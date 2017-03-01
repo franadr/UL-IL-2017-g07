@@ -1,0 +1,8 @@
+/tmp-latex/
+*.lol
+*.maf
+*.mtc
+*.mtc0
+*.mtc1
+report.pdf
+/report.log
