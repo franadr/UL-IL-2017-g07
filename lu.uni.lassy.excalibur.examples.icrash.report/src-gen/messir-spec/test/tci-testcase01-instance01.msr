@@ -130,12 +130,12 @@ Test Model {
     test step instance tsi09: testcase01.ts09oeSollicitateCrisisHandling{
       variables {
         reuse tsi02.theClock as testcase01.ts09oeSollicitateCrisisHandling.TheActor
-        steve:testcase01.ts09oeSollicitateCrisisHandling.TheCoordinator ="steve"
         reuse tsi03.bill as testcase01.ts09oeSollicitateCrisisHandling.TheAdministrator 
       }
       oracle {
          satisfaction = "true"
          received message {
+           steve:testcase01.ts09oeSollicitateCrisisHandling.TheCoordinator ="steve"
            AMessageForCrisisHandlers : testcase01.ts09oeSollicitateCrisisHandling.AMessageForCrisisHandlers= 'There are alerts pending since more than the defined delay. Please REACT !'
 					
          tsi03.bill received from system actAuthenticated.inactAuthenticated.ieMessage(AMessageForCrisisHandlers)
@@ -438,12 +438,12 @@ Test Model {
     test step instance tsi09: testcase01.ts09oeSollicitateCrisisHandling{
       variables {
         reuse tsi02.theClock as testcase01.ts09oeSollicitateCrisisHandling.TheActor
-        steve:testcase01.ts09oeSollicitateCrisisHandling.TheCoordinator ="steve"
         reuse tsi03.bill as testcase01.ts09oeSollicitateCrisisHandling.TheAdministrator 
       }
       oracle {
          satisfaction = "true"
          received message {
+           steve:testcase01.ts09oeSollicitateCrisisHandling.TheCoordinator ="steve"
            AMessageForCrisisHandlers : testcase01.ts09oeSollicitateCrisisHandling.AMessageForCrisisHandlers= 'There are alerts pending since more than the defined delay. Please REACT !'
           
          tsi03.bill received from system actAuthenticated.inactAuthenticated.ieMessage(AMessageForCrisisHandlers)
@@ -495,11 +495,11 @@ Test Model {
       variables {
         reuse tsi10.steve as testcase01.ts12oeSetCrisisHandler.TheActor
         AdtCrisisID : testcase01.ts12oeSetCrisisHandler.AdtCrisisID = "1"
-        tango : testcase01.ts12oeSetCrisisHandler.TheComCompany
       }
       oracle {
          satisfaction = "true"
          received message {
+          tango : testcase01.ts12oeSetCrisisHandler.TheComCompany
           AMessage : testcase01.ts12oeSetCrisisHandler.AMessage= 'You are now considered as handling the crisis !'
           AdtSMS : testcase01.ts12oeSetCrisisHandler.AdtSMS= 'The handling of your alert by our services is in progress !'
           AdtPhoneNumber : testcase01.ts12oeSetCrisisHandler.AdtPhoneNumber= "+3524666445252"

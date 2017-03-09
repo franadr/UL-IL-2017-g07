@@ -249,7 +249,7 @@ test step ts03oeLogin order 03{
           TheAdministrator.inactAdministrator.ieMessage(AMessageForCrisisHandlers)
           TheCoordinator.inactAdministrator.ieMessage(AMessageForCrisisHandlers)
 
-/* this oracle should be written like this:
+/* this oracle should be written like this (not currently possible due to grammar limitations:
 
         oracle{
         variables{
@@ -261,8 +261,6 @@ test step ts03oeLogin order 03{
           TheAdministrator = TheSystem.rnactAdministrator->any2(true)
           
           TheSystem.rnactCoordinator->forAll(TheCoordinator:actCoordinator | TheCoordinator.actAuthenticated.inactAuthenticated.ieMessage(AMessage))
-          
-          // receives from system is for step instances 
           
  */
         }

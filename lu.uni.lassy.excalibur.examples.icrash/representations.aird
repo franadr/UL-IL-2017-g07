@@ -12615,7 +12615,7 @@
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-DZW8rHnEeS0lKwFqsbc5g"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_-DVskbHnEeS0lKwFqsbc5g" fontName="Lucida Sans" fontHeight="14"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-DVskrHnEeS0lKwFqsbc5g" x="253" y="50" width="105" height="50"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-DVskrHnEeS0lKwFqsbc5g" x="892" y="50" width="105" height="50"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_-DW6sLHnEeS0lKwFqsbc5g" type="2001" element="_-DOX4bHnEeS0lKwFqsbc5g">
           <children xmi:type="notation:Node" xmi:id="_-DW6s7HnEeS0lKwFqsbc5g" type="5002">
@@ -12670,7 +12670,7 @@
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-DalGrHnEeS0lKwFqsbc5g"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_-DW6sbHnEeS0lKwFqsbc5g" fontName="Lucida Sans" fontHeight="14"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-DW6srHnEeS0lKwFqsbc5g" x="368" y="50" width="97" height="50"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-DW6srHnEeS0lKwFqsbc5g" x="1007" y="50" width="97" height="50"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_-DW6tbHnEeS0lKwFqsbc5g" type="2001" element="_-DOX-7HnEeS0lKwFqsbc5g">
           <children xmi:type="notation:Node" xmi:id="_-DW6uLHnEeS0lKwFqsbc5g" type="5002">
@@ -12769,7 +12769,7 @@
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-DcaQrHnEeS0lKwFqsbc5g"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_-DW6trHnEeS0lKwFqsbc5g" fontName="Lucida Sans" fontHeight="14"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-DW6t7HnEeS0lKwFqsbc5g" x="475" y="50" width="127" height="50"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-DW6t7HnEeS0lKwFqsbc5g" x="1114" y="50" width="127" height="50"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_-DXhwLHnEeS0lKwFqsbc5g" type="2001" element="_-DOYKbHnEeS0lKwFqsbc5g">
           <children xmi:type="notation:Node" xmi:id="_-DXhw7HnEeS0lKwFqsbc5g" type="5002">
@@ -12813,7 +12813,7 @@
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-DfdnbHnEeS0lKwFqsbc5g"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_-DXhwbHnEeS0lKwFqsbc5g" fontName="Lucida Sans" fontHeight="14"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-DXhwrHnEeS0lKwFqsbc5g" x="612" y="50" width="131" height="50"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-DXhwrHnEeS0lKwFqsbc5g" x="1251" y="50" width="131" height="50"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_-DXhxbHnEeS0lKwFqsbc5g" type="2001" element="_-DOYPrHnEeS0lKwFqsbc5g">
           <children xmi:type="notation:Node" xmi:id="_-DXhyLHnEeS0lKwFqsbc5g" type="5002">
@@ -13103,7 +13103,7 @@
     <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_-DOX0bHnEeS0lKwFqsbc5g" name="theCreator&#xA;: actMsrCreator" width="15" height="5" resizeKind="NSEW">
       <target xmi:type="messir:InstanceValue" href="test/tci-testcase01-instance01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.instance01.instance01Part01.tsi01.theCreator"/>
       <semanticElements xmi:type="messir:InstanceValue" href="test/tci-testcase01-instance01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.instance01.instance01Part01.tsi01.theCreator"/>
-      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_-IMXbbHnEeS0lKwFqsbc5g" x="253" y="50" height="50" width="105"/>
+      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_-IMXbbHnEeS0lKwFqsbc5g" x="892" y="50" height="50" width="105"/>
       <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_-DOX0rHnEeS0lKwFqsbc5g" name="testcase01" width="1" height="18" resizeKind="NSEW">
         <target xmi:type="messir:TestCase" href="test/tc-testcase01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.testcase01"/>
         <semanticElements xmi:type="messir:TestCase" href="test/tc-testcase01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.testcase01"/>
@@ -13111,7 +13111,7 @@
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_-DOX1LHnEeS0lKwFqsbc5g" name="tsi01" outgoingEdges="_-DOYWbHnEeS0lKwFqsbc5g" width="2" height="4" resizeKind="NSEW">
           <target xmi:type="messir:TestSentMessage" href="test/tc-testcase01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.testcase01.ts01oeCreateSystemAndEnvironment.out"/>
           <semanticElements xmi:type="messir:TestSentMessage" href="test/tc-testcase01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.testcase01.ts01oeCreateSystemAndEnvironment.out"/>
-          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_-ILwULHnEeS0lKwFqsbc5g" x="295" y="130" height="40" width="20"/>
+          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_-ILwULHnEeS0lKwFqsbc5g" x="934" y="130" height="40" width="20"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_-DOX1bHnEeS0lKwFqsbc5g" labelSize="14" showIcon="false" labelColor="77,137,20" borderSize="2" borderSizeComputationExpression="2" borderColor="77,137,20" width="2" height="4" color="77,137,20">
             <description xmi:type="style:SquareDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Test%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@nodeMappings[name='TMSD%20SD_ActorType%20Instance%20Role']/@borderedNodeMappings[name='TMSD%20Lifeline%20SD_TestCase%20%20Execution']/@borderedNodeMappings[name='TMSD%20SD_TestStep%20Execution']/@style"/>
           </ownedStyle>
@@ -13130,7 +13130,7 @@
     <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_-DOX4bHnEeS0lKwFqsbc5g" name="theClock&#xA;: actActivator" width="15" height="5" resizeKind="NSEW">
       <target xmi:type="messir:InstanceValue" href="test/tci-testcase01-instance01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.instance01.instance01Part01.tsi02.theClock"/>
       <semanticElements xmi:type="messir:InstanceValue" href="test/tci-testcase01-instance01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.instance01.instance01Part01.tsi02.theClock"/>
-      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_-IMXbrHnEeS0lKwFqsbc5g" x="368" y="50" height="50" width="97"/>
+      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_-IMXbrHnEeS0lKwFqsbc5g" x="1007" y="50" height="50" width="97"/>
       <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_-DOX4rHnEeS0lKwFqsbc5g" name="testcase01" width="1" height="18" resizeKind="NSEW">
         <target xmi:type="messir:TestCase" href="test/tc-testcase01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.testcase01"/>
         <semanticElements xmi:type="messir:TestCase" href="test/tc-testcase01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.testcase01"/>
@@ -13138,7 +13138,7 @@
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_-DOX5LHnEeS0lKwFqsbc5g" name="tsi02" outgoingEdges="_-DOYXrHnEeS0lKwFqsbc5g" width="2" height="4" resizeKind="NSEW">
           <target xmi:type="messir:TestSentMessage" href="test/tc-testcase01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.testcase01.ts02oeSetClock.out"/>
           <semanticElements xmi:type="messir:TestSentMessage" href="test/tc-testcase01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.testcase01.ts02oeSetClock.out"/>
-          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_-ILwUbHnEeS0lKwFqsbc5g" x="406" y="190" height="40" width="20"/>
+          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_-ILwUbHnEeS0lKwFqsbc5g" x="1045" y="190" height="40" width="20"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_-DOX5bHnEeS0lKwFqsbc5g" labelSize="14" showIcon="false" labelColor="77,137,20" borderSize="2" borderSizeComputationExpression="2" borderColor="77,137,20" width="2" height="4" color="77,137,20">
             <description xmi:type="style:SquareDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Test%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@nodeMappings[name='TMSD%20SD_ActorType%20Instance%20Role']/@borderedNodeMappings[name='TMSD%20Lifeline%20SD_TestCase%20%20Execution']/@borderedNodeMappings[name='TMSD%20SD_TestStep%20Execution']/@style"/>
           </ownedStyle>
@@ -13147,7 +13147,7 @@
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_-DOX6bHnEeS0lKwFqsbc5g" name="tsi06" outgoingEdges="_-DOYcrHnEeS0lKwFqsbc5g" width="2" height="4" resizeKind="NSEW">
           <target xmi:type="messir:TestSentMessage" href="test/tc-testcase01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.testcase01.ts06oeSetClock02.out"/>
           <semanticElements xmi:type="messir:TestSentMessage" href="test/tc-testcase01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.testcase01.ts06oeSetClock02.out"/>
-          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_-ILwUrHnEeS0lKwFqsbc5g" x="406" y="596" height="40" width="20"/>
+          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_-ILwUrHnEeS0lKwFqsbc5g" x="1045" y="596" height="40" width="20"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_-DOX6rHnEeS0lKwFqsbc5g" labelSize="14" showIcon="false" labelColor="77,137,20" borderSize="2" borderSizeComputationExpression="2" borderColor="77,137,20" width="2" height="4" color="77,137,20">
             <description xmi:type="style:SquareDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Test%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@nodeMappings[name='TMSD%20SD_ActorType%20Instance%20Role']/@borderedNodeMappings[name='TMSD%20Lifeline%20SD_TestCase%20%20Execution']/@borderedNodeMappings[name='TMSD%20SD_TestStep%20Execution']/@style"/>
           </ownedStyle>
@@ -13156,7 +13156,7 @@
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_-DOX7rHnEeS0lKwFqsbc5g" name="tsi09" outgoingEdges="_-DOYfLHnEeS0lKwFqsbc5g" width="2" height="4" resizeKind="NSEW">
           <target xmi:type="messir:TestSentMessage" href="test/tc-testcase01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.testcase01.ts09oeSollicitateCrisisHandling.out"/>
           <semanticElements xmi:type="messir:TestSentMessage" href="test/tc-testcase01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.testcase01.ts09oeSollicitateCrisisHandling.out"/>
-          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_-ILwU7HnEeS0lKwFqsbc5g" x="406" y="830" height="40" width="20"/>
+          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_-ILwU7HnEeS0lKwFqsbc5g" x="1045" y="830" height="40" width="20"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_-DOX77HnEeS0lKwFqsbc5g" labelSize="14" showIcon="false" labelColor="77,137,20" borderSize="2" borderSizeComputationExpression="2" borderColor="77,137,20" width="2" height="4" color="77,137,20">
             <description xmi:type="style:SquareDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Test%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@nodeMappings[name='TMSD%20SD_ActorType%20Instance%20Role']/@borderedNodeMappings[name='TMSD%20Lifeline%20SD_TestCase%20%20Execution']/@borderedNodeMappings[name='TMSD%20SD_TestStep%20Execution']/@style"/>
           </ownedStyle>
@@ -13175,7 +13175,7 @@
     <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_-DOX-7HnEeS0lKwFqsbc5g" name="bill&#xA;: actAdministrator" width="15" height="5" resizeKind="NSEW">
       <target xmi:type="messir:InstanceValue" href="test/tci-testcase01-instance01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.instance01.instance01Part01.tsi03.bill"/>
       <semanticElements xmi:type="messir:InstanceValue" href="test/tci-testcase01-instance01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.instance01.instance01Part01.tsi03.bill"/>
-      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_-IMXb7HnEeS0lKwFqsbc5g" x="475" y="50" height="50" width="127"/>
+      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_-IMXb7HnEeS0lKwFqsbc5g" x="1114" y="50" height="50" width="127"/>
       <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_-DOX_LHnEeS0lKwFqsbc5g" name="testcase01" width="1" height="18" resizeKind="NSEW">
         <target xmi:type="messir:TestCase" href="test/tc-testcase01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.testcase01"/>
         <semanticElements xmi:type="messir:TestCase" href="test/tc-testcase01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.testcase01"/>
@@ -13183,7 +13183,7 @@
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_-DOX_rHnEeS0lKwFqsbc5g" name="tsi03" outgoingEdges="_-DOYY7HnEeS0lKwFqsbc5g" width="2" height="4" resizeKind="NSEW">
           <target xmi:type="messir:TestSentMessage" href="test/tc-testcase01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.testcase01.ts03oeLogin.out"/>
           <semanticElements xmi:type="messir:TestSentMessage" href="test/tc-testcase01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.testcase01.ts03oeLogin.out"/>
-          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_-ILwVLHnEeS0lKwFqsbc5g" x="528" y="250" height="40" width="20"/>
+          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_-ILwVLHnEeS0lKwFqsbc5g" x="1167" y="250" height="40" width="20"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_-DOX_7HnEeS0lKwFqsbc5g" labelSize="14" showIcon="false" labelColor="77,137,20" borderSize="2" borderSizeComputationExpression="2" borderColor="77,137,20" width="2" height="4" color="77,137,20">
             <description xmi:type="style:SquareDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Test%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@nodeMappings[name='TMSD%20SD_ActorType%20Instance%20Role']/@borderedNodeMappings[name='TMSD%20Lifeline%20SD_TestCase%20%20Execution']/@borderedNodeMappings[name='TMSD%20SD_TestStep%20Execution']/@style"/>
           </ownedStyle>
@@ -13192,7 +13192,7 @@
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_-DOYA7HnEeS0lKwFqsbc5g" name="tsi04" outgoingEdges="_-DOYaLHnEeS0lKwFqsbc5g" width="2" height="4" resizeKind="NSEW">
           <target xmi:type="messir:TestSentMessage" href="test/tc-testcase01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.testcase01.ts04oeAddCoordinator.out"/>
           <semanticElements xmi:type="messir:TestSentMessage" href="test/tc-testcase01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.testcase01.ts04oeAddCoordinator.out"/>
-          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_-ILwVbHnEeS0lKwFqsbc5g" x="528" y="370" height="40" width="20"/>
+          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_-ILwVbHnEeS0lKwFqsbc5g" x="1167" y="370" height="40" width="20"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_-DOYBLHnEeS0lKwFqsbc5g" labelSize="14" showIcon="false" labelColor="77,137,20" borderSize="2" borderSizeComputationExpression="2" borderColor="77,137,20" width="2" height="4" color="77,137,20">
             <description xmi:type="style:SquareDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Test%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@nodeMappings[name='TMSD%20SD_ActorType%20Instance%20Role']/@borderedNodeMappings[name='TMSD%20Lifeline%20SD_TestCase%20%20Execution']/@borderedNodeMappings[name='TMSD%20SD_TestStep%20Execution']/@style"/>
           </ownedStyle>
@@ -13201,7 +13201,7 @@
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_-DOYCLHnEeS0lKwFqsbc5g" name="tsi05" outgoingEdges="_-DOYbbHnEeS0lKwFqsbc5g" width="2" height="4" resizeKind="NSEW">
           <target xmi:type="messir:TestSentMessage" href="test/tc-testcase01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.testcase01.ts05oeLogout.out"/>
           <semanticElements xmi:type="messir:TestSentMessage" href="test/tc-testcase01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.testcase01.ts05oeLogout.out"/>
-          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_-ILwVrHnEeS0lKwFqsbc5g" x="528" y="490" height="40" width="20"/>
+          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_-ILwVrHnEeS0lKwFqsbc5g" x="1167" y="490" height="40" width="20"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_-DOYCbHnEeS0lKwFqsbc5g" labelSize="14" showIcon="false" labelColor="77,137,20" borderSize="2" borderSizeComputationExpression="2" borderColor="77,137,20" width="2" height="4" color="77,137,20">
             <description xmi:type="style:SquareDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Test%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@nodeMappings[name='TMSD%20SD_ActorType%20Instance%20Role']/@borderedNodeMappings[name='TMSD%20Lifeline%20SD_TestCase%20%20Execution']/@borderedNodeMappings[name='TMSD%20SD_TestStep%20Execution']/@style"/>
           </ownedStyle>
@@ -13210,7 +13210,7 @@
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_-DOYDbHnEeS0lKwFqsbc5g" name="tsi03" outgoingEdges="_-DOYgbHnEeS0lKwFqsbc5g" width="2" height="4" resizeKind="NSEW">
           <target xmi:type="messir:TestReceivedMessageInstance" href="test/tci-testcase01-instance01.msr#//@testM/@testCaseInstances.1/@testStepInstances.2/@oracleBlock/@outputParameterBlock/@testReceivedMessageInstances.0"/>
           <semanticElements xmi:type="messir:TestReceivedMessageInstance" href="test/tci-testcase01-instance01.msr#//@testM/@testCaseInstances.1/@testStepInstances.2/@oracleBlock/@outputParameterBlock/@testReceivedMessageInstances.0"/>
-          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_-ILwV7HnEeS0lKwFqsbc5g" x="528" y="296" height="40" width="20"/>
+          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_-ILwV7HnEeS0lKwFqsbc5g" x="1167" y="296" height="40" width="20"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_-DOYDrHnEeS0lKwFqsbc5g" labelSize="14" showIcon="false" labelColor="77,137,20" borderColor="209,209,209" width="2" height="4" color="204,242,166">
             <description xmi:type="style:SquareDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Test%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@nodeMappings[name='TMSD%20SD_ActorType%20Instance%20Role']/@borderedNodeMappings[name='TMSD%20Lifeline%20SD_TestCase%20%20Execution']/@borderedNodeMappings[name='TMSD%20SD_TestStep%20Execution%20Received']/@style"/>
           </ownedStyle>
@@ -13219,7 +13219,7 @@
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_-DOYErHnEeS0lKwFqsbc5g" name="tsi04" outgoingEdges="_-DOYhrHnEeS0lKwFqsbc5g" width="2" height="4" resizeKind="NSEW">
           <target xmi:type="messir:TestReceivedMessageInstance" href="test/tci-testcase01-instance01.msr#//@testM/@testCaseInstances.1/@testStepInstances.3/@oracleBlock/@outputParameterBlock/@testReceivedMessageInstances.0"/>
           <semanticElements xmi:type="messir:TestReceivedMessageInstance" href="test/tci-testcase01-instance01.msr#//@testM/@testCaseInstances.1/@testStepInstances.3/@oracleBlock/@outputParameterBlock/@testReceivedMessageInstances.0"/>
-          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_-ILwWLHnEeS0lKwFqsbc5g" x="528" y="415" height="40" width="20"/>
+          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_-ILwWLHnEeS0lKwFqsbc5g" x="1167" y="415" height="40" width="20"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_-DOYE7HnEeS0lKwFqsbc5g" labelSize="14" showIcon="false" labelColor="77,137,20" borderColor="209,209,209" width="2" height="4" color="204,242,166">
             <description xmi:type="style:SquareDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Test%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@nodeMappings[name='TMSD%20SD_ActorType%20Instance%20Role']/@borderedNodeMappings[name='TMSD%20Lifeline%20SD_TestCase%20%20Execution']/@borderedNodeMappings[name='TMSD%20SD_TestStep%20Execution%20Received']/@style"/>
           </ownedStyle>
@@ -13228,7 +13228,7 @@
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_-DOYF7HnEeS0lKwFqsbc5g" name="tsi05" outgoingEdges="_-DOYi7HnEeS0lKwFqsbc5g" width="2" height="4" resizeKind="NSEW">
           <target xmi:type="messir:TestReceivedMessageInstance" href="test/tci-testcase01-instance01.msr#//@testM/@testCaseInstances.1/@testStepInstances.4/@oracleBlock/@outputParameterBlock/@testReceivedMessageInstances.0"/>
           <semanticElements xmi:type="messir:TestReceivedMessageInstance" href="test/tci-testcase01-instance01.msr#//@testM/@testCaseInstances.1/@testStepInstances.4/@oracleBlock/@outputParameterBlock/@testReceivedMessageInstances.0"/>
-          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_-ILwWbHnEeS0lKwFqsbc5g" x="528" y="540" height="40" width="20"/>
+          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_-ILwWbHnEeS0lKwFqsbc5g" x="1167" y="540" height="40" width="20"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_-DOYGLHnEeS0lKwFqsbc5g" labelSize="14" showIcon="false" labelColor="77,137,20" borderColor="209,209,209" width="2" height="4" color="204,242,166">
             <description xmi:type="style:SquareDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Test%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@nodeMappings[name='TMSD%20SD_ActorType%20Instance%20Role']/@borderedNodeMappings[name='TMSD%20Lifeline%20SD_TestCase%20%20Execution']/@borderedNodeMappings[name='TMSD%20SD_TestStep%20Execution%20Received']/@style"/>
           </ownedStyle>
@@ -13237,7 +13237,7 @@
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_-DOYHLHnEeS0lKwFqsbc5g" name="tsi09" outgoingEdges="_-DOYlbHnEeS0lKwFqsbc5g" width="2" height="4" resizeKind="NSEW">
           <target xmi:type="messir:TestReceivedMessageInstance" href="test/tci-testcase01-instance01.msr#//@testM/@testCaseInstances.1/@testStepInstances.8/@oracleBlock/@outputParameterBlock/@testReceivedMessageInstances.0"/>
           <semanticElements xmi:type="messir:TestReceivedMessageInstance" href="test/tci-testcase01-instance01.msr#//@testM/@testCaseInstances.1/@testStepInstances.8/@oracleBlock/@outputParameterBlock/@testReceivedMessageInstances.0"/>
-          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_-ILwWrHnEeS0lKwFqsbc5g" x="528" y="890" height="40" width="20"/>
+          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_-ILwWrHnEeS0lKwFqsbc5g" x="1167" y="890" height="40" width="20"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_-DOYHbHnEeS0lKwFqsbc5g" labelSize="14" showIcon="false" labelColor="77,137,20" borderColor="209,209,209" width="2" height="4" color="204,242,166">
             <description xmi:type="style:SquareDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Test%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@nodeMappings[name='TMSD%20SD_ActorType%20Instance%20Role']/@borderedNodeMappings[name='TMSD%20Lifeline%20SD_TestCase%20%20Execution']/@borderedNodeMappings[name='TMSD%20SD_TestStep%20Execution%20Received']/@style"/>
           </ownedStyle>
@@ -13256,7 +13256,7 @@
     <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_-DOYKbHnEeS0lKwFqsbc5g" name="tango&#xA;: actComCompany" width="15" height="5" resizeKind="NSEW">
       <target xmi:type="messir:InstanceValue" href="test/tci-testcase01-instance01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.instance01.instance01Part01.tsi07.tango"/>
       <semanticElements xmi:type="messir:InstanceValue" href="test/tci-testcase01-instance01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.instance01.instance01Part01.tsi07.tango"/>
-      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_-IMXcLHnEeS0lKwFqsbc5g" x="612" y="50" height="50" width="131"/>
+      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_-IMXcLHnEeS0lKwFqsbc5g" x="1251" y="50" height="50" width="131"/>
       <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_-DOYKrHnEeS0lKwFqsbc5g" name="testcase01" width="1" height="18" resizeKind="NSEW">
         <target xmi:type="messir:TestCase" href="test/tc-testcase01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.testcase01"/>
         <semanticElements xmi:type="messir:TestCase" href="test/tc-testcase01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.testcase01"/>
@@ -13264,7 +13264,7 @@
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_-DOYLLHnEeS0lKwFqsbc5g" name="tsi07" outgoingEdges="_-DOYd7HnEeS0lKwFqsbc5g" width="2" height="4" resizeKind="NSEW">
           <target xmi:type="messir:TestSentMessage" href="test/tc-testcase01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.testcase01.ts07oeAlert1.out"/>
           <semanticElements xmi:type="messir:TestSentMessage" href="test/tc-testcase01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.testcase01.ts07oeAlert1.out"/>
-          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_-ILwW7HnEeS0lKwFqsbc5g" x="667" y="691" height="40" width="20"/>
+          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_-ILwW7HnEeS0lKwFqsbc5g" x="1306" y="691" height="40" width="20"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_-DOYLbHnEeS0lKwFqsbc5g" labelSize="14" showIcon="false" labelColor="77,137,20" borderSize="2" borderSizeComputationExpression="2" borderColor="77,137,20" width="2" height="4" color="77,137,20">
             <description xmi:type="style:SquareDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Test%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@nodeMappings[name='TMSD%20SD_ActorType%20Instance%20Role']/@borderedNodeMappings[name='TMSD%20Lifeline%20SD_TestCase%20%20Execution']/@borderedNodeMappings[name='TMSD%20SD_TestStep%20Execution']/@style"/>
           </ownedStyle>
@@ -13273,7 +13273,7 @@
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_-DOYMbHnEeS0lKwFqsbc5g" name="tsi07" outgoingEdges="_-DOYkLHnEeS0lKwFqsbc5g" width="2" height="4" resizeKind="NSEW">
           <target xmi:type="messir:TestReceivedMessageInstance" href="test/tci-testcase01-instance01.msr#//@testM/@testCaseInstances.1/@testStepInstances.6/@oracleBlock/@outputParameterBlock/@testReceivedMessageInstances.0"/>
           <semanticElements xmi:type="messir:TestReceivedMessageInstance" href="test/tci-testcase01-instance01.msr#//@testM/@testCaseInstances.1/@testStepInstances.6/@oracleBlock/@outputParameterBlock/@testReceivedMessageInstances.0"/>
-          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_-ILwXLHnEeS0lKwFqsbc5g" x="667" y="770" height="40" width="20"/>
+          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_-ILwXLHnEeS0lKwFqsbc5g" x="1306" y="770" height="40" width="20"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_-DOYMrHnEeS0lKwFqsbc5g" labelSize="14" showIcon="false" labelColor="77,137,20" borderColor="209,209,209" width="2" height="4" color="204,242,166">
             <description xmi:type="style:SquareDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Test%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@nodeMappings[name='TMSD%20SD_ActorType%20Instance%20Role']/@borderedNodeMappings[name='TMSD%20Lifeline%20SD_TestCase%20%20Execution']/@borderedNodeMappings[name='TMSD%20SD_TestStep%20Execution%20Received']/@style"/>
           </ownedStyle>
@@ -13656,7 +13656,7 @@
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VJehtLHoEeS0lKwFqsbc5g"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_VJdTlLHoEeS0lKwFqsbc5g" fontName="Lucida Sans" fontHeight="14"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VJdTlbHoEeS0lKwFqsbc5g" x="336" y="50" width="117" height="50"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VJdTlbHoEeS0lKwFqsbc5g" x="601" y="50" width="117" height="50"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_VJd6orHoEeS0lKwFqsbc5g" type="2001" element="_VJYbYrHoEeS0lKwFqsbc5g">
           <children xmi:type="notation:Node" xmi:id="_VJd6pbHoEeS0lKwFqsbc5g" type="5002">
@@ -13755,7 +13755,7 @@
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VJkoWrHoEeS0lKwFqsbc5g"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_VJd6qLHoEeS0lKwFqsbc5g" fontName="Lucida Sans" fontHeight="14"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VJd6qbHoEeS0lKwFqsbc5g" x="601" y="50" width="117" height="50"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VJd6qbHoEeS0lKwFqsbc5g" x="728" y="50" width="117" height="50"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_VJd6rLHoEeS0lKwFqsbc5g" type="2001" element="_VJYbkbHoEeS0lKwFqsbc5g">
           <children xmi:type="notation:Node" xmi:id="_VJd6r7HoEeS0lKwFqsbc5g" type="5002">
@@ -14092,7 +14092,7 @@
     <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_VJYbEbHoEeS0lKwFqsbc5g" name="steve&#xA;: actCoordinator" width="15" height="5" resizeKind="NSEW">
       <target xmi:type="messir:InstanceValue" href="test/tci-testcase01-instance01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.instance01.instance01Part02.tsi10.steve"/>
       <semanticElements xmi:type="messir:InstanceValue" href="test/tci-testcase01-instance01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.instance01.instance01Part02.tsi10.steve"/>
-      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_VMQv-bHoEeS0lKwFqsbc5g" x="336" y="50" height="50" width="117"/>
+      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_VMQv-bHoEeS0lKwFqsbc5g" x="601" y="50" height="50" width="117"/>
       <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_VJYbErHoEeS0lKwFqsbc5g" name="testcase01" width="1" height="18" resizeKind="NSEW">
         <target xmi:type="messir:TestCase" href="test/tc-testcase01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.testcase01"/>
         <semanticElements xmi:type="messir:TestCase" href="test/tc-testcase01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.testcase01"/>
@@ -14100,7 +14100,7 @@
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_VJYbFLHoEeS0lKwFqsbc5g" name="tsi10" outgoingEdges="_VJYbnLHoEeS0lKwFqsbc5g" width="2" height="4" resizeKind="NSEW">
           <target xmi:type="messir:TestSentMessage" href="test/tc-testcase01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.testcase01.ts10oeLogin02.out"/>
           <semanticElements xmi:type="messir:TestSentMessage" href="test/tc-testcase01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.testcase01.ts10oeLogin02.out"/>
-          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_VMQI4LHoEeS0lKwFqsbc5g" x="384" y="130" height="40" width="20"/>
+          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_VMQI4LHoEeS0lKwFqsbc5g" x="649" y="130" height="40" width="20"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_VJYbFbHoEeS0lKwFqsbc5g" labelSize="14" showIcon="false" labelColor="77,137,20" borderSize="2" borderSizeComputationExpression="2" borderColor="77,137,20" width="2" height="4" color="77,137,20">
             <description xmi:type="style:SquareDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Test%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@nodeMappings[name='TMSD%20SD_ActorType%20Instance%20Role']/@borderedNodeMappings[name='TMSD%20Lifeline%20SD_TestCase%20%20Execution']/@borderedNodeMappings[name='TMSD%20SD_TestStep%20Execution']/@style"/>
           </ownedStyle>
@@ -14109,7 +14109,7 @@
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_VJYbGbHoEeS0lKwFqsbc5g" name="tsi11" outgoingEdges="_VJYbobHoEeS0lKwFqsbc5g" width="2" height="4" resizeKind="NSEW">
           <target xmi:type="messir:TestSentMessage" href="test/tc-testcase01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.testcase01.ts11oeGetCrisisSet.out"/>
           <semanticElements xmi:type="messir:TestSentMessage" href="test/tc-testcase01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.testcase01.ts11oeGetCrisisSet.out"/>
-          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_VMQI4bHoEeS0lKwFqsbc5g" x="384" y="250" height="40" width="20"/>
+          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_VMQI4bHoEeS0lKwFqsbc5g" x="649" y="250" height="40" width="20"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_VJYbGrHoEeS0lKwFqsbc5g" labelSize="14" showIcon="false" labelColor="77,137,20" borderSize="2" borderSizeComputationExpression="2" borderColor="77,137,20" width="2" height="4" color="77,137,20">
             <description xmi:type="style:SquareDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Test%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@nodeMappings[name='TMSD%20SD_ActorType%20Instance%20Role']/@borderedNodeMappings[name='TMSD%20Lifeline%20SD_TestCase%20%20Execution']/@borderedNodeMappings[name='TMSD%20SD_TestStep%20Execution']/@style"/>
           </ownedStyle>
@@ -14118,7 +14118,7 @@
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_VJYbHrHoEeS0lKwFqsbc5g" name="tsi12" outgoingEdges="_VJYbprHoEeS0lKwFqsbc5g" width="2" height="4" resizeKind="NSEW">
           <target xmi:type="messir:TestSentMessage" href="test/tc-testcase01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.testcase01.ts12oeSetCrisisHandler.out"/>
           <semanticElements xmi:type="messir:TestSentMessage" href="test/tc-testcase01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.testcase01.ts12oeSetCrisisHandler.out"/>
-          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_VMQI4rHoEeS0lKwFqsbc5g" x="384" y="370" height="40" width="20"/>
+          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_VMQI4rHoEeS0lKwFqsbc5g" x="649" y="370" height="40" width="20"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_VJYbH7HoEeS0lKwFqsbc5g" labelSize="14" showIcon="false" labelColor="77,137,20" borderSize="2" borderSizeComputationExpression="2" borderColor="77,137,20" width="2" height="4" color="77,137,20">
             <description xmi:type="style:SquareDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Test%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@nodeMappings[name='TMSD%20SD_ActorType%20Instance%20Role']/@borderedNodeMappings[name='TMSD%20Lifeline%20SD_TestCase%20%20Execution']/@borderedNodeMappings[name='TMSD%20SD_TestStep%20Execution']/@style"/>
           </ownedStyle>
@@ -14127,7 +14127,7 @@
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_VJYbI7HoEeS0lKwFqsbc5g" name="tsi14" outgoingEdges="_VJYbsLHoEeS0lKwFqsbc5g" width="2" height="4" resizeKind="NSEW">
           <target xmi:type="messir:TestSentMessage" href="test/tc-testcase01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.testcase01.ts14oeValidateAlert.out"/>
           <semanticElements xmi:type="messir:TestSentMessage" href="test/tc-testcase01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.testcase01.ts14oeValidateAlert.out"/>
-          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_VMQI47HoEeS0lKwFqsbc5g" x="384" y="611" height="40" width="20"/>
+          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_VMQI47HoEeS0lKwFqsbc5g" x="649" y="611" height="40" width="20"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_VJYbJLHoEeS0lKwFqsbc5g" labelSize="14" showIcon="false" labelColor="77,137,20" borderSize="2" borderSizeComputationExpression="2" borderColor="77,137,20" width="2" height="4" color="77,137,20">
             <description xmi:type="style:SquareDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Test%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@nodeMappings[name='TMSD%20SD_ActorType%20Instance%20Role']/@borderedNodeMappings[name='TMSD%20Lifeline%20SD_TestCase%20%20Execution']/@borderedNodeMappings[name='TMSD%20SD_TestStep%20Execution']/@style"/>
           </ownedStyle>
@@ -14136,7 +14136,7 @@
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_VJYbKLHoEeS0lKwFqsbc5g" name="tsi17" outgoingEdges="_VJYbv7HoEeS0lKwFqsbc5g" width="2" height="4" resizeKind="NSEW">
           <target xmi:type="messir:TestSentMessage" href="test/tc-testcase01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.testcase01.ts17oeSetCrisisStatus.out"/>
           <semanticElements xmi:type="messir:TestSentMessage" href="test/tc-testcase01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.testcase01.ts17oeSetCrisisStatus.out"/>
-          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_VMQI5LHoEeS0lKwFqsbc5g" x="384" y="951" height="40" width="20"/>
+          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_VMQI5LHoEeS0lKwFqsbc5g" x="649" y="951" height="40" width="20"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_VJYbKbHoEeS0lKwFqsbc5g" labelSize="14" showIcon="false" labelColor="77,137,20" borderSize="2" borderSizeComputationExpression="2" borderColor="77,137,20" width="2" height="4" color="77,137,20">
             <description xmi:type="style:SquareDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Test%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@nodeMappings[name='TMSD%20SD_ActorType%20Instance%20Role']/@borderedNodeMappings[name='TMSD%20Lifeline%20SD_TestCase%20%20Execution']/@borderedNodeMappings[name='TMSD%20SD_TestStep%20Execution']/@style"/>
           </ownedStyle>
@@ -14145,7 +14145,7 @@
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_VJYbLbHoEeS0lKwFqsbc5g" name="tsi18" outgoingEdges="_VJYbxLHoEeS0lKwFqsbc5g" width="2" height="4" resizeKind="NSEW">
           <target xmi:type="messir:TestSentMessage" href="test/tc-testcase01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.testcase01.ts18oeReportOnCrisis.out"/>
           <semanticElements xmi:type="messir:TestSentMessage" href="test/tc-testcase01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.testcase01.ts18oeReportOnCrisis.out"/>
-          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_VMQI5bHoEeS0lKwFqsbc5g" x="384" y="1071" height="40" width="20"/>
+          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_VMQI5bHoEeS0lKwFqsbc5g" x="649" y="1071" height="40" width="20"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_VJYbLrHoEeS0lKwFqsbc5g" labelSize="14" showIcon="false" labelColor="77,137,20" borderSize="2" borderSizeComputationExpression="2" borderColor="77,137,20" width="2" height="4" color="77,137,20">
             <description xmi:type="style:SquareDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Test%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@nodeMappings[name='TMSD%20SD_ActorType%20Instance%20Role']/@borderedNodeMappings[name='TMSD%20Lifeline%20SD_TestCase%20%20Execution']/@borderedNodeMappings[name='TMSD%20SD_TestStep%20Execution']/@style"/>
           </ownedStyle>
@@ -14154,7 +14154,7 @@
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_VJYbMrHoEeS0lKwFqsbc5g" name="tsi19" outgoingEdges="_VJYbybHoEeS0lKwFqsbc5g" width="2" height="4" resizeKind="NSEW">
           <target xmi:type="messir:TestSentMessage" href="test/tc-testcase01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.testcase01.ts19oeCloseCrisis.out"/>
           <semanticElements xmi:type="messir:TestSentMessage" href="test/tc-testcase01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.testcase01.ts19oeCloseCrisis.out"/>
-          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_VMQI5rHoEeS0lKwFqsbc5g" x="384" y="1191" height="40" width="20"/>
+          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_VMQI5rHoEeS0lKwFqsbc5g" x="649" y="1191" height="40" width="20"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_VJYbM7HoEeS0lKwFqsbc5g" labelSize="14" showIcon="false" labelColor="77,137,20" borderSize="2" borderSizeComputationExpression="2" borderColor="77,137,20" width="2" height="4" color="77,137,20">
             <description xmi:type="style:SquareDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Test%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@nodeMappings[name='TMSD%20SD_ActorType%20Instance%20Role']/@borderedNodeMappings[name='TMSD%20Lifeline%20SD_TestCase%20%20Execution']/@borderedNodeMappings[name='TMSD%20SD_TestStep%20Execution']/@style"/>
           </ownedStyle>
@@ -14163,7 +14163,7 @@
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_VJYbN7HoEeS0lKwFqsbc5g" name="tsi10" outgoingEdges="_VJYbzrHoEeS0lKwFqsbc5g" width="2" height="4" resizeKind="NSEW">
           <target xmi:type="messir:TestReceivedMessageInstance" href="test/tci-testcase01-instance01.msr#//@testM/@testCaseInstances.2/@testStepInstances.0/@oracleBlock/@outputParameterBlock/@testReceivedMessageInstances.0"/>
           <semanticElements xmi:type="messir:TestReceivedMessageInstance" href="test/tci-testcase01-instance01.msr#//@testM/@testCaseInstances.2/@testStepInstances.0/@oracleBlock/@outputParameterBlock/@testReceivedMessageInstances.0"/>
-          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_VMQI57HoEeS0lKwFqsbc5g" x="384" y="180" height="40" width="20"/>
+          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_VMQI57HoEeS0lKwFqsbc5g" x="649" y="180" height="40" width="20"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_VJYbOLHoEeS0lKwFqsbc5g" labelSize="14" showIcon="false" labelColor="77,137,20" borderColor="209,209,209" width="2" height="4" color="204,242,166">
             <description xmi:type="style:SquareDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Test%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@nodeMappings[name='TMSD%20SD_ActorType%20Instance%20Role']/@borderedNodeMappings[name='TMSD%20Lifeline%20SD_TestCase%20%20Execution']/@borderedNodeMappings[name='TMSD%20SD_TestStep%20Execution%20Received']/@style"/>
           </ownedStyle>
@@ -14172,7 +14172,7 @@
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_VJYbPLHoEeS0lKwFqsbc5g" name="tsi11" outgoingEdges="_VJYb07HoEeS0lKwFqsbc5g" width="2" height="4" resizeKind="NSEW">
           <target xmi:type="messir:TestReceivedMessageInstance" href="test/tci-testcase01-instance01.msr#//@testM/@testCaseInstances.2/@testStepInstances.1/@oracleBlock/@outputParameterBlock/@testReceivedMessageInstances.0"/>
           <semanticElements xmi:type="messir:TestReceivedMessageInstance" href="test/tci-testcase01-instance01.msr#//@testM/@testCaseInstances.2/@testStepInstances.1/@oracleBlock/@outputParameterBlock/@testReceivedMessageInstances.0"/>
-          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_VMQI6LHoEeS0lKwFqsbc5g" x="384" y="298" height="40" width="20"/>
+          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_VMQI6LHoEeS0lKwFqsbc5g" x="649" y="298" height="40" width="20"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_VJYbPbHoEeS0lKwFqsbc5g" labelSize="14" showIcon="false" labelColor="77,137,20" borderColor="209,209,209" width="2" height="4" color="204,242,166">
             <description xmi:type="style:SquareDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Test%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@nodeMappings[name='TMSD%20SD_ActorType%20Instance%20Role']/@borderedNodeMappings[name='TMSD%20Lifeline%20SD_TestCase%20%20Execution']/@borderedNodeMappings[name='TMSD%20SD_TestStep%20Execution%20Received']/@style"/>
           </ownedStyle>
@@ -14181,7 +14181,7 @@
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_VJYbQbHoEeS0lKwFqsbc5g" name="tsi12" outgoingEdges="_VJYb3bHoEeS0lKwFqsbc5g" width="2" height="4" resizeKind="NSEW">
           <target xmi:type="messir:TestReceivedMessageInstance" href="test/tci-testcase01-instance01.msr#//@testM/@testCaseInstances.2/@testStepInstances.2/@oracleBlock/@outputParameterBlock/@testReceivedMessageInstances.1"/>
           <semanticElements xmi:type="messir:TestReceivedMessageInstance" href="test/tci-testcase01-instance01.msr#//@testM/@testCaseInstances.2/@testStepInstances.2/@oracleBlock/@outputParameterBlock/@testReceivedMessageInstances.1"/>
-          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_VMQI6bHoEeS0lKwFqsbc5g" x="384" y="484" height="40" width="20"/>
+          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_VMQI6bHoEeS0lKwFqsbc5g" x="649" y="484" height="40" width="20"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_VJYbQrHoEeS0lKwFqsbc5g" labelSize="14" showIcon="false" labelColor="77,137,20" borderColor="209,209,209" width="2" height="4" color="204,242,166">
             <description xmi:type="style:SquareDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Test%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@nodeMappings[name='TMSD%20SD_ActorType%20Instance%20Role']/@borderedNodeMappings[name='TMSD%20Lifeline%20SD_TestCase%20%20Execution']/@borderedNodeMappings[name='TMSD%20SD_TestStep%20Execution%20Received']/@style"/>
           </ownedStyle>
@@ -14190,7 +14190,7 @@
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_VJYbRrHoEeS0lKwFqsbc5g" name="tsi14" outgoingEdges="_VJYb4rHoEeS0lKwFqsbc5g" width="2" height="4" resizeKind="NSEW">
           <target xmi:type="messir:TestReceivedMessageInstance" href="test/tci-testcase01-instance01.msr#//@testM/@testCaseInstances.2/@testStepInstances.4/@oracleBlock/@outputParameterBlock/@testReceivedMessageInstances.0"/>
           <semanticElements xmi:type="messir:TestReceivedMessageInstance" href="test/tci-testcase01-instance01.msr#//@testM/@testCaseInstances.2/@testStepInstances.4/@oracleBlock/@outputParameterBlock/@testReceivedMessageInstances.0"/>
-          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_VMQI6rHoEeS0lKwFqsbc5g" x="384" y="671" height="40" width="20"/>
+          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_VMQI6rHoEeS0lKwFqsbc5g" x="649" y="671" height="40" width="20"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_VJYbR7HoEeS0lKwFqsbc5g" labelSize="14" showIcon="false" labelColor="77,137,20" borderColor="209,209,209" width="2" height="4" color="204,242,166">
             <description xmi:type="style:SquareDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Test%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@nodeMappings[name='TMSD%20SD_ActorType%20Instance%20Role']/@borderedNodeMappings[name='TMSD%20Lifeline%20SD_TestCase%20%20Execution']/@borderedNodeMappings[name='TMSD%20SD_TestStep%20Execution%20Received']/@style"/>
           </ownedStyle>
@@ -14199,7 +14199,7 @@
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_VJYbS7HoEeS0lKwFqsbc5g" name="tsi17" outgoingEdges="_VJYb7LHoEeS0lKwFqsbc5g" width="2" height="4" resizeKind="NSEW">
           <target xmi:type="messir:TestReceivedMessageInstance" href="test/tci-testcase01-instance01.msr#//@testM/@testCaseInstances.2/@testStepInstances.7/@oracleBlock/@outputParameterBlock/@testReceivedMessageInstances.0"/>
           <semanticElements xmi:type="messir:TestReceivedMessageInstance" href="test/tci-testcase01-instance01.msr#//@testM/@testCaseInstances.2/@testStepInstances.7/@oracleBlock/@outputParameterBlock/@testReceivedMessageInstances.0"/>
-          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_VMQI67HoEeS0lKwFqsbc5g" x="384" y="1011" height="40" width="20"/>
+          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_VMQI67HoEeS0lKwFqsbc5g" x="649" y="1011" height="40" width="20"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_VJYbTLHoEeS0lKwFqsbc5g" labelSize="14" showIcon="false" labelColor="77,137,20" borderColor="209,209,209" width="2" height="4" color="204,242,166">
             <description xmi:type="style:SquareDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Test%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@nodeMappings[name='TMSD%20SD_ActorType%20Instance%20Role']/@borderedNodeMappings[name='TMSD%20Lifeline%20SD_TestCase%20%20Execution']/@borderedNodeMappings[name='TMSD%20SD_TestStep%20Execution%20Received']/@style"/>
           </ownedStyle>
@@ -14208,7 +14208,7 @@
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_VJYbULHoEeS0lKwFqsbc5g" name="tsi18" outgoingEdges="_VJYb8bHoEeS0lKwFqsbc5g" width="2" height="4" resizeKind="NSEW">
           <target xmi:type="messir:TestReceivedMessageInstance" href="test/tci-testcase01-instance01.msr#//@testM/@testCaseInstances.2/@testStepInstances.8/@oracleBlock/@outputParameterBlock/@testReceivedMessageInstances.0"/>
           <semanticElements xmi:type="messir:TestReceivedMessageInstance" href="test/tci-testcase01-instance01.msr#//@testM/@testCaseInstances.2/@testStepInstances.8/@oracleBlock/@outputParameterBlock/@testReceivedMessageInstances.0"/>
-          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_VMQI7LHoEeS0lKwFqsbc5g" x="384" y="1131" height="40" width="20"/>
+          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_VMQI7LHoEeS0lKwFqsbc5g" x="649" y="1131" height="40" width="20"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_VJYbUbHoEeS0lKwFqsbc5g" labelSize="14" showIcon="false" labelColor="77,137,20" borderColor="209,209,209" width="2" height="4" color="204,242,166">
             <description xmi:type="style:SquareDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Test%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@nodeMappings[name='TMSD%20SD_ActorType%20Instance%20Role']/@borderedNodeMappings[name='TMSD%20Lifeline%20SD_TestCase%20%20Execution']/@borderedNodeMappings[name='TMSD%20SD_TestStep%20Execution%20Received']/@style"/>
           </ownedStyle>
@@ -14217,7 +14217,7 @@
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_VJYbVbHoEeS0lKwFqsbc5g" name="tsi19" outgoingEdges="_VJYb9rHoEeS0lKwFqsbc5g" width="2" height="4" resizeKind="NSEW">
           <target xmi:type="messir:TestReceivedMessageInstance" href="test/tci-testcase01-instance01.msr#//@testM/@testCaseInstances.2/@testStepInstances.9/@oracleBlock/@outputParameterBlock/@testReceivedMessageInstances.0"/>
           <semanticElements xmi:type="messir:TestReceivedMessageInstance" href="test/tci-testcase01-instance01.msr#//@testM/@testCaseInstances.2/@testStepInstances.9/@oracleBlock/@outputParameterBlock/@testReceivedMessageInstances.0"/>
-          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_VMQI7bHoEeS0lKwFqsbc5g" x="384" y="1251" height="40" width="20"/>
+          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_VMQI7bHoEeS0lKwFqsbc5g" x="649" y="1251" height="40" width="20"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_VJYbVrHoEeS0lKwFqsbc5g" labelSize="14" showIcon="false" labelColor="77,137,20" borderColor="209,209,209" width="2" height="4" color="204,242,166">
             <description xmi:type="style:SquareDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Test%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@nodeMappings[name='TMSD%20SD_ActorType%20Instance%20Role']/@borderedNodeMappings[name='TMSD%20Lifeline%20SD_TestCase%20%20Execution']/@borderedNodeMappings[name='TMSD%20SD_TestStep%20Execution%20Received']/@style"/>
           </ownedStyle>
@@ -14281,7 +14281,7 @@
     <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_VJYbfLHoEeS0lKwFqsbc5g" name="theClock&#xA;: actActivator" width="15" height="5" resizeKind="NSEW">
       <target xmi:type="messir:InstanceValue" href="test/tci-testcase01-instance01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.instance01.instance01Part02.tsi13.theClock"/>
       <semanticElements xmi:type="messir:InstanceValue" href="test/tci-testcase01-instance01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.instance01.instance01Part02.tsi13.theClock"/>
-      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_VMQv-7HoEeS0lKwFqsbc5g" x="601" y="50" height="50" width="117"/>
+      <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_VMQv-7HoEeS0lKwFqsbc5g" x="728" y="50" height="50" width="117"/>
       <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_VJYbfbHoEeS0lKwFqsbc5g" name="testcase01" width="1" height="18" resizeKind="NSEW">
         <target xmi:type="messir:TestCase" href="test/tc-testcase01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.testcase01"/>
         <semanticElements xmi:type="messir:TestCase" href="test/tc-testcase01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.testcase01"/>
@@ -14289,7 +14289,7 @@
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_VJYbf7HoEeS0lKwFqsbc5g" name="tsi13" outgoingEdges="_VJYbq7HoEeS0lKwFqsbc5g" width="2" height="4" resizeKind="NSEW">
           <target xmi:type="messir:TestSentMessage" href="test/tc-testcase01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.testcase01.ts13oeSetClock04.out"/>
           <semanticElements xmi:type="messir:TestSentMessage" href="test/tc-testcase01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.testcase01.ts13oeSetClock04.out"/>
-          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_VMQI8bHoEeS0lKwFqsbc5g" x="649" y="559" height="40" width="20"/>
+          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_VMQI8bHoEeS0lKwFqsbc5g" x="776" y="559" height="40" width="20"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_VJYbgLHoEeS0lKwFqsbc5g" labelSize="14" showIcon="false" labelColor="77,137,20" borderSize="2" borderSizeComputationExpression="2" borderColor="77,137,20" width="2" height="4" color="77,137,20">
             <description xmi:type="style:SquareDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Test%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@nodeMappings[name='TMSD%20SD_ActorType%20Instance%20Role']/@borderedNodeMappings[name='TMSD%20Lifeline%20SD_TestCase%20%20Execution']/@borderedNodeMappings[name='TMSD%20SD_TestStep%20Execution']/@style"/>
           </ownedStyle>
@@ -14298,7 +14298,7 @@
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_VJYbhLHoEeS0lKwFqsbc5g" name="tsi16" outgoingEdges="_VJYburHoEeS0lKwFqsbc5g" width="2" height="4" resizeKind="NSEW">
           <target xmi:type="messir:TestSentMessage" href="test/tc-testcase01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.testcase01.ts16oeSetClock05.out"/>
           <semanticElements xmi:type="messir:TestSentMessage" href="test/tc-testcase01.msr#lu.uni.lassy.excalibur.examples.icrash.tests.testcase01.testcase01.ts16oeSetClock05.out"/>
-          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_VMQI8rHoEeS0lKwFqsbc5g" x="649" y="891" height="40" width="20"/>
+          <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_VMQI8rHoEeS0lKwFqsbc5g" x="776" y="891" height="40" width="20"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_VJYbhbHoEeS0lKwFqsbc5g" labelSize="14" showIcon="false" labelColor="77,137,20" borderSize="2" borderSizeComputationExpression="2" borderColor="77,137,20" width="2" height="4" color="77,137,20">
             <description xmi:type="style:SquareDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Test%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@nodeMappings[name='TMSD%20SD_ActorType%20Instance%20Role']/@borderedNodeMappings[name='TMSD%20Lifeline%20SD_TestCase%20%20Execution']/@borderedNodeMappings[name='TMSD%20SD_TestStep%20Execution']/@style"/>
           </ownedStyle>

@@ -22,7 +22,10 @@ association assctAlertctHuman
 association assctCrisisctCoordinator
 	ctCrisis(rnHandled)[0..*]
 	ctCoordinator(rnHandler)[0..1]
-	
+
+association assctLogEntryctEventLog 
+	ctLogEntry(rnLogEntry)[1..*] 
+	ctEventLog(rnTheLog)[1..1]	
 // With Actors
 
  		association assctHumanactComCompany 

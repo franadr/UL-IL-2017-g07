@@ -114,6 +114,26 @@ import lu.uni.lassy.messir.libraries.calendar
 										Alogin:dtLogin ,
 										Apwd:dtPassword ):ptBoolean
 			}
+			
+			class ctEventLog 
+					role rnEventLog 
+					cardinality [1..*] {
+			
+				attribute id: ptInteger
+				
+			}
+			class ctLogEntry
+					role rnroleName 
+					cardinality [0..*] {
+				attribute eId: ptInteger
+				attribute eType: etEventType
+				attribute eText: ptString
+				attribute eTime: dtTime
+				
+				operation createEntry() : ptBoolean	
+				operation deleteEntry() : ptBoolean
+				
+			}
 		}
 	}
 }
