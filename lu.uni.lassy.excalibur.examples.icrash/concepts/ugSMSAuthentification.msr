@@ -1,0 +1,40 @@
+/*
+* @author zhikin
+* @date Wed Mar 15 09:25:31 CET 2017
+*/
+
+package icrash.usecases.ugSMSAuthentification {
+
+import icrash.environment
+import icrash.usecases.subfunctions
+import icrash.usecases.ugSMSAuthentification.subfunctions
+
+	Use Case Model {
+
+	use case system usergoal ugSMSAuthentification() {
+	
+	actor actCoordinator[primary,active]
+	actor actActivator[secondary, proactive]
+	
+	reuse oeConfirmPhoneNumber[0..1]
+	reuse oeSollicitateVCodeHandling[0..*]
+	reuse oeLoginPhaseTwo[0..1]
+	reuse oeSetClock[1..*]
+	reuse oeSetTimerUntilVCodeTimeOut[1..*]
+			
+	step a: actAuthenticated
+		executes oeConfirmPhoneNumber
+	step b: actActivator
+		executes oeSollicitateVCodeHandling
+	step c: actAuthenticated
+		executes oeLoginPhaseTwo
+	step d: actActivator
+		executes oeSetClock
+	step e: actActivator
+		executes oeSetTimerUntilVCodeTimeOut
+		
+		}
+	}
+
+
+}

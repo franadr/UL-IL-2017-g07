@@ -10,13 +10,13 @@ use case system usergoal
 	
 	actor actAuthenticated[primary,active]
 
-	reuse oeLogin[1..1]
+	reuse oeLogin[0..1]
 	reuse oeLogout[1..1]
 
 	step a: actAuthenticated 
-	     executes oeLogin
+	    executes oeLogin		
 	step b: actAuthenticated 
-	     executes oeLogout
+	    executes oeLogout
 	
 	ordering constraint 
 	 "step (a) must always precede step (b)."

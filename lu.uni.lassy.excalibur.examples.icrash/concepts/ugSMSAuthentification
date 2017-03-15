@@ -1,0 +1,16 @@
+/*
+* @author zhikin
+* @date Wed Mar 15 09:21:44 CET 2017
+*/
+
+package icrash.usecases.ugSMSAuthentification {
+
+import lu.uni.lassy.messir.libraries.primitives
+
+
+	Use Case Model {
+
+	}
+
+
+}

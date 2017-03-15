@@ -108,6 +108,8 @@ import lu.uni.lassy.messir.libraries.calendar
 			output interface outactAuthenticated{
 				operation oeLogin(AdtLogin:dtLogin , AdtPassword:dtPassword ):ptBoolean
 				operation oeLogout():ptBoolean
+				operation oeConfirmPhoneNumber(AdtPhoneNumber:dtPhoneNumber) : ptBoolean
+				operation oeLoginPhaseTwo(AdtVCode:dtVCode):ptBoolean
 			}
 			
 			input interface inactAuthenticated{
@@ -122,6 +124,8 @@ import lu.uni.lassy.messir.libraries.calendar
 			output interface outactActivator{
 				proactive operation oeSollicitateCrisisHandling():ptBoolean
 				proactive operation oeSetClock(AcurrentClock:dtDateAndTime ):ptBoolean
+				proactive operation oeSollicitateVCodeHandling():ptBoolean
+				proactive operation oeSetTimerUntilVCodeTimeOut():ptBoolean
 				proactive operation oeCreateLogEntry(	ApteID:ptInteger,
 														AeteType : etEventType,
 														ApeText : ptString,
