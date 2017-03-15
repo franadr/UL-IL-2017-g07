@@ -1,0 +1,46 @@
+/*
+@author Adriano
+@date Wed Mar 15 09:10:42 CET 2017
+*/
+
+
+@@Operation
+icrash.environment.actActivator.outactActivator.oeCreateLogEntry
+//parameters
+@parameter
+icrash.environment.actActivator.outactActivator.oeCreateLogEntry.ApteID
+"used to initialize entry/event ID"
+@parameter
+icrash.environment.actActivator.outactActivator.oeCreateLogEntry.AeteType
+"used to initialize entry/event Type"
+@parameter
+icrash.environment.actActivator.outactActivator.oeCreateLogEntry.ApeText
+"used to initialize entry/event Description"
+@parameter
+icrash.environment.actActivator.outactActivator.oeCreateLogEntry.AdtTime
+"used to initialize entry/event Time"
+@endParameters
+
+@description "send to add an entry in the iCrash log"
+ 
+//preProtocol descriptions
+@preP
+"The system is started "
+@preP
+"There exists new event of type crisis / system / Alert that not associated with current log instance "
+
+@endPreP
+//preFunctional descriptions
+@preF
+"The id of the logEntry instance is supposed to be unique and greater than the previous added entry "
+@endPreF
+//postFunctional descriptions
+@postF 
+"The @post entry instance is associated with the current log entry "
+@endPostF
+//postProtocol descriptions
+@postP 
+" none "
+@endPostP
+//example
+@example" "

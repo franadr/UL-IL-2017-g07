@@ -122,6 +122,11 @@ import lu.uni.lassy.messir.libraries.calendar
 			output interface outactActivator{
 				proactive operation oeSollicitateCrisisHandling():ptBoolean
 				proactive operation oeSetClock(AcurrentClock:dtDateAndTime ):ptBoolean
+				proactive operation oeCreateLogEntry(	ApteID:ptInteger,
+														AeteType : etEventType,
+														ApeText : ptString,
+														AdtTime: dtTime
+													):ptBoolean
 			}
 			
 			input interface inactActivator{
