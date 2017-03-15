@@ -1,0 +1,10 @@
+/*
+@author zhikin
+@date Wed Mar 15 11:21:27 CET 2017
+*/
+
+
+@@view uc-ugSMSAuthentification
+@model Use-Case icrash.usecases.ugSMSAuthentification.ugSMSAuthentification 
+@description ""
+@caption ""

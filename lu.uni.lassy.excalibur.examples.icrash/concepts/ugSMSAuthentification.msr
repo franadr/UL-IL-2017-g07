@@ -15,6 +15,7 @@ import icrash.usecases.ugSMSAuthentification.subfunctions
 	
 	actor actCoordinator[primary,active]
 	actor actActivator[secondary, proactive]
+	actor actComCompany[secondary,passive]
 	
 	reuse oeConfirmPhoneNumber[0..1]
 	reuse oeSollicitateVCodeHandling[0..*]
@@ -22,17 +23,21 @@ import icrash.usecases.ugSMSAuthentification.subfunctions
 	reuse oeSetClock[1..*]
 	reuse oeSetTimerUntilVCodeTimeOut[1..*]
 			
-	step a: actAuthenticated
+	step a: actCoordinator
 		executes oeConfirmPhoneNumber
 	step b: actActivator
 		executes oeSollicitateVCodeHandling
-	step c: actAuthenticated
+	step c: actCoordinator
 		executes oeLoginPhaseTwo
 	step d: actActivator
 		executes oeSetClock
 	step e: actActivator
 		executes oeSetTimerUntilVCodeTimeOut
 		
+	ordering constraint 
+	 "step (c) must always precede step (b)."
+	ordering constraint 
+	 "step (d) and (e) must always precede step (c)."	
 		}
 	}
 
