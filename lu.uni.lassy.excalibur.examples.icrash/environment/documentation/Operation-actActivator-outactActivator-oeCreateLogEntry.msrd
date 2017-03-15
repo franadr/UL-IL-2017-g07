@@ -27,10 +27,13 @@ icrash.environment.actActivator.outactActivator.oeCreateLogEntry.AdtTime
 @preP
 "The system is started "
 @preP
-"There exists new event of type crisis / system / Alert that not associated with current log instance "
-
+"One of operation oeLogin , oeAlert, oeLogOut, oeValidateAlert, oeCloseCrisis, oeSetCrisisHandler, oeSetCrisisStatus has been executed"
+@preP
+"An new instance of type LogEntry has been created"
 @endPreP
 //preFunctional descriptions
+@preF
+"the new instance of LogEntry is not associated with the current EventLog instance"
 @preF
 "The id of the logEntry instance is supposed to be unique and greater than the previous added entry "
 @endPreF

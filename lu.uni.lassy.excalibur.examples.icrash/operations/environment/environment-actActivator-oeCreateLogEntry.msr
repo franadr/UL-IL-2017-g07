@@ -1,0 +1,50 @@
+/*
+* @author Adriano
+* @date Wed Mar 15 09:39:39 CET 2017
+*/
+
+package icrash.^operation.environment.actActivator.oeCreateLogEntry {
+
+import icrash.environment
+
+import lu.uni.lassy.messir.libraries.primitives
+import lu.uni.lassy.messir.libraries.calendar
+import lu.uni.lassy.messir.libraries.math
+
+import icrash.concepts.primarytypes.datatypes
+import icrash.concepts.primarytypes.classes
+
+
+	Operation Model {
+		operation: actActivator.outactActivator.oeCreateLogEntry(ApteID: ptInteger, AeteType: etEventType, ApeText: ptString, AdtTime: dtTime):ptBoolean{
+			preP {
+				
+				/*Prep 1*/
+				let TheSystem: ctState in
+  				let AvpStarted: ptBoolean in
+				
+				self.rnActor.rnSystem = TheSystem
+  				and self.rnActor.rnSystem.vpStarted = AvpStarted
+  				and AvpStarted = true
+  				
+  				/*Prep 2*/
+  				
+  				/*Prep 3*/
+  				and TheSystem.rnctLogEntry.createEntry(ApteID,AeteType,ApeText,AdtTime)
+  				
+			}
+			preF{
+				
+			}
+			postF{
+				
+			}
+			postP{
+				
+			}
+		 }
+		
+	}
+
+
+}

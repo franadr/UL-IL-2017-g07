@@ -123,14 +123,14 @@ import lu.uni.lassy.messir.libraries.calendar
 				
 			}
 			class ctLogEntry
-					role rnroleName 
+					role rnroleName
 					cardinality [0..*] {
 				attribute eId: ptInteger
 				attribute eType: etEventType
 				attribute eText: ptString
 				attribute eTime: dtTime
 				
-				operation createEntry() : ptBoolean	
+				operation createEntry(ApteID: ptInteger, AeteType: etEventType, ApeText: ptString, AdtTime: dtTime) : ptBoolean	
 				operation deleteEntry() : ptBoolean
 				
 			}
