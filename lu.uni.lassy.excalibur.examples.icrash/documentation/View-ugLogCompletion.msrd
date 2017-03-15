@@ -1,0 +1,11 @@
+/*
+@author Adriano
+@date Wed Mar 15 11:21:14 CET 2017
+*/
+
+
+@@view ugLogCompletion
+@model Use-Case icrash.usecases.ugLogCompletion.ugLogCompletion 
+@description "shows the use case diagram for the ugLogCompletion user goal use case"
+@caption ""
+@scale 0.50

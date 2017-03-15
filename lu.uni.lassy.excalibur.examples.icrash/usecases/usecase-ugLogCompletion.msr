@@ -1,0 +1,33 @@
+/*
+* @author Adriano
+* @date Wed Mar 15 11:07:00 CET 2017
+*/
+
+package icrash.usecases.ugLogCompletion {
+
+import lu.uni.lassy.messir.libraries.primitives
+import icrash.environment
+import icrash.usecases.ugLogCompletion.subfonction
+import icrash.usecases.subfunctions
+
+
+	Use Case Model {
+		use case system usergoal ugLogCompletion() {
+			actor actActivator[primary,proactive]
+			actor actCoordinator[primary,active]
+			actor actAuthenticated[primary,active]
+			actor actComCompany[primary,active]
+			
+			step a: actAuthenticated executes oeLogin(AdtLogin,AdtPassword)
+			step b: actActivator executes  oeCreateLogEntry(ApteID,AeteType,ApeText,AdtTime)
+			step c: actCoordinator executes oeSetCrisisStatus(AdtCrisisID,AetCrisisStatus)
+			step d: actActivator executes oeCreateLogEntry(ApteID,AeteType,ApeText,AdtTime)
+			step e: actComCompany executes oeAlert(AetKind,AdtMyDate,AdtTime,AdtPhoneNumber,AdtGPSLocation,AdtComment)
+			step f: actActivator executes oeCreateLogEntry(ApteID,AeteType,ApeText,AdtTime)
+			
+		}
+
+	}
+
+
+}

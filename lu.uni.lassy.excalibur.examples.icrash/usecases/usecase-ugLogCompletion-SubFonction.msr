@@ -1,0 +1,20 @@
+/*
+* @author Adriano
+* @date Wed Mar 15 11:11:18 CET 2017
+*/
+
+package icrash.usecases.ugLogCompletion.subfonction {
+
+import lu.uni.lassy.messir.libraries.primitives
+
+
+	Use Case Model {
+		use case system subfunction oeCreateLogEntry(ApteID :ptInteger,AeteType:icrash.concepts.primarytypes.datatypes.etEventType,ApeText:ptString,AdtTime:lu.uni.lassy.messir.libraries.calendar.dtTime) {
+			actor icrash.environment.actActivator[primary,proactive]
+			
+		}
+
+	}
+
+
+}

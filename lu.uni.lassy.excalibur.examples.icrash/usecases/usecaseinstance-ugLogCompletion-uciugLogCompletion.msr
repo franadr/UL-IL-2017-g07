@@ -1,0 +1,42 @@
+package usecases.uciugLogCompletion {
+	import icrash.usecases.ugLogCompletion
+
+	Use Case Model {
+
+		use case instance uciugLogCompletion : ugLogCompletion{
+			actors {
+				activator :icrash.environment.actActivator
+				user : icrash.environment.actAuthenticated
+				bill : icrash.environment.actCoordinator
+				tango : icrash.environment.actComCompany
+				
+			}
+			use case steps {
+				user 
+				executed instanceof subfunction 
+				icrash.usecases.subfunctions.oeLogin("user123123", "XdE45WQ") {
+						ieMessage("You're logged in") returned to user
+					}
+				activator 
+				executed instanceof subfunction 
+				subfonction.oeCreateLogEntry("1", "System", "user logged", "10/12/17 10h10") {
+			
+					}
+				tango
+				executed instanceof subfunction
+				icrash.usecases.subfunctions.oeAlert("Witness", "10/12/17", "10:15", "691867211", "49.0000 56.0000", "3 cars involved in a  accident") {
+					ieSmsSend("691867211","The alert has been sent") returned to tango
+					}
+				activator 
+				executed instanceof subfunction 
+				subfonction.oeCreateLogEntry("2","Alert", "New alert has arrived", "10/12/17 10h16") {
+			
+					}
+
+
+
+				
+			}
+		}
+	}
+}

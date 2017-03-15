@@ -1,0 +1,4 @@
+@@view uciugLogCompletion
+@instance Use-Case usecases.uciugLogCompletion.uciugLogCompletion
+@description ""
+@caption ""
