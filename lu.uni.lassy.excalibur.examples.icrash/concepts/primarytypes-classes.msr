@@ -117,9 +117,9 @@ import lu.uni.lassy.messir.libraries.calendar
 			
 			class ctEventLog 
 					role rnEventLog 
-					cardinality [1..*] {
+					cardinality [1..1] {
 			
-				attribute id: ptInteger
+				attribute lId: ptInteger
 				
 			}
 			class ctLogEntry
