@@ -24,7 +24,7 @@ package icrash.usecases.suDeployAndRun {
 			step b: actAdministrator executes ugAdministrateTheSystem
 			step c: actComCompany executes oeAlert
 			step d: actActivator executes oeSetClock
-			step ^e: actActivator executes oeSollicitateCrisisHandling
+			step e: actActivator executes oeSollicitateCrisisHandling
 			step f: actCoordinator executes suGlobalCrisisHandling
 			
       ordering constraint 

@@ -1,0 +1,53 @@
+/*
+* @author zhikin
+* @date Wed Mar 15 10:04:55 CET 2017
+*/
+
+package icrash.usecases.ugSMSAuthentification.subfunctions {
+
+import icrash.concepts.primarytypes.datatypes
+import icrash.concepts.primarytypes.classes
+import icrash.concepts.secondarytypes.datatypes
+import lu.uni.lassy.messir.libraries.primitives
+import lu.uni.lassy.messir.libraries.math
+import lu.uni.lassy.messir.libraries.calendar
+
+import icrash.environment
+
+
+	Use Case Model {
+		
+	use case system subfunction oeConfirmPhoneNumber(AdtPhoneNumber:dtPhoneNumber) {
+		actor actAuthenticated[primary,active]
+			returned messages {
+		ieMessage(AMessage) returned to actAuthenticated
+	    }
+	}
+	
+	use case system subfunction oeLoginPhaseTwo(AdtVCode:dtVCode) {
+		actor actAuthenticated[primary,active]
+			returned messages {
+		ieMessage(AMessage) returned to actAuthenticated
+	    }
+	}
+		
+	use case system subfunction oeSollicitateVCodeHandling() {
+		actor actActivator[primary,proactive]
+		actor actAuthenticated[secondary,passive]
+			returned messages {
+		ieMessage(AMessage) returned to actAuthenticated
+	    }
+	}
+	
+	use case system subfunction oeSetTimerUntilVCodeTimeOut() {
+		actor actActivator[primary,proactive]
+		actor actAuthenticated[secondary,passive]
+			returned messages {
+		ieMessage(AMessage) returned to actAuthenticated
+	    }
+	}
+
+	}
+
+
+}
