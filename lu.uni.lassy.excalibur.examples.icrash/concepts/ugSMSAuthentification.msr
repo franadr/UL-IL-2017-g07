@@ -13,6 +13,7 @@ import icrash.usecases.ugSMSAuthentification.subfunctions
 
 	use case system usergoal ugSMSAuthentification() {
 	
+	//To be modified
 	actor actCoordinator[primary,active]
 	actor actActivator[secondary, proactive]
 	actor actComCompany[secondary,passive]
