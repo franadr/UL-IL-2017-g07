@@ -71,6 +71,15 @@ import lu.uni.lassy.messir.libraries.calendar
                                           AetCrisisType:etCrisisType
                                           ):ptBoolean
 				operation oeValidateAlert(AdtAlertID:dtAlertID ):ptBoolean
+				
+				operation oeSendToHospital(
+											AdtPhoneNumber:dtPhoneNumber ,
+											AdtDate:dtDate ,
+											AdtTime:dtTime ,
+											AdtGPSLocation:dtGPSLocation ,
+											AetAccidentType:etAccidentType				
+											):ptBoolean
+				
 			}
 			
 			input interface inactCoordinator{

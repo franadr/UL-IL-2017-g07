@@ -68,6 +68,11 @@ import lu.uni.lassy.messir.libraries.calendar
 				constants["Crisis", "Alert","System"]
 				operation is():ptBoolean
 			}
+			
+			enum etAccidentType {
+				constants["Road","Work/Sport","Attack"]
+				operation is():ptBoolean
+			}
 		}
 	}
 }
