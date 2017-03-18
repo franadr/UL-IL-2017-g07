@@ -21,7 +21,7 @@ import lu.uni.lassy.messir.libraries.calendar
 			datatype dtPassword extends dtString {
 				operation is():ptBoolean
 			}
-			datatype dtCoordinatorID extends dtString {
+			datatype dtAuthenticatedID extends dtString {
 				operation is():ptBoolean
 			}
 			datatype dtPhoneNumber extends dtString {
@@ -43,6 +43,10 @@ import lu.uni.lassy.messir.libraries.calendar
 				operation isNearTo(AGPSLocation:dtGPSLocation ):ptBoolean
 			}
 			
+			datatype dtVCode extends dtString{
+				operation is():ptBoolean
+			}
+			
 			enum etCrisisStatus {
 				constants["pending", "handled", "solved","closed"]
 				operation is():ptBoolean
@@ -57,6 +61,16 @@ import lu.uni.lassy.messir.libraries.calendar
 			}
 			enum etHumanKind {
 				constants["witness", "victim", "anonymous"]
+				operation is():ptBoolean
+			}
+			
+			enum etEventType {
+				constants["Crisis", "Alert","System"]
+				operation is():ptBoolean
+			}
+			
+			enum etAccidentType {
+				constants["Road","Work/Sport","Attack"]
 				operation is():ptBoolean
 			}
 		}

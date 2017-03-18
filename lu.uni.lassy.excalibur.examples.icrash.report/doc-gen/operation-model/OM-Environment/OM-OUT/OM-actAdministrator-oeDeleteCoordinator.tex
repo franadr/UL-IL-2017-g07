@@ -10,7 +10,7 @@ The \msrcode{oeDeleteCoordinator} operation has the following properties:
 	\adddoublerow{oeDeleteCoordinator}{sent to delete an existing coordinator in the system's post state and environment's post state.}
 
 	\addrowheading{Parameters}
-	\addnumbereddoublerow{}{AdtCoordinatorID: dtCoordinatorID}{used for ctCoordinator instance retrieval} 
+	\addnumbereddoublerow{}{AdtAuthenticatedID: dtAuthenticatedID}{used for ctCoordinator instance retrieval} 
 
 	\addrowheading{Return type}
 	\addsinglerow{ptBoolean}
@@ -61,7 +61,7 @@ The \msrcode{oeDeleteCoordinator} operation has the following properties:
 	  self.rnActor.rnSystem = TheSystem
 	  and self.rnActor = TheActor
 	/* PreF01 */
-	  TheSystem.rnctCoordinator->select(id.eq(AdtCoordinatorID))
+	  TheSystem.rnctCoordinator->select(id.eq(AdtAuthenticatedID))
 	  = ColctCoordinators
 	  and ColctCoordinators->size().eq(1)}
 	
@@ -72,7 +72,7 @@ The \msrcode{oeDeleteCoordinator} operation has the following properties:
 	  self.rnActor.rnSystem = TheSystem
 	  and self.rnActor = TheActor
 	/* PostF01 */
-	  TheSystem.rnctCoordinator->select(id.eq(AdtCoordinatorID))
+	  TheSystem.rnctCoordinator->select(id.eq(AdtAuthenticatedID))
 	  = ThectCoordinator
 	  and ThectCoordinator.rnactCoordinator->forAll(msrIsKilled)
 	  and ThectCoordinator.msrIsKilled

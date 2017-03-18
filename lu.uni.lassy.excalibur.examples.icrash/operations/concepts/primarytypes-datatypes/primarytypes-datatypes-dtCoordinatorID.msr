@@ -1,9 +1,9 @@
-package icrash.operations.concepts.primarytypes.datatypes.dtCoordinatorID{ 
+package icrash.operations.concepts.primarytypes.datatypes.dtAuthenticatedID{ 
 	
 import lu.uni.lassy.messir.libraries.primitives
 
 Operation Model {
-		operation: icrash.concepts.primarytypes.datatypes.dtCoordinatorID.is():ptBoolean{
+		operation: icrash.concepts.primarytypes.datatypes.dtAuthenticatedID.is():ptBoolean{
 		
 		postF{ 
         let TheResult: ptBoolean in
@@ -17,7 +17,7 @@ Operation Model {
           result = TheResult
         )
 		}
-    prolog{"src/Operations/Concepts/PrimaryTypesDatatypes/PrimaryTypesDatatypes-dtCoordinatorID-is.pl"}
+    prolog{"src/Operations/Concepts/PrimaryTypesDatatypes/PrimaryTypesDatatypes-dtAuthenticatedID-is.pl"}
 	}
 }
 }

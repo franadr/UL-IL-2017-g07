@@ -14,7 +14,7 @@
 		\begin{description}
 			\item[] \textbf{out:TheActor}
 			\item[] \textbf{sends to system}
-			\item[] \textbf{\hyperlink{actAdministrator.outactAdministrator.oeAddCoordinator}{actAdministrator.outactAdministrator.oeAddCoordinator} (AdtCoordinatorID, AdtLogin, AdtPassword)}
+			\item[] \textbf{\hyperlink{actAdministrator.outactAdministrator.oeAddCoordinator}{actAdministrator.outactAdministrator.oeAddCoordinator} (AdtAuthenticatedID, AdtLogin, AdtPassword)}
 		\end{description}}
 		
 		
@@ -49,14 +49,14 @@
 
 	variables{
 		TheActor : actAdministrator
-		AdtCoordinatorID : dtCoordinatorID
+		AdtAuthenticatedID : dtAuthenticatedID
 		AdtLogin:dtLogin
 		AdtPassword:dtPassword
 	}
 	
 	constraints{
 		TheActor = TheSystem.rnactAdministrator->any2(true)
-		AdtCoordinatorID.value.eq('1')
+		AdtAuthenticatedID.value.eq('1')
 		AdtLogin.value.eq('steve')
 		AdtPassword.value.eq('pwdMessirExcalibur2017')
 	}

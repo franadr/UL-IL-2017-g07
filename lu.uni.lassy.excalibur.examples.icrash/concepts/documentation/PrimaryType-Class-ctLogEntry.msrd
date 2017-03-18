@@ -1,0 +1,28 @@
+/*
+@author zhikin
+@date Sat Mar 18 16:31:08 CET 2017
+*/
+
+
+@@Primary Type Class icrash.concepts.primarytypes.classes.ctLogEntry
+@description ""
+@attribute
+icrash.concepts.primarytypes.classes.ctLogEntry.eId
+""
+@attribute
+icrash.concepts.primarytypes.classes.ctLogEntry.eType
+""
+@attribute
+icrash.concepts.primarytypes.classes.ctLogEntry.eText
+""
+@attribute
+icrash.concepts.primarytypes.classes.ctLogEntry.eTime
+""
+@endAttributes
+@operation
+icrash.concepts.primarytypes.classes.ctLogEntry.createEntry
+""
+@operation
+icrash.concepts.primarytypes.classes.ctLogEntry.deleteEntry
+""
+@endOperations

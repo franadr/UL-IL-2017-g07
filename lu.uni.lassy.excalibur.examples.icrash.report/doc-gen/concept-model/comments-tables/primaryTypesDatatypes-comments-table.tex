@@ -13,12 +13,12 @@ The table below is providing comments on the graphical views given for the datat
 \adddoublerow{dtAlertID}{ A string used to identify alerts.}
 \addsingletwocolumnrow{extends}{dtString}
 \adddoubletwocolumnrow{operation}{\msrcode{is():ptBoolean}}{used to determine which strings are considered as valid alert identifiers.}
+\adddoublerow{dtAuthenticatedID}{A string used to identify coordinators.}
+\addsingletwocolumnrow{extends}{dtString}
+\adddoubletwocolumnrow{operation}{\msrcode{is():ptBoolean}}{used to determine which strings are considered as valid coordinators identifiers.}
 \adddoublerow{dtComment}{a datatype made of a string value used to receive,store and send textual information about crisis and alerts.}
 \addsingletwocolumnrow{extends}{dtString}
 \adddoubletwocolumnrow{operation}{\msrcode{is():ptBoolean}}{used to determine which strings are considered as valid comments.}
-\adddoublerow{dtCoordinatorID}{A string used to identify coordinators.}
-\addsingletwocolumnrow{extends}{dtString}
-\adddoubletwocolumnrow{operation}{\msrcode{is():ptBoolean}}{used to determine which strings are considered as valid coordinators identifiers.}
 \adddoublerow{dtCrisisID}{ A string used to identify crisis.}
 \addsingletwocolumnrow{extends}{dtString}
 \adddoubletwocolumnrow{operation}{\msrcode{is():ptBoolean}}{used to determine which strings are considered as valid crisis identifiers.}
@@ -42,12 +42,17 @@ The table below is providing comments on the graphical views given for the datat
 \adddoublerow{dtPhoneNumber}{a string used to store the phone number from the human declaring the crisis or the alert.}
 \addsingletwocolumnrow{extends}{dtString}
 \adddoubletwocolumnrow{operation}{\msrcode{is():ptBoolean}}{used to determine which strings are considered as valid dtPhoneNumber.}
+\adddoublerow{dtVCode}{}
+\addsingletwocolumnrow{extends}{dtString}
+\adddoubletwocolumnrow{operation}{\msrcode{is():ptBoolean}}{}
 \end{datadictionary}
 
 
 \begin{datadictionary}
 \addheading{Enumerations}
 
+\adddoublerow{etAccidentType}{}
+\adddoubletwocolumnrow{operation}{\msrcode{is():ptBoolean}}{}
 \adddoublerow{etAlertStatus}{
 this type is used to indicate the different validation status of an alert.
 }
@@ -60,6 +65,8 @@ this type is used to indicate the different handling status of a crisis.
 this type is used to indicate the different types of a crisis.
 }
 \adddoubletwocolumnrow{operation}{\msrcode{is():ptBoolean}}{used to determine which litteral belongs to the enumeration.}
+\adddoublerow{etEventType}{}
+\adddoubletwocolumnrow{operation}{\msrcode{is():ptBoolean}}{}
 \adddoublerow{etHumanKind}{
 this type is used to indicate the kind of human that informs about a car crash crisis.
 }

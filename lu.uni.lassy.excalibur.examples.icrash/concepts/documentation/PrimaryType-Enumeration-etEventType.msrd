@@ -1,0 +1,12 @@
+/*
+@author zhikin
+@date Sat Mar 18 16:31:15 CET 2017
+*/
+
+
+@@Primary Type Enumeration icrash.concepts.primarytypes.datatypes.etEventType
+@description ""
+@operation
+icrash.concepts.primarytypes.datatypes.etEventType.is
+""
+@endOperations

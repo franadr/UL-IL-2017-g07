@@ -67,12 +67,12 @@ import icrash.environment
 							theSystem = self.rnActor.rnSystem
 							/* Pre Messir - may be incomplete (cf. see rationals) */
 							/* Pre M01*/
-							and aCoordinatorID.isCoordinatorID()
+							and aAuthenticatedID.isAuthenticatedID()
 							and aLogin.isLogin()
 							and aPassword.isPassword()
 							/* Pre Functional:*/
 							/* Pre F01*/
-							and not (theSystem.coordinator->exists(coord | coord.id = aCoordinatorID))
+							and not (theSystem.coordinator->exists(coord | coord.id = aAuthenticatedID))
 				preP: /* Pre Protocol:*/
 						self.rnActor.authenticated.vpmIsLogged = true
 				postF: let theCoordinator:Coordinator in
@@ -86,7 +86,7 @@ import icrash.environment
 						
 						/* Post Functional:*/
 						/* Post F01 */
-						theCoordinator.msrCreateCoordinator(aCoordinatorID,aLogin,aPassword,false)
+						theCoordinator.msrCreateCoordinator(aAuthenticatedID,aLogin,aPassword,false)
 						/* Post F02 */
 						and theCoordinatorActor.msrCreateCoordinatorActor()
 						/* Post F03 */
@@ -108,11 +108,11 @@ import icrash.environment
 							theSystem = self.rnActor.rnSystem
 							/* Pre Messir - may be incomplete (cf. see rationals) */
 							/* Pre M01 */
-							and aCoordinatorID.isCoordinatorID()
+							and aAuthenticatedID.isAuthenticatedID()
 							/* Pre Functional:*/
 							/* Pre F01 */
 							and (theSystem.coordinator
-							->exists(coord | coord.id = aCoordinatorID))
+							->exists(coord | coord.id = aAuthenticatedID))
 				preP:  /* Pre Protocol:*/
 						/* Pre P01 */
 						self.rnActor.authenticated.vpmIsLogged = true
@@ -121,7 +121,7 @@ import icrash.environment
 							/* Post Functional:*/
 							/* Post F01 */
 							//and let theCoordinator:Coordinator in
-							theCoordinator = theSystem.coordinator->select(coord | coord.id = aCoordinatorID)
+							theCoordinator = theSystem.coordinator->select(coord | coord.id = aAuthenticatedID)
 							and theCoordinator.msrDestroy()
 							/* Post F02 */
 							and theCoordinator.coordinatorActor.msrDestroy()

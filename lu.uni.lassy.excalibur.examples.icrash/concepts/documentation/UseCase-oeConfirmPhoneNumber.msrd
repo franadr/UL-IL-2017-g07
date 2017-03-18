@@ -1,0 +1,26 @@
+/*
+@author zhikin
+@date Sat Mar 18 16:31:23 CET 2017
+*/
+
+
+@@Use Case Subfunction icrash.usecases.ugSMSAuthentification.subfunctions.oeConfirmPhoneNumber
+@description ""
+@parameter icrash.usecases.ugSMSAuthentification.subfunctions.oeConfirmPhoneNumber.AdtPhoneNumber ""
+@endParameters
+@protocolCondition
+"
+"
+@endProtocolConditions
+@preCondition
+"
+"
+@endPreConditions
+@postCondition
+"
+"
+@endPostConditions
+@additionalInformation
+"
+none
+"

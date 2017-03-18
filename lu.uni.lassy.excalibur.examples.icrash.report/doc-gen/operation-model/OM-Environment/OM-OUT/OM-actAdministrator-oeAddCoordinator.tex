@@ -10,7 +10,7 @@ The \msrcode{oeAddCoordinator} operation has the following properties:
 	\adddoublerow{oeAddCoordinator}{sent to add a new coordinator in the system's post state and environment's post state.}
 
 	\addrowheading{Parameters}
-	\addnumbereddoublerow{}{AdtCoordinatorID: dtCoordinatorID}{used to initialize the id field} 
+	\addnumbereddoublerow{}{AdtAuthenticatedID: dtAuthenticatedID}{used to initialize the id field} 
 	\addnumbereddoublerow{}{AdtLogin: dtLogin}{used to initialize the login field} 
 	\addnumbereddoublerow{}{AdtPassword: dtPassword}{used to initialize the password field} 
 
@@ -67,7 +67,7 @@ The \msrcode{oeAddCoordinator} operation has the following properties:
 	  self.rnActor.rnSystem = TheSystem
 	  and self.rnActor = TheActor
 	/* PreF01 */
-	  and TheSystem.rnctCoordinator->select(id.eq(AdtCoordinatorID))
+	  and TheSystem.rnctCoordinator->select(id.eq(AdtAuthenticatedID))
 	      = ColctCoordinators
 	  and ColctCoordinators->isEmpty() = true}
 	
@@ -80,7 +80,7 @@ The \msrcode{oeAddCoordinator} operation has the following properties:
 	/* PostF01 */
 	  TheactCoordinator.init()
 	/* PostF02 */
-	  and ThectCoordinator.init(AdtCoordinatorID,AdtLogin,AdtPassword)
+	  and ThectCoordinator.init(AdtAuthenticatedID,AdtLogin,AdtPassword)
 	
 	/* PostF03 */
 	  and TheactCoordinator@post.rnctCoordinator = ThectCoordinator

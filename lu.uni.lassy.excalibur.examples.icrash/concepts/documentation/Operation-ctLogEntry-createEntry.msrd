@@ -1,0 +1,31 @@
+/*
+@author zhikin
+@date Sat Mar 18 16:31:09 CET 2017
+*/
+
+
+@@Operation
+icrash.concepts.primarytypes.classes.ctLogEntry.createEntry
+//parameters
+@parameter
+icrash.concepts.primarytypes.classes.ctLogEntry.createEntry.ApteID
+""
+@parameter
+icrash.concepts.primarytypes.classes.ctLogEntry.createEntry.AeteType
+""
+@parameter
+icrash.concepts.primarytypes.classes.ctLogEntry.createEntry.ApeText
+""
+@parameter
+icrash.concepts.primarytypes.classes.ctLogEntry.createEntry.AdtTime
+""
+@endParameters
+
+@description "
+ "
+//postFunctional descriptions
+@postF 
+" "
+@endPostF
+//example
+@example" "

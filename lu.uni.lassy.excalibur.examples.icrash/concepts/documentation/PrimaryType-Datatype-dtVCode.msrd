@@ -1,0 +1,12 @@
+/*
+@author zhikin
+@date Sat Mar 18 16:31:13 CET 2017
+*/
+
+
+@@Primary Type Datatype icrash.concepts.primarytypes.datatypes.dtVCode
+@description ""
+@operation
+icrash.concepts.primarytypes.datatypes.dtVCode.is
+""
+@endOperations

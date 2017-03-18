@@ -33,7 +33,7 @@
     <semanticResources>operations/environment/environment-actActivator.msr</semanticResources>
     <semanticResources>operations/concepts/primarytypes-datatypes/primarytypes-datatypes-dtLogin.msr</semanticResources>
     <semanticResources>operations/concepts/primarytypes-datatypes/primarytypes-datatypes-dtPassword.msr</semanticResources>
-    <semanticResources>operations/concepts/primarytypes-datatypes/primarytypes-datatypes-dtCoordinatorID.msr</semanticResources>
+    <semanticResources>operations/concepts/primarytypes-datatypes/primarytypes-datatypes-dtAuthenticatedID.msr</semanticResources>
     <semanticResources>operations/concepts/primarytypes-classes/primarytypes-classes-ctCrisis-maxHandlingDelayPassed.msr</semanticResources>
     <semanticResources>operations/concepts/primarytypes-classes/primarytypes-classes-ctCrisis.msr</semanticResources>
     <semanticResources>operations/concepts/primarytypes-classes/primarytypes-classes-ctCrisis.msr</semanticResources>
@@ -54,7 +54,7 @@
     <semanticResources>operations/concepts/primarytypes-datatypes/primarytypes-datatypes-dtLogin.msr</semanticResources>
     <semanticResources>operations/concepts/primarytypes-datatypes/primarytypes-datatypes-dtGPSLocation.msr</semanticResources>
     <semanticResources>operations/concepts/primarytypes-datatypes/primarytypes-datatypes-dtCrisisID.msr</semanticResources>
-    <semanticResources>operations/concepts/primarytypes-datatypes/primarytypes-datatypes-dtCoordinatorID.msr</semanticResources>
+    <semanticResources>operations/concepts/primarytypes-datatypes/primarytypes-datatypes-dtAuthenticatedID.msr</semanticResources>
     <semanticResources>operations/concepts/primarytypes-classes/primarytypes-classes-ctHuman.msr</semanticResources>
     <semanticResources>operations/concepts/primarytypes-classes/primarytypes-classes-ctHuman.msr</semanticResources>
     <semanticResources>platform:/resource/lu.uni.lassy.excalibur.standard.specification.libraries/library/primitives.msr</semanticResources>
@@ -101,7 +101,7 @@
     <semanticResources>operations/concepts/primarytypes-datatypes/primarytypes-datatypes-dtLogin.msr</semanticResources>
     <semanticResources>operations/concepts/primarytypes-datatypes/primarytypes-datatypes-dtGPSLocation.msr</semanticResources>
     <semanticResources>operations/concepts/primarytypes-datatypes/primarytypes-datatypes-dtCrisisID.msr</semanticResources>
-    <semanticResources>operations/concepts/primarytypes-datatypes/primarytypes-datatypes-dtCoordinatorID.msr</semanticResources>
+    <semanticResources>operations/concepts/primarytypes-datatypes/primarytypes-datatypes-dtAuthenticatedID.msr</semanticResources>
     <semanticResources>operations/concepts/primarytypes-datatypes/primarytypes-datatypes-dtComment.msr</semanticResources>
     <semanticResources>operations/concepts/primarytypes-datatypes/primarytypes-datatypes-dtAlertID.msr</semanticResources>
     <semanticResources>operations/concepts/primarytypes-classes/primarytypes-classes-ctState.msr</semanticResources>
@@ -217,7 +217,7 @@
     <semanticResources>operations/concepts/primarytypes-datatypes/primarytypes-datatypes-dtLogin.msr</semanticResources>
     <semanticResources>operations/concepts/primarytypes-datatypes/primarytypes-datatypes-dtGPSLocation.msr</semanticResources>
     <semanticResources>operations/concepts/primarytypes-datatypes/primarytypes-datatypes-dtCrisisID.msr</semanticResources>
-    <semanticResources>operations/concepts/primarytypes-datatypes/primarytypes-datatypes-dtCoordinatorID.msr</semanticResources>
+    <semanticResources>operations/concepts/primarytypes-datatypes/primarytypes-datatypes-dtAuthenticatedID.msr</semanticResources>
     <semanticResources>operations/concepts/primarytypes-datatypes/primarytypes-datatypes-dtComment.msr</semanticResources>
     <semanticResources>operations/concepts/primarytypes-datatypes/primarytypes-datatypes-dtAlertID.msr</semanticResources>
     <semanticResources>operations/concepts/primarytypes-classes/primarytypes-classes-ctState.msr</semanticResources>
@@ -256,7 +256,7 @@
     <semanticResources>concepts/documentation/PrimaryType-Datatype-dtLatitude.msrd</semanticResources>
     <semanticResources>concepts/documentation/PrimaryType-Datatype-dtGPSLocation.msrd</semanticResources>
     <semanticResources>concepts/documentation/PrimaryType-Datatype-dtCrisisID.msrd</semanticResources>
-    <semanticResources>concepts/documentation/PrimaryType-Datatype-dtCoordinatorID.msrd</semanticResources>
+    <semanticResources>concepts/documentation/PrimaryType-Datatype-dtAuthenticatedID.msrd</semanticResources>
     <semanticResources>concepts/documentation/PrimaryType-Datatype-dtComment.msrd</semanticResources>
     <semanticResources>concepts/documentation/PrimaryType-Datatype-dtAlertID.msrd</semanticResources>
     <semanticResources>concepts/documentation/PrimaryType-Class-ctState.msrd</semanticResources>
@@ -392,7 +392,7 @@
     <semanticResources>operations/concepts/primarytypes-datatypes/primarytypes-datatypes-dtLogin.msr</semanticResources>
     <semanticResources>operations/concepts/primarytypes-datatypes/primarytypes-datatypes-dtGPSLocation.msr</semanticResources>
     <semanticResources>operations/concepts/primarytypes-datatypes/primarytypes-datatypes-dtCrisisID.msr</semanticResources>
-    <semanticResources>operations/concepts/primarytypes-datatypes/primarytypes-datatypes-dtCoordinatorID.msr</semanticResources>
+    <semanticResources>operations/concepts/primarytypes-datatypes/primarytypes-datatypes-dtAuthenticatedID.msr</semanticResources>
     <semanticResources>operations/concepts/primarytypes-datatypes/primarytypes-datatypes-dtComment.msr</semanticResources>
     <semanticResources>operations/concepts/primarytypes-datatypes/primarytypes-datatypes-dtAlertID.msr</semanticResources>
     <semanticResources>operations/concepts/primarytypes-classes/primarytypes-classes-ctState.msr</semanticResources>
@@ -475,7 +475,7 @@
     <semanticResources>concepts/documentation/PrimaryType-Datatype-dtLatitude.msrd</semanticResources>
     <semanticResources>concepts/documentation/PrimaryType-Datatype-dtGPSLocation.msrd</semanticResources>
     <semanticResources>concepts/documentation/PrimaryType-Datatype-dtCrisisID.msrd</semanticResources>
-    <semanticResources>concepts/documentation/PrimaryType-Datatype-dtCoordinatorID.msrd</semanticResources>
+    <semanticResources>concepts/documentation/PrimaryType-Datatype-dtAuthenticatedID.msrd</semanticResources>
     <semanticResources>concepts/documentation/PrimaryType-Datatype-dtComment.msrd</semanticResources>
     <semanticResources>concepts/documentation/PrimaryType-Datatype-dtAlertID.msrd</semanticResources>
     <semanticResources>concepts/documentation/PrimaryType-Class-ctState.msrd</semanticResources>
@@ -504,7 +504,7 @@
     <semanticResources>concepts/documentation/Operation-dtGPSLocation-isNearTo.msrd</semanticResources>
     <semanticResources>concepts/documentation/Operation-dtGPSLocation-is.msrd</semanticResources>
     <semanticResources>concepts/documentation/Operation-dtCrisisID-is.msrd</semanticResources>
-    <semanticResources>concepts/documentation/Operation-dtCoordinatorID-is.msrd</semanticResources>
+    <semanticResources>concepts/documentation/Operation-dtAuthenticatedID-is.msrd</semanticResources>
     <semanticResources>concepts/documentation/Operation-dtComment-is.msrd</semanticResources>
     <semanticResources>concepts/documentation/Operation-dtAlertID-is.msrd</semanticResources>
     <semanticResources>concepts/documentation/Operation-ctState-init.msrd</semanticResources>
@@ -580,7 +580,7 @@
     <semanticResources>operations/concepts/documentation/Operation-dtGPSLocation-isNearTo.msrd</semanticResources>
     <semanticResources>operations/concepts/documentation/Operation-dtGPSLocation-is.msrd</semanticResources>
     <semanticResources>operations/concepts/documentation/Operation-dtCrisisID-is.msrd</semanticResources>
-    <semanticResources>operations/concepts/documentation/Operation-dtCoordinatorID-is.msrd</semanticResources>
+    <semanticResources>operations/concepts/documentation/Operation-dtAuthenticatedID-is.msrd</semanticResources>
     <semanticResources>operations/concepts/documentation/Operation-dtComment-is.msrd</semanticResources>
     <semanticResources>operations/concepts/documentation/Operation-dtAlertID-is.msrd</semanticResources>
     <semanticResources>operations/concepts/documentation/Operation-ctState-init.msrd</semanticResources>
@@ -899,6 +899,37 @@
     <semanticResources>usecases/OLD-documentation/UseCaseInstance-uciSimpleAndCompletePart02.msrd</semanticResources>
     <semanticResources>documentation/View-cm-view6.msrd</semanticResources>
     <semanticResources>documentation/View-em-gv-02.msrd</semanticResources>
+    <semanticResources>concepts/documentation/PrimaryType-Association-assctLogEntryctEventLog.msrd</semanticResources>
+    <semanticResources>concepts/documentation/PrimaryType-Class-ctEventLog.msrd</semanticResources>
+    <semanticResources>concepts/documentation/PrimaryType-Class-ctLogEntry.msrd</semanticResources>
+    <semanticResources>concepts/documentation/Operation-ctLogEntry-createEntry.msrd</semanticResources>
+    <semanticResources>concepts/documentation/Operation-ctLogEntry-deleteEntry.msrd</semanticResources>
+    <semanticResources>concepts/documentation/PrimaryType-Datatype-dtVCode.msrd</semanticResources>
+    <semanticResources>concepts/documentation/Operation-dtVCode-is.msrd</semanticResources>
+    <semanticResources>concepts/documentation/PrimaryType-Enumeration-etEventType.msrd</semanticResources>
+    <semanticResources>concepts/documentation/Operation-etEventType-is.msrd</semanticResources>
+    <semanticResources>concepts/documentation/PrimaryType-Enumeration-etAccidentType.msrd</semanticResources>
+    <semanticResources>concepts/documentation/Operation-etAccidentType-is.msrd</semanticResources>
+    <semanticResources>concepts/documentation/UseCase-ugSMSAuthentification.msrd</semanticResources>
+    <semanticResources>concepts/ugSMSAuthentification.msr</semanticResources>
+    <semanticResources>concepts/ugSMSAuthentification.subfunctions.msr</semanticResources>
+    <semanticResources>concepts/documentation/UseCase-oeConfirmPhoneNumber.msrd</semanticResources>
+    <semanticResources>concepts/documentation/UseCase-oeLoginPhaseTwo.msrd</semanticResources>
+    <semanticResources>concepts/documentation/UseCase-oeSollicitateVCodeHandling.msrd</semanticResources>
+    <semanticResources>concepts/documentation/UseCase-oeSetTimerUntilVCodeTimeOut.msrd</semanticResources>
+    <semanticResources>concepts/documentation/UseCaseInstance-uciugSMSAuthentification.msrd</semanticResources>
+    <semanticResources>concepts/usecaseinstance-ugSMSAuthentification-uciugSMSAuthentification.msr</semanticResources>
+    <semanticResources>environment/documentation/Operation-actCoordinator-outactCoordinator-oeSendToHospital.msrd</semanticResources>
+    <semanticResources>environment/documentation/Operation-actAuthenticated-outactAuthenticated-oeConfirmPhoneNumber.msrd</semanticResources>
+    <semanticResources>environment/documentation/Operation-actAuthenticated-outactAuthenticated-oeLoginPhaseTwo.msrd</semanticResources>
+    <semanticResources>environment/documentation/Operation-actActivator-outactActivator-oeSollicitateVCodeHandling.msrd</semanticResources>
+    <semanticResources>environment/documentation/Operation-actActivator-outactActivator-oeSetTimerUntilVCodeTimeOut.msrd</semanticResources>
+    <semanticResources>usecases/documentation/UseCase-oeCreateLogEntry.msrd</semanticResources>
+    <semanticResources>usecases/usecase-ugLogCompletion-SubFonction.msr</semanticResources>
+    <semanticResources>usecases/documentation/UseCase-ugLogCompletion.msrd</semanticResources>
+    <semanticResources>usecases/usecase-ugLogCompletion.msr</semanticResources>
+    <semanticResources>usecases/documentation/UseCaseInstance-uciugLogCompletion.msrd</semanticResources>
+    <semanticResources>usecases/usecaseinstance-ugLogCompletion-uciugLogCompletion.msr</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_Aguk8EY3EeOwoLagakxXNQ">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_8IZyuNKSEeadaP6YRq5p0w" name="cm-pt-ct-gv-01" representation="_frDQIFBBEeOoKst3jxjvgA">
@@ -17878,7 +17909,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Messir%20Diagram']/@defaultLayer/@containerMappings[name='Class']/@conditionnalStyles.1/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Messir%20Diagram']/@defaultLayer/@containerMappings[name='Class']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_frFFWFBBEeOoKst3jxjvgA" name="id : dtCoordinatorID">
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_frFFWFBBEeOoKst3jxjvgA" name="id : dtAuthenticatedID">
         <target xmi:type="messir:Attribute" href="concepts/primarytypes-classes.msr#icrash.concepts.primarytypes.classes.ctCoordinator.id"/>
         <semanticElements xmi:type="messir:Attribute" href="concepts/primarytypes-classes.msr#icrash.concepts.primarytypes.classes.ctCoordinator.id"/>
         <ownedStyle xmi:type="diagram:Square" xmi:id="_frFFWVBBEeOoKst3jxjvgA" labelSize="14" iconPath="/lu.uni.lassy.excalibur.dsl.messir.ui/icons/attribute.png" labelAlignment="LEFT">
@@ -17886,7 +17917,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Messir%20Diagram']/@defaultLayer/@containerMappings[name='Class']/@subNodeMappings[name='Class_Attributes']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_frFFXVBBEeOoKst3jxjvgA" name="init(Aid: dtCoordinatorID, Alogin: dtLogin, Apwd: dtPassword): ptBoolean    ">
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_frFFXVBBEeOoKst3jxjvgA" name="init(Aid: dtAuthenticatedID, Alogin: dtLogin, Apwd: dtPassword): ptBoolean    ">
         <target xmi:type="messir:OperationDeclaration" href="concepts/primarytypes-classes.msr#icrash.concepts.primarytypes.classes.ctCoordinator.init"/>
         <semanticElements xmi:type="messir:OperationDeclaration" href="concepts/primarytypes-classes.msr#icrash.concepts.primarytypes.classes.ctCoordinator.init"/>
         <ownedStyle xmi:type="diagram:Square" xmi:id="_frFFXlBBEeOoKst3jxjvgA" labelSize="14" iconPath="/lu.uni.lassy.excalibur.dsl.messir.ui/icons/operation.png" labelAlignment="LEFT">
@@ -18458,7 +18489,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Messir%20Diagram']/@defaultLayer/@containerMappings[name='Output_Interface']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Messir%20Diagram']/@defaultLayer/@containerMappings[name='Output_Interface']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_Tqo-UFFqEeOyAb9vFKebug" name="oeAddCoordinator(AdtCoordinatorID: dtCoordinatorID, AdtLogin: dtLogin, AdtPassword: dtPassword): ptBoolean    ">
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_Tqo-UFFqEeOyAb9vFKebug" name="oeAddCoordinator(AdtAuthenticatedID: dtAuthenticatedID, AdtLogin: dtLogin, AdtPassword: dtPassword): ptBoolean    ">
         <target xmi:type="messir:OperationDeclaration" href="environment/environment.msr#icrash.environment.actAdministrator.outactAdministrator.oeAddCoordinator"/>
         <semanticElements xmi:type="messir:OperationDeclaration" href="environment/environment.msr#icrash.environment.actAdministrator.outactAdministrator.oeAddCoordinator"/>
         <ownedStyle xmi:type="diagram:Square" xmi:id="_Tqt20FFqEeOyAb9vFKebug" labelSize="14" iconPath="/lu.uni.lassy.excalibur.dsl.messir.ui/icons/operation.png" labelAlignment="LEFT">
@@ -18466,7 +18497,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Messir%20Diagram']/@defaultLayer/@containerMappings[name='Output_Interface']/@subNodeMappings[name='Output_Interface_Operation']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_Tqud4FFqEeOyAb9vFKebug" name="oeDeleteCoordinator(AdtCoordinatorID: dtCoordinatorID): ptBoolean    ">
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_Tqud4FFqEeOyAb9vFKebug" name="oeDeleteCoordinator(AdtAuthenticatedID: dtAuthenticatedID): ptBoolean    ">
         <target xmi:type="messir:OperationDeclaration" href="environment/environment.msr#icrash.environment.actAdministrator.outactAdministrator.oeDeleteCoordinator"/>
         <semanticElements xmi:type="messir:OperationDeclaration" href="environment/environment.msr#icrash.environment.actAdministrator.outactAdministrator.oeDeleteCoordinator"/>
         <ownedStyle xmi:type="diagram:Square" xmi:id="_TqvE8FFqEeOyAb9vFKebug" labelSize="14" iconPath="/lu.uni.lassy.excalibur.dsl.messir.ui/icons/operation.png" labelAlignment="LEFT">
@@ -19316,7 +19347,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Messir%20Diagram']/@defaultLayer/@containerMappings[name='Output_Interface']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Messir%20Diagram']/@defaultLayer/@containerMappings[name='Output_Interface']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_jZhvXlFpEeOyAb9vFKebug" name="oeAddCoordinator(AdtCoordinatorID: dtCoordinatorID, AdtLogin: dtLogin, AdtPassword: dtPassword): ptBoolean    ">
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_jZhvXlFpEeOyAb9vFKebug" name="oeAddCoordinator(AdtAuthenticatedID: dtAuthenticatedID, AdtLogin: dtLogin, AdtPassword: dtPassword): ptBoolean    ">
         <target xmi:type="messir:OperationDeclaration" href="environment/environment.msr#icrash.environment.actAdministrator.outactAdministrator.oeAddCoordinator"/>
         <semanticElements xmi:type="messir:OperationDeclaration" href="environment/environment.msr#icrash.environment.actAdministrator.outactAdministrator.oeAddCoordinator"/>
         <ownedStyle xmi:type="diagram:Square" xmi:id="_jZhvX1FpEeOyAb9vFKebug" labelSize="14" iconPath="/lu.uni.lassy.excalibur.dsl.messir.ui/icons/operation.png" labelAlignment="LEFT">
@@ -19324,7 +19355,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Messir%20Diagram']/@defaultLayer/@containerMappings[name='Output_Interface']/@subNodeMappings[name='Output_Interface_Operation']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_jZhvY1FpEeOyAb9vFKebug" name="oeDeleteCoordinator(AdtCoordinatorID: dtCoordinatorID): ptBoolean    ">
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_jZhvY1FpEeOyAb9vFKebug" name="oeDeleteCoordinator(AdtAuthenticatedID: dtAuthenticatedID): ptBoolean    ">
         <target xmi:type="messir:OperationDeclaration" href="environment/environment.msr#icrash.environment.actAdministrator.outactAdministrator.oeDeleteCoordinator"/>
         <semanticElements xmi:type="messir:OperationDeclaration" href="environment/environment.msr#icrash.environment.actAdministrator.outactAdministrator.oeDeleteCoordinator"/>
         <ownedStyle xmi:type="diagram:Square" xmi:id="_jZhvZFFpEeOyAb9vFKebug" labelSize="14" iconPath="/lu.uni.lassy.excalibur.dsl.messir.ui/icons/operation.png" labelAlignment="LEFT">
@@ -21504,9 +21535,9 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Messir%20Diagram']/@defaultLayer/@containerMappings[name='SimpleDatatype']/@subNodeMappings[name='SimpleDatatype_Operations']"/>
       </ownedElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_an_nBX3VEeOpEb49SLHzqA" name="dtCoordinatorID" outgoingEdges="_eI19-4K_EeOWj8tK8iD8YA">
-      <target xmi:type="messir:SimpleDataType" href="concepts/primarytypes-datatypes.msr#icrash.concepts.primarytypes.datatypes.dtCoordinatorID"/>
-      <semanticElements xmi:type="messir:SimpleDataType" href="concepts/primarytypes-datatypes.msr#icrash.concepts.primarytypes.datatypes.dtCoordinatorID"/>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_an_nBX3VEeOpEb49SLHzqA" name="dtAuthenticatedID" outgoingEdges="_eI19-4K_EeOWj8tK8iD8YA">
+      <target xmi:type="messir:SimpleDataType" href="concepts/primarytypes-datatypes.msr#icrash.concepts.primarytypes.datatypes.dtAuthenticatedID"/>
+      <semanticElements xmi:type="messir:SimpleDataType" href="concepts/primarytypes-datatypes.msr#icrash.concepts.primarytypes.datatypes.dtAuthenticatedID"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -21517,8 +21548,8 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Messir%20Diagram']/@defaultLayer/@containerMappings[name='SimpleDatatype']"/>
       <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_aoO3kH3VEeOpEb49SLHzqA" name="is(): ptBoolean    ">
-        <target xmi:type="messir:OperationDeclaration" href="concepts/primarytypes-datatypes.msr#icrash.concepts.primarytypes.datatypes.dtCoordinatorID.is"/>
-        <semanticElements xmi:type="messir:OperationDeclaration" href="concepts/primarytypes-datatypes.msr#icrash.concepts.primarytypes.datatypes.dtCoordinatorID.is"/>
+        <target xmi:type="messir:OperationDeclaration" href="concepts/primarytypes-datatypes.msr#icrash.concepts.primarytypes.datatypes.dtAuthenticatedID.is"/>
+        <semanticElements xmi:type="messir:OperationDeclaration" href="concepts/primarytypes-datatypes.msr#icrash.concepts.primarytypes.datatypes.dtAuthenticatedID.is"/>
         <ownedStyle xmi:type="diagram:Square" xmi:id="_aoO3kX3VEeOpEb49SLHzqA" labelSize="14" iconPath="/lu.uni.lassy.excalibur.dsl.messir.ui/icons/operation.png" labelAlignment="LEFT">
           <description xmi:type="style:SquareDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Messir%20Diagram']/@defaultLayer/@containerMappings[name='SimpleDatatype']/@subNodeMappings[name='SimpleDatatype_Operations']/@style"/>
         </ownedStyle>
@@ -22327,7 +22358,7 @@
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Messir%20Diagram']/@defaultLayer/@edgeMappings[name='Inheritance_Relation_SimpleDatatype_SimpleDatatype']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_eI19-4K_EeOWj8tK8iD8YA" sourceNode="_an_nBX3VEeOpEb49SLHzqA" targetNode="_aoIw8H3VEeOpEb49SLHzqA">
-      <target xmi:type="messir:SimpleDataType" href="concepts/primarytypes-datatypes.msr#icrash.concepts.primarytypes.datatypes.dtCoordinatorID"/>
+      <target xmi:type="messir:SimpleDataType" href="concepts/primarytypes-datatypes.msr#icrash.concepts.primarytypes.datatypes.dtAuthenticatedID"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_eI2lAIK_EeOWj8tK8iD8YA" targetArrow="InputClosedArrow" size="2" routingStyle="manhattan">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Messir%20Diagram']/@defaultLayer/@edgeMappings[name='Inheritance_Relation_SimpleDatatype_SimpleDatatype']/@style"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_eI2lAoK_EeOWj8tK8iD8YA" labelSize="14" showIcon="false">
@@ -23160,7 +23191,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Messir%20Diagram']/@defaultLayer/@containerMappings[name='Class']/@conditionnalStyles.1/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Messir%20Diagram']/@defaultLayer/@containerMappings[name='Class']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_FG-FkFAiEeOR4uMJ2UQWig" name="id : dtCoordinatorID">
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_FG-FkFAiEeOR4uMJ2UQWig" name="id : dtAuthenticatedID">
         <target xmi:type="messir:Attribute" href="concepts/primarytypes-classes.msr#icrash.concepts.primarytypes.classes.ctCoordinator.id"/>
         <semanticElements xmi:type="messir:Attribute" href="concepts/primarytypes-classes.msr#icrash.concepts.primarytypes.classes.ctCoordinator.id"/>
         <ownedStyle xmi:type="diagram:Square" xmi:id="_FG-soFAiEeOR4uMJ2UQWig" labelSize="14" iconPath="/lu.uni.lassy.excalibur.dsl.messir.ui/icons/attribute.png" labelAlignment="LEFT">
@@ -23168,7 +23199,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Messir%20Diagram']/@defaultLayer/@containerMappings[name='Class']/@subNodeMappings[name='Class_Attributes']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_FG_6wFAiEeOR4uMJ2UQWig" name="init(Aid: dtCoordinatorID, Alogin: dtLogin, Apwd: dtPassword): ptBoolean    ">
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_FG_6wFAiEeOR4uMJ2UQWig" name="init(Aid: dtAuthenticatedID, Alogin: dtLogin, Apwd: dtPassword): ptBoolean    ">
         <target xmi:type="messir:OperationDeclaration" href="concepts/primarytypes-classes.msr#icrash.concepts.primarytypes.classes.ctCoordinator.init"/>
         <semanticElements xmi:type="messir:OperationDeclaration" href="concepts/primarytypes-classes.msr#icrash.concepts.primarytypes.classes.ctCoordinator.init"/>
         <ownedStyle xmi:type="diagram:Square" xmi:id="_FHAh0FAiEeOR4uMJ2UQWig" labelSize="14" iconPath="/lu.uni.lassy.excalibur.dsl.messir.ui/icons/operation.png" labelAlignment="LEFT">

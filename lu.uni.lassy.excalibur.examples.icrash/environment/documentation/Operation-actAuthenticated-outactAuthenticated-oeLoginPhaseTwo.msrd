@@ -1,0 +1,34 @@
+/*
+@author zhikin
+@date Sat Mar 18 16:31:33 CET 2017
+*/
+
+
+@@Operation
+icrash.environment.actAuthenticated.outactAuthenticated.oeLoginPhaseTwo
+//parameters
+@parameter
+icrash.environment.actAuthenticated.outactAuthenticated.oeLoginPhaseTwo.AdtVCode
+""
+@endParameters
+
+@description "
+ "
+//preProtocol descriptions
+@preP
+" "
+@endPreP
+//preFunctional descriptions
+@preF
+" "
+@endPreF
+//postFunctional descriptions
+@postF 
+" "
+@endPostF
+//postProtocol descriptions
+@postP 
+" "
+@endPostP
+//example
+@example" "

@@ -86,6 +86,7 @@ import lu.uni.lassy.messir.libraries.calendar
 				attribute login:dtLogin
 				attribute pwd: dtPassword
 				attribute vpIsLogged:ptBoolean
+				attribute id:dtAuthenticatedID
 				
 				operation init(
 										Alogin:dtLogin ,
@@ -96,11 +97,9 @@ import lu.uni.lassy.messir.libraries.calendar
 					role rnctCoordinator
 					cardinality [0..*]
 					extends ctAuthenticated{
-			
-				attribute id:dtCoordinatorID
-				
+
 				operation init(
-										Aid:dtCoordinatorID ,
+										Aid:dtAuthenticatedID ,
 										Alogin:dtLogin ,
 										Apwd:dtPassword ):ptBoolean
 			}
@@ -113,6 +112,26 @@ import lu.uni.lassy.messir.libraries.calendar
 				operation init(
 										Alogin:dtLogin ,
 										Apwd:dtPassword ):ptBoolean
+			}
+			
+			class ctEventLog 
+					role rnEventLog 
+					cardinality [1..1] {
+			
+				attribute lId: ptInteger
+				
+			}
+			class ctLogEntry
+					role rnroleName
+					cardinality [0..*] {
+				attribute eId: ptInteger
+				attribute eType: etEventType
+				attribute eText: ptString
+				attribute eTime: dtTime
+				
+				operation createEntry(ApteID: ptInteger, AeteType: etEventType, ApeText: ptString, AdtTime: dtTime) : ptBoolean	
+				operation deleteEntry() : ptBoolean
+				
 			}
 		}
 	}

@@ -1,7 +1,7 @@
 @@Operation
 icrash.environment.actAdministrator.outactAdministrator.oeDeleteCoordinator
 //parameters
-@parameter icrash.environment.actAdministrator.outactAdministrator.oeDeleteCoordinator.AdtCoordinatorID
+@parameter icrash.environment.actAdministrator.outactAdministrator.oeDeleteCoordinator.AdtAuthenticatedID
 "used for ctCoordinator instance retrieval"
 @endParameters
 @description

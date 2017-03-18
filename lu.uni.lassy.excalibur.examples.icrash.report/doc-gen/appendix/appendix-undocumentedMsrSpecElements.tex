@@ -2,6 +2,29 @@
 \chapter{Undocumented Messir Specification Elements}
 
 
+\section[Undocumented Use Cases]{Undocumented Use Cases}
+
+
+\subsection[Undocumented Use Cases - User-Goal Level]{Undocumented User-Goal Level Use Cases}
+\begin{itemize}
+\item icrash.usecases.ugSMSAuthentification.ugSMSAuthentification 
+\item icrash.usecases.ugLogCompletion.ugLogCompletion 
+\end{itemize}
+
+\subsection[Undocumented Use Cases - Subfunction Level]{Undocumented Subfunction Level Use Cases}
+\begin{itemize}
+\item icrash.usecases.ugSMSAuthentification.subfunctions.oeConfirmPhoneNumber 
+\item icrash.usecases.ugSMSAuthentification.subfunctions.oeLoginPhaseTwo 
+\item icrash.usecases.ugSMSAuthentification.subfunctions.oeSetTimerUntilVCodeTimeOut 
+\item icrash.usecases.ugSMSAuthentification.subfunctions.oeSollicitateVCodeHandling 
+\item icrash.usecases.ugLogCompletion.subfonction.oeCreateLogEntry 
+\end{itemize}
+
+\subsection[Undocumented Use Case Views]{Undocumented Use Case Views}
+\begin{itemize}
+\item uc-ugSMSAuthentification 
+\end{itemize}
+
 
 
 
@@ -10,18 +33,54 @@
 
 \subsection[Undocumented Use Case Instances - User-Goal Level]{Undocumented User-Goal Level Use Case Instances}
 \begin{itemize}
+\item concepts.uciugSMSAuthentification.uciugSMSAuthentification 
+\item usecases.uciugLogCompletion.uciugLogCompletion 
 \item usecases.uciugSecurelyUseSystem.uciugSecurelyUseSystem 
 \end{itemize}
 
 
 \subsection[Undocumented Use Case Instance Views]{Undocumented Use Case Instance Views}
 \begin{itemize}
+\item uciugLogCompletion 
 \item uci-uciugSecurelyUseSystem 
+\item uciugSMSAuthentification 
 \end{itemize}
 
 
 
 
+
+
+\section[Undocumented Primary Types]{Undocumented Primary Types}
+
+\subsection[Undocumented Primary Classe Types]{Undocumented Primary Classe Types}
+\begin{itemize}
+\item icrash.concepts.primarytypes.classes.ctEventLog 
+\item icrash.concepts.primarytypes.classes.ctLogEntry 
+\end{itemize}
+
+\subsection[Undocumented Primary Datatype Types]{Undocumented Primary Datatype Types}
+\begin{itemize}
+\item icrash.concepts.primarytypes.datatypes.dtVCode 
+\end{itemize}
+
+\subsection[Undocumented Primary Enumeration Types]{Undocumented Primary Enumeration Types}
+\begin{itemize}
+\item icrash.concepts.primarytypes.datatypes.etAccidentType 
+\item icrash.concepts.primarytypes.datatypes.etEventType 
+\end{itemize}
+
+
+
+
+
+
+\section[Undocumented Primary Type Relationships]{Undocumented Primary Relationships}
+
+\subsection[Undocumented Primary Type Associations]{Undocumented Primary Type Associations}
+\begin{itemize}
+\item icrash.concepts.primarytypes.associations.assctLogEntryctEventLog 
+\end{itemize}
 
 
 
@@ -40,6 +99,19 @@
 \end{itemize}
 
 
+\section[Undocumented Operation Specifications]{Undocumented Operation Specifications}
+\begin{itemize}
+\item icrash.concepts.primarytypes.classes.ctLogEntry.createEntry 
+\item icrash.concepts.primarytypes.classes.ctLogEntry.deleteEntry 
+\item icrash.concepts.primarytypes.datatypes.dtVCode.is 
+\item icrash.concepts.primarytypes.datatypes.etAccidentType.is 
+\item icrash.concepts.primarytypes.datatypes.etEventType.is 
+\item icrash.environment.actActivator.outactActivator.oeSetTimerUntilVCodeTimeOut 
+\item icrash.environment.actActivator.outactActivator.oeSollicitateVCodeHandling 
+\item icrash.environment.actAuthenticated.outactAuthenticated.oeConfirmPhoneNumber 
+\item icrash.environment.actAuthenticated.outactAuthenticated.oeLoginPhaseTwo 
+\item icrash.environment.actCoordinator.outactCoordinator.oeSendToHospital 
+\end{itemize}
 
 
 

@@ -1,7 +1,7 @@
 @@Operation
 icrash.environment.actAdministrator.outactAdministrator.oeAddCoordinator
 //parameters
-@parameter icrash.environment.actAdministrator.outactAdministrator.oeAddCoordinator.AdtCoordinatorID
+@parameter icrash.environment.actAdministrator.outactAdministrator.oeAddCoordinator.AdtAuthenticatedID
 "used to initialize the id field"
 @parameter icrash.environment.actAdministrator.outactAdministrator.oeAddCoordinator.AdtLogin
 "used to initialize the login field"

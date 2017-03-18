@@ -30,7 +30,7 @@
     <semanticResources>operations/concepts/primarytypes-datatypes/primarytypes-datatypes-dtLogin.msr</semanticResources>
     <semanticResources>operations/concepts/primarytypes-datatypes/primarytypes-datatypes-dtGPSLocation.msr</semanticResources>
     <semanticResources>operations/concepts/primarytypes-datatypes/primarytypes-datatypes-dtCrisisID.msr</semanticResources>
-    <semanticResources>operations/concepts/primarytypes-datatypes/primarytypes-datatypes-dtCoordinatorID.msr</semanticResources>
+    <semanticResources>operations/concepts/primarytypes-datatypes/primarytypes-datatypes-dtAuthenticatedID.msr</semanticResources>
     <semanticResources>operations/concepts/primarytypes-classes/primarytypes-classes-ctHuman.msr</semanticResources>
     <semanticResources>operations/concepts/primarytypes-classes/primarytypes-classes-ctCoordinator.msr</semanticResources>
     <semanticResources>operations/environment/environment-actAdministrator-oeAddCoordinator.msr</semanticResources>
@@ -93,7 +93,7 @@
     <semanticResources>concepts/documentation/PrimaryType-Datatype-dtLatitude.msrd</semanticResources>
     <semanticResources>concepts/documentation/PrimaryType-Datatype-dtGPSLocation.msrd</semanticResources>
     <semanticResources>concepts/documentation/PrimaryType-Datatype-dtCrisisID.msrd</semanticResources>
-    <semanticResources>concepts/documentation/PrimaryType-Datatype-dtCoordinatorID.msrd</semanticResources>
+    <semanticResources>concepts/documentation/PrimaryType-Datatype-dtAuthenticatedID.msrd</semanticResources>
     <semanticResources>concepts/documentation/PrimaryType-Datatype-dtComment.msrd</semanticResources>
     <semanticResources>concepts/documentation/PrimaryType-Datatype-dtAlertID.msrd</semanticResources>
     <semanticResources>concepts/documentation/PrimaryType-Class-ctState.msrd</semanticResources>
@@ -152,7 +152,7 @@
     <semanticResources>operations/concepts/documentation/Operation-dtGPSLocation-isNearTo.msrd</semanticResources>
     <semanticResources>operations/concepts/documentation/Operation-dtGPSLocation-is.msrd</semanticResources>
     <semanticResources>operations/concepts/documentation/Operation-dtCrisisID-is.msrd</semanticResources>
-    <semanticResources>operations/concepts/documentation/Operation-dtCoordinatorID-is.msrd</semanticResources>
+    <semanticResources>operations/concepts/documentation/Operation-dtAuthenticatedID-is.msrd</semanticResources>
     <semanticResources>operations/concepts/documentation/Operation-dtComment-is.msrd</semanticResources>
     <semanticResources>operations/concepts/documentation/Operation-dtAlertID-is.msrd</semanticResources>
     <semanticResources>operations/concepts/documentation/Operation-ctState-init.msrd</semanticResources>
@@ -456,6 +456,31 @@
     <semanticResources>usecases/usecase-ugLogCompletion-SubFonction.msr</semanticResources>
     <semanticResources>usecases/usecase-ugLogCompletion.msr</semanticResources>
     <semanticResources>usecases/usecaseinstance-ugLogCompletion-uciugLogCompletion.msr</semanticResources>
+    <semanticResources>concepts/documentation/PrimaryType-Association-assctLogEntryctEventLog.msrd</semanticResources>
+    <semanticResources>concepts/documentation/PrimaryType-Class-ctEventLog.msrd</semanticResources>
+    <semanticResources>concepts/documentation/PrimaryType-Class-ctLogEntry.msrd</semanticResources>
+    <semanticResources>concepts/documentation/Operation-ctLogEntry-createEntry.msrd</semanticResources>
+    <semanticResources>concepts/documentation/Operation-ctLogEntry-deleteEntry.msrd</semanticResources>
+    <semanticResources>concepts/documentation/PrimaryType-Datatype-dtVCode.msrd</semanticResources>
+    <semanticResources>concepts/documentation/Operation-dtVCode-is.msrd</semanticResources>
+    <semanticResources>concepts/documentation/PrimaryType-Enumeration-etEventType.msrd</semanticResources>
+    <semanticResources>concepts/documentation/Operation-etEventType-is.msrd</semanticResources>
+    <semanticResources>concepts/documentation/PrimaryType-Enumeration-etAccidentType.msrd</semanticResources>
+    <semanticResources>concepts/documentation/Operation-etAccidentType-is.msrd</semanticResources>
+    <semanticResources>concepts/documentation/UseCase-ugSMSAuthentification.msrd</semanticResources>
+    <semanticResources>concepts/documentation/UseCase-oeConfirmPhoneNumber.msrd</semanticResources>
+    <semanticResources>concepts/documentation/UseCase-oeLoginPhaseTwo.msrd</semanticResources>
+    <semanticResources>concepts/documentation/UseCase-oeSollicitateVCodeHandling.msrd</semanticResources>
+    <semanticResources>concepts/documentation/UseCase-oeSetTimerUntilVCodeTimeOut.msrd</semanticResources>
+    <semanticResources>concepts/documentation/UseCaseInstance-uciugSMSAuthentification.msrd</semanticResources>
+    <semanticResources>environment/documentation/Operation-actCoordinator-outactCoordinator-oeSendToHospital.msrd</semanticResources>
+    <semanticResources>environment/documentation/Operation-actAuthenticated-outactAuthenticated-oeConfirmPhoneNumber.msrd</semanticResources>
+    <semanticResources>environment/documentation/Operation-actAuthenticated-outactAuthenticated-oeLoginPhaseTwo.msrd</semanticResources>
+    <semanticResources>environment/documentation/Operation-actActivator-outactActivator-oeSollicitateVCodeHandling.msrd</semanticResources>
+    <semanticResources>environment/documentation/Operation-actActivator-outactActivator-oeSetTimerUntilVCodeTimeOut.msrd</semanticResources>
+    <semanticResources>usecases/documentation/UseCase-oeCreateLogEntry.msrd</semanticResources>
+    <semanticResources>usecases/documentation/UseCase-ugLogCompletion.msrd</semanticResources>
+    <semanticResources>usecases/documentation/UseCaseInstance-uciugLogCompletion.msrd</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_UmILAPWqEeSOM9Kfym77Zg">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_JfZkEAlpEeek38dIUYae9A" name="uc-ugSMSAuthentification" representation="_JfZkEQlpEeek38dIUYae9A">

@@ -1,0 +1,24 @@
+/*
+@author zhikin
+@date Sat Mar 18 16:31:26 CET 2017
+*/
+
+
+@@Use Case Subfunction icrash.usecases.ugSMSAuthentification.subfunctions.oeSollicitateVCodeHandling
+@description ""
+@protocolCondition
+"
+"
+@endProtocolConditions
+@preCondition
+"
+"
+@endPreConditions
+@postCondition
+"
+"
+@endPostConditions
+@additionalInformation
+"
+none
+"

@@ -1,0 +1,24 @@
+/*
+@author zhikin
+@date Sat Mar 18 16:31:21 CET 2017
+*/
+
+
+@@Use Case icrash.usecases.ugSMSAuthentification.ugSMSAuthentification
+@description ""
+@protocolCondition
+"
+"
+@endProtocolConditions
+@preCondition
+"
+"
+@endPreConditions
+@postCondition
+"
+"
+@endPostConditions
+@additionalInformation
+"
+none
+"

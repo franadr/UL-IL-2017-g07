@@ -12,6 +12,9 @@
 @attribute icrash.concepts.primarytypes.classes.ctAuthenticated.vpIsLogged
 "used to determine the access status."
 
+@attribute icrash.concepts.primarytypes.classes.ctAuthenticated.id
+"a unique identification information."
+
 @endAttributes
 
 @operation icrash.concepts.primarytypes.classes.ctAuthenticated.init

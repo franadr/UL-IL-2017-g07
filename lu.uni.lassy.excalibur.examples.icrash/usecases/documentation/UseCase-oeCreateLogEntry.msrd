@@ -1,0 +1,29 @@
+/*
+@author zhikin
+@date Sat Mar 18 16:31:37 CET 2017
+*/
+
+
+@@Use Case Subfunction icrash.usecases.ugLogCompletion.subfonction.oeCreateLogEntry
+@description ""
+@parameter icrash.usecases.ugLogCompletion.subfonction.oeCreateLogEntry.ApteID ""
+@parameter icrash.usecases.ugLogCompletion.subfonction.oeCreateLogEntry.AeteType ""
+@parameter icrash.usecases.ugLogCompletion.subfonction.oeCreateLogEntry.ApeText ""
+@parameter icrash.usecases.ugLogCompletion.subfonction.oeCreateLogEntry.AdtTime ""
+@endParameters
+@protocolCondition
+"
+"
+@endProtocolConditions
+@preCondition
+"
+"
+@endPreConditions
+@postCondition
+"
+"
+@endPostConditions
+@additionalInformation
+"
+none
+"

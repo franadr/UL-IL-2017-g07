@@ -30,12 +30,12 @@ import lu.uni.lassy.messir.libraries.calendar
 			output interface outactAdministrator{
 				
 				operation oeAddCoordinator(
-											AdtCoordinatorID:dtCoordinatorID ,
+											AdtAuthenticatedID:dtAuthenticatedID ,
 											AdtLogin:dtLogin , 
 											AdtPassword:dtPassword ):ptBoolean
 											
 				operation oeDeleteCoordinator(
-											AdtCoordinatorID:dtCoordinatorID ):ptBoolean
+											AdtAuthenticatedID:dtAuthenticatedID ):ptBoolean
 			}
 			
 			input interface inactAdministrator{

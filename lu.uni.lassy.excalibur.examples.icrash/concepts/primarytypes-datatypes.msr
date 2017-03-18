@@ -21,7 +21,7 @@ import lu.uni.lassy.messir.libraries.calendar
 			datatype dtPassword extends dtString {
 				operation is():ptBoolean
 			}
-			datatype dtCoordinatorID extends dtString {
+			datatype dtAuthenticatedID extends dtString {
 				operation is():ptBoolean
 			}
 			datatype dtPhoneNumber extends dtString {

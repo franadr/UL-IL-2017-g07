@@ -1,0 +1,12 @@
+/*
+@author zhikin
+@date Sat Mar 18 16:31:07 CET 2017
+*/
+
+
+@@Primary Type Class icrash.concepts.primarytypes.classes.ctEventLog
+@description ""
+@attribute
+icrash.concepts.primarytypes.classes.ctEventLog.lId
+""
+@endAttributes

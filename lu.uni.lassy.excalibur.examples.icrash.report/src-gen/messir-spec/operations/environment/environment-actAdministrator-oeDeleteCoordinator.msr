@@ -11,7 +11,7 @@ import icrash.concepts.primarytypes.classes
 
 Operation Model {
 
-operation: actAdministrator.outactAdministrator.oeDeleteCoordinator(AdtCoordinatorID:dtCoordinatorID):ptBoolean
+operation: actAdministrator.outactAdministrator.oeDeleteCoordinator(AdtAuthenticatedID:dtAuthenticatedID):ptBoolean
 {
 preP{
   let TheSystem: ctState in
@@ -32,7 +32,7 @@ preF{
   self.rnActor.rnSystem = TheSystem
   and self.rnActor = TheActor
 /* PreF01 */
-  TheSystem.rnctCoordinator->select(id.eq(AdtCoordinatorID))
+  TheSystem.rnctCoordinator->select(id.eq(AdtAuthenticatedID))
   = ColctCoordinators
   and ColctCoordinators->size().eq(1)
 }
@@ -43,7 +43,7 @@ postF{
   self.rnActor.rnSystem = TheSystem
   and self.rnActor = TheActor
 /* PostF01 */
-  TheSystem.rnctCoordinator->select(id.eq(AdtCoordinatorID))
+  TheSystem.rnctCoordinator->select(id.eq(AdtAuthenticatedID))
   = ThectCoordinator
   and ThectCoordinator.rnactCoordinator->forAll(msrIsKilled)
   and ThectCoordinator.msrIsKilled

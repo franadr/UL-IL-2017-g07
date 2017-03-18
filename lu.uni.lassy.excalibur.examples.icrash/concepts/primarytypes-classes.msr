@@ -86,6 +86,7 @@ import lu.uni.lassy.messir.libraries.calendar
 				attribute login:dtLogin
 				attribute pwd: dtPassword
 				attribute vpIsLogged:ptBoolean
+				attribute id:dtAuthenticatedID
 				
 				operation init(
 										Alogin:dtLogin ,
@@ -96,11 +97,9 @@ import lu.uni.lassy.messir.libraries.calendar
 					role rnctCoordinator
 					cardinality [0..*]
 					extends ctAuthenticated{
-			
-				attribute id:dtCoordinatorID
-				
+
 				operation init(
-										Aid:dtCoordinatorID ,
+										Aid:dtAuthenticatedID ,
 										Alogin:dtLogin ,
 										Apwd:dtPassword ):ptBoolean
 			}
