@@ -87,7 +87,7 @@ import icrash.environment
     }
   }    
 //----------------------------------------------------
-  use case system subfunction oeLogin(AdtLogin:dtLogin , AdtPassword:dtPassword) {
+  use case system subfunction oeLogin(AdtAuthenticatedID:dtAuthenticatedID, AdtLogin:dtLogin , AdtPassword:dtPassword) {
     actor actAuthenticated[primary,active]
     actor actComCompany[secondary,passive]
     returned messages {

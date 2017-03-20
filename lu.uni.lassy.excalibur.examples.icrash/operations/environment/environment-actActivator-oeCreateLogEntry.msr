@@ -3,7 +3,7 @@
 * @date Wed Mar 15 09:39:39 CET 2017
 */
 
-package icrash.^operation.environment.actActivator.oeCreateLogEntry {
+package icrash.^operation.environment.actActivator.oeaddLogEntry {
 
 import icrash.environment
 
@@ -16,7 +16,7 @@ import icrash.concepts.primarytypes.classes
 
 
 	Operation Model {
-		operation: actActivator.outactActivator.oeCreateLogEntry(ApteID: ptInteger, AeteType: etEventType, ApeText: ptString, AdtTime: dtTime):ptBoolean{
+		operation: actActivator.outactActivator.oeaddLogEntry(ApteID: ptInteger, AeteType: etEventType, ApeText: ptString, AdtTime: dtTime):ptBoolean{
 			preP {
 				
 				/*Prep 1*/

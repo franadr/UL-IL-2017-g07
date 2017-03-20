@@ -20,7 +20,7 @@ package usecases.uciugSecurelyUseSystemWithSMS2ndVersion {
 				
 //-----------------------------				
         steve executed instanceof subfunction
-              oeLogin("steve","pwd1234"){
+              oeLogin("2","steve","pwd1234"){
                 ieMessage('A verification code has been sent to +352 691 12 ** ** 56.') returned to steve
                	ieSmsSend('Dear user, this is the verification code you need to login to iCrash: XS98M. It is a one-time verification code, meaning that it will become invalid once you have used it to login to your account. Be notified that this code will also become invalid after not being usedfor 15 minutes.') 
                		returned to tango
@@ -43,7 +43,7 @@ steve executed instanceof ugSMSAuthentification() {
 }
 //-----------------------------//-----------------------------				
         steve executed instanceof subfunction
-              oeLogin("steve","pwd1234"){
+              oeLogin("2","steve","pwd1234"){
                 ieMessage('A verification code has been sent to +352 691 12 ** ** 56.') returned to steve
                	ieSmsSend('Dear user, this is the verification code you need to login to iCrash: BDS8K. It is a one-time verification code, meaning that it will become invalid once you have used it to login to your account. Be notified that this code will also become invalid after not being usedfor 15 minutes.') 
                		returned to tango

@@ -5,19 +5,19 @@
 
 
 @@Operation
-icrash.environment.actActivator.outactActivator.oeCreateLogEntry
+icrash.environment.actActivator.outactActivator.oeaddLogEntry
 //parameters
 @parameter
-icrash.environment.actActivator.outactActivator.oeCreateLogEntry.ApteID
+icrash.environment.actActivator.outactActivator.oeaddLogEntry.ApteID
 "used to initialize entry/event ID"
 @parameter
-icrash.environment.actActivator.outactActivator.oeCreateLogEntry.AeteType
+icrash.environment.actActivator.outactActivator.oeaddLogEntry.AeteType
 "used to initialize entry/event Type"
 @parameter
-icrash.environment.actActivator.outactActivator.oeCreateLogEntry.ApeText
+icrash.environment.actActivator.outactActivator.oeaddLogEntry.ApeText
 "used to initialize entry/event Description"
 @parameter
-icrash.environment.actActivator.outactActivator.oeCreateLogEntry.AdtTime
+icrash.environment.actActivator.outactActivator.oeaddLogEntry.AdtTime
 "used to initialize entry/event Time"
 @endParameters
 
