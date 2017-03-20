@@ -135,6 +135,23 @@ import icrash.environment
       ieMessage(AMessage) returned to actCoordinator
     }
   }
+//----------------------------------------------------
+  use case system subfunction oeSendToHospital(AdtCrisisID:dtCrisisID){
+  	actor actCoordinator[primary, active]
+  	actor actHospital[secondary, passive]
+  	returned messages {
+  		ieMessage(AMessage) returned to actCoordinator
+  	}
+  }
+//----------------------------------------------------
+  use case system subfunction oeResolved(AdtCrisisID:dtCrisisID, AetCrisisStatus:etCrisisStatus){
+  	actor actHospital[primary, active]
+  	actor actCoordinator[secondary, passive]
+  	returned messages {
+  		ieMessage(AMessage) returned to actHospital
+  	}
+  }
+  
   }
 
 }
