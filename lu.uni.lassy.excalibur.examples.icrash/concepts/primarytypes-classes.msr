@@ -133,6 +133,20 @@ import lu.uni.lassy.messir.libraries.calendar
 				operation deleteEntry() : ptBoolean
 				
 			}
+			class ctListener role rnctListener cardinality [1..1] {
+				attribute lId : ptInteger
+				
+			}
+			class ctEvent role rnctEvent cardinality [0..*] {
+				attribute eventId:ptInteger
+				attribute eventType : etEventType
+				attribute eventContent : ptString
+				attribute eventTime : dtTime
+				
+				operation createEvent(AeventID : ptInteger,AeventType : etEventType,AeventContent : ptString,AeventTime : dtTime) : ptBoolean
+				
+				
+			}
 		}
 	}
 }

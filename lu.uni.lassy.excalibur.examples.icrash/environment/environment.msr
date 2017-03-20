@@ -150,7 +150,7 @@ import lu.uni.lassy.messir.libraries.calendar
 				proactive operation oeSetClock(AcurrentClock:dtDateAndTime ):ptBoolean
 				proactive operation oeSollicitateVCodeHandling():ptBoolean
 				proactive operation oeSetTimerUntilVCodeTimeOut():ptBoolean
-				proactive operation oeCreateLogEntry(	ApteID:ptInteger,
+				proactive operation oeaddLogEntry(	ApteID:ptInteger,
 														AeteType : etEventType,
 														ApeText : ptString,
 														AdtTime: dtTime
