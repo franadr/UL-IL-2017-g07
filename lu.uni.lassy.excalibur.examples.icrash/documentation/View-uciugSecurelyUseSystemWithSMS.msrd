@@ -1,0 +1,11 @@
+/*
+@author zhikin
+@date Mon Mar 20 17:10:44 CET 2017
+*/
+
+
+@@view uciugSecurelyUseSystemWithSMS
+@instance Use-Case usecases.uciugSecurelyUseSystemWithSMS.uciugSecurelyUseSystemWithSMS 
+@description "ugSecurelyUseSystemWithSMS - 1st Time Login after implementation."
+@caption "ugSecurelyUseSystemWithSMS - 1st Time Login after implementation."
+@scale MaxWidth

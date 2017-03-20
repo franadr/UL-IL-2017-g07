@@ -6,5 +6,6 @@
 
 @@view uc-ugSMSAuthentification
 @model Use-Case icrash.usecases.ugSMSAuthentification.ugSMSAuthentification 
-@description ""
-@caption ""
+@description "ugSMSAuthentification"
+@caption "ugSMSAuthentification"
+@scale MaxWidth

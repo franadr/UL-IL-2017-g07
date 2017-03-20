@@ -89,8 +89,10 @@ import icrash.environment
 //----------------------------------------------------
   use case system subfunction oeLogin(AdtLogin:dtLogin , AdtPassword:dtPassword) {
     actor actAuthenticated[primary,active]
+    actor actComCompany[secondary,passive]
     returned messages {
       ieMessage(AMessage) returned to actAuthenticated
+	  ieSmsSend(AdtPhoneNumber,AdtSMS) returned to actComCompany
 	  }
   }   
 //----------------------------------------------------

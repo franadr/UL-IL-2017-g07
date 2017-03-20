@@ -14,7 +14,7 @@ import icrash.usecases.ugSMSAuthentification.subfunctions
 	use case system usergoal ugSMSAuthentification() {
 	
 	//To be modified
-	actor actCoordinator[primary,active]
+	actor actAuthenticated[primary,active]
 	actor actActivator[secondary, proactive]
 	actor actComCompany[secondary,passive]
 	
@@ -24,11 +24,11 @@ import icrash.usecases.ugSMSAuthentification.subfunctions
 	reuse oeSetClock[1..*]
 	reuse oeSetTimerUntilVCodeTimeOut[1..*]
 			
-	step a: actCoordinator
+	step a: actAuthenticated
 		executes oeConfirmPhoneNumber
 	step b: actActivator
 		executes oeSollicitateVCodeHandling
-	step c: actCoordinator
+	step c: actAuthenticated
 		executes oeLoginPhaseTwo
 	step d: actActivator
 		executes oeSetClock

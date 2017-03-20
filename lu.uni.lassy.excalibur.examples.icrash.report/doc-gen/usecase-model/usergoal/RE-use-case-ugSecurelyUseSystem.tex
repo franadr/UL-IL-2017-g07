@@ -18,6 +18,9 @@ the actAdministrator's goal is to follow an identification procedure to be allow
 \addnumberedsinglerow{}{\msrcode{actAuthenticated[active]}}
 
 
+\addrowheading{Secondary actor(s)}
+\addnumberedsinglerow{}{\msrcode{actActivator[proactive]}}
+\addnumberedsinglerow{}{\msrcode{actComCompany[passive]}}
 
 \addrowheading{Goal(s) description}
 \addsinglerow{
@@ -45,9 +48,10 @@ the actAuthenticated is known by the system not to be logged.
 
 \addrowheading{Main Steps}
 \addalphanumberedsinglerow{}{the actor \msrcode{actAuthenticated} executes the \msrucname{oeLogin} use case}
+\addalphanumberedsinglerow{}{the actor \msrcode{actAuthenticated} executes the \msrucname{ugSMSAuthentification} use case}
 \addalphanumberedsinglerow{}{the actor \msrcode{actAuthenticated} executes the \msrucname{oeLogout} use case}
 \addrowheading{Steps Ordering Constraints}
-\addnumberedsinglerow{}{step (a) must always precede step (b).}
+\addnumberedsinglerow{}{step (a) must always be the first step.}
 
 
 \end{usecase} 

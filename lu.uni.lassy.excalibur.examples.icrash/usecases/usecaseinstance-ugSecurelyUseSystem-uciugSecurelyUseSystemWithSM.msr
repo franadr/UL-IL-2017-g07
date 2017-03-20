@@ -1,0 +1,86 @@
+package usecases.uciugSecurelyUseSystemWithSMS2ndVersion {
+	import icrash.usecases.ugSecurelyUseSystem
+	import icrash.environment
+    import icrash.usecases.suGlobalCrisisHandling
+    import icrash.usecases.ugAdministrateTheSystem
+    import icrash.usecases.subfunctions
+	import icrash.usecases.ugSMSAuthentification
+	import icrash.usecases.ugSMSAuthentification.subfunctions
+	
+	Use Case Model {
+
+		use case instance uciugSecurelyUseSystemWithSMS2ndVersion : ugSecurelyUseSystem{
+			actors {
+				steve: actAuthenticated
+				tango: actComCompany
+				theClock: actActivator				
+			}
+			
+			use case steps {
+				
+//-----------------------------				
+        steve executed instanceof subfunction
+              oeLogin("steve","pwd1234"){
+                ieMessage('A verification code has been sent to +352 691 12 ** ** 56.') returned to steve
+               	ieSmsSend('Dear user, this is the verification code you need to login to iCrash: XS98M. It is a one-time verification code, meaning that it will become invalid once you have used it to login to your account. Be notified that this code will also become invalid after not being usedfor 15 minutes.') 
+               		returned to tango
+              }			
+//-----------------------------//-----------------------------
+steve executed instanceof ugSMSAuthentification() {              				
+						use case steps {							
+//-----------------------------							
+		theClock executed instanceof subfunction 
+			oeSetClock("2017:03:13 - 10:44:23"){
+			}
+//-----------------------------
+		theClock executed instanceof subfunction 
+			oeSollicitateVCodeHandling(){
+				ieMessage('Your verification code will expire in 10 minutes.') returned to steve
+				ieMessage('Your verification code will expire in 5 minutes.') returned to steve
+				ieMessage('Your code has expired! Please try again.') returned to steve
+			}
+	}
+}
+//-----------------------------//-----------------------------				
+        steve executed instanceof subfunction
+              oeLogin("steve","pwd1234"){
+                ieMessage('A verification code has been sent to +352 691 12 ** ** 56.') returned to steve
+               	ieSmsSend('Dear user, this is the verification code you need to login to iCrash: BDS8K. It is a one-time verification code, meaning that it will become invalid once you have used it to login to your account. Be notified that this code will also become invalid after not being usedfor 15 minutes.') 
+               		returned to tango
+              }			
+//-----------------------------//-----------------------------
+steve executed instanceof ugSMSAuthentification() {              				
+						use case steps {							
+//-----------------------------							
+		theClock executed instanceof subfunction 
+			oeSetClock("2017:03:13 - 10:44:23"){
+			}
+//-----------------------------
+		theClock executed instanceof subfunction 
+			oeSollicitateVCodeHandling(){
+			}
+//-----------------------------			
+		steve executed instanceof subfunction 
+			oeLoginPhaseTwo("BDS8K") {
+				ieMessage('You are logged. Welcome ...') returned to steve
+					}
+//-----------------------------
+		theClock executed instanceof subfunction 
+			oeSetClock("2017:03:13 - 10:45:13") {
+			}
+//-----------------------------
+		theClock executed instanceof subfunction 
+			oeSetTimerUntilVCodeTimeOut() {
+			}
+//-----------------------------
+		}
+	}
+//-----------------------------//-----------------------------
+        steve executed instanceof subfunction
+              oeLogout{
+                ieMessage('You are logged out ! Good Bye ...') returned to steve
+              }
+			}
+		}
+	}
+}

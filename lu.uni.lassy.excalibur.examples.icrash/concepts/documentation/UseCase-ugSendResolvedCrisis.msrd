@@ -1,0 +1,24 @@
+/*
+@author zhikin
+@date Mon Mar 20 18:34:07 CET 2017
+*/
+
+
+@@Use Case icrash.usecases.ugSendResolvedCrisis.ugSendResolvedCrisis
+@description ""
+@protocolCondition
+"
+"
+@endProtocolConditions
+@preCondition
+"
+"
+@endPreConditions
+@postCondition
+"
+"
+@endPostConditions
+@additionalInformation
+"
+none
+"

@@ -3,7 +3,6 @@ package icrash.usecases.suGlobalCrisisHandling {
 	import icrash.environment
   import icrash.usecases.subfunctions
 	import icrash.usecases.ugSecurelyUseSystem
-	import icrash.usecases.ugSMSAuthentification
 	import icrash.usecases.ugManageCrisis
   import icrash.usecases.ugMonitor
    
@@ -19,15 +18,13 @@ package icrash.usecases.suGlobalCrisisHandling {
 			step a: actCoordinator 
 			        executes ugSecurelyUseSystem
 			step b: actCoordinator
-					executes ugSMSAuthentification
-			step c: actCoordinator
 			        executes ugMonitor
-			step d: actCoordinator
+			step c: actCoordinator
 			        executes ugManageCrisis
 
       ordering constraint 
-        "steps (a) (b) (c) and (d) executions are interleaved 
-        (steps (b) (c) and (d) have their protocol constrained by steps of (a))."
+        "steps (a) (b) and (c) executions are interleaved 
+        (steps (b) and (c) have their protocol constrained by steps of (a))."
       ordering constraint 
           "steps (a) (b) and (c) can be executed multiple times."
 }

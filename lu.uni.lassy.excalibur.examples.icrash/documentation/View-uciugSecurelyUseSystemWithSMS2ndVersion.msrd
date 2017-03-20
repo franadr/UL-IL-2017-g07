@@ -1,0 +1,11 @@
+/*
+@author zhikin
+@date Mon Mar 20 18:02:35 CET 2017
+*/
+
+
+@@view uciugSecurelyUseSystemWithSMS2ndVersion
+@instance Use-Case usecases.uciugSecurelyUseSystemWithSMS2ndVersion.uciugSecurelyUseSystemWithSMS2ndVersion 
+@description "ugSecurelyUseSystemWithSMS - Fail to use the code under 15 minutes once."
+@caption "ugSecurelyUseSystemWithSMS - Fail to use the code under 15 minutes once."
+@scale MaxWidth

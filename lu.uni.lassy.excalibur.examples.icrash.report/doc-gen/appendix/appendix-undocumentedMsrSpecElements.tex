@@ -8,6 +8,7 @@
 \subsection[Undocumented Use Cases - User-Goal Level]{Undocumented User-Goal Level Use Cases}
 \begin{itemize}
 \item icrash.usecases.ugSMSAuthentification.ugSMSAuthentification 
+\item icrash.usecases.ugSendResolvedCrisis.ugSendResolvedCrisis 
 \item icrash.usecases.ugLogCompletion.ugLogCompletion 
 \end{itemize}
 
@@ -18,12 +19,10 @@
 \item icrash.usecases.ugSMSAuthentification.subfunctions.oeSetTimerUntilVCodeTimeOut 
 \item icrash.usecases.ugSMSAuthentification.subfunctions.oeSollicitateVCodeHandling 
 \item icrash.usecases.ugLogCompletion.subfonction.oeCreateLogEntry 
+\item icrash.usecases.subfunctions.oeResolved 
+\item icrash.usecases.subfunctions.oeSendToHospital 
 \end{itemize}
 
-\subsection[Undocumented Use Case Views]{Undocumented Use Case Views}
-\begin{itemize}
-\item uc-ugSMSAuthentification 
-\end{itemize}
 
 
 
@@ -33,9 +32,10 @@
 
 \subsection[Undocumented Use Case Instances - User-Goal Level]{Undocumented User-Goal Level Use Case Instances}
 \begin{itemize}
-\item concepts.uciugSMSAuthentification.uciugSMSAuthentification 
 \item usecases.uciugLogCompletion.uciugLogCompletion 
 \item usecases.uciugSecurelyUseSystem.uciugSecurelyUseSystem 
+\item usecases.uciugSecurelyUseSystemWithSMS.uciugSecurelyUseSystemWithSMS 
+\item usecases.uciugSecurelyUseSystemWithSMS2ndVersion.uciugSecurelyUseSystemWithSMS2ndVersion 
 \end{itemize}
 
 
@@ -43,10 +43,13 @@
 \begin{itemize}
 \item uciugLogCompletion 
 \item uci-uciugSecurelyUseSystem 
-\item uciugSMSAuthentification 
 \end{itemize}
 
 
+\section[Undocumented Actors]{Undocumented Actors}
+\begin{itemize}
+\item icrash.environment.actHospital 
+\end{itemize}
 
 
 
@@ -111,6 +114,7 @@
 \item icrash.environment.actAuthenticated.outactAuthenticated.oeConfirmPhoneNumber 
 \item icrash.environment.actAuthenticated.outactAuthenticated.oeLoginPhaseTwo 
 \item icrash.environment.actCoordinator.outactCoordinator.oeSendToHospital 
+\item icrash.environment.actHospital.outactHospital.oeResolved 
 \end{itemize}
 
 

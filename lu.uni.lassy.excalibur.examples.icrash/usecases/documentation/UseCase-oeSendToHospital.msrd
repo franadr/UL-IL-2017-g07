@@ -1,0 +1,26 @@
+/*
+@author zhikin
+@date Mon Mar 20 18:34:11 CET 2017
+*/
+
+
+@@Use Case Subfunction icrash.usecases.subfunctions.oeSendToHospital
+@description ""
+@parameter icrash.usecases.subfunctions.oeSendToHospital.AdtCrisisID ""
+@endParameters
+@protocolCondition
+"
+"
+@endProtocolConditions
+@preCondition
+"
+"
+@endPreConditions
+@postCondition
+"
+"
+@endPostConditions
+@additionalInformation
+"
+none
+"

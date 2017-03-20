@@ -29,8 +29,7 @@ The goal is to do an action that makes the handling of a crisis or an alert prog
 \addnumberedsinglerow{}{\msrucname{oeSetCrisisStatus [0..*]}}
 \addnumberedsinglerow{}{\msrucname{oeSetCrisisHandler [0..*]}}
 \addnumberedsinglerow{}{\msrucname{oeReportOnCrisis [0..*]}}
-\addnumberedsinglerow{}{\msrucname{oeCloseCrisis [0..*]}}
-\addnumberedsinglerow{}{\msrucname{oeInvalidateAlert [0..*]}}
+\addnumberedsinglerow{}{\msrucname{oeSendToHospital [0..*]}}
 
 \addrowheading{Protocol condition(s)}
 \addnumberedsinglerow{}{
@@ -52,8 +51,7 @@ there exist one alert or one crisis whose related information has been changed.
 \addalphanumberedsinglerow{}{the actor \msrcode{actCoordinator} executes the \msrucname{oeSetCrisisStatus} use case}
 \addalphanumberedsinglerow{}{the actor \msrcode{actCoordinator} executes the \msrucname{oeSetCrisisHandler} use case}
 \addalphanumberedsinglerow{}{the actor \msrcode{actCoordinator} executes the \msrucname{oeReportOnCrisis} use case}
-\addalphanumberedsinglerow{}{the actor \msrcode{actCoordinator} executes the \msrucname{oeCloseCrisis} use case}
-\addalphanumberedsinglerow{}{the actor \msrcode{actCoordinator} executes the \msrucname{oeInvalidateAlert} use case}
+\addalphanumberedsinglerow{}{the actor \msrcode{actCoordinator} executes the \msrucname{oeSendToHospital} use case}
 \addrowheading{Steps Ordering Constraints}
 \addnumberedsinglerow{}{managing a crisis is doing one of the indicated use cases.}
 

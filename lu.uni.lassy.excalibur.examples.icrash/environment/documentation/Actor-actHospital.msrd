@@ -1,0 +1,20 @@
+/*
+@author zhikin
+@date Mon Mar 20 18:34:08 CET 2017
+*/
+
+
+@@Actor icrash.environment.actHospital
+@description ""
+//input events
+@inputEvent
+icrash.environment.actHospital.inactHospital.ieMessage
+""
+
+@endInputEvents
+//output events
+@outputEvent
+icrash.environment.actHospital.outactHospital.oeResolved
+""
+
+@endOutputEvents
