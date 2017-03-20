@@ -1,0 +1,18 @@
+package concepts.uciugSendResolvedCrisis {
+	import icrash.usecases.ugSendResolvedCrisis
+	import icrash.usecases.subfunctions
+	import icrash.environment
+
+	Use Case Model {
+
+	use case instance uciugSendResolvedCrisis : ugSendResolvedCrisis{
+		actors {
+			kevin:actCoordinator
+			chl:actHospital
+			}
+			use case steps {
+				
+			}
+		}
+	}
+}

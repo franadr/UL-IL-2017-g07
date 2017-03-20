@@ -5,16 +5,16 @@
 
 
 @@Actor icrash.environment.actHospital
-@description ""
+@description "represents actor responsible of resolving one or several received crisis"
 //input events
 @inputEvent
 icrash.environment.actHospital.inactHospital.ieMessage
-""
+"allows for receiving general textual messages."
 
 @endInputEvents
 //output events
 @outputEvent
 icrash.environment.actHospital.outactHospital.oeResolved
-""
+"sent to define the handling status of a specific crisis."
 
 @endOutputEvents

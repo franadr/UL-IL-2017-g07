@@ -1,0 +1,10 @@
+/*
+@author Carlos
+@date Mon Mar 20 09:33:59 CET 2017
+*/
+
+
+@@view uc-ugSendResolvedCrisis
+@model Use-Case icrash.usecases.ugSendResolvedCrisis.ugSendResolvedCrisis 
+@description ""
+@caption ""
