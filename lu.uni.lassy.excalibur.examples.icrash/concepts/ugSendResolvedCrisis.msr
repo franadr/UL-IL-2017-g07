@@ -14,7 +14,7 @@ import icrash.usecases.subfunctions
 
 	use case system usergoal ugSendResolvedCrisis() {
 		actor actHospital [primary, active]
-		actor actCoordinator [secondary, active]
+		actor actCoordinator [primary, active]
 		
 		reuse oeResolved[0..*]
 		reuse oeCloseCrisis[0..*]

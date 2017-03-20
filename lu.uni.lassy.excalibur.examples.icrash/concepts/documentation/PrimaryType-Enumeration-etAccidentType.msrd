@@ -5,7 +5,7 @@
 
 
 @@Primary Type Enumeration icrash.concepts.primarytypes.datatypes.etAccidentType
-@description ""
+@description "shows a certain accident type"
 @operation
 icrash.concepts.primarytypes.datatypes.etAccidentType.is
 ""
