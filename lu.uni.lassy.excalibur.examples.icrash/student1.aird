@@ -496,6 +496,8 @@
     <semanticResources>usecases/documentation/UseCaseInstance-uciugSecurelyUseSystemWithSMS.msrd</semanticResources>
     <semanticResources>documentation/View-cm-view8.msrd</semanticResources>
     <semanticResources>documentation/View-cm-view9.msrd</semanticResources>
+    <semanticResources>concepts/usecaseinstance-ugSendResolvedCrisis-uciugSendResolvedCrisis.msr</semanticResources>
+    <semanticResources>documentation/View-uc-ugSendResolvedCrisis.msrd</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_UmILAPWqEeSOM9Kfym77Zg">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_JfZkEAlpEeek38dIUYae9A" name="uc-ugSMSAuthentification" representation="_JfZkEQlpEeek38dIUYae9A">
@@ -1754,7 +1756,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_2:InstanceRoleMapping" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Use%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@nodeMappings[name='UCI_SD_UseCaseActor%20Instance%20Role']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_xWFlhg2HEeeMkPYQlKbdAw" name="oeLogin(&quot;steve&quot;,&quot;pwd1234&quot;)" sourceNode="_xWFlXA2HEeeMkPYQlKbdAw" targetNode="_xWFlVQ2HEeeMkPYQlKbdAw">
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_xWFlhg2HEeeMkPYQlKbdAw" name="oeLogin(&quot;2&quot;,&quot;steve&quot;,&quot;pwd1234&quot;)" sourceNode="_xWFlXA2HEeeMkPYQlKbdAw" targetNode="_xWFlVQ2HEeeMkPYQlKbdAw">
       <target xmi:type="messir:UseCaseInstanceStepActor" href="usecases/usecaseinstance-ugSecurelyUseSystem-uciugSecurelyUseSystemWithSMS.msr#//@usecaseM/@useCaseInstances.0/@useCaseInstanceDefinition/@useCaseInstanceStepsBlock/@useCaseInstanceSteps.0/@actor"/>
       <semanticElements xmi:type="messir:UseCaseInstanceStepActor" href="usecases/usecaseinstance-ugSecurelyUseSystem-uciugSecurelyUseSystemWithSMS.msr#//@usecaseM/@useCaseInstances.0/@useCaseInstanceDefinition/@useCaseInstanceStepsBlock/@useCaseInstanceSteps.0/@actor"/>
       <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_xp0Zrw2HEeeMkPYQlKbdAw" y="130" height="0"/>
@@ -2780,13 +2782,15 @@
       </ownedStyle>
       <actualMapping xmi:type="description_2:InstanceRoleMapping" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Use%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@nodeMappings[name='UCI_SD_UseCaseActor%20Instance%20Role']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_A-Kpfg2PEeeMkPYQlKbdAw" name="oeLogin(&quot;steve&quot;,&quot;pwd1234&quot;)" sourceNode="_A-KpTA2PEeeMkPYQlKbdAw" targetNode="_A-KpRQ2PEeeMkPYQlKbdAw">
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_A-Kpfg2PEeeMkPYQlKbdAw" name="oeLogin(&quot;2&quot;,&quot;steve&quot;,&quot;pwd1234&quot;)" sourceNode="_A-KpTA2PEeeMkPYQlKbdAw" targetNode="_A-KpRQ2PEeeMkPYQlKbdAw">
       <target xmi:type="messir:UseCaseInstanceStepActor" href="usecases/usecaseinstance-ugSecurelyUseSystem-uciugSecurelyUseSystemWithSM.msr#//@usecaseM/@useCaseInstances.0/@useCaseInstanceDefinition/@useCaseInstanceStepsBlock/@useCaseInstanceSteps.0/@actor"/>
       <semanticElements xmi:type="messir:UseCaseInstanceStepActor" href="usecases/usecaseinstance-ugSecurelyUseSystem-uciugSecurelyUseSystemWithSM.msr#//@usecaseM/@useCaseInstances.0/@useCaseInstanceDefinition/@useCaseInstanceStepsBlock/@useCaseInstanceSteps.0/@actor"/>
       <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_BQw1Mw2PEeeMkPYQlKbdAw" y="130" height="0"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_A-Kpfw2PEeeMkPYQlKbdAw" size="2">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Use%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@edgeMappings[name='UCI_SD_UC_Executed']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_A-KpgA2PEeeMkPYQlKbdAw" showIcon="false"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_A-KpgA2PEeeMkPYQlKbdAw" showIcon="false">
+          <customFeatures>labelSize</customFeatures>
+        </centerLabelStyle>
       </ownedStyle>
       <actualMapping xmi:type="description_2:BasicMessageMapping" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Use%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@edgeMappings[name='UCI_SD_UC_Executed']"/>
     </ownedDiagramElements>
@@ -2796,7 +2800,9 @@
       <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_BQw1NA2PEeeMkPYQlKbdAw" y="375" height="0"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_A-Kpgg2PEeeMkPYQlKbdAw" size="2">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Use%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@edgeMappings[name='UCI_SD_UC_Executed']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_A-Kpgw2PEeeMkPYQlKbdAw" showIcon="false"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_A-Kpgw2PEeeMkPYQlKbdAw" showIcon="false">
+          <customFeatures>labelSize</customFeatures>
+        </centerLabelStyle>
       </ownedStyle>
       <actualMapping xmi:type="description_2:BasicMessageMapping" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Use%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@edgeMappings[name='UCI_SD_UC_Executed']"/>
     </ownedDiagramElements>
@@ -2806,17 +2812,21 @@
       <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_BQw1NQ2PEeeMkPYQlKbdAw" y="441" height="0"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_A-KphQ2PEeeMkPYQlKbdAw" size="2">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Use%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@edgeMappings[name='UCI_SD_UC_Executed']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_A-Kphg2PEeeMkPYQlKbdAw" showIcon="false"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_A-Kphg2PEeeMkPYQlKbdAw" showIcon="false">
+          <customFeatures>labelSize</customFeatures>
+        </centerLabelStyle>
       </ownedStyle>
       <actualMapping xmi:type="description_2:BasicMessageMapping" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Use%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@edgeMappings[name='UCI_SD_UC_Executed']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_A-Kphw2PEeeMkPYQlKbdAw" name="oeLogin(&quot;steve&quot;,&quot;pwd1234&quot;)" sourceNode="_A-KpTg2PEeeMkPYQlKbdAw" targetNode="_A-KpRQ2PEeeMkPYQlKbdAw">
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_A-Kphw2PEeeMkPYQlKbdAw" name="oeLogin(&quot;2&quot;,&quot;steve&quot;,&quot;pwd1234&quot;)" sourceNode="_A-KpTg2PEeeMkPYQlKbdAw" targetNode="_A-KpRQ2PEeeMkPYQlKbdAw">
       <target xmi:type="messir:UseCaseInstanceStepActor" href="usecases/usecaseinstance-ugSecurelyUseSystem-uciugSecurelyUseSystemWithSM.msr#//@usecaseM/@useCaseInstances.0/@useCaseInstanceDefinition/@useCaseInstanceStepsBlock/@useCaseInstanceSteps.2/@actor"/>
       <semanticElements xmi:type="messir:UseCaseInstanceStepActor" href="usecases/usecaseinstance-ugSecurelyUseSystem-uciugSecurelyUseSystemWithSM.msr#//@usecaseM/@useCaseInstances.0/@useCaseInstanceDefinition/@useCaseInstanceStepsBlock/@useCaseInstanceSteps.2/@actor"/>
       <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_BQw1Ng2PEeeMkPYQlKbdAw" y="678" height="0"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_A-KpiA2PEeeMkPYQlKbdAw" size="2">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Use%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@edgeMappings[name='UCI_SD_UC_Executed']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_A-KpiQ2PEeeMkPYQlKbdAw" showIcon="false"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_A-KpiQ2PEeeMkPYQlKbdAw" showIcon="false">
+          <customFeatures>labelSize</customFeatures>
+        </centerLabelStyle>
       </ownedStyle>
       <actualMapping xmi:type="description_2:BasicMessageMapping" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Use%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@edgeMappings[name='UCI_SD_UC_Executed']"/>
     </ownedDiagramElements>
@@ -2826,7 +2836,9 @@
       <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_BQw1Nw2PEeeMkPYQlKbdAw" y="914" height="0"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_A-Kpiw2PEeeMkPYQlKbdAw" size="2">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Use%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@edgeMappings[name='UCI_SD_UC_Executed']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_A-KpjA2PEeeMkPYQlKbdAw" showIcon="false"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_A-KpjA2PEeeMkPYQlKbdAw" showIcon="false">
+          <customFeatures>labelSize</customFeatures>
+        </centerLabelStyle>
       </ownedStyle>
       <actualMapping xmi:type="description_2:BasicMessageMapping" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Use%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@edgeMappings[name='UCI_SD_UC_Executed']"/>
     </ownedDiagramElements>
@@ -2836,7 +2848,9 @@
       <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_BQw1OA2PEeeMkPYQlKbdAw" y="974" height="0"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_A-Kpjg2PEeeMkPYQlKbdAw" size="2">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Use%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@edgeMappings[name='UCI_SD_UC_Executed']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_A-Kpjw2PEeeMkPYQlKbdAw" showIcon="false"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_A-Kpjw2PEeeMkPYQlKbdAw" showIcon="false">
+          <customFeatures>labelSize</customFeatures>
+        </centerLabelStyle>
       </ownedStyle>
       <actualMapping xmi:type="description_2:BasicMessageMapping" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Use%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@edgeMappings[name='UCI_SD_UC_Executed']"/>
     </ownedDiagramElements>
@@ -2846,7 +2860,9 @@
       <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_BQw1OQ2PEeeMkPYQlKbdAw" y="1020" height="0"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_A-KpkQ2PEeeMkPYQlKbdAw" size="2">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Use%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@edgeMappings[name='UCI_SD_UC_Executed']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_A-Kpkg2PEeeMkPYQlKbdAw" showIcon="false"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_A-Kpkg2PEeeMkPYQlKbdAw" showIcon="false">
+          <customFeatures>labelSize</customFeatures>
+        </centerLabelStyle>
       </ownedStyle>
       <actualMapping xmi:type="description_2:BasicMessageMapping" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Use%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@edgeMappings[name='UCI_SD_UC_Executed']"/>
     </ownedDiagramElements>
@@ -2856,7 +2872,9 @@
       <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_BQw1Og2PEeeMkPYQlKbdAw" y="1143" height="0"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_A-KplA2PEeeMkPYQlKbdAw" size="2">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Use%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@edgeMappings[name='UCI_SD_UC_Executed']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_A-KplQ2PEeeMkPYQlKbdAw" showIcon="false"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_A-KplQ2PEeeMkPYQlKbdAw" showIcon="false">
+          <customFeatures>labelSize</customFeatures>
+        </centerLabelStyle>
       </ownedStyle>
       <actualMapping xmi:type="description_2:BasicMessageMapping" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Use%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@edgeMappings[name='UCI_SD_UC_Executed']"/>
     </ownedDiagramElements>
@@ -2866,7 +2884,9 @@
       <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_BQw1Ow2PEeeMkPYQlKbdAw" y="1205" height="0"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_A-Kplw2PEeeMkPYQlKbdAw" size="2">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Use%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@edgeMappings[name='UCI_SD_UC_Executed']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_A-KpmA2PEeeMkPYQlKbdAw" showIcon="false"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_A-KpmA2PEeeMkPYQlKbdAw" showIcon="false">
+          <customFeatures>labelSize</customFeatures>
+        </centerLabelStyle>
       </ownedStyle>
       <actualMapping xmi:type="description_2:BasicMessageMapping" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Use%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@edgeMappings[name='UCI_SD_UC_Executed']"/>
     </ownedDiagramElements>
@@ -2876,7 +2896,9 @@
       <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_BQw1PA2PEeeMkPYQlKbdAw" y="1253" height="0"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_A-Kpmg2PEeeMkPYQlKbdAw" size="2">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Use%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@edgeMappings[name='UCI_SD_UC_Executed']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_A-Kpmw2PEeeMkPYQlKbdAw" showIcon="false"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_A-Kpmw2PEeeMkPYQlKbdAw" showIcon="false">
+          <customFeatures>labelSize</customFeatures>
+        </centerLabelStyle>
       </ownedStyle>
       <actualMapping xmi:type="description_2:BasicMessageMapping" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Use%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@edgeMappings[name='UCI_SD_UC_Executed']"/>
     </ownedDiagramElements>
@@ -2886,7 +2908,9 @@
       <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_BQw1PQ2PEeeMkPYQlKbdAw" y="190" height="0"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_A-KpnQ2PEeeMkPYQlKbdAw" lineStyle="dash" sourceArrow="InputArrow" targetArrow="NoDecoration" size="2">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Use%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@edgeMappings[name='UCI_SD_UC_Subfunction_Return_Message']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_A-Kpng2PEeeMkPYQlKbdAw" showIcon="false"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_A-Kpng2PEeeMkPYQlKbdAw" showIcon="false">
+          <customFeatures>labelSize</customFeatures>
+        </centerLabelStyle>
       </ownedStyle>
       <actualMapping xmi:type="description_2:BasicMessageMapping" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Use%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@edgeMappings[name='UCI_SD_UC_Subfunction_Return_Message']"/>
     </ownedDiagramElements>
@@ -2896,7 +2920,9 @@
       <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_BQw1Pg2PEeeMkPYQlKbdAw" y="300" height="0"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_A-KpoA2PEeeMkPYQlKbdAw" lineStyle="dash" sourceArrow="InputArrow" targetArrow="NoDecoration" size="2">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Use%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@edgeMappings[name='UCI_SD_UC_Subfunction_Return_Message']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_A-KpoQ2PEeeMkPYQlKbdAw" showIcon="false"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_A-KpoQ2PEeeMkPYQlKbdAw" showIcon="false">
+          <customFeatures>labelSize</customFeatures>
+        </centerLabelStyle>
       </ownedStyle>
       <actualMapping xmi:type="description_2:BasicMessageMapping" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Use%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@edgeMappings[name='UCI_SD_UC_Subfunction_Return_Message']"/>
     </ownedDiagramElements>
@@ -2906,7 +2932,9 @@
       <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_BQw1Pw2PEeeMkPYQlKbdAw" y="495" height="0"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_A-Kpow2PEeeMkPYQlKbdAw" lineStyle="dash" sourceArrow="InputArrow" targetArrow="NoDecoration" size="2">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Use%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@edgeMappings[name='UCI_SD_UC_Subfunction_Return_Message']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_A-KppA2PEeeMkPYQlKbdAw" showIcon="false"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_A-KppA2PEeeMkPYQlKbdAw" showIcon="false">
+          <customFeatures>labelSize</customFeatures>
+        </centerLabelStyle>
       </ownedStyle>
       <actualMapping xmi:type="description_2:BasicMessageMapping" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Use%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@edgeMappings[name='UCI_SD_UC_Subfunction_Return_Message']"/>
     </ownedDiagramElements>
@@ -2916,7 +2944,9 @@
       <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_BQw1QA2PEeeMkPYQlKbdAw" y="550" height="0"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_A-Kppg2PEeeMkPYQlKbdAw" lineStyle="dash" sourceArrow="InputArrow" targetArrow="NoDecoration" size="2">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Use%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@edgeMappings[name='UCI_SD_UC_Subfunction_Return_Message']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_A-Kppw2PEeeMkPYQlKbdAw" showIcon="false"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_A-Kppw2PEeeMkPYQlKbdAw" showIcon="false">
+          <customFeatures>labelSize</customFeatures>
+        </centerLabelStyle>
       </ownedStyle>
       <actualMapping xmi:type="description_2:BasicMessageMapping" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Use%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@edgeMappings[name='UCI_SD_UC_Subfunction_Return_Message']"/>
     </ownedDiagramElements>
@@ -2926,7 +2956,9 @@
       <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_BQw1QQ2PEeeMkPYQlKbdAw" y="614" height="0"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_A-KpqQ2PEeeMkPYQlKbdAw" lineStyle="dash" sourceArrow="InputArrow" targetArrow="NoDecoration" size="2">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Use%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@edgeMappings[name='UCI_SD_UC_Subfunction_Return_Message']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_A-Kpqg2PEeeMkPYQlKbdAw" showIcon="false"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_A-Kpqg2PEeeMkPYQlKbdAw" showIcon="false">
+          <customFeatures>labelSize</customFeatures>
+        </centerLabelStyle>
       </ownedStyle>
       <actualMapping xmi:type="description_2:BasicMessageMapping" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Use%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@edgeMappings[name='UCI_SD_UC_Subfunction_Return_Message']"/>
     </ownedDiagramElements>
@@ -2936,7 +2968,9 @@
       <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_BQw1Qg2PEeeMkPYQlKbdAw" y="743" height="0"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_A-KprA2PEeeMkPYQlKbdAw" lineStyle="dash" sourceArrow="InputArrow" targetArrow="NoDecoration" size="2">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Use%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@edgeMappings[name='UCI_SD_UC_Subfunction_Return_Message']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_A-KprQ2PEeeMkPYQlKbdAw" showIcon="false"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_A-KprQ2PEeeMkPYQlKbdAw" showIcon="false">
+          <customFeatures>labelSize</customFeatures>
+        </centerLabelStyle>
       </ownedStyle>
       <actualMapping xmi:type="description_2:BasicMessageMapping" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Use%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@edgeMappings[name='UCI_SD_UC_Subfunction_Return_Message']"/>
     </ownedDiagramElements>
@@ -2946,7 +2980,9 @@
       <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_BQw1Qw2PEeeMkPYQlKbdAw" y="856" height="0"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_A-Kprw2PEeeMkPYQlKbdAw" lineStyle="dash" sourceArrow="InputArrow" targetArrow="NoDecoration" size="2">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Use%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@edgeMappings[name='UCI_SD_UC_Subfunction_Return_Message']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_A-KpsA2PEeeMkPYQlKbdAw" showIcon="false"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_A-KpsA2PEeeMkPYQlKbdAw" showIcon="false">
+          <customFeatures>labelSize</customFeatures>
+        </centerLabelStyle>
       </ownedStyle>
       <actualMapping xmi:type="description_2:BasicMessageMapping" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Use%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@edgeMappings[name='UCI_SD_UC_Subfunction_Return_Message']"/>
     </ownedDiagramElements>
@@ -2956,7 +2992,9 @@
       <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_BQw1RA2PEeeMkPYQlKbdAw" y="1078" height="0"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_A-Kpsg2PEeeMkPYQlKbdAw" lineStyle="dash" sourceArrow="InputArrow" targetArrow="NoDecoration" size="2">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Use%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@edgeMappings[name='UCI_SD_UC_Subfunction_Return_Message']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_A-Kpsw2PEeeMkPYQlKbdAw" showIcon="false"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_A-Kpsw2PEeeMkPYQlKbdAw" showIcon="false">
+          <customFeatures>labelSize</customFeatures>
+        </centerLabelStyle>
       </ownedStyle>
       <actualMapping xmi:type="description_2:BasicMessageMapping" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Use%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@edgeMappings[name='UCI_SD_UC_Subfunction_Return_Message']"/>
     </ownedDiagramElements>
@@ -2966,7 +3004,9 @@
       <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_BQw1RQ2PEeeMkPYQlKbdAw" y="1324" height="0"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_A-KptQ2PEeeMkPYQlKbdAw" lineStyle="dash" sourceArrow="InputArrow" targetArrow="NoDecoration" size="2">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Use%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@edgeMappings[name='UCI_SD_UC_Subfunction_Return_Message']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_A-Kptg2PEeeMkPYQlKbdAw" showIcon="false"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_A-Kptg2PEeeMkPYQlKbdAw" showIcon="false">
+          <customFeatures>labelSize</customFeatures>
+        </centerLabelStyle>
       </ownedStyle>
       <actualMapping xmi:type="description_2:BasicMessageMapping" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Use%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer/@edgeMappings[name='UCI_SD_UC_Subfunction_Return_Message']"/>
     </ownedDiagramElements>

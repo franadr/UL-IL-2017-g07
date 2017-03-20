@@ -73,6 +73,7 @@ import lu.uni.lassy.messir.libraries.calendar
 				constants["Road","Work/Sport","Attack"]
 				operation is():ptBoolean
 			}
+
 		}
 	}
 }
