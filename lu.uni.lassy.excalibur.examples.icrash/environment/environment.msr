@@ -73,6 +73,7 @@ import lu.uni.lassy.messir.libraries.calendar
 				operation oeValidateAlert(AdtAlertID:dtAlertID ):ptBoolean
 				
 				operation oeSendToHospital(
+											AdtCrisisID:dtCrisisID,
 											AdtPhoneNumber:dtPhoneNumber ,
 											AdtDate:dtDate ,
 											AdtTime:dtTime ,

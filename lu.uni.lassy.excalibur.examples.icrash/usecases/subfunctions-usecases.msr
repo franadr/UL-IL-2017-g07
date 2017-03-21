@@ -103,7 +103,7 @@ import icrash.environment
     }
   }
 //----------------------------------------------------
-  use case system subfunction oeReportOnCrisis(AdtCrisisID:dtCrisisID,AdtComment:dtComment) {
+  use case system subfunction oeReportOnCrisis(AdtCrisisID:dtCrisisID,AetAccidentType:etAccidentType) {
     actor actCoordinator[primary,active]
     returned messages {
       ieMessage(AMessage) returned to actCoordinator
@@ -138,7 +138,7 @@ import icrash.environment
     }
   }
 //----------------------------------------------------
-  use case system subfunction oeSendToHospital(AdtCrisisID:dtCrisisID){
+  use case system subfunction oeSendToHospital(AdtCrisisID:dtCrisisID, AdtPhoneNumber:dtPhoneNumber, AdtDate:dtDate, AdtTime:dtTime, AdtGPSLocation:dtGPSLocation, AetAccidentType:etAccidentType	){
   	actor actCoordinator[primary, active]
   	actor actHospital[secondary, passive]
   	returned messages {

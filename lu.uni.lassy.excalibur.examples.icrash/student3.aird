@@ -497,6 +497,8 @@
     <semanticResources>usecases/documentation/UseCaseInstance-uciugLogCompletion.msrd</semanticResources>
     <semanticResources>documentation/View-cm-view8.msrd</semanticResources>
     <semanticResources>documentation/View-cm-view9.msrd</semanticResources>
+    <semanticResources>operations/environment/environment-actHospital-oeResolved.msr</semanticResources>
+    <semanticResources>documentation/View-em-view10.msrd</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_WzMfgPWqEeSOM9Kfym77Zg">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_HYErMAlpEeeXPe1toLtFXg" name="ugLogCompletion" representation="_HYIVkAlpEeeXPe1toLtFXg">
