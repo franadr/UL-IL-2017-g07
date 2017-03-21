@@ -1,0 +1,15 @@
+/*
+@author Carlos
+@date Tue Mar 21 11:32:35 CET 2017
+*/
+
+
+@@view uci-uciugSendResolvedCrisis
+@instance Use-Case concepts.uciugSendResolvedCrisis.uciugSendResolvedCrisis 
+@description ""
+@caption ""
+
+@@view uci-uciugSendResolvedCrisis
+@instance Use-Case concepts.uciugSendResolvedCrisis.uciugSendResolvedCrisis 
+@description ""
+@caption ""
