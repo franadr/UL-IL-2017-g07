@@ -8,8 +8,3 @@
 @instance Use-Case concepts.uciugSendResolvedCrisis.uciugSendResolvedCrisis 
 @description ""
 @caption ""
-
-@@view uci-uciugSendResolvedCrisis
-@instance Use-Case concepts.uciugSendResolvedCrisis.uciugSendResolvedCrisis 
-@description ""
-@caption ""
