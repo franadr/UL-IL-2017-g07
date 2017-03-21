@@ -50,7 +50,7 @@ import lu.uni.lassy.messir.libraries.calendar
 				attribute status: etCrisisStatus
 				attribute location:dtGPSLocation
 				attribute instant:dtDateAndTime
-				attribute comment:dtComment
+				attribute accidentType:etAccidentType
 				
 				operation init(
 										Aid:dtCrisisID ,
@@ -58,7 +58,7 @@ import lu.uni.lassy.messir.libraries.calendar
 										Astatus:etCrisisStatus ,
 										Alocation:dtGPSLocation ,
 										Ainstant:dtDateAndTime ,
-										Acomment:dtComment ):ptBoolean
+										AaccidentType:etAccidentType ):ptBoolean
 										
 				operation handlingDelayPassed():ptBoolean
         operation maxHandlingDelayPassed():ptBoolean
@@ -115,6 +115,18 @@ import lu.uni.lassy.messir.libraries.calendar
 										Alogin:dtLogin ,
 										Apwd:dtPassword ):ptBoolean
 			}
+			
+			class ctHospital
+					role rnctHospital
+					cardinality [0..*]{
+				
+				attribute location:dtGPSLocation
+				attribute inService:ptBoolean
+				
+				operation init(
+										Alocation:dtGPSLocation,
+										AinService:ptBoolean	):ptBoolean
+					}
 			
 			class ctEventLog 
 					role rnEventLog 

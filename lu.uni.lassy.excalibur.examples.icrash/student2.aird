@@ -509,6 +509,7 @@
     <semanticResources>usecases/documentation/UseCaseInstance-uciugSecurelyUseSystemWithSMS2ndVersion.msrd</semanticResources>
     <semanticResources>usecases/usecaseinstance-ugSecurelyUseSystem-uciugSecurelyUseSystemWithSM.msr</semanticResources>
     <semanticResources>usecases/usecaseinstance-ugSecurelyUseSystem-uciugSecurelyUseSystemWithSMS.msr</semanticResources>
+    <semanticResources>documentation/View-uci-uciugSendResolvedCrisis.msrd</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_VxVZ4PWqEeSOM9Kfym77Zg">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_LCV8MA1IEeeiBKenHAAEBg" name="uc-ugSendResolvedCrisis" representation="_LCdQ8A1IEeeiBKenHAAEBg">

@@ -23,6 +23,10 @@ association assctCrisisctCoordinator
 	ctCrisis(rnHandled)[0..*]
 	ctCoordinator(rnHandler)[0..1]
 
+association assctCrisisctHospital
+	ctCrisis(rnResolved)[0..*]
+	ctHospital(rnResolver)[1..1]
+
 association assctLogEntryctEventLog 
 	ctLogEntry(rnLogEntry)[1..*] 
 	ctEventLog(rnTheLog)[1..1]	
@@ -39,6 +43,10 @@ association assctLogEntryctEventLog
  		association assctAuthenticatedactAuthenticated 
  					ctAuthenticated(rnctAuthenticated)[1..1]
  					actAuthenticated(rnactAuthenticated)[1..1]
+ 		
+ 		association assctHospitalactCoordinator2
+ 					ctHospital(rnctHospital)[1..*]
+ 					actCoordinator(rnactCoordinator2)[1..1]
 			
 		}
 	}

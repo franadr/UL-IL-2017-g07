@@ -7,10 +7,30 @@ package concepts.uciugSendResolvedCrisis {
 
 	use case instance uciugSendResolvedCrisis : ugSendResolvedCrisis{
 		actors {
-			kevin:actCoordinator
-			chl:actHospital
+			bill : actCoordinator
+			chl : actHospital
 			}
 			use case steps {
+				chl
+				executed instanceof subfunction
+				icrash.usecases.subfunctions.oeResolved("1"){
+					ieMessage("The status of the crisis has been sent") returned to chl
+				}
+				bill
+				executed instanceof subfunction
+				icrash.usecases.subfunctions.oeCloseCrisis("1"){
+					ieMessage("Crisis #1 has been closed") returned to bill
+				}
+				bill
+				executed instanceof subfunction
+				icrash.usecases.subfunctions.oeInvalidateAlert("1"){
+					ieMessage("Alert #1 has been invalidated") returned to bill
+				}
+				bill
+				executed instanceof subfunction
+				icrash.usecases.subfunctions.oeInvalidateAlert("2"){
+					ieMessage("Alert #1 has been invalidated") returned to bill
+				}
 				
 			}
 		}

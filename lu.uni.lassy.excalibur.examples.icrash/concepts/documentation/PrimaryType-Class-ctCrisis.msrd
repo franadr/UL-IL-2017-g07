@@ -18,8 +18,8 @@
 @attribute icrash.concepts.primarytypes.classes.ctCrisis.instant
 "the date and time at which the first related alert notification has been sent."
 
-@attribute icrash.concepts.primarytypes.classes.ctCrisis.comment
-"a textual description providing unstructured information on the crisis handling."
+@attribute icrash.concepts.primarytypes.classes.ctCrisis.accidentType
+"a crisis accident type."
 
 @endAttributes
 

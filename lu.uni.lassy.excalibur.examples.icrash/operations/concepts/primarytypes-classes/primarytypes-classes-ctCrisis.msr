@@ -20,7 +20,7 @@ operation: icrash.concepts.primarytypes.classes.ctCrisis.init(
                 Astatus:etCrisisStatus,
                 Alocation:dtGPSLocation,
                 Ainstant:dtDateAndTime,
-                Acomment:dtComment
+                AaccidentType:etAccidentType
               ):ptBoolean{
 postF{
 if
@@ -32,7 +32,7 @@ and Self.type = Atype
 and Self.status = Astatus
 and Self.location = Alocation
 and Self.instant = Ainstant
-and Self.comment = Acomment
+and Self.accidentType = AaccidentType
 /* Post F02 */
 and (Self.oclIsNew and self = Self)
 )
