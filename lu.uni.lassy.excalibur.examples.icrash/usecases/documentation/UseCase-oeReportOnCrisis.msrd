@@ -3,7 +3,7 @@
 "goal is to update the textual information available for a specific handled crisis.
 "
 @parameter icrash.usecases.subfunctions.oeReportOnCrisis.AdtCrisisID ""
-@parameter icrash.usecases.subfunctions.oeReportOnCrisis.AdtComment ""
+@parameter icrash.usecases.subfunctions.oeReportOnCrisis.AetAccidentType ""
 @endParameters
 @protocolCondition
 "
