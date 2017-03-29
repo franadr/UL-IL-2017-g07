@@ -35,7 +35,7 @@ icrash.environment.actActivator.outactActivator.oeaddLogEntry.AdtTime
 @endPreF
 //postFunctional descriptions
 @postF 
-"There is a new instance of ctLogEntry for each instance of ctEvent"
+"There is a new instance of ctLogEntry created for each instance of ctEvent"
 
 @postF
 "All instance of type ctEvent are deleted"
