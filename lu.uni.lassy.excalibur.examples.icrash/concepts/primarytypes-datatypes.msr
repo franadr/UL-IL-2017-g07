@@ -48,7 +48,7 @@ import lu.uni.lassy.messir.libraries.calendar
 			}
 			
 			enum etCrisisStatus {
-				constants["pending", "handled", "solved","closed"]
+				constants["pending", "handled", "treated", "incorrect","closed"]
 				operation is():ptBoolean
 			}
 			enum etAlertStatus {
@@ -59,6 +59,10 @@ import lu.uni.lassy.messir.libraries.calendar
 				constants["small", "medium", "huge"]
 				operation is():ptBoolean
 			}
+			enum etCrisisCategory {
+				constants["1: Immediately life-threatening", "2: Imminently life-threatening", "3: Potentially life-threatening", "4: Potentially serious", "5: Less urgent"]
+				operation is():ptBoolean
+			}
 			enum etHumanKind {
 				constants["witness", "victim", "anonymous"]
 				operation is():ptBoolean
@@ -66,11 +70,6 @@ import lu.uni.lassy.messir.libraries.calendar
 			
 			enum etEventType {
 				constants["Crisis", "Alert","System"]
-				operation is():ptBoolean
-			}
-			
-			enum etAccidentType {
-				constants["Road","Work/Sport","Attack"]
 				operation is():ptBoolean
 			}
 

@@ -64,22 +64,15 @@ import lu.uni.lassy.messir.libraries.calendar
 											):ptBoolean
 				operation oeSetCrisisStatus(
 											AdtCrisisID:dtCrisisID ,
-											AetCrisisStatus:etCrisisStatus 
+											AetCrisisStatus:etCrisisStatus
 											):ptBoolean
 				operation oeSetCrisisType(
                                           AdtCrisisID:dtCrisisID ,
-                                          AetCrisisType:etCrisisType
+                                          AetCrisisType:etCrisisType ,
+										  AetCrisisCategory:etCrisisCategory 
                                           ):ptBoolean
 				operation oeValidateAlert(AdtAlertID:dtAlertID ):ptBoolean
 				
-				operation oeSendToHospital(
-											AdtCrisisID:dtCrisisID,
-											AdtPhoneNumber:dtPhoneNumber ,
-											AdtDate:dtDate ,
-											AdtTime:dtTime ,
-											AdtGPSLocation:dtGPSLocation ,
-											AetAccidentType:etAccidentType				
-											):ptBoolean
 				
 			}
 			
@@ -116,13 +109,21 @@ import lu.uni.lassy.messir.libraries.calendar
 			operation init():ptBoolean
 			
 			output interface outactHospital{
-				operation oeResolved(
-										AetCrisisStatus:etCrisisStatus
-									):ptBoolean
+				operation oeTreated(AdtCrisisID:dtCrisisID, AetCrisisStatus:etCrisisStatus):ptBoolean
+				operation oeCallNumber(AdtPhoneNumber:dtPhoneNumber):ptBoolean
+				operation oeSendBack(AdtCrisisID:dtCrisisID, AetCrisisStatus:etCrisisStatus):ptBoolean
 			}
 			
 			input interface inactHospital{
 				operation ieMessage(AMessage:ptString):ptBoolean
+				operation ieReceiveCrisis(AdtCrisisID:dtCrisisID,
+											AdtDate:dtDate ,
+											AdtTime:dtTime ,
+											AetCrisisType:etCrisisType ,
+											AetCrisisCategory:etCrisisCategory ,
+											AdtPhoneNumber:dtPhoneNumber ,
+											AdtGPSLocation:dtGPSLocation ,
+											AdtComment:dtComment):ptBoolean
 			}
 		}
 
@@ -156,6 +157,16 @@ import lu.uni.lassy.messir.libraries.calendar
 														ApeText : ptString,
 														AdtTime: dtTime
 													):ptBoolean
+				proactive operation oeSendToHospital(
+											AdtCrisisID:dtCrisisID,
+											AdtDate:dtDate ,
+											AdtTime:dtTime ,
+											AetCrisisType:etCrisisType ,
+											AetCrisisCategory:etCrisisCategory ,
+											AdtPhoneNumber:dtPhoneNumber ,
+											AdtGPSLocation:dtGPSLocation ,
+											AdtComment:dtComment				
+											):ptBoolean
 			}
 			
 			input interface inactActivator{

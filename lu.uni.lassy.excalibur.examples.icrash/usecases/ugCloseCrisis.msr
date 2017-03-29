@@ -1,0 +1,35 @@
+/*
+* @author Carlos
+* @date Wed Mar 29 10:03:00 CEST 2017
+*/
+
+package icrash.usecases.ugCloseCrisis.msr {
+
+import lu.uni.lassy.messir.libraries.primitives
+import icrash.environment
+import icrash.usecases.subfunctions
+
+
+	Use Case Model {
+		
+		use case system usergoal ugCloseCrisis(){
+			actor actCoordinator[primary, active]
+			actor actHospital[primary, active]
+			
+			reuse oeTreated[0..*]
+			reuse oeCallNumber[0..*]
+			reuse oeCloseCrisis[0..*]
+			reuse oeInvalidateAlert[0..*]
+			
+			step a: actHospital executes oeCallNumber
+			step b: actHospital executes oeTreated
+			step c: actCoordinator executes oeCloseCrisis
+			step d: actCoordinator executes oeInvalidateAlert
+			
+			ordering constraint "closing a crisis is doing one of the indicated use cases."
+		}
+
+	}
+
+
+}

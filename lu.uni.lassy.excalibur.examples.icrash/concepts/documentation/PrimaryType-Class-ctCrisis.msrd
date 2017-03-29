@@ -9,6 +9,9 @@
 @attribute icrash.concepts.primarytypes.classes.ctCrisis.type
 "an indication of the gravity of the crisis."
 
+@attribute icrash.concepts.primarytypes.classes.ctCrisis.category
+"an indication of the gravity of the crisis."
+
 @attribute icrash.concepts.primarytypes.classes.ctCrisis.status
 "the crisis handling status."
 
@@ -18,8 +21,8 @@
 @attribute icrash.concepts.primarytypes.classes.ctCrisis.instant
 "the date and time at which the first related alert notification has been sent."
 
-@attribute icrash.concepts.primarytypes.classes.ctCrisis.accidentType
-"a crisis accident type."
+@attribute icrash.concepts.primarytypes.classes.ctCrisis.comment
+"a comment describing the crisis."
 
 @endAttributes
 

@@ -47,18 +47,20 @@ import lu.uni.lassy.messir.libraries.calendar
 			class ctCrisis role rnctCrisis cardinality [0..*]{
 				attribute id:dtCrisisID
 				attribute type:etCrisisType
+				attribute category:etCrisisCategory
 				attribute status: etCrisisStatus
 				attribute location:dtGPSLocation
 				attribute instant:dtDateAndTime
-				attribute accidentType:etAccidentType
+				attribute comment:dtComment
 				
 				operation init(
 										Aid:dtCrisisID ,
 										Atype:etCrisisType ,
+										Acategory:etCrisisCategory ,
 										Astatus:etCrisisStatus ,
 										Alocation:dtGPSLocation ,
 										Ainstant:dtDateAndTime ,
-										AaccidentType:etAccidentType ):ptBoolean
+										Acomment:dtComment ):ptBoolean
 										
 				operation handlingDelayPassed():ptBoolean
         operation maxHandlingDelayPassed():ptBoolean
@@ -121,11 +123,9 @@ import lu.uni.lassy.messir.libraries.calendar
 					cardinality [0..*]{
 				
 				attribute location:dtGPSLocation
-				attribute inService:ptBoolean
 				
 				operation init(
-										Alocation:dtGPSLocation,
-										AinService:ptBoolean	):ptBoolean
+										Alocation:dtGPSLocation	):ptBoolean
 					}
 			
 			class ctEventLog 

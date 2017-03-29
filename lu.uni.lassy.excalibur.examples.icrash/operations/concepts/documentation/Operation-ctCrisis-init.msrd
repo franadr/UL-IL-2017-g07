@@ -5,13 +5,15 @@ icrash.concepts.primarytypes.classes.ctCrisis.init
 "used to initialize the id field"
 @parameter icrash.concepts.primarytypes.classes.ctCrisis.init.Atype
 "used to initialize the type field"
+@parameter icrash.concepts.primarytypes.classes.ctCrisis.init.Acategory
+"used to initialize the category field"
 @parameter icrash.concepts.primarytypes.classes.ctCrisis.init.Astatus
 "used to initialize the status field"
 @parameter icrash.concepts.primarytypes.classes.ctCrisis.init.Alocation
 "used to initialize the location field"
 @parameter icrash.concepts.primarytypes.classes.ctCrisis.init.Ainstant
 "used to initialize the instant field"
-@parameter icrash.concepts.primarytypes.classes.ctCrisis.init.AaccidentType
+@parameter icrash.concepts.primarytypes.classes.ctCrisis.init.Acomment
 "used to initialize the accidentType field"
 @endParameters
 @description

@@ -1,0 +1,46 @@
+package usecases.uciugCloseCrisis {
+	import icrash.usecases.ugCloseCrisis.msr
+
+	Use Case Model {
+
+		use case instance uciugCloseCrisis : ugCloseCrisis{
+			actors {
+				chl : icrash.environment.actHospital
+				bill : icrash.environment.actCoordinator
+				
+			}
+			use case steps {
+				chl
+				executed instanceof subfunction
+				icrash.usecases.subfunctions.oeCallNumber("691582496"){
+					ieMessage("Calling...") returned to chl
+				}
+				
+				chl
+				executed instanceof subfunction
+				icrash.usecases.subfunctions.oeTreated("2","Treated"){
+					ieMessage("Status of crisis 2 has been set to Treated") returned to chl
+				}
+				
+				bill
+				executed instanceof subfunction
+				icrash.usecases.subfunctions.oeCloseCrisis("2"){
+					ieMessage("Crisis 2 has been closed") returned to bill
+				}
+				
+				bill
+				executed instanceof subfunction
+				icrash.usecases.subfunctions.oeInvalidateAlert("3"){
+					ieMessage("Alert 3 has been invalidated") returned to bill
+				}
+				
+				bill
+				executed instanceof subfunction
+				icrash.usecases.subfunctions.oeInvalidateAlert("4"){
+					ieMessage("Alert 4 has been invalidated") returned to bill
+				}
+				
+			}
+		}
+	}
+}

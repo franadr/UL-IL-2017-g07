@@ -8,7 +8,7 @@
 icrash.environment.actCoordinator.outactCoordinator.oeSendToHospital
 //parameters
 @parameter
-icrash.environment.actCoordinator.outactCoordinator.oeSendToHospital.AdtPhoneNumber
+icrash.environment.actCoordinator.outactCoordinator.oeSendToHospital.AdtCrisisID
 ""
 @parameter
 icrash.environment.actCoordinator.outactCoordinator.oeSendToHospital.AdtDate
@@ -17,10 +17,19 @@ icrash.environment.actCoordinator.outactCoordinator.oeSendToHospital.AdtDate
 icrash.environment.actCoordinator.outactCoordinator.oeSendToHospital.AdtTime
 ""
 @parameter
+icrash.environment.actCoordinator.outactCoordinator.oeSendToHospital.AetCrisisType
+""
+@parameter
+icrash.environment.actCoordinator.outactCoordinator.oeSendToHospital.AetCrisisCategory
+""
+@parameter
+icrash.environment.actCoordinator.outactCoordinator.oeSendToHospital.AdtPhoneNumber
+""
+@parameter
 icrash.environment.actCoordinator.outactCoordinator.oeSendToHospital.AdtGPSLocation
 ""
 @parameter
-icrash.environment.actCoordinator.outactCoordinator.oeSendToHospital.AetAccidentType
+icrash.environment.actCoordinator.outactCoordinator.oeSendToHospital.AdtComment
 ""
 @endParameters
 

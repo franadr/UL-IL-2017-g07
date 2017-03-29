@@ -4,9 +4,9 @@
 */
 
 
-@@Primary Type Enumeration icrash.concepts.primarytypes.datatypes.etAccidentType
-@description "shows a certain accident type"
+@@Primary Type Enumeration icrash.concepts.primarytypes.datatypes.etCrisisCategory
+@description "shows a the seriousness of the crisis"
 @operation
-icrash.concepts.primarytypes.datatypes.etAccidentType.is
+icrash.concepts.primarytypes.datatypes.etCrisisCategory.is
 ""
 @endOperations

@@ -14,7 +14,15 @@ icrash.environment.actHospital.inactHospital.ieMessage
 @endInputEvents
 //output events
 @outputEvent
-icrash.environment.actHospital.outactHospital.oeResolved
+icrash.environment.actHospital.outactHospital.oeTreated
 "sent to define the handling status of a specific crisis."
+
+@outputEvent
+icrash.environment.actHospital.outactHospital.oeCallNumber
+"sent to call a phone number associated with the specific crisis."
+
+@outputEvent
+icrash.environment.actHospital.outactHospital.oeSendBack
+"sent to define the handling status of a specific crisis as an error."
 
 @endOutputEvents

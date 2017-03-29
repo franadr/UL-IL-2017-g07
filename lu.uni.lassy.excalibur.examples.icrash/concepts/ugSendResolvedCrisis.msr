@@ -12,20 +12,7 @@ import icrash.usecases.subfunctions
 
 	Use Case Model {
 
-	use case system usergoal ugSendResolvedCrisis() {
-		actor actHospital [primary, active]
-		actor actCoordinator [primary, active]
-		
-		reuse oeResolved[0..*]
-		reuse oeCloseCrisis[0..*]
-		reuse oeInvalidateAlert[0..*]
-		
-		step a: actHospital executes oeResolved
-		step b: actCoordinator executes oeCloseCrisis
-		step c: actCoordinator executes oeInvalidateAlert
-		
-		ordering constraint "resolving a crisis is doing one of the indicated use cases."
-		}
+	
 	}
 
 

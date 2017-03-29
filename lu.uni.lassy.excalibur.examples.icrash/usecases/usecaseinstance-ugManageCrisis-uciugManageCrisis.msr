@@ -1,0 +1,35 @@
+package usecases.uciugManageCrisis {
+	import icrash.usecases.ugManageCrisis
+
+	Use Case Model {
+
+		use case instance uciugManageCrisis : ugManageCrisis{
+			actors {
+				bill : icrash.environment.actCoordinator
+				activator : icrash.environment.actActivator
+				
+			}
+			use case steps {
+				bill
+				executed instanceof subfunction
+				icrash.usecases.subfunctions.oeValidateAlert("3"){
+					ieMessage("Crisis 2 has been created") returned to bill
+				}
+				
+				bill
+				executed instanceof subfunction
+				icrash.usecases.subfunctions.oeSetCrisisStatus("2","handled"){
+					ieMessage("Crisis 2 has been set to handled") returned to bill
+				}
+				
+				bill
+				executed instanceof subfunction
+				icrash.usecases.subfunctions.oeSetCrisisHandler("3"){
+					ieMessage("Crisis 2 has been created") returned to bill
+				}
+				
+				
+			}
+		}
+	}
+}

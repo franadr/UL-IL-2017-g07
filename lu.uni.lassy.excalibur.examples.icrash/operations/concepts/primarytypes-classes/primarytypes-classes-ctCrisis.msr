@@ -17,10 +17,11 @@ Operation Model {
 operation: icrash.concepts.primarytypes.classes.ctCrisis.init(
                 Aid:dtCrisisID, 
                 Atype:etCrisisType,
+                Acategory:etCrisisCategory,
                 Astatus:etCrisisStatus,
                 Alocation:dtGPSLocation,
                 Ainstant:dtDateAndTime,
-                AaccidentType:etAccidentType
+                Acomment:dtComment
               ):ptBoolean{
 postF{
 if
@@ -29,6 +30,7 @@ if
 let Self:ctCrisis in
 Self.id = Aid
 and Self.type = Atype
+and Self.category = Acategory
 and Self.status = Astatus
 and Self.location = Alocation
 and Self.instant = Ainstant
