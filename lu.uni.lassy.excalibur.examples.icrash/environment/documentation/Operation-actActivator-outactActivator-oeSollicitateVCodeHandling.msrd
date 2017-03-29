@@ -6,23 +6,34 @@
 
 @@Operation
 icrash.environment.actActivator.outactActivator.oeSollicitateVCodeHandling
-@description "
- "
+@description "A proactive message (message of a pro-active actor with no parameter triggered automatically if the pre protocol condition is true) used 
+to remind how much time the actor still has to use his/her verification code and also to invalidate the verification code when meeting certain condition 
+(see PostP) 
+"
 //preProtocol descriptions
 @preP
-" "
+"the system is started. "
+@preP
+" there exist some 'ctVCode' instance that still has its 'isValidated' attribute set to false and the difference of its 'dtTime' attribute
+ is 5, 10, or 15 minutes less compared to the current ctState clock information."
 @endPreP
+
 //preFunctional descriptions
 @preF
 " "
 @endPreF
 //postFunctional descriptions
 @postF 
-" "
+" if there exist some 'ctVCode' instance where the difference of its 'dtTime' attribute is 5 or 10 minutes less compared 
+to the current ctState clock information then a reminder message is sent to the actor."
+@postF 
+" if there exist some 'ctVCode' instance where the difference of its 'dtTime' attribute is 15 minutes less compared 
+to the current ctState clock information then a message is sent to the actor indicating that the verification code has been invalidated."
 @endPostF
 //postProtocol descriptions
 @postP 
-" "
+" if there exist some 'ctVCode' instance where the difference of its 'dtTime' attribute is 15 minutes less compared 
+to the current ctState clock information then break the association between that 'ctVCode' instance and the unique associated actAuthenticated instance."
 @endPostP
 //example
 @example" "

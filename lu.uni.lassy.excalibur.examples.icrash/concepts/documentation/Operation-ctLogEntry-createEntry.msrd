@@ -9,23 +9,23 @@ icrash.concepts.primarytypes.classes.ctLogEntry.createEntry
 //parameters
 @parameter
 icrash.concepts.primarytypes.classes.ctLogEntry.createEntry.ApteID
-""
+"Used to initialize the LogEntry ID"
 @parameter
 icrash.concepts.primarytypes.classes.ctLogEntry.createEntry.AeteType
-""
+"Used to initialize event source type"
 @parameter
 icrash.concepts.primarytypes.classes.ctLogEntry.createEntry.ApeText
-""
+"Used to initialize log entry details"
 @parameter
 icrash.concepts.primarytypes.classes.ctLogEntry.createEntry.AdtTime
-""
+"Used to initialize time at which event has been recorded"
 @endParameters
 
-@description "
+@description " Used to create a new object instance of type ctLogEntry
  "
 //postFunctional descriptions
 @postF 
-" "
+"True if the system post state include a new instance of ctLogEntry"
 @endPostF
-//example
+
 @example" "

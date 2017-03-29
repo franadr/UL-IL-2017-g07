@@ -1,0 +1,25 @@
+/*
+@author Adriano
+@date Wed Mar 29 10:30:19 CEST 2017
+*/
+
+
+@@Primary Type Class icrash.concepts.primarytypes.classes.ctEvent
+@description "Used to model Events triggered by selected operation"
+@attribute
+icrash.concepts.primarytypes.classes.ctEvent.eventId
+"used to uniquely identify and event"
+@attribute
+icrash.concepts.primarytypes.classes.ctEvent.eventType
+"type of the source of this event"
+@attribute
+icrash.concepts.primarytypes.classes.ctEvent.eventContent
+"description that comes with the event for more details"
+@attribute
+icrash.concepts.primarytypes.classes.ctEvent.eventTime
+"time at which the event has been recorded"
+@endAttributes
+@operation
+icrash.concepts.primarytypes.classes.ctEvent.createEvent
+"used to create a new object instance of ctEvent"
+@endOperations

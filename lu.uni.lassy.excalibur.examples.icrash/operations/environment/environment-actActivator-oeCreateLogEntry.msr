@@ -19,24 +19,37 @@ import icrash.concepts.primarytypes.classes
 		operation: actActivator.outactActivator.oeaddLogEntry(ApteID: ptInteger, AeteType: etEventType, ApeText: ptString, AdtTime: dtTime):ptBoolean{
 			preP {
 				
-				/*Prep 1*/
+				
 				let TheSystem: ctState in
   				let AvpStarted: ptBoolean in
-				
+				let ListOfEvent : Bag(ctEvent) in
 				self.rnActor.rnSystem = TheSystem
+				
   				and self.rnActor.rnSystem.vpStarted = AvpStarted
+  				
+  				/*Prep 1*/
   				and AvpStarted = true
   				
   				/*Prep 2*/
+  				and TheSystem.rnctEvent->Select(all) = ListOfEvent
+  				and ListOfEvent->size().geq(2)
   				
-  				/*Prep 3*/
-  				and TheSystem.rnctLogEntry.createEntry(ApteID,AeteType,ApeText,AdtTime)
+  				
   				
 			}
 			preF{
-				
+				true
 			}
 			postF{
+				
+				let TheSystem: ctState in
+				let ListOfEvent : Bag(ctEvent) in
+				self.rnActor.rnSystem = TheSystem
+				
+				/*PostF 1*/
+				
+				and TheSystem.rnctEvent ->select(all) = ListOfEvent
+				/*and  ListOfEvent -> forall(e : TheSystem.rnctLogEntry.addlogentry(e.ApteID, e.AeteType, e.ApeText, e.AdtTime))*/
 				
 			}
 			postP{

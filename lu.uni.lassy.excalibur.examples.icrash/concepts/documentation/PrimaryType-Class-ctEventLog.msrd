@@ -5,8 +5,8 @@
 
 
 @@Primary Type Class icrash.concepts.primarytypes.classes.ctEventLog
-@description ""
+@description "Used to model the system representation of a Log containing multiple entry "
 @attribute
 icrash.concepts.primarytypes.classes.ctEventLog.lId
-""
+"uniquely identifies the log"
 @endAttributes

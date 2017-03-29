@@ -5,9 +5,10 @@
 
 
 @@Use Case icrash.usecases.ugLogCompletion.ugLogCompletion
-@description ""
+@description "The goal is to retrieve event from a time slice and save them to the log"
 @protocolCondition
 "
+The iCrash system has been deployed
 "
 @endProtocolConditions
 @preCondition

@@ -39,6 +39,16 @@ steve executed instanceof ugSMSAuthentification() {
 				ieMessage('Your verification code will expire in 5 minutes.') returned to steve
 				ieMessage('Your code has expired! Please try again.') returned to steve
 			}
+//-----------------------------
+		theClock executed instanceof subfunction 
+			oeSollicitateVCodeHandling(){
+				ieMessage('Your verification code will expire in 5 minutes.') returned to steve
+			}
+//-----------------------------
+		theClock executed instanceof subfunction 
+			oeSollicitateVCodeHandling(){
+				ieMessage('Your code has expired! Please try again.') returned to steve
+			}
 	}
 }
 //-----------------------------//-----------------------------				
@@ -54,10 +64,6 @@ steve executed instanceof ugSMSAuthentification() {
 //-----------------------------							
 		theClock executed instanceof subfunction 
 			oeSetClock("2017:03:13 - 10:44:23"){
-			}
-//-----------------------------
-		theClock executed instanceof subfunction 
-			oeSollicitateVCodeHandling(){
 			}
 //-----------------------------			
 		steve executed instanceof subfunction 

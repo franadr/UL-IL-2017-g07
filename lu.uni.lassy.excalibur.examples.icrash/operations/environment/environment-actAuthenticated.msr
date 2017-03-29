@@ -111,6 +111,14 @@ postP{
   and self.rnActor = TheactAuthenticated.asSet
 /* PostP01 */
   TheactAuthenticated.rnctAuthenticated@post.vpIsLogged = false
+  
+/* PostP 2  TRY */
+ApteID = TheSystem.vpeventID
+AeteType = "System"
+ApeText = "User self.login logged in"
+AdtTime = TheSystem.clock
+TheSystem.rnctEvent^createEvent(ApteID,AereType,ApeText,AdtTime)
+
 }
 prolog{"src/Operations/Environment/OUT/outactAuthenticated-oeLogout.pl"}
 }

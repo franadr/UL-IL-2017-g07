@@ -5,17 +5,19 @@
 
 
 @@Use Case icrash.usecases.ugSMSAuthentification.ugSMSAuthentification
-@description ""
+@description "the actAuthenticated's goal is to follow a SMS identification procedure to be able to use his/her other operations."
 @protocolCondition
 "
+the iCrash system has been deployed.
 "
 @endProtocolConditions
 @preCondition
-"
+"The boolean attribute 'isSMSAuthenticated' of the unique ctAuthenticated instance associated with the actor is set to false.
 "
 @endPreConditions
 @postCondition
 "
+The boolean attribute 'isSMSAuthenticated' of the unique ctAuthenticated instance associated with the actor is set to false.
 "
 @endPostConditions
 @additionalInformation

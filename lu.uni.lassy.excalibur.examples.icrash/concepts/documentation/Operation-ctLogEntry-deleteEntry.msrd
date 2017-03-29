@@ -6,11 +6,11 @@
 
 @@Operation
 icrash.concepts.primarytypes.classes.ctLogEntry.deleteEntry
-@description "
+@description "Used to delete the current ctLogEntry instance object
  "
 //postFunctional descriptions
 @postF 
-" "
+"True if the current logEntry instance object is deleted "
 @endPostF
 //example
 @example" "
