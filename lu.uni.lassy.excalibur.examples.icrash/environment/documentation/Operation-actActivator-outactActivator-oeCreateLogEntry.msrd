@@ -27,23 +27,22 @@ icrash.environment.actActivator.outactActivator.oeaddLogEntry.AdtTime
 @preP
 "The system is started "
 @preP
-"One of operation oeLogin , oeAlert, oeLogOut, oeValidateAlert, oeCloseCrisis, oeSetCrisisHandler, oeSetCrisisStatus has been executed"
-@preP
-"An new instance of type LogEntry has been created"
+"The total number of instances of type ctEventis greater than 2 "
 @endPreP
 //preFunctional descriptions
 @preF
-"the new instance of LogEntry is not associated with the current EventLog instance"
-@preF
-"The id of the logEntry instance is supposed to be unique and greater than the previous added entry "
+""
 @endPreF
 //postFunctional descriptions
 @postF 
-"The @post entry instance is associated with the current log entry "
+"There is a new instance of ctLogEntry for each instance of ctEvent"
+
+@postF
+"All instance of type ctEvent are deleted"
 @endPostF
 //postProtocol descriptions
 @postP 
-" none "
+""
 @endPostP
 //example
 @example" "

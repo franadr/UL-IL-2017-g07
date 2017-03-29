@@ -5,24 +5,24 @@
 
 
 @@Primary Type Class icrash.concepts.primarytypes.classes.ctLogEntry
-@description ""
+@description "used to model logging entries recorded by the event listener "
 @attribute
 icrash.concepts.primarytypes.classes.ctLogEntry.eId
-""
+"uniquely identifies the log entry"
 @attribute
 icrash.concepts.primarytypes.classes.ctLogEntry.eType
-""
+"categorize the type of the source of the event "
 @attribute
 icrash.concepts.primarytypes.classes.ctLogEntry.eText
-""
+"description that comes with the log entry for more details about the event"
 @attribute
 icrash.concepts.primarytypes.classes.ctLogEntry.eTime
-""
+"Time a which the event has been recorded"
 @endAttributes
 @operation
 icrash.concepts.primarytypes.classes.ctLogEntry.createEntry
-""
+"used to create a new logEntry instance"
 @operation
 icrash.concepts.primarytypes.classes.ctLogEntry.deleteEntry
-""
+"used to delete a logEntry instance "
 @endOperations

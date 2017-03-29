@@ -1,0 +1,31 @@
+/*
+@author Adriano
+@date Wed Mar 29 10:46:32 CEST 2017
+*/
+
+
+@@Operation
+icrash.concepts.primarytypes.classes.ctEvent.createEvent
+//parameters
+@parameter
+icrash.concepts.primarytypes.classes.ctEvent.createEvent.AeventID
+"Used create the event unique identifier"
+@parameter
+icrash.concepts.primarytypes.classes.ctEvent.createEvent.AeventType
+"used to create the event source type"
+@parameter
+icrash.concepts.primarytypes.classes.ctEvent.createEvent.AeventContent
+"used to create detail description of event"
+@parameter
+icrash.concepts.primarytypes.classes.ctEvent.createEvent.AeventTime
+"used to create event time "
+@endParameters
+
+@description " used to create a new object as an instance of type ctEvent
+ "
+//postFunctional descriptions
+@postF 
+"True if the system post state include the current object as a new instance of type ctEvent with the given parameters "
+@endPostF
+//example
+@example" "

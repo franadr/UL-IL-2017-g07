@@ -1,0 +1,12 @@
+/*
+@author Adriano
+@date Wed Mar 29 10:29:02 CEST 2017
+*/
+
+
+@@Primary Type Class icrash.concepts.primarytypes.classes.ctListener
+@description "used to model system's representation of a event Listener"
+@attribute
+icrash.concepts.primarytypes.classes.ctListener.lId
+""
+@endAttributes
