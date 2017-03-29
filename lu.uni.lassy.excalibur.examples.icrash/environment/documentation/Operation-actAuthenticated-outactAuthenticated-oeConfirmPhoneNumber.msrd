@@ -9,26 +9,32 @@ icrash.environment.actAuthenticated.outactAuthenticated.oeConfirmPhoneNumber
 //parameters
 @parameter
 icrash.environment.actAuthenticated.outactAuthenticated.oeConfirmPhoneNumber.AdtPhoneNumber
-""
+"a to be registered phone number given by the actor."
 @endParameters
 
-@description "
+@description "sent to confirm a phone number.
  "
 //preProtocol descriptions
 @preP
-" "
+"the actor successfully passed the first login step."
 @endPreP
 //preFunctional descriptions
 @preF
-" "
+"the attribute 'isPhoneNumberOK' is set to false."
 @endPreF
 //postFunctional descriptions
 @postF 
-" "
+"a message is sent to the coordinator informing him that he received a verification code per SMS to the given phone number."
+@postF
+"the actor is associated with a newly generated 'ctVCode' instance with its \newline
+'dtTime' attribute set to the current ctState clock information \newline
+'dtVCode' attribute generated randomly \newline
+and 'isValidated' attribute set to false
+"
 @endPostF
 //postProtocol descriptions
 @postP 
-" "
+"the actor will now need to confirm the phone number by using the verification code (also to procede with the login)."
 @endPostP
 //example
 @example" "

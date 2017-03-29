@@ -24,12 +24,23 @@ icrash.environment.actAuthenticated.outactAuthenticated.oeLogin
 //postFunctional descriptions
 @postF 
 " if the login and password provided by the actor correspond to the ones that belong to the ctAuthenticated instance he is related to 
-then a welcome message is sent to the actor (n.b. the logged status is changed as a post-protocol condition);
+and the actor is already associated with a 'ctVCode' instance where the attribute 'isValidated' is set to true then
+a welcome message is sent to the actor (n.b. the logged status is changed as a post-protocol condition); \newline
+else if the actor isn't associated with any 'ctVCode' instance then the actor will have to continue his/her login procedure with ugSMSAuthentification (PostF 2) \newline
 else the actor is notified that he gave incorrect data and all the administrator actors existing in the environment are notified of an intrusion attempt."
+@postF 
+" if the login and password provided by the actor correspond to the ones that belong to the ctAuthenticated instance he is related to, \newline
+the attribute 'isPhoneNumberOK' of that class is set to true \newline
+and the actor isn't associated with any 'ctVCode' instance then \newline
+
+the actor is associated with a newly generated 'ctVCode' instance with its \newline
+'dtTime' attribute set to the current ctState clock information \newline
+'dtVCode' attribute generated randomly \newline
+and 'isValidated' attribute set to false.
+"
 @endPostF
 
 //postProtocol descriptions
 @postP 
-"if the authentication information is correct then the actor is known to be logged in ! (i.e. the associated ctAuthenticated instance with given login and password is considered logged)"
-
+"if the authentication information is correct and the actors is associated with a 'ctVCode' instance where the attribute 'isValidated' is set to true then the actor is known to be logged in ! (i.e. the associated ctAuthenticated instance with given login and password is considered logged)"
 @endPostP

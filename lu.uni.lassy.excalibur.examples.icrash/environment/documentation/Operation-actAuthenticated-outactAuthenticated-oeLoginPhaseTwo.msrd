@@ -9,7 +9,7 @@ icrash.environment.actAuthenticated.outactAuthenticated.oeLoginPhaseTwo
 //parameters
 @parameter
 icrash.environment.actAuthenticated.outactAuthenticated.oeLoginPhaseTwo.AdtVCode
-""
+"A verification code that has been sent per SMS to the actor's registered phone number."
 @endParameters
 
 @description "

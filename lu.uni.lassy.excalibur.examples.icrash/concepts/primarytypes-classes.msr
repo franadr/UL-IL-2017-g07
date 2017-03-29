@@ -88,6 +88,7 @@ import lu.uni.lassy.messir.libraries.calendar
 				attribute vpIsLogged:ptBoolean
 				attribute id:dtAuthenticatedID
 				attribute isSMSAuthenticated:ptBoolean
+				attribute isPhoneNumberOK:dtPhoneNumber
 				
 				operation init(
 										Aid:dtAuthenticatedID ,
