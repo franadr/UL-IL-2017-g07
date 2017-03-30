@@ -14,12 +14,13 @@ import lu.uni.lassy.messir.libraries.math
 import icrash.concepts.primarytypes.datatypes
 import icrash.concepts.primarytypes.classes
 
+import icrash.concepts.primarytypes.datatypes
+import icrash.concepts.primarytypes.classes
+
 
 	Operation Model {
 		operation: actActivator.outactActivator.oeaddLogEntry(ApteID: ptInteger, AeteType: etEventType, ApeText: ptString, AdtTime: dtTime):ptBoolean{
 			preP {
-				
-				
 				let TheSystem: ctState in
   				let AvpStarted: ptBoolean in
 				let ListOfEvent : Bag(ctEvent) in
@@ -31,11 +32,8 @@ import icrash.concepts.primarytypes.classes
   				and AvpStarted = true
   				
   				/*Prep 2*/
-  				and TheSystem.rnctEvent->Select(all) = ListOfEvent
+  				and TheSystem.rnctEvent = ListOfEvent
   				and ListOfEvent->size().geq(2)
-  				
-  				
-  				
 			}
 			preF{
 				true
@@ -46,10 +44,19 @@ import icrash.concepts.primarytypes.classes
 				let ListOfEvent : Bag(ctEvent) in
 				self.rnActor.rnSystem = TheSystem
 				
+				
+				let ActLogEntry:ctLogEntry in
+				let ApteID : ptInteger in
+				let AeteType:etEventType in
+				let ApeText : ptString in
+				let AdtTime : dtTime in
+				
 				/*PostF 1*/
 				
-				and TheSystem.rnctEvent ->select(all) = ListOfEvent
-				/*and  ListOfEvent -> forall(e : TheSystem.rnctLogEntry.addlogentry(e.ApteID, e.AeteType, e.ApeText, e.AdtTime))*/
+				and TheSystem.rnctEvent = ListOfEvent
+				and ActLogEntry.createEntry(ApteID,AeteType,ApeText,AdtTime)
+				and ListOfEvent -> forall(e ) /* TO DO */
+
 				
 			}
 			postP{

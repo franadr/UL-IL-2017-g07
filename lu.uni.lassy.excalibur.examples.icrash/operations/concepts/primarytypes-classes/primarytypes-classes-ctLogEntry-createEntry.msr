@@ -1,0 +1,35 @@
+package icrash.concepts.primarytypes.classes.operations.classes.ctLogEntry.createEntry {
+
+import lu.uni.lassy.messir.libraries.primitives
+import lu.uni.lassy.messir.libraries.math
+import lu.uni.lassy.messir.libraries.string
+import lu.uni.lassy.messir.libraries.calendar
+
+import icrash.concepts.primarytypes.datatypes
+import icrash.concepts.primarytypes.classes
+
+	Operation Model {
+
+		operation: icrash.concepts.primarytypes.classes.ctLogEntry.createEntry(ApteID:ptInteger, AeteType:etEventType, ApeText:ptString, AdtTime:dtTime):ptBoolean{
+		postF{
+if
+(
+	
+
+let Self:ctLogEntry in
+Self.eId = ApteID
+and Self.eType = AeteType
+and Self.eText = ApeText
+and Self.eTime = AdtTime
+
+and (Self.oclIsNew and self = Self)
+)
+then (result = true)
+else (result = false)
+endif}
+		
+		
+
+		}
+	}
+}

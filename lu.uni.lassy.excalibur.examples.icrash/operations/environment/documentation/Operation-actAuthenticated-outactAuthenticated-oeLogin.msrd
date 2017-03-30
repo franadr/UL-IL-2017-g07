@@ -43,4 +43,8 @@ and 'isValidated' attribute set to false.
 //postProtocol descriptions
 @postP 
 "if the authentication information is correct and the actors is associated with a 'ctVCode' instance where the attribute 'isValidated' is set to true then the actor is known to be logged in ! (i.e. the associated ctAuthenticated instance with given login and password is considered logged)"
+@postP
+
+"A new instance of type ctEvent is created with corresponding attributes"
+
 @endPostP
