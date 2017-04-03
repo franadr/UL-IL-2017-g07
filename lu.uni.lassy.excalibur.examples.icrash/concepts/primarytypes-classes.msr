@@ -101,12 +101,12 @@ import lu.uni.lassy.messir.libraries.calendar
 					cardinality [0..*] {
 						
 			attribute VCode:dtVCode
-			attribute time:dtTime
+			attribute time:dtDateAndTime
 			attribute isValidated:ptBoolean
 	
 				operation init( 
 										AVCode:dtVCode ,
-										Atime:dtTime ,
+										Atime:dtDateAndTime ,
 										AisValidated:ptBoolean ):ptBoolean
 	
 			}

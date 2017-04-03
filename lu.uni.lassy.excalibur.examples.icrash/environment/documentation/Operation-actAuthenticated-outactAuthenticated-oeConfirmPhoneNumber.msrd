@@ -16,11 +16,13 @@ icrash.environment.actAuthenticated.outactAuthenticated.oeConfirmPhoneNumber.Adt
  "
 //preProtocol descriptions
 @preP
+"the system is started."
+@preP
 "the actor successfully passed the first login step."
 @endPreP
 //preFunctional descriptions
 @preF
-"the attribute 'isPhoneNumberValid' is set to false."
+"the attribute 'isPhoneNumberValid' of actor's related ctAuthenticated is set to false."
 @endPreF
 //postFunctional descriptions
 @postF 

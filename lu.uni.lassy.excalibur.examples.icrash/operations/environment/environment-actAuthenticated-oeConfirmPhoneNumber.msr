@@ -7,12 +7,68 @@ import lu.uni.lassy.messir.libraries.primitives
 import lu.uni.lassy.messir.libraries.math
 import lu.uni.lassy.messir.libraries.string
 import lu.uni.lassy.messir.libraries.calendar
+import icrash.environment
 
 	Operation Model {
 
 		operation: icrash.environment.actAuthenticated.outactAuthenticated.oeConfirmPhoneNumber(AdtPhoneNumber:dtPhoneNumber):ptBoolean{
-		// include below the specification information (pre,post or ocl or prolog)
 
+			preP {
+				let TheSystem: ctState in
+  				let AvpStarted: ptBoolean in
+  				
+				self.rnActor.rnSystem = TheSystem
+  				and self.rnActor = TheActor
+  				
+  				/*Prep 1*/
+  				and TheSystem.vpStarted = true
+  				
+  				/*Prep 2*/
+			}
+			
+			
+			preF{
+				/*PreF 1*/
+				let TheSystem: ctState in
+				let TheActor:actAuthenticated in
+				
+				TheActor.isPhoneNumberValid = false
+				
+			}
+			
+			postF{
+				let TheSystem: ctState in
+				let TheActor:actAuthenticated in
+				let AMessage:ptString in
+
+				let TheComCompany:actComCompany in	
+				let TheSMS:dtSMS in	
+				
+				let TheVCode:ctVCode in			
+				
+				/*PostF 1*/
+				AMessage = 'A verification code has been sent to +352 691 12 ** ** 56.'
+				and TheActor.rnInterfaceIN^ieMessage(AMessage)
+				
+				/*PostF 2*/
+
+				TheSMS.value = 'Dear user, this is the verification code you need to login to iCrash: XS98M. It is a one-time verification code, meaning that it will become invalid once you have used it to login to your account. Be notified that this code will also become invalid after not being used for 15 minutes.'
+				and TheComCompany.rnInterfaceIN^ieSmsSend(AdtPhoneNumber, TheSMS)
+				
+				/*PostF 3*/		
+				and ATime = TheSystem.dtDateAndTime
+				and TheVCode.init(
+								AdtVCode,
+								ATime,
+								false
+				)
+				and TheActor.rnctVCode = TheVode				
+			}
+			postP{
+				/*PostP 1*/
+				
+			}
+		 
 		}
 	}
 }
