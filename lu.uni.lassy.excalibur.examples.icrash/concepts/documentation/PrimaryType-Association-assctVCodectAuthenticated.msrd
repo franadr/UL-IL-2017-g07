@@ -1,0 +1,8 @@
+/*
+@author zhikin
+@date Mon Apr 03 13:12:45 CEST 2017
+*/
+
+
+@@Primary Type Association icrash.concepts.primarytypes.associations.assctVCodectAuthenticated
+@description "the validity of the verification codes are bound to single actors (ctAthenticated)."

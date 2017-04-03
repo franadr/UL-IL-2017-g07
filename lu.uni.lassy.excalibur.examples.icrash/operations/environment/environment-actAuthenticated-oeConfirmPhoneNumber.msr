@@ -1,0 +1,18 @@
+package icrash.environment.operations.actAuthenticated.outactAuthenticated.oeConfirmPhoneNumber {
+
+import icrash.concepts.primarytypes.datatypes
+import icrash.concepts.primarytypes.classes
+import icrash.concepts.secondarytypes.datatypes
+import lu.uni.lassy.messir.libraries.primitives
+import lu.uni.lassy.messir.libraries.math
+import lu.uni.lassy.messir.libraries.string
+import lu.uni.lassy.messir.libraries.calendar
+
+	Operation Model {
+
+		operation: icrash.environment.actAuthenticated.outactAuthenticated.oeConfirmPhoneNumber(AdtPhoneNumber:dtPhoneNumber):ptBoolean{
+		// include below the specification information (pre,post or ocl or prolog)
+
+		}
+	}
+}

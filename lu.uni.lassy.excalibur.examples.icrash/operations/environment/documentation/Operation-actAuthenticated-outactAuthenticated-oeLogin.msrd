@@ -23,14 +23,19 @@ icrash.environment.actAuthenticated.outactAuthenticated.oeLogin
 
 //postFunctional descriptions
 @postF 
-" if the login and password provided by the actor correspond to the ones that belong to the ctAuthenticated instance he is related to 
-and the actor is already associated with a 'ctVCode' instance where the attribute 'isValidated' is set to true then
-a welcome message is sent to the actor (n.b. the logged status is changed as a post-protocol condition); \newline
-else if the actor isn't associated with any 'ctVCode' instance then the actor will have to continue his/her login procedure with ugSMSAuthentification (PostF 2) \newline
-else the actor is notified that he gave incorrect data and all the administrator actors existing in the environment are notified of an intrusion attempt."
+" if the login and password provided by the actor correspond to the ones that belong to the ctAuthenticated instance 
+he is related to and the actor is already associated with a 'ctVCode' instance then
+a welcome message is sent to the actor (PostP 1); \newline
+
+ else if the actor isn't associated with any 'ctVCode' instance then the actor will be either notified that he has to
+input a verification code that is sent to his registered phone number or that he has to confirm his phone number.\newline
+
+ else the actor is notified that he gave incorrect data and all the administrator actors existing in the environment 
+are notified of an intrusion attempt.
+"
 @postF 
-" if the login and password provided by the actor correspond to the ones that belong to the ctAuthenticated instance he is related to, \newline
-the attribute 'isPhoneNumberOK' of that class is set to true \newline
+" if the login and password provided by the actor correspond to the ones that belong to the ctAuthenticated instance 
+he is related to and the attribute 'isPhoneNumberValid' of that class is set to true \newline
 and the actor isn't associated with any 'ctVCode' instance then \newline
 
 the actor is associated with a newly generated 'ctVCode' instance with its \newline
@@ -42,9 +47,21 @@ and 'isValidated' attribute set to false.
 
 //postProtocol descriptions
 @postP 
-"if the authentication information is correct and the actors is associated with a 'ctVCode' instance where the attribute 'isValidated' is set to true then the actor is known to be logged in ! (i.e. the associated ctAuthenticated instance with given login and password is considered logged)"
-@postP
+"if the authentication information is correct and the actors is associated with a 'ctVCode' 
+instance where the attribute 'isValidated' is set to true then the actor is known to be logged in !"
 
+@postP
+ " if the login and password provided by the actor correspond to the ones that belong to the ctAuthenticated instance 
+he is related and that class @pre isn't associated with any 'ctVCode' instance then the actor will have to continue 
+his/her login procedure with ugSMSAuthentification (PostF 2)"
+
+@postP
+" if the login and password provided by the actor correspond to the ones that belong to the ctAuthenticated instance 
+he is related to and the attribute 'isPhoneNumberValid' of that class is set to false then the actor will have to
+continue his/her login procedure with oeConfirmPhoneNumber."
+
+
+@postP
 "A new instance of type ctEvent is created with corresponding attributes"
 
 @endPostP

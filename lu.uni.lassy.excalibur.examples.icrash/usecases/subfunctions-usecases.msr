@@ -170,6 +170,11 @@ import icrash.environment
   		ieMessage(AMessage) returned to actHospital
   	}
   }
+  
+//----------------------------------------------------
+	use case system subfunction oeBreakAndDeleteVCode() {
+		actor actActivator[primary,proactive]
+	}
+  
   }
-
-}
+ }

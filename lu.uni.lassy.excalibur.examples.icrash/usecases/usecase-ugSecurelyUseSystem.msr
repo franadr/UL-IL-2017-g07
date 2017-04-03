@@ -22,6 +22,8 @@ use case system usergoal
 		executes ugSMSAuthentification		
 	step c: actAuthenticated 
 	    executes oeLogout
+	step d: actActivator
+		executes oeBreakAndDeleteVCode
 	
 	ordering constraint 
 	 "step (a) must always be the first step."
