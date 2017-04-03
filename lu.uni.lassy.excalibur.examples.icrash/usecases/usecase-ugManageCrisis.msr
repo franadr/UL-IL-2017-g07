@@ -12,8 +12,9 @@ package icrash.usecases.ugManageCrisis {
 			step a: actCoordinator executes oeGetCrisisSet
 			step b: actCoordinator executes oeSetCrisisHandler
 			step c: actCoordinator executes oeValidateAlert
-			step d: actCoordinator executes oeSetCrisisStatus
-			step e: actActivator executes oeSendToHospital
+			step d: actCoordinator executes oeSetCrisisType
+			step e: actCoordinator executes oeSetCrisisStatus
+			step f: actActivator executes oeSendToHospital
 			
 			ordering constraint "managing a crisis is doing one of the indicated use cases."
 			

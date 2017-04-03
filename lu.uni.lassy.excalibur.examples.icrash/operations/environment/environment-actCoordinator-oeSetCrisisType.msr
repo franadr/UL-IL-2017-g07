@@ -9,7 +9,7 @@ import icrash.environment
 
 Operation Model {
 
-operation: actCoordinator.outactCoordinator.oeSetCrisisType(AdtCrisisID:dtCrisisID, AetCrisisType:etCrisisType, AetCrisisCategory:etCrisisCategory):ptBoolean{
+operation: actCoordinator.outactCoordinator.oeSetCrisisType(AdtCrisisID:dtCrisisID, AetCrisisType:etCrisisType, AetCrisisCategory:etCrisisCategory, AetService:etService):ptBoolean{
 prolog{"src/Operations/Environment/OUT/outactCoordinator-oeSetCrisisType.pl"}
 }
 

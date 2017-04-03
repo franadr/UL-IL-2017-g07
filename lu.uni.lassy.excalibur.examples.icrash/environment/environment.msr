@@ -69,7 +69,8 @@ import lu.uni.lassy.messir.libraries.calendar
 				operation oeSetCrisisType(
                                           AdtCrisisID:dtCrisisID ,
                                           AetCrisisType:etCrisisType ,
-										  AetCrisisCategory:etCrisisCategory 
+										  AetCrisisCategory:etCrisisCategory ,
+										  AetService:etService
                                           ):ptBoolean
 				operation oeValidateAlert(AdtAlertID:dtAlertID ):ptBoolean
 				

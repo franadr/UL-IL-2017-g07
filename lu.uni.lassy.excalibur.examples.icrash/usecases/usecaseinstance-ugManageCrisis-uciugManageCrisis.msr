@@ -10,23 +10,45 @@ package usecases.uciugManageCrisis {
 				
 			}
 			use case steps {
-				bill
-				executed instanceof subfunction
-				icrash.usecases.subfunctions.oeValidateAlert("3"){
-					ieMessage("Crisis 2 has been created") returned to bill
-				}
 				
 				bill
 				executed instanceof subfunction
-				icrash.usecases.subfunctions.oeSetCrisisStatus("2","handled"){
-					ieMessage("Crisis 2 has been set to handled") returned to bill
+				icrash.usecases.subfunctions.oeGetCrisisSet("pending"){
+					ieSendACrisis("Crisis with ID 3 details") returned to bill
 				}
 				
 				bill
 				executed instanceof subfunction
 				icrash.usecases.subfunctions.oeSetCrisisHandler("3"){
-					ieMessage("Crisis 2 has been created") returned to bill
+					ieMessage("You are now considered handling the crisis") returned to bill
 				}
+				
+				bill
+				executed instanceof subfunction
+				icrash.usecases.subfunctions.oeValidateAlert("3"){
+					ieMessage("The Alert now declared as valid!") returned to bill
+				}
+				
+				bill
+				executed instanceof subfunction
+				icrash.usecases.subfunctions.oeSetCrisisType("3","medium","3: Potentially life-threatening","Maternity"){
+					ieMessage("Crisis 3 Type has been changed") returned to bill
+				}
+				
+				
+				bill
+				executed instanceof subfunction
+				icrash.usecases.subfunctions.oeSetCrisisStatus("3","under treatment"){
+					ieMessage("Crisis 3 Status has been set to under treatment") returned to bill
+				}
+				
+				activator
+				executed instanceof subfunction
+				icrash.usecases.subfunctions.oeSendToHospital("3","12/12/2007","13:37","medium","3: Potentially life-threatening","691547896","rue de la mer","Jambe droite et bras droit cassés"){
+					ieMessage("Crisis 3 has been sent to the Zitha Hospital") returned to bill
+				}
+				
+				
 				
 				
 			}

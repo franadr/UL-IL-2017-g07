@@ -10,9 +10,6 @@ import icrash.environment
 
 	Operation Model {
 
-		operation: icrash.environment.actHospital.outactHospital.oeResolved(AetCrisisStatus:etCrisisStatus):ptBoolean{
-		// include below the specification information (pre,post or ocl or prolog)
-
-		}
+		
 	}
 }

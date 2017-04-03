@@ -155,6 +155,13 @@ import icrash.environment
   	}
   }
 //----------------------------------------------------
+	use case system subfunction oeSetCrisisType(AdtCrisisID:dtCrisisID, AetCrisisType:etCrisisType, AetCrisisCategory:etCrisisCategory, AetService:etService){
+  	actor actCoordinator[primary, proactive]
+  	returned messages {
+  		ieMessage(AMessage) returned to actCoordinator
+  	}
+  }
+//---------------------------------------------------- 
    use case system subfunction oeCallNumber(AdtPhoneNumber:dtPhoneNumber){
   	actor actHospital[primary, active]
   	actor actComCompany[secondary, passive]

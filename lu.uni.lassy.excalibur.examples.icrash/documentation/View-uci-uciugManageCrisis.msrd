@@ -1,0 +1,10 @@
+/*
+@author Carlos
+@date Mon Apr 03 20:01:28 CEST 2017
+*/
+
+
+@@view uci-uciugManageCrisis
+@instance Use-Case usecases.uciugManageCrisis.uciugManageCrisis 
+@description ""
+@caption ""

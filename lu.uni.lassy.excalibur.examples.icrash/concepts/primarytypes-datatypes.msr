@@ -51,7 +51,7 @@ import lu.uni.lassy.messir.libraries.calendar
 			}
 			
 			enum etCrisisStatus {
-				constants["pending", "handled", "treated", "incorrect","closed"]
+				constants["pending", "under treatment", "treated", "incorrect","closed"]
 				operation is():ptBoolean
 			}
 			enum etAlertStatus {

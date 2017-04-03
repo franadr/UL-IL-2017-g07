@@ -1,0 +1,10 @@
+/*
+@author Carlos
+@date Mon Apr 03 20:11:11 CEST 2017
+*/
+
+
+@@view uc-oeTreated
+@model Use-Case icrash.usecases.subfunctions.oeTreated
+@description ""
+@caption ""
