@@ -39,6 +39,7 @@ import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.CreatedWi
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.activator.CreateActivatorGUI;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.admin.CreateICrashAdminGUI;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.comcompany.CreateICrashComCompany;
+import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.log.CreateLog;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.monitor.CreateMonitor;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
@@ -116,6 +117,8 @@ public class CreatorGUIController extends AbstractGUIController{
 						listOfWindows.add(new CreateActivatorGUI(systemStatecontroller.getActActivator(), (bounds.getMinX()), (bounds.getMinY() + rangeY * percent)));
 						percent += 0.25;
 						listOfWindows.add(new CreateMonitor((bounds.getMinX()), (bounds.getMinY() + rangeY * percent)));
+						percent +=0.25;
+						listOfWindows.add(new CreateLog((bounds.getMaxX()), (bounds.getMinY() + rangeY * percent)));
 						bttnCreateSystemAndEnvir.setDisable(true);
 						txtfldNumberOfComComp.setDisable(true);
 						//Minimises the window

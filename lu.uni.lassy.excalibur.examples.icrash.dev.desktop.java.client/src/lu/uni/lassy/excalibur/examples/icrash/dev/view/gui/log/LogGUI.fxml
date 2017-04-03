@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="321.0" prefWidth="459.0" visible="false" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane prefHeight="321.0" prefWidth="459.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TableView layoutY="61.0" prefHeight="217.0" prefWidth="459.0">
+              <columns>
+                <TableColumn prefWidth="49.0" text="Time" />
+                <TableColumn prefWidth="65.0" text="Type" />
+                  <TableColumn prefWidth="291.0" text="Content" />
+                  <TableColumn minWidth="0.0" prefWidth="53.0" text="Mark ?" />
+              </columns>
+            </TableView>
+            <Button layoutX="64.0" layoutY="283.0" mnemonicParsing="false" text="Refresh" />
+            <TextField layoutX="13.0" layoutY="24.0" />
+            <Button layoutX="193.0" layoutY="24.0" mnemonicParsing="false" text="Search" />
+            <Button layoutX="14.0" layoutY="283.0" mnemonicParsing="false" text="Save" />
+            <Button layoutX="372.0" layoutY="283.0" mnemonicParsing="false" text="Clear log" />
+            <ChoiceBox layoutX="268.0" layoutY="24.0" prefHeight="27.0" prefWidth="85.0" />
+            <Button layoutX="359.0" layoutY="24.0" mnemonicParsing="false" text="Apply filter" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
