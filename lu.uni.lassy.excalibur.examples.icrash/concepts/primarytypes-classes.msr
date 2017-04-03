@@ -123,10 +123,15 @@ import lu.uni.lassy.messir.libraries.calendar
 					role rnctHospital
 					cardinality [0..*]{
 				
-				attribute location:dtGPSLocation
+				attribute location: dtGPSLocation
+				attribute name: dtHospitalName
+				attribute service: etService
 				
 				operation init(
-										Alocation:dtGPSLocation	):ptBoolean
+										Alocation:dtGPSLocation ,
+										Aname:dtHospitalName ,	
+										Aservice:etService ):ptBoolean
+										
 					}
 			
 			class ctEventLog 

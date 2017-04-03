@@ -21,6 +21,9 @@ import lu.uni.lassy.messir.libraries.calendar
 			datatype dtPassword extends dtString {
 				operation is():ptBoolean
 			}
+			datatype dtHospitalName extends dtString{
+				operation is():ptBoolean
+			}
 			datatype dtAuthenticatedID extends dtString {
 				operation is():ptBoolean
 			}
@@ -61,6 +64,10 @@ import lu.uni.lassy.messir.libraries.calendar
 			}
 			enum etCrisisCategory {
 				constants["1: Immediately life-threatening", "2: Imminently life-threatening", "3: Potentially life-threatening", "4: Potentially serious", "5: Less urgent"]
+				operation is():ptBoolean
+			}
+			enum etService {
+				constants["Maternity", "Pediatry", "Adult"]
 				operation is():ptBoolean
 			}
 			enum etHumanKind {

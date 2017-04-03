@@ -9,17 +9,11 @@ package icrash.usecases.ugManageCrisis {
 			actor actCoordinator[primary, active]
 			actor actActivator[secondary, proactive]
 
-			reuse oeValidateAlert[0..*]
-			reuse oeSetCrisisStatus[0..*]
-			reuse oeSetCrisisHandler[0..*]
-			reuse oeReportOnCrisis[0..*]
-			reuse oeSendToHospital[0..*]
-
-			step a: actCoordinator executes oeValidateAlert
-			step b: actCoordinator executes oeSetCrisisStatus
-			step c: actCoordinator executes oeSetCrisisHandler
-			step d: actCoordinator executes oeReportOnCrisis
-			step f: actActivator executes oeSendToHospital
+			step a: actCoordinator executes oeGetCrisisSet
+			step b: actCoordinator executes oeSetCrisisHandler
+			step c: actCoordinator executes oeValidateAlert
+			step d: actCoordinator executes oeSetCrisisStatus
+			step e: actActivator executes oeSendToHospital
 			
 			ordering constraint "managing a crisis is doing one of the indicated use cases."
 			

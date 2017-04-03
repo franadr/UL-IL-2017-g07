@@ -515,6 +515,11 @@
     <semanticResources>operations/primarytypes-classes-ctHospital.msr</semanticResources>
     <semanticResources>concepts/documentation/PrimaryType-Class-ctHospital.msrd</semanticResources>
     <semanticResources>usecases/usecaseinstance-ugCloseCrisis-uciugCloseCrisis.msr</semanticResources>
+    <semanticResources>concepts/documentation/Operation-ctEvent-createEvent.msrd</semanticResources>
+    <semanticResources>concepts/documentation/PrimaryType-Class-ctEvent.msrd</semanticResources>
+    <semanticResources>concepts/documentation/PrimaryType-Class-ctListener.msrd</semanticResources>
+    <semanticResources>usecases/documentation/UseCase-oeaddLogEntry.msrd</semanticResources>
+    <semanticResources>operations/concepts/primarytypes-classes/primarytypes-classes-ctLogEntry-createEntry.msr</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_VxVZ4PWqEeSOM9Kfym77Zg">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_LCV8MA1IEeeiBKenHAAEBg" name="uc-ugSendResolvedCrisis" representation="_LCdQ8A1IEeeiBKenHAAEBg">

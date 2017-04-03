@@ -116,7 +116,8 @@ import lu.uni.lassy.messir.libraries.calendar
 			
 			input interface inactHospital{
 				operation ieMessage(AMessage:ptString):ptBoolean
-				operation ieReceiveCrisis(AdtCrisisID:dtCrisisID,
+				operation ieReceiveCrisis(  AetService:etService,
+											AdtCrisisID:dtCrisisID,
 											AdtDate:dtDate ,
 											AdtTime:dtTime ,
 											AetCrisisType:etCrisisType ,
@@ -158,6 +159,7 @@ import lu.uni.lassy.messir.libraries.calendar
 														AdtTime: dtTime
 													):ptBoolean
 				proactive operation oeSendToHospital(
+											AetService:etService,
 											AdtCrisisID:dtCrisisID,
 											AdtDate:dtDate ,
 											AdtTime:dtTime ,
