@@ -138,10 +138,15 @@ import lu.uni.lassy.messir.libraries.calendar
 					role rnctHospital
 					cardinality [0..*]{
 				
-				attribute location:dtGPSLocation
+				attribute location: dtGPSLocation
+				attribute name: dtHospitalName
+				attribute service: etService
 				
 				operation init(
-										Alocation:dtGPSLocation	):ptBoolean
+										Alocation:dtGPSLocation ,
+										Aname:dtHospitalName ,	
+										Aservice:etService ):ptBoolean
+										
 					}
 			
 			class ctEventLog 
@@ -149,6 +154,8 @@ import lu.uni.lassy.messir.libraries.calendar
 					cardinality [1..1] {
 			
 				attribute lId: ptInteger
+				
+				operation init(AlId : ptInteger) : ptBoolean
 				
 			}
 			class ctLogEntry
@@ -165,6 +172,8 @@ import lu.uni.lassy.messir.libraries.calendar
 			}
 			class ctListener role rnctListener cardinality [1..1] {
 				attribute lId : ptInteger
+				
+				operation init(AlId : ptInteger): ptBoolean
 				
 			}
 			class ctEvent role rnctEvent cardinality [0..*] {

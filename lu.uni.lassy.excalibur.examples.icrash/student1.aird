@@ -470,7 +470,6 @@
     <semanticResources>concepts/documentation/UseCase-oeLoginPhaseTwo.msrd</semanticResources>
     <semanticResources>concepts/documentation/UseCase-oeSollicitateVCodeHandling.msrd</semanticResources>
     <semanticResources>concepts/documentation/UseCase-oeSetTimerUntilVCodeTimeOut.msrd</semanticResources>
-    <semanticResources>environment/documentation/Operation-actCoordinator-outactCoordinator-oeSendToHospital.msrd</semanticResources>
     <semanticResources>environment/documentation/Operation-actAuthenticated-outactAuthenticated-oeConfirmPhoneNumber.msrd</semanticResources>
     <semanticResources>environment/documentation/Operation-actAuthenticated-outactAuthenticated-oeLoginPhaseTwo.msrd</semanticResources>
     <semanticResources>environment/documentation/Operation-actActivator-outactActivator-oeSollicitateVCodeHandling.msrd</semanticResources>
@@ -486,18 +485,14 @@
     <semanticResources>documentation/View-uciugSecurelyUseSystemWithSMS.msrd</semanticResources>
     <semanticResources>usecases/usecaseinstance-ugSecurelyUseSystem-uciugSecurelyUseSystemWithSM.msr</semanticResources>
     <semanticResources>documentation/View-uciugSecurelyUseSystemWithSMS2ndVersion.msrd</semanticResources>
-    <semanticResources>concepts/documentation/UseCase-ugSendResolvedCrisis.msrd</semanticResources>
     <semanticResources>environment/documentation/Actor-actHospital.msrd</semanticResources>
     <semanticResources>environment/documentation/Operation-actHospital-init.msrd</semanticResources>
-    <semanticResources>environment/documentation/Operation-actHospital-outactHospital-oeResolved.msrd</semanticResources>
     <semanticResources>usecases/documentation/UseCase-oeSendToHospital.msrd</semanticResources>
-    <semanticResources>usecases/documentation/UseCase-oeResolved.msrd</semanticResources>
     <semanticResources>usecases/documentation/UseCaseInstance-uciugSecurelyUseSystemWithSMS2ndVersion.msrd</semanticResources>
     <semanticResources>usecases/documentation/UseCaseInstance-uciugSecurelyUseSystemWithSMS.msrd</semanticResources>
     <semanticResources>documentation/View-cm-view8.msrd</semanticResources>
     <semanticResources>documentation/View-cm-view9.msrd</semanticResources>
     <semanticResources>concepts/usecaseinstance-ugSendResolvedCrisis-uciugSendResolvedCrisis.msr</semanticResources>
-    <semanticResources>documentation/View-uc-ugSendResolvedCrisis.msrd</semanticResources>
     <semanticResources>concepts/documentation/PrimaryType-Class-ctHospital.msrd</semanticResources>
     <semanticResources>documentation/View-uc-ugCloseCrisis.msrd</semanticResources>
     <semanticResources>operations/concepts/primarytypes-classes/primarytypes-classes-ctLogEntry-createEntry.msr</semanticResources>
@@ -507,6 +502,13 @@
     <semanticResources>concepts/documentation/PrimaryType-Association-assctVCodectAuthenticated.msrd</semanticResources>
     <semanticResources>concepts/documentation/Operation-ctVCode-init.msrd</semanticResources>
     <semanticResources>concepts/documentation/PrimaryType-Class-ctVCode.msrd</semanticResources>
+    <semanticResources>concepts/documentation/UseCase-ugSendResolvedCrisis.msrd</semanticResources>
+    <semanticResources>documentation/View-uc-ugSendResolvedCrisis.msrd</semanticResources>
+    <semanticResources>documentation/View-uci-uciugSendResolvedCrisis.msrd</semanticResources>
+    <semanticResources>environment/documentation/Operation-actCoordinator-outactCoordinator-oeSendToHospital.msrd</semanticResources>
+    <semanticResources>environment/documentation/Operation-actHospital-outactHospital-oeResolved.msrd</semanticResources>
+    <semanticResources>operations/environment/environment-actHospital-oeResolved.msr</semanticResources>
+    <semanticResources>usecases/documentation/UseCase-oeResolved.msrd</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_UmILAPWqEeSOM9Kfym77Zg">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_JfZkEAlpEeek38dIUYae9A" name="uc-ugSMSAuthentification" representation="_JfZkEQlpEeek38dIUYae9A">
