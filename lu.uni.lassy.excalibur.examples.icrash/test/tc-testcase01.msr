@@ -88,20 +88,20 @@ test step ts03oeLogin order 03{
  test step ts04oeAddCoordinator order 04{
         variables{
             TheActor : actAdministrator
-            AdtAuthenticatedID : dtAuthenticatedID
+            AdtCoordinatorID : dtCoordinatorID
             AdtLogin:dtLogin
             AdtPassword:dtPassword
           }
         constraints{
             TheActor = TheSystem.rnactAdministrator->any2(true) 
-            AdtAuthenticatedID.value.eq('1')
+            AdtCoordinatorID.value.eq('1')
             AdtLogin.value.eq('steve')
             AdtPassword.value.eq('pwdMessirExcalibur2017')
           }
         test message{
           out:TheActor 
           sends to system actAdministrator.outactAdministrator.oeAddCoordinator
-                                                                (AdtAuthenticatedID,
+                                                                (AdtCoordinatorID,
                                                                  AdtLogin,
                                                                  AdtPassword)
         }

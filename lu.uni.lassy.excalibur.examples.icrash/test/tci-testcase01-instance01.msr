@@ -56,7 +56,7 @@ Test Model {
     test step instance tsi04: testcase01.ts04oeAddCoordinator{
       variables {
         reuse tsi03.bill as testcase01.ts04oeAddCoordinator.TheActor
-        AdtAuthenticatedID : testcase01.ts04oeAddCoordinator.AdtAuthenticatedID = "1"
+        AdtCoordinatorID : testcase01.ts04oeAddCoordinator.AdtCoordinatorID = "1"
         AdtLogin :testcase01.ts04oeAddCoordinator.AdtLogin= "steve"
         AdtPassword : testcase01.ts04oeAddCoordinator.AdtPassword = "pwdMessirExcalibur2017"
       }
@@ -364,7 +364,7 @@ Test Model {
     test step instance tsi04: testcase01.ts04oeAddCoordinator{
       variables {
         reuse tsi03.bill as testcase01.ts04oeAddCoordinator.TheActor
-        AdtAuthenticatedID : testcase01.ts04oeAddCoordinator.AdtAuthenticatedID = "1"
+        AdtCoordinatorID : testcase01.ts04oeAddCoordinator.AdtCoordinatorID = "1"
         AdtLogin :testcase01.ts04oeAddCoordinator.AdtLogin= "steve"
         AdtPassword : testcase01.ts04oeAddCoordinator.AdtPassword = "pwdMessirExcalibur2017"
       }

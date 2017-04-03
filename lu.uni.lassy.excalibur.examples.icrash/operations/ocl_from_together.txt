@@ -285,7 +285,7 @@ AdministratorActor
 /*** addCoordinator ***/
 
 context Environment::outactAdministrator::addCoordinator(
-aAuthenticatedID: PrimaryTypesDataTypes::dtAuthenticatedID, 
+aCoordinatorID: PrimaryTypesDataTypes::dtCoordinatorID, 
 aLogin: PrimaryTypesDataTypes::dtLogin,
 aPassword: PrimaryTypesDataTypes::dtPassword)
 /*--------------------------------------------*/
@@ -294,12 +294,12 @@ let TheSystem:PrimaryTypesClasses::ctState in
 TheSystem = self.rnActor.rnSystem
 /* Pre Messir - may be incomplete (cf. see rationals) */
 /* Pre M01*/
-and aAuthenticatedID.isAuthenticatedID()
+and aCoordinatorID.isCoordinatorID()
 and aLogin.isLogin()
 and aPassword.isPassword()
 /* Pre Functional:*/
 /* Pre F01*/
-and not (TheSystem.coordinator->exists(coord | coord.id = aAuthenticatedID))
+and not (TheSystem.coordinator->exists(coord | coord.id = aCoordinatorID))
 
 /* Pre Protocol:*/
 and self.rnActor.authenticated.vpIsLogged = true
@@ -315,7 +315,7 @@ let AdtCoordinatorActorOutputInterface:
 /* Post Functional:*/
 /* Post F01 */
 AdtCoordinator.msrCreateCoordinator(
-	aAuthenticatedID,
+	aCoordinatorID,
 	aLogin,
 	aPassword,
 	false)
@@ -344,18 +344,18 @@ and true
 /*** deleteCoordinator ***/
 
 context Environment::outactAdministrator::deleteCoordinator(
-aAuthenticatedID: PrimaryTypesDataTypes::dtAuthenticatedID)
+aCoordinatorID: PrimaryTypesDataTypes::dtCoordinatorID)
 /*--------------------------------------------*/
 pre: 
 let TheSystem:PrimaryTypesClasses::ctState in
 TheSystem = self.rnActor.rnSystem
 /* Pre Messir - may be incomplete (cf. see rationals) */
 /* Pre M01 */
-and aAuthenticatedID.isAuthenticatedID()
+and aCoordinatorID.isCoordinatorID()
 /* Pre Functional:*/
 /* Pre F01 */
 and (TheSystem.coordinator
-		->exists(coord | coord.id = aAuthenticatedID))
+		->exists(coord | coord.id = aCoordinatorID))
 /* Pre Protocol:*/
 /* Pre P01 */
 and self.rnActor.authenticated.vpIsLogged = true
@@ -368,7 +368,7 @@ TheSystem = self.rnActor.rnSystem
 and let AdtCoordinator:PrimaryTypesClasses::ctCoordinator in
 AdtCoordinator 
 = 	TheSystem.coordinator
-	->select(coord | coord.id = aAuthenticatedID)
+	->select(coord | coord.id = aCoordinatorID)
 and AdtCoordinator.msrDestroy()
 /* Post F02 */
 and AdtCoordinator.coordinatorActor.msrDestroy()

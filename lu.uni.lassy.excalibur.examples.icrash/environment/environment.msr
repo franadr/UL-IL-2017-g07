@@ -30,12 +30,12 @@ import lu.uni.lassy.messir.libraries.calendar
 			output interface outactAdministrator{
 				
 				operation oeAddCoordinator(
-											AdtAuthenticatedID:dtAuthenticatedID ,
+											AdtCoordinatorID:dtCoordinatorID ,
 											AdtLogin:dtLogin , 
 											AdtPassword:dtPassword ):ptBoolean
 											
 				operation oeDeleteCoordinator(
-											AdtAuthenticatedID:dtAuthenticatedID ):ptBoolean
+											AdtCoordinatorID:dtCoordinatorID ):ptBoolean
 			}
 			
 			input interface inactAdministrator{
@@ -132,7 +132,7 @@ import lu.uni.lassy.messir.libraries.calendar
 			operation init():ptBoolean
 
 			output interface outactAuthenticated{
-				operation oeLogin(AdtAuthenticatedID:dtAuthenticatedID, AdtLogin:dtLogin , AdtPassword:dtPassword ):ptBoolean
+				operation oeLogin(AdtLogin:dtLogin , AdtPassword:dtPassword ):ptBoolean
 				operation oeLogout():ptBoolean
 				operation oeConfirmPhoneNumber(AdtPhoneNumber:dtPhoneNumber) : ptBoolean
 				operation oeLoginPhaseTwo(AdtVCode:dtVCode):ptBoolean

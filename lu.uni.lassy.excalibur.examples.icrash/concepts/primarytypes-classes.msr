@@ -63,7 +63,7 @@ import lu.uni.lassy.messir.libraries.calendar
 										Acomment:dtComment ):ptBoolean
 										
 				operation handlingDelayPassed():ptBoolean
-        operation maxHandlingDelayPassed():ptBoolean
+        		operation maxHandlingDelayPassed():ptBoolean
 				operation isSentToCoordinator(AactCoordinator:actCoordinator ):ptBoolean
 				operation isAllocatedIfPossible():ptBoolean
 			}
@@ -88,11 +88,9 @@ import lu.uni.lassy.messir.libraries.calendar
 				attribute login:dtLogin
 				attribute pwd: dtPassword
 				attribute vpIsLogged:ptBoolean
-				attribute id:dtAuthenticatedID
 				attribute isPhoneNumberValid:ptBoolean
 				
 				operation init(
-										Aid:dtAuthenticatedID ,
 										Alogin:dtLogin ,
 										Apwd:dtPassword ,
 										AisPhoneNumberValid:ptBoolean ):ptBoolean
@@ -108,8 +106,8 @@ import lu.uni.lassy.messir.libraries.calendar
 	
 				operation init( 
 										AVCode:dtVCode ,
-										atime:dtTime ,
-										aisValidated:ptBoolean ):ptBoolean
+										Atime:dtTime ,
+										AisValidated:ptBoolean ):ptBoolean
 	
 			}
 			
@@ -117,9 +115,11 @@ import lu.uni.lassy.messir.libraries.calendar
 					role rnctCoordinator
 					cardinality [0..*]
 					extends ctAuthenticated{
+			
+			attribute id:dtCoordinatorID
 
 				operation init(
-										Aid:dtAuthenticatedID ,
+										Aid:dtCoordinatorID ,
 										Alogin:dtLogin ,
 										Apwd:dtPassword ):ptBoolean
 			}

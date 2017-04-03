@@ -64,7 +64,7 @@ TheActor:actAdministrator
 @constraint
 "TheActor is any \msrcode{actAdministrator} instance existing in the environment. It is expected that there exists at least one which is the same during all the test case."
 @constraint
-"AdtAuthenticatedID is equal to 1 to set the new coordinator ID"
+"AdtCoordinatorID is equal to 1 to set the new coordinator ID"
 @constraint
 "AdtLogin has its value attribute equal to the primitive string 'steve' which is the ID defined for the new coordinator."
 @constraint
