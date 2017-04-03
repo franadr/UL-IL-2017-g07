@@ -1,0 +1,13 @@
+/*
+@author zhikin
+@date Mon Apr 03 13:00:07 CEST 2017
+*/
+
+
+@@view cm-ugSMSAuthentification
+@model Concept 
+@level Global
+@sublevel Primary Class
+@number 10
+@description ""
+@caption ""

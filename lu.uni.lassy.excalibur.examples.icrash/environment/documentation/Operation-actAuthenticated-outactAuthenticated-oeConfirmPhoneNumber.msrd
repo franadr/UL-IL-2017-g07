@@ -20,13 +20,15 @@ icrash.environment.actAuthenticated.outactAuthenticated.oeConfirmPhoneNumber.Adt
 @endPreP
 //preFunctional descriptions
 @preF
-"the attribute 'isPhoneNumberOK' is set to false."
+"the attribute 'isPhoneNumberValid' is set to false."
 @endPreF
 //postFunctional descriptions
 @postF 
-"a message is sent to the coordinator informing him that he received a verification code per SMS to the given phone number."
+"a message is sent to the actor informing him that he received a verification code per SMS to the given phone number."
 @postF
-"the actor is associated with a newly generated 'ctVCode' instance with its \newline
+"a SMS message containing a brief explanation and the verification code is sent to ComCompany together with the given phone number."
+@postF
+"the ctAuthenticated to which the actor is related to is associated with a newly generated 'ctVCode' instance with its \newline
 'dtTime' attribute set to the current ctState clock information \newline
 'dtVCode' attribute generated randomly \newline
 and 'isValidated' attribute set to false
