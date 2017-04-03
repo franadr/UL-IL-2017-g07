@@ -55,7 +55,16 @@ import icrash.concepts.primarytypes.classes
 				
 				and TheSystem.rnctEvent = ListOfEvent
 				and ActLogEntry.createEntry(ApteID,AeteType,ApeText,AdtTime)
-				and ListOfEvent -> forall(e ) /* TO DO */
+				and ListOfEvent -> forall( e  ApteID =e.eventID
+					  and AeteType = e.eventType
+					  and ApeText = e.eventContent
+					  and AdtTime = e.eventTime
+					  and ActLogEntry.createEntry(ApteID,AeteType,ApeText,AdtTime)
+				)
+				
+				 
+				
+				
 
 				
 			}
