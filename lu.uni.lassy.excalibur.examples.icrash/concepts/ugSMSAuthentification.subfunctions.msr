@@ -26,6 +26,13 @@ import icrash.environment
 	    }
 	}
 	
+	use case system subfunction oeCancelLogin() {
+		actor actAuthenticated[primary,proactive]
+			returned messages {
+		ieMessage(AMessage) returned to actAuthenticated
+	    }
+	}	
+	
 	use case system subfunction oeLoginPhaseTwo(AdtVCode:dtVCode) {
 		actor actAuthenticated[primary,active]
 			returned messages {
@@ -39,17 +46,7 @@ import icrash.environment
 			returned messages {
 		ieMessage(AMessage) returned to actAuthenticated
 	    }
-	}
-	
-	use case system subfunction oeSetTimerUntilVCodeTimeOut() {
-		actor actActivator[primary,proactive]
-		actor actAuthenticated[secondary,passive]
-			returned messages {
-		ieMessage(AMessage) returned to actAuthenticated
-	    }
-	}
+	}	
 
 	}
-
-
 }

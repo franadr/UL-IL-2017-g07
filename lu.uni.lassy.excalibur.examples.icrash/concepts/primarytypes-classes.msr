@@ -89,13 +89,28 @@ import lu.uni.lassy.messir.libraries.calendar
 				attribute pwd: dtPassword
 				attribute vpIsLogged:ptBoolean
 				attribute id:dtAuthenticatedID
-				attribute isSMSAuthenticated:ptBoolean
-				attribute isPhoneNumberOK:dtPhoneNumber
+				attribute isPhoneNumberValid:ptBoolean
 				
 				operation init(
 										Aid:dtAuthenticatedID ,
 										Alogin:dtLogin ,
-										Apwd:dtPassword ):ptBoolean
+										Apwd:dtPassword ,
+										AisPhoneNumberValid:ptBoolean ):ptBoolean
+			}
+			
+			class ctVCode 
+					role rnctVCode 
+					cardinality [0..*] {
+						
+			attribute VCode:dtVCode
+			attribute time:dtTime
+			attribute isValidated:ptBoolean
+	
+				operation init( 
+										AVCode:dtVCode ,
+										atime:dtTime ,
+										aisValidated:ptBoolean ):ptBoolean
+	
 			}
 			
 			class ctCoordinator 

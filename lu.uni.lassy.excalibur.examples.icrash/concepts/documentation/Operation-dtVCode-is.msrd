@@ -6,11 +6,11 @@
 
 @@Operation
 icrash.concepts.primarytypes.datatypes.dtVCode.is
-@description "
+@description "used to determine which strings are considered as valid dtVCode.
  "
 //postFunctional descriptions
 @postF 
-" "
+"is true if the length of the string value is exactly 6 characters composed of only numbers and/or capital letters of the alphabet."
 @endPostF
 //example
 @example" "

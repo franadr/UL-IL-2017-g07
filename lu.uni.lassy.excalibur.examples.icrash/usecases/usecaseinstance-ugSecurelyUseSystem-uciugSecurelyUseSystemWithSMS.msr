@@ -52,10 +52,6 @@ steve executed instanceof ugSMSAuthentification() {
 			oeSetClock("2017:03:13 - 10:45:13") {
 			}
 //-----------------------------
-		theClock executed instanceof subfunction 
-			oeSetTimerUntilVCodeTimeOut() {
-			}
-//-----------------------------
 						}
 			}
 //-----------------------------//-----------------------------
@@ -63,6 +59,12 @@ steve executed instanceof ugSMSAuthentification() {
               oeLogout{
                 ieMessage('You are logged out ! Good Bye ...') returned to steve
               }
+//-----------------------------
+		theClock executed instanceof subfunction 
+			oeBreakAndDeleteVCode() {
+			}
+//-----------------------------
+              
 			}
 		}
 	}

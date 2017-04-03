@@ -1,0 +1,29 @@
+/*
+@author zhikin
+@date Mon Apr 03 12:41:33 CEST 2017
+*/
+
+
+@@Operation
+icrash.environment.actAuthenticated.outactAuthenticated.oeCancelLogin
+@description "sent to cancel the SMS authentication procedure.
+ "
+//preProtocol descriptions
+@preP
+"the actor successfully passed the first login step."
+@endPreP
+//preFunctional descriptions
+@preF
+" "
+@endPreF
+//postFunctional descriptions
+@postF 
+"a message is sent to the coordinator informing him that he cancelled the login procedure."
+@endPostF
+//postProtocol descriptions
+@postP 
+"break the association between that 'ctVCode' instance and the unique associated actAuthenticated instance 
+(and also delete that ctVCode instance). "
+@endPostP
+//example
+@example" "

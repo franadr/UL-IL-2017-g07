@@ -12,11 +12,14 @@ icrash.environment.actAuthenticated.outactAuthenticated.oeLoginPhaseTwo.AdtVCode
 "A verification code that has been sent per SMS to the actor's registered phone number."
 @endParameters
 
-@description "
- "
+@description "2nd step of the login where the actor needs to input the correct verification code instead of the
+combination of login and password."
 //preProtocol descriptions
 @preP
-" "
+" the actor successfully passed the first login step."
+@preP
+" there exist some actor with its related ctAuthenticated instance having an association with a 
+'ctVCode' instance that still has its 'isValidated' attribute set to false."
 @endPreP
 //preFunctional descriptions
 @preF
@@ -24,11 +27,16 @@ icrash.environment.actAuthenticated.outactAuthenticated.oeLoginPhaseTwo.AdtVCode
 @endPreF
 //postFunctional descriptions
 @postF 
-" "
+" if the verification code provided by the actor correspond to the one in the ctVCode with which the actor's related 
+ctAuthenticated instance is associated with then a welcome message is sent to the actor, the isValidated attribute
+of that ctVCode instance is set to true and its dtTime value is set to the current clock information. \newline 
+
+ else the actor is notified that he gave incorrect data and all the administrator actors existing in the environment 
+are notified of an intrusion attempt."
 @endPostF
 //postProtocol descriptions
 @postP 
-" "
+"if the authentication information is correct then the actor is known to be logged in ! "
 @endPostP
 //example
 @example" "
