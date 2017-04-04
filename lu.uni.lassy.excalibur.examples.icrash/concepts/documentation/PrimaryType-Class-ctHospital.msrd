@@ -5,12 +5,18 @@
 
 
 @@Primary Type Class icrash.concepts.primarytypes.classes.ctHospital
-@description ""
+@description "used to model system's representation about the actors that have the responsibility to treat the crisis."
 @attribute
 icrash.concepts.primarytypes.classes.ctHospital.location
-""
+"the position of the Hospital"
+@attribute
+icrash.concepts.primarytypes.classes.ctHospital.name
+"the name of the Hospital"
+@attribute
+icrash.concepts.primarytypes.classes.ctHospital.service
+"a service the Hospital uses"
 @endAttributes
 @operation
 icrash.concepts.primarytypes.classes.ctHospital.init
-""
+"used to initialize the current object as a new instance of the ctHospital type"
 @endOperations
