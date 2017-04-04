@@ -52,6 +52,7 @@ import javafx.stage.Modality;
  * This is the import section to be replaced by modifications in the ICrash.fxml document from the sample skeleton controller
  */
 import javafx.fxml.FXML;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.PasswordField;
@@ -454,6 +455,7 @@ public class ICrashCoordGUIController extends AbstractAuthGUIController {
 				if (userController.oeLogin(txtfldCoordLogonUserName.getText(), psswrdfldCoordLogonPassword.getText()).getValue()){
 					if (userController.getUserType() == UserType.Coordinator){
 						logonShowPanes(true);
+						
 					}
 				}
 			}
