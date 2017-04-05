@@ -5,6 +5,12 @@ icrash.environment.actCoordinator.outactCoordinator.oeSetCrisisType
 "the identification information used to determine the crisis"
 @parameter icrash.environment.actCoordinator.outactCoordinator.oeSetCrisisType.AetCrisisType
 "the new type value"
+@parameter icrash.environment.actCoordinator.outactCoordinator.oeSetCrisisType.AetCrisisCategory
+"the new category value"
+@parameter icrash.environment.actCoordinator.outactCoordinator.oeSetCrisisType.AetService
+"the new service value"
+@parameter icrash.environment.actCoordinator.outactCoordinator.oeSetCrisisType.AetService
+"the information used to describe the crisis"
 @endParameters
 @description
 "sent to define the gravity type of a specific crisis."
@@ -23,7 +29,7 @@ icrash.environment.actCoordinator.outactCoordinator.oeSetCrisisType
 
 //postFunctional descriptions
 @postF 
-"the crisis type attribute of the crisis instance having the given id is replaced by the given one and the requesting actor is notified of this update."
+"the crisis type attribute, category attribute, service attribute and a comment of the crisis instance having the given id is replaced by the given one and the requesting actor is notified of this update."
 @endPostF
 
 //postProtocol descriptions

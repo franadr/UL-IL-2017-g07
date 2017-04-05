@@ -17,6 +17,7 @@ import icrash.concepts.primarytypes.classes
 		preP{
 			let TheSystem: ctState in
 			let AvpStarted: ptBoolean in
+			let TheActor:actCoordinator in
 			let ListOfHospital : Bag(ctHospital) in
 			self.rnActor.rnSystem = TheSystem
 			
@@ -26,15 +27,19 @@ import icrash.concepts.primarytypes.classes
 			and AvpStarted = true
 			
 			/*PreP02*/
+			and TheActor.rnctAuthenticated.vpIsLogged = true
+			
+			/*PreP03*/
 			and TheSystem.rnctHospital = ListOfHospital
   			and ListOfHospital->size().geq(1)
+  			and ActCrisis.init(AdtCrisisID, AetCrisisType, AetCrisisCategory, AetCrisisStatus, AdtGPSLocation, AdtDateAndTime, AetService, AdtComment)
+			and ListOfHospital -> forall(
+				AetService = hospital.service
+				)
 		}
 		
 		preF{
-			let TheSystem: ctState in
-			self.rnActor.rnSystem = TheSystem
-			
-			/*PreF01*/
+			//(------------------------------------)
 		}
 		
 		postF{
@@ -55,9 +60,6 @@ import icrash.concepts.primarytypes.classes
 			
 			and TheSystem.rnctHospital = ListOfHospital
 			and ActCrisis.init(AdtCrisisID, AetCrisisType, AetCrisisCategory, AetCrisisStatus, AdtGPSLocation, AdtDateAndTime, AetService, AdtComment)
-			and ListOfHospital -> forall(
-				AetService = hospital.service
-			)
 		}
 		
 		postP{

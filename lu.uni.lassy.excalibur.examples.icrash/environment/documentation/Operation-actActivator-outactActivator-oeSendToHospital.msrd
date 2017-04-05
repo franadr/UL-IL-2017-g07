@@ -1,0 +1,59 @@
+/*
+@author Carlos
+@date Wed Apr 05 10:54:54 CEST 2017
+*/
+
+
+@@Operation
+icrash.environment.actActivator.outactActivator.oeSendToHospital
+//parameters
+@parameter
+icrash.environment.actActivator.outactActivator.oeSendToHospital.AetService
+"used to send service type"
+@parameter
+icrash.environment.actActivator.outactActivator.oeSendToHospital.AdtCrisisID
+"used to send crisis ID"
+@parameter
+icrash.environment.actActivator.outactActivator.oeSendToHospital.Ainstant
+"used to send date and time"
+@parameter
+icrash.environment.actActivator.outactActivator.oeSendToHospital.AetCrisisType
+"used to send crisis type"
+@parameter
+icrash.environment.actActivator.outactActivator.oeSendToHospital.AetCrisisCategory
+"used to send crisis category"
+@parameter
+icrash.environment.actActivator.outactActivator.oeSendToHospital.AdtPhoneNumber
+"used to send phone number of one person who send an alert"
+@parameter
+icrash.environment.actActivator.outactActivator.oeSendToHospital.AdtGPSLocation
+"used to send the location of the crisis"
+@parameter
+icrash.environment.actActivator.outactActivator.oeSendToHospital.AdtComment
+"used to send a comment about the crisis"
+@endParameters
+
+@description "send given information to the hospital
+ "
+//preProtocol descriptions
+@preP
+"The system is started"
+@preP
+"The coordinator must be logged in"
+@preP
+"At least one instance of ctHospital has the same etService type as the instance of ctCrisis' etService type"
+@endPreP
+//preFunctional descriptions
+@preF
+"The ctCrisis instance must have a defined phone number, category type, crisis type and a comment"
+@endPreF
+//postFunctional descriptions
+@postF 
+"The information of the ctCrisis instance is sent to the nearest hospital with the equivalent service"
+@endPostF
+//postProtocol descriptions
+@postP 
+" "
+@endPostP
+//example
+@example" "

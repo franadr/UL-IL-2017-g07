@@ -8,8 +8,7 @@
 @description ""
 @parameter icrash.usecases.subfunctions.oeSendToHospital.AdtCrisisID ""
 @endParameters
-@protocolCondition
-"
+@protocolCondition"
 "
 @endProtocolConditions
 @preCondition

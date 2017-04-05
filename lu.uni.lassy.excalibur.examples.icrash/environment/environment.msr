@@ -70,7 +70,8 @@ import lu.uni.lassy.messir.libraries.calendar
                                           AdtCrisisID:dtCrisisID ,
                                           AetCrisisType:etCrisisType ,
 										  AetCrisisCategory:etCrisisCategory ,
-										  AetService:etService
+										  AetService:etService ,
+										  AdtComment:dtComment
                                           ):ptBoolean
 				operation oeValidateAlert(AdtAlertID:dtAlertID ):ptBoolean
 				
