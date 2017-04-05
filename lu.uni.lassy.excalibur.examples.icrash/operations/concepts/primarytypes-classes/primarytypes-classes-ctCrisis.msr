@@ -21,6 +21,7 @@ operation: icrash.concepts.primarytypes.classes.ctCrisis.init(
                 Astatus:etCrisisStatus,
                 Alocation:dtGPSLocation,
                 Ainstant:dtDateAndTime,
+                AetService:etService,
                 Acomment:dtComment
               ):ptBoolean{
 postF{
