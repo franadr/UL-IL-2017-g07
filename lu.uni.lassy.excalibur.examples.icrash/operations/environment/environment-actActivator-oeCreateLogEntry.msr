@@ -33,7 +33,7 @@ import icrash.concepts.primarytypes.classes
   				
   				/*Prep 2*/
   				and TheSystem.rnctEvent = ListOfEvent
-  				and ListOfEvent->size().geq(2)
+  				and ListOfEvent->size().geq(1)
 			}
 			preF{
 				true
@@ -50,22 +50,19 @@ import icrash.concepts.primarytypes.classes
 				let AeteType:etEventType in
 				let ApeText : ptString in
 				let AdtTime : dtTime in
+				let theEvent : ctEvent in
 				
 				/*PostF 1*/
 				
 				and TheSystem.rnctEvent = ListOfEvent
+				and theEvent = ListOfEvent -> first ()
+				
+				and ApteID =theEvent.eventID
+				and AeteType = theEvent.eventType
+				and ApeText = theEvent.eventContent
+				and AdtTime = theEvent.eventTime
 				and ActLogEntry.createEntry(ApteID,AeteType,ApeText,AdtTime)
-				and ListOfEvent -> forall( e  ApteID =e.eventID
-					  and AeteType = e.eventType
-					  and ApeText = e.eventContent
-					  and AdtTime = e.eventTime
-					  and ActLogEntry.createEntry(ApteID,AeteType,ApeText,AdtTime)
-				)
 				
-				 
-				
-				
-
 				
 			}
 			postP{

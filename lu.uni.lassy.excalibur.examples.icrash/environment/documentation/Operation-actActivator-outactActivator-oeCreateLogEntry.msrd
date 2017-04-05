@@ -27,7 +27,7 @@ icrash.environment.actActivator.outactActivator.oeaddLogEntry.AdtTime
 @preP
 "The system is started "
 @preP
-"The total number of instances of type ctEventis greater than 2 "
+"The total number of instances of type ctEvent is equal or greater than 1 "
 @endPreP
 //preFunctional descriptions
 @preF
@@ -35,10 +35,9 @@ icrash.environment.actActivator.outactActivator.oeaddLogEntry.AdtTime
 @endPreF
 //postFunctional descriptions
 @postF 
-"There is a new instance of ctLogEntry created for each instance of ctEvent"
-
+"A new instance of type ctLogEntry is created corresponding of the first instance of type ctEvent created"
 @postF
-"All instance of type ctEvent are deleted"
+"Once the new instance of type ctLogEntry is created the corresponding instance of type ctEvent is deleted"
 @endPostF
 //postProtocol descriptions
 @postP 
