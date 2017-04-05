@@ -102,6 +102,15 @@ postF{
   /* PostF01 */
   AptStringMessageForTheactAuthenticated.eq('You are logged out ! Good Bye ...')
   and TheactAuthenticated.rnInterfaceIN^ieMessage(AptStringMessageForTheactAuthenticated)
+  
+  /* PostF02 */
+  and ApteID = TheSystem.eventIndex
+and TheSystem.eventIndex.add(1)
+and AeteType = "System"
+and ApeText = "User "+ Self.login.Value() +" logged in"
+and AdtTime = TheSystem.clock
+and theNewEvent.createEvent(ApteID,AereType,ApeText,AdtTime)
+  
 }
 postP{
   let TheSystem: ctState in
@@ -113,14 +122,7 @@ postP{
 /* PostP01 */
   TheactAuthenticated.rnctAuthenticated@post.vpIsLogged = false
   
-/* PostP02*/
 
-and ApteID = TheSystem.eventIndex
-and TheSystem.eventIndex.add(1)
-and AeteType = "System"
-and ApeText = "User Self.login logged in"
-and AdtTime = TheSystem.clock
-and theNewEvent.createEvent(ApteID,AereType,ApeText,AdtTime)
 
 }
 prolog{"src/Operations/Environment/OUT/outactAuthenticated-oeLogout.pl"}

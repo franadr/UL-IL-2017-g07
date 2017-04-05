@@ -43,6 +43,10 @@ the actor is associated with a newly generated 'ctVCode' instance with its \newl
 'dtVCode' attribute generated randomly \newline
 and 'isValidated' attribute set to false.
 "
+
+@postF
+"A new instance of type ctEvent is created with corresponding attributes"
+
 @endPostF
 
 //postProtocol descriptions
@@ -61,7 +65,5 @@ he is related to and the attribute 'isPhoneNumberValid' of that class is set to 
 continue his/her login procedure with oeConfirmPhoneNumber."
 
 
-@postP
-"A new instance of type ctEvent is created with corresponding attributes"
 
 @endPostP
