@@ -18,6 +18,7 @@ import lu.uni.lassy.messir.libraries.calendar
 				attribute maxCrisisReminderPeriod:dtSecond
 				attribute vpLastReminder:dtDateAndTime
 				attribute vpStarted:ptBoolean
+				attribute eventIndex : dtInteger
 				
 				operation init(	AnextValueForAlertID:dtInteger,
 												AnextValueForCrisisID:dtInteger,
@@ -25,7 +26,8 @@ import lu.uni.lassy.messir.libraries.calendar
 												AcrisisReminderPeriod:dtSecond ,
 												AmaxCrisisReminderPeriod:dtSecond ,
 												AvpLastReminder:dtDateAndTime ,
-												AvpStarted:ptBoolean ): ptBoolean
+												AvpStarted:ptBoolean,
+												AeventIndex :dtInteger ): ptBoolean
 			}
 	
 			class ctAlert role rnctAlert cardinality [0..*]{

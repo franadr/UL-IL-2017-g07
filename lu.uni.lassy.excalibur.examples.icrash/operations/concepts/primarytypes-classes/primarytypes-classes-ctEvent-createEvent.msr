@@ -1,0 +1,35 @@
+package icrash.concepts.primarytypes.classes.operations.classes.ctEvent.createEvent {
+
+import lu.uni.lassy.messir.libraries.primitives
+import lu.uni.lassy.messir.libraries.math
+import lu.uni.lassy.messir.libraries.string
+import lu.uni.lassy.messir.libraries.calendar
+
+import icrash.concepts.primarytypes.datatypes
+import icrash.concepts.primarytypes.classes
+
+	Operation Model {
+
+		operation: icrash.concepts.primarytypes.classes.ctEvent.createEvent(AeventID:ptInteger, AeventType:etEventType, AeventContent:ptString, AeventTime:dtTime):ptBoolean{
+		// include below the specification information (pre,post or ocl or prolog)
+
+
+		postF{
+if
+(
+	
+
+let Self:ctLogEntry in
+Self.eventId = AeventID
+and Self.eventType = AeventType
+and Self.eventContent = AeventContent
+and Self.eventTime = AeventTime
+
+and (Self.oclIsNew and self = Self)
+)
+then (result = true)
+else (result = false)
+endif}
+		}
+	}
+}

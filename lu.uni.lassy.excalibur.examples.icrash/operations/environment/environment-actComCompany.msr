@@ -124,6 +124,15 @@ and if (HumanCol2->msrIsEmpty)
 /* PostF06 */
 AdtSMS.value = 'Your alert has been registered. We will handle it and keep you informed'
 and TheactComCompany.rnInterfaceIN^ieSmsSend(AdtPhoneNumber,AdtSMS)
+
+/* PostF07 */
+let theNewEvent : ctEvent in
+and ApteID = TheSystem.eventIndex
+and TheSystem.eventIndex.add(1)
+and AeteType = "Alert"
+and ApeText = "A new alert arrived "
+and AdtTime = TheSystem.clock
+and theNewEvent.createEvent(ApteID,AereType,ApeText,AdtTime)
 }
  /* Post Protocol:*/
 /* PostP01 */

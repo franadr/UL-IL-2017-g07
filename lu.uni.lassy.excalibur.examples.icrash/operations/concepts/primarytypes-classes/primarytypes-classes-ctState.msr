@@ -15,7 +15,8 @@ Operation Model {
 		AcrisisReminderPeriod: dtSecond, 
 		AmaxCrisisReminderPeriod: dtSecond ,
     AvpLastReminder: dtDateAndTime ,
-    AvpStarted:ptBoolean	):ptBoolean{
+    AvpStarted:ptBoolean,	
+    AeventIndex : dtInteger):ptBoolean{
 postF{
 if
 (
@@ -29,6 +30,7 @@ and Self.crisisReminderPeriod = AcrisisReminderPeriod
 and Self.maxCrisisReminderPeriod = AmaxCrisisReminderPeriod
 and Self.vpLastReminder = AvpLastReminder
 and Self.vpStarted = AvpStarted
+and Self.eventIndex=AeventIndex
 
 and (Self.oclIsNew and self = Self)
 )
