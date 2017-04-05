@@ -163,8 +163,7 @@ import lu.uni.lassy.messir.libraries.calendar
 				proactive operation oeSendToHospital(
 											AetService:etService,
 											AdtCrisisID:dtCrisisID,
-											AdtDate:dtDate ,
-											AdtTime:dtTime ,
+											Ainstant:dtDateAndTime ,
 											AetCrisisType:etCrisisType ,
 											AetCrisisCategory:etCrisisCategory ,
 											AdtPhoneNumber:dtPhoneNumber ,
