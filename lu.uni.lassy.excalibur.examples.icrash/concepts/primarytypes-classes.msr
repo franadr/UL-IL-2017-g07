@@ -51,6 +51,7 @@ import lu.uni.lassy.messir.libraries.calendar
 				attribute status: etCrisisStatus
 				attribute location:dtGPSLocation
 				attribute instant:dtDateAndTime
+				attribute service: etService
 				attribute comment:dtComment
 				
 				operation init(
@@ -60,6 +61,7 @@ import lu.uni.lassy.messir.libraries.calendar
 										Astatus:etCrisisStatus ,
 										Alocation:dtGPSLocation ,
 										Ainstant:dtDateAndTime ,
+										Aservice: etService ,
 										Acomment:dtComment ):ptBoolean
 										
 				operation handlingDelayPassed():ptBoolean

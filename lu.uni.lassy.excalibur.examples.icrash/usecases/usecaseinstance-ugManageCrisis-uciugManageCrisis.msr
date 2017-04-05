@@ -31,7 +31,7 @@ package usecases.uciugManageCrisis {
 				
 				bill
 				executed instanceof subfunction
-				icrash.usecases.subfunctions.oeSetCrisisType("3","medium","3: Potentially life-threatening","Maternity"){
+				icrash.usecases.subfunctions.oeSetCrisisType("3","medium","3: Potentially life-threatening","Paternity"){
 					ieMessage("Crisis 3 Type has been changed") returned to bill
 				}
 				

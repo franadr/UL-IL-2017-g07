@@ -1,0 +1,70 @@
+package icrash.environment.operations.actActivator.outactActivator.oeSendToHospital {
+
+import lu.uni.lassy.messir.libraries.primitives
+import lu.uni.lassy.messir.libraries.math
+import lu.uni.lassy.messir.libraries.string
+import lu.uni.lassy.messir.libraries.calendar
+
+import icrash.concepts.primarytypes.datatypes
+import icrash.environment
+
+import icrash.concepts.primarytypes.datatypes
+import icrash.concepts.primarytypes.classes
+
+	Operation Model {
+		operation: icrash.environment.actActivator.outactActivator.oeSendToHospital(AetService:etService, AdtCrisisID:dtCrisisID, AdtDateAndTime:dtDateAndTime, AetCrisisType:etCrisisType, AetCrisisCategory:etCrisisCategory, AdtPhoneNumber:dtPhoneNumber, AdtGPSLocation:dtGPSLocation, AdtComment:dtComment):ptBoolean{
+		// include below the specification information (pre,post or ocl or prolog)
+		preP{
+			let TheSystem: ctState in
+			let AvpStarted: ptBoolean in
+			let ListOfHospital : Bag(ctHospital) in
+			self.rnActor.rnSystem = TheSystem
+			
+			and self.rnActor.rnSystem.vpStarted = AvpStarted
+			
+			/*PreP01*/
+			and AvpStarted = true
+			
+			/*PreP02*/
+			and TheSystem.rnctHospital = ListOfHospital
+  			and ListOfHospital->size().geq(1)
+		}
+		
+		preF{
+			let TheSystem: ctState in
+			self.rnActor.rnSystem = TheSystem
+			
+			/*PreF01*/
+		}
+		
+		postF{
+			let TheSystem: ctState in
+			let ListOfHospital: Bag(ctHospital) in
+			self.rnActor.rnSystem = TheSystem
+			
+			let AetService: etService in
+		    let AdtCrisisID: dtCrisisID in
+			let AdtDateAndTime: dtDateAndTime in
+			let AetCrisisType: etCrisisType in
+			let AetCrisisCategory: etCrisisCategory in
+			let AdtPhoneNumber: dtPhoneNumber in
+			let AdtGPSLocation: dtGPSLocation in
+			let AdtComment: dtComment in
+			
+			/*PostF01*/
+			
+			and TheSystem.rnctHospital = ListOfHospital
+			and ActCrisis.init(AdtCrisisID, AetCrisisType, AetCrisisCategory, AetCrisisStatus, AdtGPSLocation, AdtDateAndTime, AetService, AdtComment)
+			and ListOfHospital -> forall(
+				AetService = hospital.service
+			)
+		}
+		
+		postP{
+			
+		}
+		
+
+		}
+	}
+}
