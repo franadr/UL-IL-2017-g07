@@ -1,0 +1,81 @@
+package icrash.environment.operations.actActivator.outactActivator.oeSollicitateVCodeHandling {
+
+import icrash.concepts.primarytypes.datatypes
+import icrash.concepts.primarytypes.classes
+import icrash.concepts.secondarytypes.datatypes
+import lu.uni.lassy.messir.libraries.primitives
+import lu.uni.lassy.messir.libraries.math
+import lu.uni.lassy.messir.libraries.string
+import lu.uni.lassy.messir.libraries.calendar
+
+import icrash.environment
+
+	Operation Model {
+
+		operation: icrash.environment.actActivator.outactActivator.oeSollicitateVCodeHandling():ptBoolean{
+		// include below the specification information (pre,post or ocl or prolog)
+			preP {
+				
+				let TheSystem: ctState in
+  				let AvpStarted: ptBoolean in
+  				
+				self.rnActor.rnSystem = TheSystem
+  				and self.rnActor = TheActor
+  				
+  				/*Prep 1*/
+  				and TheSystem.vpStarted = true
+  				
+  				/*Prep 2*/
+  				and TheSystem.rnctVCode -> exist( e / 5 < (TheSystem.clock - e.time))
+  				
+
+			}
+			
+			
+			preF{
+
+				
+			}
+			
+			postF{
+				let TheSystem: ctState in
+
+  				let ColctVCodeG5:Bag(ctVCode) in
+  				let ColctVCodeG10:Bag(ctVCode) in
+  				let ColctVCodeG15:Bag(ctVCode) in
+  				let AMessage5:ptString in
+  				let AMessage10:ptString in
+  				let Amessage15:ptString in
+  				
+				self.rnActor.rnSystem = TheSystem
+
+				
+				/*PostF 1*/
+  				and TheSystem.rnctVCode -> select( e / 5 < (TheSystem.clock - e.time) < 10 ) = ColctVCodeG5
+  				and AMessage5 = 'Your verification code will expire in less than 10 minutes.'
+  				and ColctVCode5.rnctAuthenticated.rnActor.rnInterfaceIN^ieMessage(AMessage5)
+				
+				/*PostF 2*/
+  				and TheSystem.rnctVCode -> select( e / 10 < (TheSystem.clock - e.time) < 15 ) = ColctVCodeG10
+  				and AMessage10 = 'Your verification code will expire in less than 5 minutes.'
+  				and ColctVCode10.rnctAuthenticated.rnActor.rnInterfaceIN^ieMessage(AMessage10)
+				
+				/*PostF 3*/		
+  				and TheSystem.rnctVCode -> select( e / 15 < (TheSystem.clock - e.time)) = ColctVCodeG10
+  				and AMessage15 = 'Your verification has expired. Please try again.'
+  				and ColctVCode15.rnctAuthenticated.rnActor.rnInterfaceIN^ieMessage(AMessage15)
+  				
+  				}
+  				
+			postP{
+				let TheSystem: ctState in
+				self.rnActor.rnSystem = TheSystem
+				
+				/*PostP 1*/
+  				and TheSystem.rnctVCode -> select( e / 15 < (TheSystem.clock - e.time)) -> isEmpty() = true
+				
+			}
+		}
+	}
+}
+	

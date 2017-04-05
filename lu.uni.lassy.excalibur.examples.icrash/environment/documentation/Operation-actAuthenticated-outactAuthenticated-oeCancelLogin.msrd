@@ -10,6 +10,8 @@ icrash.environment.actAuthenticated.outactAuthenticated.oeCancelLogin
  "
 //preProtocol descriptions
 @preP
+"the system is started."
+@preP
 "the actor successfully passed the first login step."
 @endPreP
 //preFunctional descriptions

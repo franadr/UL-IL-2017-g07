@@ -1,0 +1,59 @@
+package icrash.environment.operations.actActivator.outactActivator.oeBreakAndDeleteVCode {
+	
+import icrash.concepts.primarytypes.datatypes
+import icrash.concepts.primarytypes.classes
+import icrash.concepts.secondarytypes.datatypes
+
+import lu.uni.lassy.messir.libraries.primitives
+import lu.uni.lassy.messir.libraries.math
+import lu.uni.lassy.messir.libraries.string
+import lu.uni.lassy.messir.libraries.calendar
+
+import icrash.environment
+
+	Operation Model {
+
+		operation: icrash.environment.actActivator.outactActivator.oeBreakAndDeleteVCode():ptBoolean{
+		// include below the specification information (pre,post or ocl or prolog)
+
+			preP {
+				
+				let TheSystem: ctState in
+  				let AvpStarted: ptBoolean in
+  				
+				self.rnActor.rnSystem = TheSystem
+  				and self.rnActor = TheActor
+  				
+  				/*Prep 1*/
+  				and TheSystem.vpStarted = true
+  				
+  				/*Prep 2*/
+  				and TheSystem.rnctVCode -> exist( e / 180 < (TheSystem.clock - e.time))
+  				
+
+			}
+			
+			
+			preF{
+
+				
+			}
+			
+			postF{
+				let TheSystem: ctState in
+				
+				/*PostF 1*/
+  				and TheSystem.rnctVCode -> select( e / 180 < (TheSystem.clock - e.time)) -> isEmpty() = true				
+  				
+  				}
+  				
+			postP{
+
+				
+			}
+
+
+
+		}
+	}
+}

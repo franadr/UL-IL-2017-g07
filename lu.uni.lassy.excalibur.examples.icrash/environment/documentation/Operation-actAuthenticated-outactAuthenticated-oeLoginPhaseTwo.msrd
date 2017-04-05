@@ -16,6 +16,8 @@ icrash.environment.actAuthenticated.outactAuthenticated.oeLoginPhaseTwo.AdtVCode
 combination of login and password."
 //preProtocol descriptions
 @preP
+" the system has started."
+@preP
 " the actor successfully passed the first login step."
 @preP
 " there exist some actor with its related ctAuthenticated instance having an association with a 

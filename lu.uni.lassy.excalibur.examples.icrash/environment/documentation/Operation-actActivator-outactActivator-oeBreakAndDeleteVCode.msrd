@@ -9,6 +9,8 @@ icrash.environment.actActivator.outactActivator.oeBreakAndDeleteVCode
 @description "sent by the proactive actor to reset the verification procedure of any actor meeting the conditions."
 //preProtocol descriptions
 @preP
+" the system is started."
+@preP
 " there exist some actor with its related ctAuthenticated instance having an association with a 
 'ctVCode' instance that its 'isValidated' attribute set to true and the difference between its dtTime attribute and
 the current clock time information is more than 3 hours. "

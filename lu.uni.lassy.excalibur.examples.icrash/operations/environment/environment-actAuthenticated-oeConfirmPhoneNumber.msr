@@ -20,19 +20,19 @@ import icrash.environment
 				self.rnActor.rnSystem = TheSystem
   				and self.rnActor = TheActor
   				
-  				/*Prep 1*/
+  				/*PreP 1*/
   				and TheSystem.vpStarted = true
   				
-  				/*Prep 2*/
+  				/*PreP 2*/		
+				TheActor.rnctAuthenticated.isPhoneNumberValid = false
+  				
+  				/*PreP 3*/
+  				
 			}
 			
 			
 			preF{
-				/*PreF 1*/
-				let TheSystem: ctState in
-				let TheActor:actAuthenticated in
-				
-				TheActor.isPhoneNumberValid = false
+
 				
 			}
 			
@@ -62,7 +62,10 @@ import icrash.environment
 								ATime,
 								false
 				)
-				and TheActor.rnctVCode = TheVode				
+				and TheActor.rnctVCode = TheVCode
+				
+				/*PostF 4*/
+				and TheActor.rnctAuthenticated.phoneNumber = AdtPhoneNumber				
 			}
 			postP{
 				/*PostP 1*/

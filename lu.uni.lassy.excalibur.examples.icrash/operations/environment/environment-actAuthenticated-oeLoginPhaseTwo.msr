@@ -1,0 +1,82 @@
+package icrash.environment.operations.actAuthenticated.outactAuthenticated.oeLoginPhaseTwo {
+
+import icrash.concepts.primarytypes.datatypes
+import icrash.concepts.primarytypes.classes
+import icrash.concepts.secondarytypes.datatypes
+
+import lu.uni.lassy.messir.libraries.primitives
+import lu.uni.lassy.messir.libraries.math
+import lu.uni.lassy.messir.libraries.string
+import lu.uni.lassy.messir.libraries.calendar
+
+import icrash.environment
+
+	Operation Model {
+
+		operation: icrash.environment.actAuthenticated.outactAuthenticated.oeLoginPhaseTwo(AdtVCode:dtVCode):ptBoolean{
+		// include below the specification information (pre,post or ocl or prolog)
+
+			preP {
+				
+				let TheSystem: ctState in
+  				let AvpStarted: ptBoolean in
+  				
+				self.rnActor.rnSystem = TheSystem
+  				and self.rnActor = TheActor
+  				
+  				/*Prep 1*/
+  				and TheSystem.vpStarted = true
+  				
+  				/*Prep 2*/
+  				
+  				
+  				/*Prep 3*/
+  				and TheSystem.rnctVCode -> exist( e / e.isPhoneNumberValid = false)
+  				
+
+			}
+			
+			
+			preF{
+
+				
+			}
+			
+			postF{
+				let TheSystem: ctState in
+
+  				let ColctVCode:Bag(ctVCode) in
+  				let AMessage:ptString in
+  				
+				self.rnActor.rnSystem = TheSystem
+				and self.rnActor = TheActor
+
+				
+				/*PostF 1*/
+				and if(AdtVCode = TheActor.rnctAuthenticated.VCode) 
+				then (AMessage = 'Welcome to iCrash!'
+				and TheActor.rnInterfaceIN^ieMessage(AMessage))
+				else (AMessage = 'The given verification code is wrong!'
+				and TheActor.rnInterfaceIN^ieMessage(AMessage))
+				endif
+
+  				
+  				}
+  				
+			postP{
+				let TheSystem: ctState in
+				self.rnActor.rnSystem = TheSystem
+				and self.rnActor = TheActor
+				
+				/*PostP 1*/
+  				if(AdtVCode = TheActor.ctAuthenticated.VCode)
+  				then (TheActor.ctAuthenticated.vpIsLogged = true)
+				else ()
+				endif
+			}
+
+
+
+		}
+	}
+}

@@ -1,0 +1,61 @@
+package icrash.environment.operations.actAuthenticated.outactAuthenticated.oeCancelLogin {
+
+import icrash.concepts.primarytypes.datatypes
+import icrash.concepts.primarytypes.classes
+import icrash.concepts.secondarytypes.datatypes
+
+import lu.uni.lassy.messir.libraries.primitives
+import lu.uni.lassy.messir.libraries.math
+import lu.uni.lassy.messir.libraries.string
+import lu.uni.lassy.messir.libraries.calendar
+
+import icrash.environment
+
+	Operation Model {
+
+		operation: icrash.environment.actAuthenticated.outactAuthenticated.oeCancelLogin():ptBoolean{
+		// include below the specification information (pre,post or ocl or prolog)
+preP {
+				let TheSystem: ctState in
+  				let AvpStarted: ptBoolean in
+  				
+				self.rnActor.rnSystem = TheSystem
+  				and self.rnActor = TheActor
+  				
+  				/*Prep 1*/
+  				and TheSystem.vpStarted = true
+  				
+  				/*Prep 2*/
+  				
+			}
+			
+			
+			preF{
+	
+				
+			}
+			
+			postF{
+				let TheSystem: ctState in
+				let TheActor:actAuthenticated in
+				let AMessage:ptString in
+
+				self.rnActor.rnSystem = TheSystem
+  				and self.rnActor = TheActor	
+				
+				/*PostF 1*/
+				AMessage = 'You cancelled your login.'
+				and TheActor.rnInterfaceIN^ieMessage(AMessage)
+				
+			}
+			
+			postP{
+				let TheActor:actAuthenticated in
+  				and self.rnActor = TheActor	
+				
+				/*PostF 1*/
+  				and TheActor.rnctVCode -> isEmpty() = true
+			}
+		}
+	}
+}
