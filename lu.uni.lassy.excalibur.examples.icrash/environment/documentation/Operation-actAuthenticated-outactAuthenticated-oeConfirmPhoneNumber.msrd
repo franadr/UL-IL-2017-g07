@@ -18,7 +18,7 @@ icrash.environment.actAuthenticated.outactAuthenticated.oeConfirmPhoneNumber.Adt
 @preP
 "the system is started."
 @preP
-"the attribute 'isPhoneNumberValid' of actor's related ctAuthenticated is set to false."
+"the attribute 'vpIsPhoneNumberValid' of actor's related ctAuthenticated is set to false."
 @preP
 "the actor successfully passed the first login step."
 @endPreP
@@ -30,19 +30,19 @@ icrash.environment.actAuthenticated.outactAuthenticated.oeConfirmPhoneNumber.Adt
 @postF 
 "a message is sent to the actor informing him that he received a verification code per SMS to the given phone number."
 @postF
-"a SMS message containing a brief explanation and the verification code is sent to ComCompany together with the given phone number."
-@postF
 "the ctAuthenticated to which the actor is related to is associated with a newly generated 'ctVCode' instance with its \newline
 'dtTime' attribute set to the current ctState clock information \newline
 'dtVCode' attribute generated randomly \newline
 and 'isValidated' attribute set to false
 "
 @postF
+"a SMS message containing a brief explanation and the verification code is sent to ComCompany together with the given phone number."
+@postF
 "the given phone is saved in the actor's associated ctAuthenticated class"
 @endPostF
 //postProtocol descriptions
 @postP 
-"the actor will now need to confirm the phone number by using the verification code (also to procede with the login)."
+""
 @endPostP
 //example
 @example" "

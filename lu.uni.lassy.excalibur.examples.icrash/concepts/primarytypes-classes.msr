@@ -93,14 +93,13 @@ import lu.uni.lassy.messir.libraries.calendar
 				attribute pwd: dtPassword
 				attribute vpIsLogged:ptBoolean
 				attribute phoneNumber:dtPhoneNumber
-				attribute isPhoneNumberValid:ptBoolean
+				attribute vpIsPhoneNumberValid:ptBoolean
 				attribute vpIs2ndLoginPhase:ptBoolean
-				attribute vpIsConfirmPhoneNumber:ptBoolean
 				
 				operation init(
 										Alogin:dtLogin ,
 										Apwd:dtPassword ,
-										AisPhoneNumberValid:ptBoolean ):ptBoolean
+										AvpIsPhoneNumberValid:ptBoolean ):ptBoolean
 			}
 			
 			class ctVCode 
@@ -109,12 +108,11 @@ import lu.uni.lassy.messir.libraries.calendar
 						
 			attribute VCode:dtVCode
 			attribute time:dtDateAndTime
-			attribute isValidated:ptBoolean
+			attribute vpIsValidated:ptBoolean
 	
 				operation init( 
-										AVCode:dtVCode ,
 										Atime:dtDateAndTime ,
-										AisValidated:ptBoolean ):ptBoolean
+										AvpIsValidated:ptBoolean ):ptBoolean
 	
 			}
 			

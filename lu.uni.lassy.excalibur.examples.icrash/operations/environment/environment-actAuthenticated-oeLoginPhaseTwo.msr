@@ -20,6 +20,7 @@ import icrash.environment
 				
 				let TheSystem: ctState in
   				let AvpStarted: ptBoolean in
+ 				let TheActor:actAuthenticated in
   				
 				self.rnActor.rnSystem = TheSystem
   				and self.rnActor = TheActor
@@ -28,10 +29,10 @@ import icrash.environment
   				and TheSystem.vpStarted = true
   				
   				/*Prep 2*/
-  				
+  				TheActor.rnctAuthenticated.vpIs2ndLoginPhase = true
   				
   				/*Prep 3*/
-  				and TheSystem.rnctVCode -> exist( e / e.isPhoneNumberValid = false)
+  				and TheSystem.rnctAuthenticated.rnctVCode -> exist( vpIsValidated = false)
   				
 
 			}
@@ -44,7 +45,7 @@ import icrash.environment
 			
 			postF{
 				let TheSystem: ctState in
-
+				let TheActor:actAuthenticated in
   				let ColctVCode:Bag(ctVCode) in
   				let AMessage:ptString in
   				
@@ -64,9 +65,8 @@ import icrash.environment
   				}
   				
 			postP{
-				let TheSystem: ctState in
-				self.rnActor.rnSystem = TheSystem
-				and self.rnActor = TheActor
+				let TheActor:actAuthenticated in
+				self.rnActor = TheActor
 				
 				/*PostP 1*/
   				if(AdtVCode = TheActor.ctAuthenticated.VCode)

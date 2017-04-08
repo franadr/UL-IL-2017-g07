@@ -26,6 +26,8 @@ icrash.environment.actAuthenticated.outactAuthenticated.oeCancelLogin
 @postP 
 "break the association between that 'ctVCode' instance and the unique associated actAuthenticated instance 
 (and also delete that ctVCode instance). "
+@postP
+"the actor is sent back to first login step."
 @endPostP
 //example
 @example" "

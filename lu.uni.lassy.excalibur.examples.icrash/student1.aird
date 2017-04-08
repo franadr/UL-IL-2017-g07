@@ -531,6 +531,10 @@
     <semanticResources>usecases/documentation/UseCase-oeBreakAndDeleteVCode.msrd</semanticResources>
     <semanticResources>usecases/documentation/UseCaseInstance-uciugManageCrisis.msrd</semanticResources>
     <semanticResources>usecases/usecaseinstance-ugManageCrisis-uciugManageCrisis.msr</semanticResources>
+    <semanticResources>operations/environment/environment-actAuthenticated-oeLoginPhaseTwo.msr</semanticResources>
+    <semanticResources>operations/environment/environment-actAuthenticated-oeCancelLogin.msr</semanticResources>
+    <semanticResources>operations/environment/environment-actActivator-oeSollicitateVCodeHandling.msr</semanticResources>
+    <semanticResources>operations/environment/environment-actActivator-oeBreakAndDeleteVCode.msr</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_UmILAPWqEeSOM9Kfym77Zg">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_JfZkEAlpEeek38dIUYae9A" name="uc-ugSMSAuthentification" representation="_JfZkEQlpEeek38dIUYae9A">

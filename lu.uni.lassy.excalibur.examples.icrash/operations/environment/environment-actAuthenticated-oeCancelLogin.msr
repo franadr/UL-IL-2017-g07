@@ -26,7 +26,7 @@ preP {
   				and TheSystem.vpStarted = true
   				
   				/*Prep 2*/
-  				
+  				and TheActor.rnctAuthenticated.vpIs2ndLoginPhase = true
 			}
 			
 			
@@ -54,7 +54,10 @@ preP {
   				and self.rnActor = TheActor	
 				
 				/*PostF 1*/
-  				and TheActor.rnctVCode -> isEmpty() = true
+  				and TheActor.rnctAuthenticated.rnctVCode -> isEmpty() = true
+  				
+  				/*PostF 2*/
+  				and TheActor.rnctAuthenticated.vpIs2ndLoginPhase = false
 			}
 		}
 	}

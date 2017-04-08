@@ -26,7 +26,7 @@ import icrash.environment
   				and TheSystem.vpStarted = true
   				
   				/*Prep 2*/
-  				and TheSystem.rnctVCode -> exist( e / 5 < (TheSystem.clock - e.time))
+  				and TheSystem.rnctAuthenticated.rnctVCode -> exist( 5 < (TheSystem.clock - time and vpIsValidated = false))
   				
 
 			}
@@ -51,17 +51,17 @@ import icrash.environment
 
 				
 				/*PostF 1*/
-  				and TheSystem.rnctVCode -> select( e / 5 < (TheSystem.clock - e.time) < 10 ) = ColctVCodeG5
+  				and TheSystem.rnctVCode -> select( e / 5 < (TheSystem.clock - e.time and vpIsValidated = false) < 10 ) = ColctVCodeG5
   				and AMessage5 = 'Your verification code will expire in less than 10 minutes.'
   				and ColctVCode5.rnctAuthenticated.rnActor.rnInterfaceIN^ieMessage(AMessage5)
 				
 				/*PostF 2*/
-  				and TheSystem.rnctVCode -> select( e / 10 < (TheSystem.clock - e.time) < 15 ) = ColctVCodeG10
+  				and TheSystem.rnctVCode -> select( e / 10 < (TheSystem.clock - e.time and vpIsValidated = false) < 15 ) = ColctVCodeG10
   				and AMessage10 = 'Your verification code will expire in less than 5 minutes.'
   				and ColctVCode10.rnctAuthenticated.rnActor.rnInterfaceIN^ieMessage(AMessage10)
 				
 				/*PostF 3*/		
-  				and TheSystem.rnctVCode -> select( e / 15 < (TheSystem.clock - e.time)) = ColctVCodeG10
+  				and TheSystem.rnctVCode -> select( e / 15 < (TheSystem.clock - e.time and vpIsValidated = false)) = ColctVCodeG10
   				and AMessage15 = 'Your verification has expired. Please try again.'
   				and ColctVCode15.rnctAuthenticated.rnActor.rnInterfaceIN^ieMessage(AMessage15)
   				
@@ -72,7 +72,7 @@ import icrash.environment
 				self.rnActor.rnSystem = TheSystem
 				
 				/*PostP 1*/
-  				and TheSystem.rnctVCode -> select( e / 15 < (TheSystem.clock - e.time)) -> isEmpty() = true
+  				and TheSystem.rnctVCode -> select( e / 15 < (TheSystem.clock - e.time and vpIsValidated = false)) -> isEmpty() = true
 				
 			}
 		}

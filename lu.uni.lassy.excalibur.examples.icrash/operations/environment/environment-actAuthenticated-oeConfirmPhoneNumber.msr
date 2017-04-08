@@ -16,6 +16,7 @@ import icrash.environment
 			preP {
 				let TheSystem: ctState in
   				let AvpStarted: ptBoolean in
+  				let TheActor:actAuthenticated in
   				
 				self.rnActor.rnSystem = TheSystem
   				and self.rnActor = TheActor
@@ -24,10 +25,10 @@ import icrash.environment
   				and TheSystem.vpStarted = true
   				
   				/*PreP 2*/		
-				TheActor.rnctAuthenticated.isPhoneNumberValid = false
+				and TheActor.rnctAuthenticated.vpIsPhoneNumberValid = false
   				
   				/*PreP 3*/
-  				
+  				and TheActor.rnctAuthenticated.vpIs2ndLoginPhase = true
 			}
 			
 			
@@ -44,31 +45,35 @@ import icrash.environment
 				let TheComCompany:actComCompany in	
 				let TheSMS:dtSMS in	
 				
-				let TheVCode:ctVCode in			
+				let TheVCode:ctVCode in		
+				let ADateAndTime:dtDateAndTime in
+				let ABoolean:ptBoolean in	
 				
 				/*PostF 1*/
-				AMessage = 'A verification code has been sent to +352 691 12 ** ** 56.'
+				AMessage = 'A verification code has been sent to ' + AdtPhoneNumber
 				and TheActor.rnInterfaceIN^ieMessage(AMessage)
 				
 				/*PostF 2*/
-
-				TheSMS.value = 'Dear user, this is the verification code you need to login to iCrash: XS98M. It is a one-time verification code, meaning that it will become invalid once you have used it to login to your account. Be notified that this code will also become invalid after not being used for 15 minutes.'
-				and TheComCompany.rnInterfaceIN^ieSmsSend(AdtPhoneNumber, TheSMS)
-				
-				/*PostF 3*/		
-				and ATime = TheSystem.dtDateAndTime
+				and ADateAndTime = TheSystem.dtDateAndTime
+				and ABoolean = false
 				and TheVCode.init(
-								AdtVCode,
-								ATime,
-								false
+								ADateAndTime,
+								ABoolean
 				)
-				and TheActor.rnctVCode = TheVCode
+				and TheActor.rnctAuthenticated.rnctVCode = TheVCode
+				
+				/*PostF 3*/
+				TheSMS.value = 'Dear user, this is the verification code you need to login to iCrash: ' + TheActor.rnctAuthenticated.rnctVCode.VCode + '. 
+				It is a one-time verification code, meaning that it will become invalid once you have used it to login to your account. 
+				Be notified that this code will also become invalid after not being used for 15 minutes.'
+				and TheComCompany.rnInterfaceIN^ieSmsSend(AdtPhoneNumber, TheSMS)		
+				
 				
 				/*PostF 4*/
 				and TheActor.rnctAuthenticated.phoneNumber = AdtPhoneNumber				
 			}
 			postP{
-				/*PostP 1*/
+				
 				
 			}
 		 

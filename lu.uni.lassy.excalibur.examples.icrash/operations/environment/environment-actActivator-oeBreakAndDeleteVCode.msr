@@ -43,7 +43,7 @@ import icrash.environment
 				let TheSystem: ctState in
 				
 				/*PostF 1*/
-  				and TheSystem.rnctVCode -> select( e / 180 < (TheSystem.clock - e.time)) -> isEmpty() = true				
+  				and TheSystem.rnctAuthenticated.rnctVCode -> select( e / 180 < (TheSystem.clock - e.time)) -> isEmpty() = true				
   				
   				}
   				
