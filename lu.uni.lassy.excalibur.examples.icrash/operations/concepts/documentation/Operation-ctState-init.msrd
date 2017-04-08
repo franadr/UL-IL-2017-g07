@@ -15,6 +15,14 @@ icrash.concepts.primarytypes.classes.ctState.init
 "used to initialize the vpLastReminder field"
 @parameter icrash.concepts.primarytypes.classes.ctState.init.AvpStarted
 "used to initialize the vpStarted field"
+@parameter icrash.concepts.primarytypes.classes.ctState.init.AnotificationPeriod5min
+"used to initialize the notificationPeriod5min field"
+@parameter icrash.concepts.primarytypes.classes.ctState.init.AnotificationPeriod10min
+"used to initialize the notificationPeriod10min field"
+@parameter icrash.concepts.primarytypes.classes.ctState.init.AnotificationPeriod15min
+"used to initialize the AnotificationPeriod15min field"
+@parameter icrash.concepts.primarytypes.classes.ctState.init.AnotificationPeriod3h
+"used to initialize the AnotificationPeriod3h field"
 @endParameters
 @description
 " used to initialize the current object as a new instance of the ctState type."

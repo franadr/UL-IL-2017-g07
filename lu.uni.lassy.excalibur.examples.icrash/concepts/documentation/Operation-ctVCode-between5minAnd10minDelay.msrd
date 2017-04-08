@@ -1,0 +1,17 @@
+/*
+@author zhikin
+@date Sat Apr 08 18:59:53 CEST 2017
+*/
+
+
+@@Operation
+icrash.concepts.primarytypes.classes.ctVCode.between5minAnd10minDelay
+@description "used to determine if the ctVCode instance has been created between 5 minutes and 10 minutes ago.
+ "
+//postFunctional descriptions
+@postF 
+"true iff the difference between the current ctState clock information and the ctVCode instance's registered clock information is 
+is between 5 and 10 minutes."
+@endPostF
+//example
+@example" "

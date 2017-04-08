@@ -19,6 +19,10 @@ import lu.uni.lassy.messir.libraries.calendar
 				attribute vpLastReminder:dtDateAndTime
 				attribute vpStarted:ptBoolean
 				attribute eventIndex : dtInteger
+				attribute notificationPeriod5min:dtSecond
+				attribute notificationPeriod10min:dtSecond
+				attribute notificationPeriod15min:dtSecond
+				attribute notificationPeriod3h:dtSecond				
 				
 				operation init(	AnextValueForAlertID:dtInteger,
 												AnextValueForCrisisID:dtInteger,
@@ -27,7 +31,11 @@ import lu.uni.lassy.messir.libraries.calendar
 												AmaxCrisisReminderPeriod:dtSecond ,
 												AvpLastReminder:dtDateAndTime ,
 												AvpStarted:ptBoolean,
-												AeventIndex :dtInteger ): ptBoolean
+												AeventIndex :dtInteger,
+												AnotificationPeriod5min:dtSecond,
+												AnotificationPerio10min:dtSecond,
+												AnotificationPeriod15min:dtSecond,
+												AnotificationPeriod3h:dtSecond ): ptBoolean
 			}
 	
 			class ctAlert role rnctAlert cardinality [0..*]{
@@ -116,8 +124,9 @@ import lu.uni.lassy.messir.libraries.calendar
 										AdateAndTime:dtDateAndTime ,
 										AvpIsValidated:ptBoolean ):ptBoolean
 										
-				operation over5minDelayPassed():ptBoolean
-        		operation over10minDelayPassed():ptBoolean
+				operation over5minDelayPassed():ptBoolean										
+				operation between5minAnd10minDelay():ptBoolean
+        		operation between10minAnd15minDelay():ptBoolean
 				operation over15minDelayPassed():ptBoolean
         		operation over3hDelayPassed():ptBoolean
 	

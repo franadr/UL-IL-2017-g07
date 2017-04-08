@@ -1,5 +1,5 @@
-package icrash.concepts.primarytypes.classes.operations.classes.ctVCode.between5minAnd10minDelay {
-	
+package icrash.concepts.primarytypes.classes.operations.classes.ctVCode.over5minDelayPassed {
+
 import icrash.concepts.primarytypes.datatypes
 import icrash.concepts.primarytypes.classes
 import icrash.concepts.secondarytypes.datatypes
@@ -13,7 +13,7 @@ import icrash.environment
 
 	Operation Model {
 
-		operation: icrash.concepts.primarytypes.classes.ctVCode.between5minAnd10minDelay():ptBoolean{
+		operation: icrash.concepts.primarytypes.classes.ctVCode.over5minDelayPassed():ptBoolean{
 		// include below the specification information (pre,post or ocl or prolog)
 		postF{ 
 			
@@ -21,17 +21,13 @@ import icrash.environment
 		let CurrentClockSecondsQty:dtInteger in
 		let CurrentStoredClockSecondsQty:dtInteger in
 		let NotificationPeriod5min:dtSecond in
-		let NotificationPeriod10min:dtSecond in
-		
 		if 
 		( /* Post F01 */
 		  self.rnSystem = TheSystem
 		  and TheSystem.clock.toSecondsQty() = CurrentClockSecondsQty
 		  and TheSystem.rnctVCode.dateAndTime.toSecondsQty() = CurrentStoredClockSecondsQtyCollection
 		  and TheSystem.notificationPeriod5min = NotificationPeriod5min
-		  and TheSystem.notificationPeriod10min = NotificationPeriod10min
 		  and CurrentClockSecondsQty.sub(vpCurrentStoredClockSecondsQtyCollection).gt(NotificationPeriod5min) = true
-		  and CurrentClockSecondsQty.sub(vpCurrentStoredClockSecondsQtyCollection).lt(NotificationPeriod10min) = true
 		)
 		then (result = true)
 		else (result = false)

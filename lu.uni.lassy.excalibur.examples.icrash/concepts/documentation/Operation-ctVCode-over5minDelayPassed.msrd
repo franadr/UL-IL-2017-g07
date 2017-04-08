@@ -6,7 +6,7 @@
 
 @@Operation
 icrash.concepts.primarytypes.classes.ctVCode.over5minDelayPassed
-@description "used to determine if the ctVCode instance has been created over 5 minutes ago.
+@description "used to determine if the ctVCode instance has been created between 5 minutes and 10 minutes ago.
  "
 //postFunctional descriptions
 @postF 

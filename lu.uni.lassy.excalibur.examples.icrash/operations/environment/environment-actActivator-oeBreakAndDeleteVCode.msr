@@ -28,7 +28,7 @@ import icrash.environment
   				and TheSystem.vpStarted = true
   				
   				/*Prep 2*/
-  				and TheSystem.rnctVCode -> exist( e / 180 < (TheSystem.clock - e.time))
+  				and TheSystem.rnctVCode -> exist( over3hDelayPassed() )
   				
 
 			}
@@ -43,7 +43,7 @@ import icrash.environment
 				let TheSystem: ctState in
 				
 				/*PostF 1*/
-  				and TheSystem.rnctAuthenticated.rnctVCode -> select( e / 180 < (TheSystem.clock - e.time)) -> isEmpty() = true				
+  				and TheSystem.rnctAuthenticated.rnctVCode -> select( over3hDelayPassed() ) -> isEmpty() = true				
   				
   				}
   				

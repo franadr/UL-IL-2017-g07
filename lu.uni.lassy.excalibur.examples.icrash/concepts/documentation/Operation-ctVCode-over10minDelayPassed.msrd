@@ -5,13 +5,13 @@
 
 
 @@Operation
-icrash.concepts.primarytypes.classes.ctVCode.over10minDelayPassed
-@description "used to determine if the ctVCode instance has been created over 10 minutes ago.
+icrash.concepts.primarytypes.classes.ctVCode.between10minAnd15minDelay
+@description "used to determine if the ctVCode instance has been created between 5 and 10 minutes ago.
  "
 //postFunctional descriptions
 @postF 
-"true iff the duration between the current ctState clock information and the ctVCode instance's registered clock information is 
-greater than 10 minutes."
+"true iff the difference between the current ctState clock information and the ctVCode instance's registered clock information is 
+between 5 and 10 minutes"
 @endPostF
 //example
 @example" "
