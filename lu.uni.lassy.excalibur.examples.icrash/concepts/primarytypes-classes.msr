@@ -92,7 +92,10 @@ import lu.uni.lassy.messir.libraries.calendar
 				attribute login:dtLogin
 				attribute pwd: dtPassword
 				attribute vpIsLogged:ptBoolean
+				attribute phoneNumber:dtPhoneNumber
 				attribute isPhoneNumberValid:ptBoolean
+				attribute vpIs2ndLoginPhase:ptBoolean
+				attribute vpIsConfirmPhoneNumber:ptBoolean
 				
 				operation init(
 										Alogin:dtLogin ,
