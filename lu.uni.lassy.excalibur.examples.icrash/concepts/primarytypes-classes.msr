@@ -81,7 +81,8 @@ import lu.uni.lassy.messir.libraries.calendar
 				operation init(
 										Aid:dtPhoneNumber ,
 										Akind:etHumanKind ):ptBoolean
-        operation isAcknowledged():ptBoolean
+										
+        		operation isAcknowledged():ptBoolean
 			}
 
 
@@ -100,6 +101,7 @@ import lu.uni.lassy.messir.libraries.calendar
 										Alogin:dtLogin ,
 										Apwd:dtPassword ,
 										AvpIsPhoneNumberValid:ptBoolean ):ptBoolean
+										
 			}
 			
 			class ctVCode 
@@ -107,12 +109,17 @@ import lu.uni.lassy.messir.libraries.calendar
 					cardinality [0..*] {
 						
 			attribute VCode:dtVCode
-			attribute time:dtDateAndTime
+			attribute dateAndTime:dtDateAndTime
 			attribute vpIsValidated:ptBoolean
 	
 				operation init( 
-										Atime:dtDateAndTime ,
+										AdateAndTime:dtDateAndTime ,
 										AvpIsValidated:ptBoolean ):ptBoolean
+										
+				operation over5minDelayPassed():ptBoolean
+        		operation over10minDelayPassed():ptBoolean
+				operation over15minDelayPassed():ptBoolean
+        		operation over3hDelayPassed():ptBoolean
 	
 			}
 			

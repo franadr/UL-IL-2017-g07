@@ -1,0 +1,22 @@
+package icrash.concepts.primarytypes.classes.operations.classes.ctVCode.over5minDelayPassed {
+	
+import icrash.concepts.primarytypes.datatypes
+import icrash.concepts.primarytypes.classes
+import icrash.concepts.secondarytypes.datatypes
+
+import lu.uni.lassy.messir.libraries.primitives
+import lu.uni.lassy.messir.libraries.math
+import lu.uni.lassy.messir.libraries.string
+import lu.uni.lassy.messir.libraries.calendar
+
+import icrash.environment
+
+	Operation Model {
+
+		operation: icrash.concepts.primarytypes.classes.ctVCode.over5minDelayPassed():ptBoolean{
+		// include below the specification information (pre,post or ocl or prolog)
+		
+
+		}
+	}
+}

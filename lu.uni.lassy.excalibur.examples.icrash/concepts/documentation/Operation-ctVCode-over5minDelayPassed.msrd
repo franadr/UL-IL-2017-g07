@@ -1,0 +1,17 @@
+/*
+@author zhikin
+@date Sat Apr 08 17:29:21 CEST 2017
+*/
+
+
+@@Operation
+icrash.concepts.primarytypes.classes.ctVCode.over5minDelayPassed
+@description "used to determine if the ctVCode instance has been created over 5 minutes ago.
+ "
+//postFunctional descriptions
+@postF 
+"true iff the duration between the current ctState clock information and the ctVCode instance's registered clock information is 
+greater than 5 minutes."
+@endPostF
+//example
+@example" "
