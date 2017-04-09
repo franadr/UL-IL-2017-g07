@@ -11,6 +11,7 @@
  *     Thomas Mortimer - Updated client to MVC and added new design patterns
  ******************************************************************************/
 package lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.admin;
+import java.io.IOException;
 import java.net.URL;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
@@ -32,6 +33,7 @@ import lu.uni.lassy.excalibur.examples.icrash.dev.java.utils.Log4JUtils;
 import lu.uni.lassy.excalibur.examples.icrash.dev.model.Message;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.AbstractAuthGUIController;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.coordinator.CreateICrashCoordGUI;
+import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.sms.SmsGUIController;
 import javafx.scene.layout.GridPane;
 import javafx.collections.ListChangeListener;
 import javafx.event.ActionEvent;
@@ -40,6 +42,8 @@ import javafx.event.EventHandler;
  * This is the import section to be replaced by modifications in the ICrash.fxml document from the sample skeleton controller
  */
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TableView;
@@ -47,6 +51,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 /*
  * This is the end of the import section to be replaced by modifications in the ICrash.fxml document from the sample skeleton controller
  */
@@ -189,7 +195,9 @@ public class ICrashAdminGUIController extends AbstractAuthGUIController {
 				anchrpnCoordinatorDetails.getChildren().remove(i);
 		}
 		
-	}	
+		
+	}
+	
 	
 	/**
 	 * Server has gone down.
@@ -363,5 +371,67 @@ public class ICrashAdminGUIController extends AbstractAuthGUIController {
 			return new PtBoolean(false);
 		}
 		return new PtBoolean(false);
-	}	
+	}
+	
+	
+	
+/***********************************************************************************************************************************************************************************/	
+
+	
+	private CreateICrashAdminGUI createAdminGUI;
+	
+	/**
+	 * Link to Login Window of the user.
+	 * */
+	public void setLoginWindow(CreateICrashAdminGUI createAdminGUI){
+		this.createAdminGUI = createAdminGUI;
+	}
+	
+	
+	
+	/**
+	 * Called when the user clicks the new button. Opens a dialog to edit
+	 * details for a new employee.
+	 */
+	@FXML
+	private void handleLogon() {
+		showSMSDialog();		
+	}
+	
+	
+	
+	public void showSMSDialog() {
+		try {
+			// Load the fxml file and create a new stage for the popup dialog.
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(SmsGUIController.class.getResource("SmsGUI.fxml"));
+			AnchorPane page = (AnchorPane) loader.load();
+
+			// Create the dialog Stage.
+			Stage dialogStage = new Stage();
+			dialogStage.setTitle("SMS Authentication");
+			dialogStage.initModality(Modality.WINDOW_MODAL);
+//			dialogStage.initOwner(stage);
+			Scene scene = new Scene(page);
+			dialogStage.setScene(scene);
+			
+			((SmsGUIController) loader.getController()).setAdminGUIController(this);
+//			((SmsGUIController) loader.getController()).setDialogStage(stage);
+
+			// Show the dialog and wait until the user closes it
+			dialogStage.showAndWait();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+/***********************************************************************************************************************************************************************************/	
+	
+	
+	
+	
+	
+	
 }

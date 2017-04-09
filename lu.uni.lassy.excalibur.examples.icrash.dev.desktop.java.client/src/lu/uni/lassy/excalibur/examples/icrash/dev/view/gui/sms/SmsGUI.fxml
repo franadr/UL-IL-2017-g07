@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.sms.SmsGUIController">
+   <children>
+      <VBox prefHeight="350.0" prefWidth="250.0">
+         <children>
+            <Label prefHeight="17.0" prefWidth="199.0" text="My verification code is :">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+            </Label>
+            <TextField>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="30.0" right="30.0" />
+               </VBox.margin>
+            </TextField>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Warning Messages!">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="30.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Text>
+            <TextArea prefHeight="123.0" prefWidth="210.0" text="Once your code has been verified, iCrash will not ask you for a SMS authentication for the next 3h." wrapText="true">
+               <VBox.margin>
+                  <Insets bottom="75.0" left="17.0" right="17.0" />
+               </VBox.margin>
+            </TextArea>
+            <HBox prefHeight="48.0" prefWidth="267.0" spacing="15.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#handle" text="Confirm" />
+                  <Button mnemonicParsing="false" text="Cancel" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets left="103.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

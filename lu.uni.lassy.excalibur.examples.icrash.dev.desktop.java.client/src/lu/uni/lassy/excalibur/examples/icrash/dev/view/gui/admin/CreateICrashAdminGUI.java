@@ -11,6 +11,7 @@
  *     Thomas Mortimer - Updated client to MVC and added new design patterns
  ******************************************************************************/
 package lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.admin;
+import java.io.IOException;
 import java.net.URL;
 
 import javafx.application.Platform;
@@ -70,6 +71,7 @@ public class CreateICrashAdminGUI implements CreatedWindows {
             stage.show();
             ((ICrashAdminGUIController)loader.getController()).setWindow(stage);
             ((ICrashAdminGUIController)loader.getController()).setActor(aActAdmin);
+            ((ICrashAdminGUIController)loader.getController()).setLoginWindow(this);						/**NEW SMS AUTHENTIFICATION FEATURE**/
             stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
 				@Override
 				public void handle(WindowEvent event) {
@@ -90,4 +92,21 @@ public class CreateICrashAdminGUI implements CreatedWindows {
 		if (stage != null)
 			stage.close();
 	}
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
