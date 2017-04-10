@@ -11,11 +11,16 @@
  *     Thomas Mortimer - Updated client to MVC and added new design patterns
  ******************************************************************************/
 package lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.coordinator;
+import java.io.IOException;
+import java.lang.reflect.Executable;
 import java.net.URL;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.util.Optional;
 import java.util.ResourceBundle;
+import java.util.function.Consumer;
+
+import com.oracle.jrockit.jfr.Producer;
 
 import javafx.util.Callback;
 import lu.uni.lassy.excalibur.examples.icrash.dev.controller.CoordinatorController;
@@ -35,10 +40,15 @@ import lu.uni.lassy.excalibur.examples.icrash.dev.java.utils.Log4JUtils;
 import lu.uni.lassy.excalibur.examples.icrash.dev.model.Message;
 import lu.uni.lassy.excalibur.examples.icrash.dev.model.actors.ActProxyCoordinatorImpl;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.AbstractAuthGUIController;
+import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.CreatedWindows;
+import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.log.CreateLog;
+import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.log.LogGuiControler;
+import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.sms.SmsGUIController;
 import javafx.scene.control.ButtonBar.ButtonData;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.TextArea;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -48,11 +58,17 @@ import javafx.collections.MapChangeListener;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.stage.Modality;
+import javafx.stage.Screen;
+import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 /*
  * This is the import section to be replaced by modifications in the ICrash.fxml document from the sample skeleton controller
  */
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.PasswordField;
@@ -186,10 +202,13 @@ public class ICrashCoordGUIController extends AbstractAuthGUIController {
      */
     @FXML
     void bttnCoordLogon_OnClick(ActionEvent event) {
+    	showLogWindow();
     	logon();
     }
 
-    /**
+   
+
+	/**
      * Button event that deals with handling of a crisis
      *
      * @param event The event type fired, we do not need it's details
@@ -244,6 +263,50 @@ public class ICrashCoordGUIController extends AbstractAuthGUIController {
 	/*
 	 * Methods used within the GUI
 	 */
+	/**
+	 * 
+	 * Added by Adriano
+	 * 
+	 */
+	
+	 private void showLogWindow() {
+		 
+		 Screen screen = Screen.getPrimary();
+		 Rectangle2D bounds = screen.getVisualBounds();
+		 
+		 try {
+				// Load the fxml file and create a new stage for the popup dialog.
+				FXMLLoader loader = new FXMLLoader();
+				loader.setLocation(LogGuiControler.class.getResource("LogGUI.fxml"));
+				AnchorPane page = (AnchorPane) loader.load();
+
+				// Create the dialog Stage.
+				Stage logStage = new Stage();
+				logStage.setX(bounds.getMaxX());
+				logStage.setY(bounds.getMaxY());
+				logStage.setTitle("Coordinator log");
+				Scene scene = new Scene(page);
+				logStage.setScene(scene);
+				
+				// Show the dialog and wait until the user closes it
+				logStage.showAndWait();
+
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		 
+		  		
+			
+		}
+	
+	
+	/**
+	 * 
+	 * 
+	 * Added by adriano
+	 * 
+	 */
+	
 	
 	/* (non-Javadoc)
 	 * @see lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.HasTables#setUpTables()

@@ -117,8 +117,6 @@ public class CreatorGUIController extends AbstractGUIController{
 						listOfWindows.add(new CreateActivatorGUI(systemStatecontroller.getActActivator(), (bounds.getMinX()), (bounds.getMinY() + rangeY * percent)));
 						percent += 0.25;
 						listOfWindows.add(new CreateMonitor((bounds.getMinX()), (bounds.getMinY() + rangeY * percent)));
-						percent +=0.25;
-						listOfWindows.add(new CreateLog((bounds.getMaxX()), (bounds.getMinY() + rangeY * percent)));
 						bttnCreateSystemAndEnvir.setDisable(true);
 						txtfldNumberOfComComp.setDisable(true);
 						//Minimises the window
