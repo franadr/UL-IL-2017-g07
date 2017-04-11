@@ -1,0 +1,24 @@
+/*
+@author Carlos
+@date Wed Apr 05 12:38:26 CEST 2017
+*/
+
+
+@@Use Case Subfunction icrash.usecases.ugSMSAuthentification.subfunctions.oeCancelLogin
+@description ""
+@protocolCondition
+"
+"
+@endProtocolConditions
+@preCondition
+"
+"
+@endPreConditions
+@postCondition
+"
+"
+@endPostConditions
+@additionalInformation
+"
+none
+"

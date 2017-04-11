@@ -1,0 +1,29 @@
+/*
+@author Carlos
+@date Wed Apr 05 12:38:32 CEST 2017
+*/
+
+
+@@Use Case Subfunction icrash.usecases.subfunctions.oeSetCrisisType
+@description ""
+@parameter icrash.usecases.subfunctions.oeSetCrisisType.AdtCrisisID ""
+@parameter icrash.usecases.subfunctions.oeSetCrisisType.AetCrisisType ""
+@parameter icrash.usecases.subfunctions.oeSetCrisisType.AetCrisisCategory ""
+@parameter icrash.usecases.subfunctions.oeSetCrisisType.AetService ""
+@endParameters
+@protocolCondition
+"
+"
+@endProtocolConditions
+@preCondition
+"
+"
+@endPreConditions
+@postCondition
+"
+"
+@endPostConditions
+@additionalInformation
+"
+none
+"

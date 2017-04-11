@@ -1,0 +1,12 @@
+/*
+@author Carlos
+@date Wed Apr 05 12:38:24 CEST 2017
+*/
+
+
+@@Primary Type Enumeration icrash.concepts.primarytypes.datatypes.etService
+@description "a service that a victim of a victim needs to be transfered to"
+@operation
+icrash.concepts.primarytypes.datatypes.etService.is
+""
+@endOperations

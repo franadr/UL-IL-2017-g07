@@ -41,4 +41,7 @@
 @operation icrash.concepts.primarytypes.classes.ctCrisis.isAllocatedIfPossible
 "used to allocate a crisis to a coordinator if any or to alert the administrator of crisis waiting to be handled."
 
+@operation icrash.concepts.primarytypes.classes.ctCrisis.isSelected
+"used to determine if the crisis is selected"
+
 @endOperations

@@ -1,0 +1,36 @@
+/*
+@author Carlos
+@date Wed Apr 05 12:38:29 CEST 2017
+*/
+
+
+@@Operation
+icrash.environment.actHospital.outactHospital.oeCallNumber
+//parameters
+@parameter
+icrash.environment.actHospital.outactHospital.oeCallNumber.AdtPhoneNumber
+""
+@endParameters
+
+@description "used by the ctHospital to call a ctHuman that sent an alert
+ "
+//preProtocol descriptions
+@preP
+"the system has started "
+@preP
+"a crisis must be selected and dtPhoneNumber can't be empty"
+@endPreP
+//preFunctional descriptions
+@preF
+" "
+@endPreF
+//postFunctional descriptions
+@postF 
+" "
+@endPostF
+//postProtocol descriptions
+@postP 
+" "
+@endPostP
+//example
+@example" "

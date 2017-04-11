@@ -33,7 +33,7 @@ import lu.uni.lassy.messir.libraries.calendar
 												AvpStarted:ptBoolean,
 												AeventIndex :dtInteger,
 												AnotificationPeriod5min:dtSecond,
-												AnotificationPerio10min:dtSecond,
+												AnotificationPeriod10min:dtSecond,
 												AnotificationPeriod15min:dtSecond,
 												AnotificationPeriod3h:dtSecond ): ptBoolean
 			}
@@ -78,6 +78,7 @@ import lu.uni.lassy.messir.libraries.calendar
         		operation maxHandlingDelayPassed():ptBoolean
 				operation isSentToCoordinator(AactCoordinator:actCoordinator ):ptBoolean
 				operation isAllocatedIfPossible():ptBoolean
+				operation isSelected():ptBoolean
 			}
 			
 

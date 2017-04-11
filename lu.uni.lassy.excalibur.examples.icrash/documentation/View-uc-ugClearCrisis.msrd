@@ -1,0 +1,10 @@
+/*
+@author Carlos
+@date Tue Apr 11 18:30:42 CEST 2017
+*/
+
+
+@@view uc-ugClearCrisis
+@model Use-Case icrash.usecases.ugClearCrisis.msr.ugClearCrisis 
+@description "shows the use case diagram for the ugClearCrisis user goal use case"
+@caption "ugClearCrisis user goal use case"

@@ -1,0 +1,32 @@
+/*
+* @author Carlos
+* @date Tue Apr 11 16:48:20 CEST 2017
+*/
+
+package icrash.usecases.ugClearCrisis.msr {
+
+import lu.uni.lassy.messir.libraries.primitives
+
+import icrash.environment
+import icrash.usecases.subfunctions
+
+
+	Use Case Model {
+
+	use case system usergoal ugClearCrisis() {
+		
+		actor actHospital[primary, active]
+		actor actCoordinator[primary, active]
+		
+		step a: actHospital executes oeCallNumber
+		step b: actHospital executes oeTreated
+		step c: actCoordinator executes oeReportOnCrisis
+		step d: actCoordinator executes oeInvalidateAlert
+		step e: actCoordinator executes oeCloseCrisis
+		
+		ordering constraint "closing a crisis is one of the indicated use cases"
+		}
+	}
+
+
+}

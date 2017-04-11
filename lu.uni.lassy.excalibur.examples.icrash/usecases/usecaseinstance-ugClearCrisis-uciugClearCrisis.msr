@@ -1,0 +1,50 @@
+package usecases.uciugClearCrisis {
+	import icrash.usecases.ugClearCrisis.msr
+	import icrash.environment
+	import icrash.usecases.subfunctions
+
+	Use Case Model {
+
+		use case instance uciugClearCrisis : ugClearCrisis{
+			actors {
+				bill: actCoordinator
+				chl: actHospital
+				
+				
+				
+			}
+			use case steps {
+				chl
+				executed instanceof subfunction
+					oeCallNumber("691234568"){
+						ieMessage("Calling...") returned to chl
+					}
+					
+				chl
+				executed instanceof subfunction
+					oeTreated("3","Treated"){
+						ieMessage("Crisis 3 status has been set to 'Treated'") returned to chl
+					}
+					
+				bill
+				executed instanceof subfunction
+					oeReportOnCrisis("Victim has been transfered to the maternity service"){
+						ieMessage("Report on Crisis 3 created") returned to bill
+					}
+					
+				bill
+				executed instanceof subfunction
+					oeInvalidateAlert("3"){
+						ieMessage("Alert 3 has been invalidated") returned to bill
+					}
+				
+				bill
+				executed instanceof subfunction
+					oeCloseCrisis("3"){
+						ieMessage("Crisis 3 has been closed") returned to bill
+					}
+				
+			}
+		}
+	}
+}

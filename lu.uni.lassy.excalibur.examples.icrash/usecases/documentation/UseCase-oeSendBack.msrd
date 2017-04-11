@@ -1,0 +1,27 @@
+/*
+@author Carlos
+@date Wed Apr 05 12:38:35 CEST 2017
+*/
+
+
+@@Use Case Subfunction icrash.usecases.subfunctions.oeSendBack
+@description ""
+@parameter icrash.usecases.subfunctions.oeSendBack.AdtCrisisID ""
+@parameter icrash.usecases.subfunctions.oeSendBack.AdtComment ""
+@endParameters
+@protocolCondition
+"
+"
+@endProtocolConditions
+@preCondition
+"
+"
+@endPreConditions
+@postCondition
+"
+"
+@endPostConditions
+@additionalInformation
+"
+none
+"

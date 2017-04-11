@@ -1,0 +1,12 @@
+/*
+@author Carlos
+@date Wed Apr 05 12:38:19 CEST 2017
+*/
+
+
+@@Primary Type Datatype icrash.concepts.primarytypes.datatypes.dtHospitalName
+@description "the name of the hospital"
+@operation
+icrash.concepts.primarytypes.datatypes.dtHospitalName.is
+""
+@endOperations

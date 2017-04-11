@@ -24,8 +24,8 @@ association assctCrisisctCoordinator
 	ctCoordinator(rnHandler)[0..1]
 
 association assctCrisisctHospital
-	ctCrisis(rnResolved)[0..*]
-	ctHospital(rnResolver)[1..1]
+	ctCrisis(rnTreated)[0..*]
+	ctHospital(rnTreater)[1..1]
 
 association assctLogEntryctEventLog 
 	ctLogEntry(rnLogEntry)[1..*] 

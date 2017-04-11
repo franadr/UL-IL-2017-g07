@@ -1,0 +1,24 @@
+/*
+@author Carlos
+@date Tue Apr 11 21:06:33 CEST 2017
+*/
+
+
+@@Use Case icrash.usecases.ugClearCrisis.msr.ugClearCrisis
+@description "A user goal to achieve the closing of a crisis"
+@protocolCondition
+"
+"
+@endProtocolConditions
+@preCondition
+"
+"
+@endPreConditions
+@postCondition
+"
+"
+@endPostConditions
+@additionalInformation
+"
+none
+"

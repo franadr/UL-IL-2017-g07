@@ -1,0 +1,24 @@
+/*
+@author Carlos
+@date Wed Apr 05 12:38:36 CEST 2017
+*/
+
+
+@@Use Case Subfunction icrash.usecases.subfunctions.oeBreakAndDeleteVCode
+@description ""
+@protocolCondition
+"
+"
+@endProtocolConditions
+@preCondition
+"
+"
+@endPreConditions
+@postCondition
+"
+"
+@endPostConditions
+@additionalInformation
+"
+none
+"

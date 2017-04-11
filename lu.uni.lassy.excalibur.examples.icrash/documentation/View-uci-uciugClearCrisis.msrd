@@ -1,0 +1,10 @@
+/*
+@author Carlos
+@date Tue Apr 11 21:12:39 CEST 2017
+*/
+
+
+@@view uci-uciugClearCrisis
+@instance Use-Case usecases.uciugClearCrisis.uciugClearCrisis 
+@description "use case instance of ugClearCrisis"
+@caption "uciugClearCrisis"

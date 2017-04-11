@@ -1,0 +1,39 @@
+/*
+@author Carlos
+@date Wed Apr 05 12:38:30 CEST 2017
+*/
+
+
+@@Operation
+icrash.environment.actHospital.outactHospital.oeSendBack
+//parameters
+@parameter
+icrash.environment.actHospital.outactHospital.oeSendBack.AdtCrisisID
+""
+@parameter
+icrash.environment.actHospital.outactHospital.oeSendBack.AetCrisisStatus
+""
+@endParameters
+
+@description "used by the ctHospital to send a crisis back if its information is erroneous
+ "
+//preProtocol descriptions
+@preP
+"the system has started"
+@preP
+"a crisis must be selected"
+@endPreP
+//preFunctional descriptions
+@preF
+" "
+@endPreF
+//postFunctional descriptions
+@postF 
+"the status of the crisis is changed to 'incorrect'"
+@endPostF
+//postProtocol descriptions
+@postP 
+" "
+@endPostP
+//example
+@example" "

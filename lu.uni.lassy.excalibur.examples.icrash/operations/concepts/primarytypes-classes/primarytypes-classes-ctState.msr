@@ -14,9 +14,13 @@ Operation Model {
 		dtAclock:dtDateAndTime,
 		AcrisisReminderPeriod: dtSecond, 
 		AmaxCrisisReminderPeriod: dtSecond ,
-    AvpLastReminder: dtDateAndTime ,
-    AvpStarted:ptBoolean,	
-    AeventIndex : dtInteger):ptBoolean{
+    	AvpLastReminder: dtDateAndTime ,
+    	AvpStarted:ptBoolean,	
+    	AeventIndex : dtInteger,
+    	AnotificationPeriod5min:dtSecond,
+		AnotificationPerio10min:dtSecond,
+		AnotificationPeriod15min:dtSecond,
+		AnotificationPeriod3h:dtSecond):ptBoolean{
 postF{
 if
 (

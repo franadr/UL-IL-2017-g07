@@ -1,0 +1,51 @@
+package icrash.environment.operations.actHospital.outactHospital.oeCallNumber {
+
+import lu.uni.lassy.messir.libraries.primitives
+import lu.uni.lassy.messir.libraries.math
+import lu.uni.lassy.messir.libraries.string
+import lu.uni.lassy.messir.libraries.calendar
+import icrash.concepts.primarytypes.datatypes
+import icrash.concepts.primarytypes.classes
+import icrash.environment
+
+	Operation Model {
+
+		operation: icrash.environment.actHospital.outactHospital.oeCallNumber(AdtPhoneNumber:dtPhoneNumber):ptBoolean{
+		// include below the specification information (pre,post or ocl or prolog)
+		
+		preP {
+				let TheSystem: ctState in
+  				let AvpStarted: ptBoolean in
+				self.rnActor.rnSystem = TheSystem
+				
+  				and self.rnActor.rnSystem.vpStarted = AvpStarted
+  				
+  				/*preP 01*/
+  				and AvpStarted = true
+  				
+  				/*preP 02*/
+  				and TheSystem.rnctCrisis.isSelected() = true
+  				and if(TheSystem.rnctHuman.dtPhoneNumber.size() > 0)
+  				then(result = true)
+  				else(result = false)
+  				endif
+			}
+			preF{
+				true
+			}
+			postF{
+				
+				let TheSystem: ctState in
+				self.rnActor.rnSystem = TheSystem
+				
+				/*postF 01*/
+				TheSystem.rnctCrisis.etStatus = "treated"
+				
+			}
+			postP{
+				
+			}
+
+		}
+	}
+}
