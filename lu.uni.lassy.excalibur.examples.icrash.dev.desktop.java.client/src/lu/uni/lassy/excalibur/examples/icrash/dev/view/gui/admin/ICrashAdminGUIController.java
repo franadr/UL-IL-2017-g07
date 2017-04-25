@@ -388,8 +388,6 @@ public class ICrashAdminGUIController extends AbstractAuthGUIController {
 	}
 	
 	
-	
-
 	@FXML
 	private void handleLogon() {
 		logonShowPanes(true);		

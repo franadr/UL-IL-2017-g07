@@ -32,6 +32,7 @@ public class SmsGUIController {
 	
 	/**
 	 * Sets the stage of this dialog.
+	 * 
 	 * @param dialogStage
 	 */
 	public void setDialogStage(Stage dialogStage) {
