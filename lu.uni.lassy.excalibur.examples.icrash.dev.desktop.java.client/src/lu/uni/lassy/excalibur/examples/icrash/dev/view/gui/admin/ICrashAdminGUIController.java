@@ -182,7 +182,7 @@ public class ICrashAdminGUIController extends AbstractAuthGUIController {
 	/* (non-Javadoc)
 	 * @see lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.AbstractAuthGUIController#logonShowPanes(boolean)
 	 */
-	protected void logonShowPanes(boolean loggedOn) {
+	public void logonShowPanes(boolean loggedOn) {
 		pnAdminLogon.setVisible(!loggedOn);
 		brdpnAdmin.setVisible(loggedOn);
 		bttnAdminLogoff.setDisable(!loggedOn);
@@ -297,7 +297,7 @@ public class ICrashAdminGUIController extends AbstractAuthGUIController {
 		if(txtfldAdminUserName.getText().length() > 0 && psswrdfldAdminPassword.getText().length() > 0){
 			try {
 				if (userController.oeLogin(txtfldAdminUserName.getText(), psswrdfldAdminPassword.getText()).getValue())
-					logonShowPanes(true);
+					showSMSDialog();
 			}
 			catch (ServerOfflineException | ServerNotBoundException e) {
 				showExceptionErrorMessage(e);
@@ -388,14 +388,9 @@ public class ICrashAdminGUIController extends AbstractAuthGUIController {
 	}
 	
 	
-	
-	/**
-	 * Called when the user clicks the new button. Opens a dialog to edit
-	 * details for a new employee.
-	 */
 	@FXML
 	private void handleLogon() {
-		showSMSDialog();		
+		logonShowPanes(true);		
 	}
 	
 	

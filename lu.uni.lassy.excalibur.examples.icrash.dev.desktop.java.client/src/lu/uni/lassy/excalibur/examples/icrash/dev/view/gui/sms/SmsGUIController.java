@@ -34,7 +34,7 @@ public class SmsGUIController {
 	}
 	
 	public void handle(){
-		adminGUIController.logon();
+		adminGUIController.logonShowPanes(true);
 	}
 
 	
