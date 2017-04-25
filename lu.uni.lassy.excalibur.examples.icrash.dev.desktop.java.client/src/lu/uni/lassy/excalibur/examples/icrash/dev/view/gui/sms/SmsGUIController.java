@@ -20,27 +20,18 @@ public class SmsGUIController {
 	private void initialize() {
 	}
 	
-	/**
-	 * Is called by the main application to give a reference back to itself.
-	 * 
-	 * @param mainApp
-	 */
-	public void setMainApp(CreateICrashAdminGUI mainApp) {
-		this.mainApp = mainApp;
-	}
-	
+
 	public void setAdminGUIController(ICrashAdminGUIController adminGUIController){
 		this.adminGUIController = adminGUIController;
 	}
 	
 	public void handle(){
-		adminGUIController.logon();
+		adminGUIController.logonShowPanes(true);
 	}
 
 	
 	/**
 	 * Sets the stage of this dialog.
-	 * 
 	 * @param dialogStage
 	 */
 	public void setDialogStage(Stage dialogStage) {
