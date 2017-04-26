@@ -41,8 +41,8 @@
             </TextArea>
             <HBox prefHeight="48.0" prefWidth="267.0" spacing="15.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#handle" text="Confirm" />
-                  <Button mnemonicParsing="false" text="Cancel" />
+                  <Button mnemonicParsing="false" onAction="#bttnConfirm_OnClick" text="Confirm" />
+                  <Button mnemonicParsing="false" onAction="#bttnCancel_OnClick" text="Cancel" />
                </children>
                <opaqueInsets>
                   <Insets />

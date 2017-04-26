@@ -411,7 +411,7 @@ public class ICrashAdminGUIController extends AbstractAuthGUIController {
 			dialogStage.setScene(scene);
 			
 			((SmsGUIController) loader.getController()).setAdminGUIController(this);
-//			((SmsGUIController) loader.getController()).setDialogStage(stage);
+			((SmsGUIController) loader.getController()).setDialogStage(dialogStage);
 
 			// Show the dialog and wait until the user closes it
 			dialogStage.showAndWait();

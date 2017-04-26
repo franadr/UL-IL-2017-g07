@@ -25,8 +25,13 @@ public class SmsGUIController {
 		this.adminGUIController = adminGUIController;
 	}
 	
-	public void handle(){
+	public void bttnConfirm_OnClick(){
 		adminGUIController.logonShowPanes(true);
+		dialogStage.close();
+	}
+	
+	public void bttnCancel_OnClick(){
+		dialogStage.close();
 	}
 
 	
