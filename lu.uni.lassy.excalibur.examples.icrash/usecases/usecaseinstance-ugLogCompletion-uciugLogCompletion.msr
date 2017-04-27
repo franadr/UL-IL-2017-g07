@@ -32,6 +32,12 @@ package usecases.uciugLogCompletion {
 				subfonction.oeCreateLogEntry("2","Alert", "New alert has arrived", "10/12/17 10h16") {
 			
 					}
+				bill executed instanceof subfunction icrash.usecases.subfunctions.oeGetLog() {
+					ieSendALogEntry("1 System user-logged 10/12/17 10h10") returned to bill
+					ieSendALogEntry("2 Alert New-alert-has-arrived 10/12/17-10h16") returned to bill
+					
+					}
+
 
 
 

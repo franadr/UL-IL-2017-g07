@@ -74,6 +74,8 @@ import lu.uni.lassy.messir.libraries.calendar
 										  AdtComment:dtComment
                                           ):ptBoolean
 				operation oeValidateAlert(AdtAlertID:dtAlertID ):ptBoolean
+				operation oeGetLog():ptBoolean
+				
 				
 				
 			}
@@ -82,6 +84,7 @@ import lu.uni.lassy.messir.libraries.calendar
 				operation ieSendAnAlert(ActAlert:ctAlert ):ptBoolean
 				operation ieSendACrisis(ActCrisis:ctCrisis ):ptBoolean
 				operation ieMessage(AMessage:ptString):ptBoolean
+				operation ieSendALogEntry(AlogEntry:ctLogEntry):ptBoolean
 	 		}
 		}
 		

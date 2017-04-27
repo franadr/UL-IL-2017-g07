@@ -1,0 +1,49 @@
+/*
+* @author Adriano
+* @date Thu Apr 27 17:06:42 CEST 2017
+*/
+
+package icrash.^operation.environment.actCoordinator.oeGetLog {
+
+import lu.uni.lassy.messir.libraries.primitives
+
+import lu.uni.lassy.messir.libraries.calendar
+import lu.uni.lassy.messir.libraries.math
+
+import icrash.concepts.primarytypes.classes
+
+	Operation Model {
+	operation: icrash.environment.actCoordinator.outactCoordinator.oeGetLog():ptBoolean {
+		preP{
+			let TheSystem: ctState in
+			let AvpStarted: ptBoolean in
+			let AvpIsLogged : ptBoolean in
+			let TheCoordinator: ctCoordinator in
+			
+			//Prep1&2
+			and TheCoordinator = self.rnActor
+			and	AvpIsLogged = TheCoordinator.rnctAuthenticated.vpIsLogged
+			and TheSystem = self.rnActor.rnSystem
+			and AvpStarted = TheSystem.vpStarted 
+			and AvpStarted = true
+			and AvpIsLogged = true
+			
+		}
+		preF{
+			let TheSystem: ctState in
+			let ColOfLogEntries: Bag(ctLogEntry) in
+			
+			and TheSystem = self.rnActor.rnSystem
+			and ColOfLogEntries = TheSystem.rnctLogEntry
+			and ColOfLogEntries->size.geq(1)
+			
+			and ColOfLogEntries->forall(e / TheSystem.rnactCoordinator.rnInterfaceIN^ieSendALogEntry(e)  )
+			
+			
+			
+		}
+	}
+	}
+
+
+}
