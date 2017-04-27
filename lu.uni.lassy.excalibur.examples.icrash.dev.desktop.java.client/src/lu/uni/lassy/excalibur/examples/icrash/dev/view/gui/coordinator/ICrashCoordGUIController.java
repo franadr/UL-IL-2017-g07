@@ -202,7 +202,6 @@ public class ICrashCoordGUIController extends AbstractAuthGUIController {
      */
     @FXML
     void bttnCoordLogon_OnClick(ActionEvent event) {
-    	showLogWindow();
     	logon();
     }
 
@@ -269,35 +268,7 @@ public class ICrashCoordGUIController extends AbstractAuthGUIController {
 	 * 
 	 */
 	
-	 private void showLogWindow() {
-		 
-		 Screen screen = Screen.getPrimary();
-		 Rectangle2D bounds = screen.getVisualBounds();
-		 
-		 try {
-				// Load the fxml file and create a new stage for the popup dialog.
-				FXMLLoader loader = new FXMLLoader();
-				loader.setLocation(LogGuiControler.class.getResource("LogGUI.fxml"));
-				AnchorPane page = (AnchorPane) loader.load();
-
-				// Create the dialog Stage.
-				Stage logStage = new Stage();
-				logStage.setX(bounds.getMaxX());
-				logStage.setY(bounds.getMaxY());
-				logStage.setTitle("Coordinator log");
-				Scene scene = new Scene(page);
-				logStage.setScene(scene);
-				
-				// Show the dialog and wait until the user closes it
-				logStage.showAndWait();
-
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		 
-		  		
-			
-		}
+	 private CreatedWindows createdLogWindows; 
 	
 	
 	/**
@@ -513,11 +484,18 @@ public class ICrashCoordGUIController extends AbstractAuthGUIController {
 	 */
 	@Override
 	public void logon() {
+		//Created by Adriano, used to get screen bounds for the future call of log window
+		Screen screen = Screen.getPrimary();
+		Rectangle2D bounds = screen.getVisualBounds();
 		if(txtfldCoordLogonUserName.getText().length() > 0 && psswrdfldCoordLogonPassword.getText().length() > 0){
 			try {
 				if (userController.oeLogin(txtfldCoordLogonUserName.getText(), psswrdfldCoordLogonPassword.getText()).getValue()){
 					if (userController.getUserType() == UserType.Coordinator){
 						logonShowPanes(true);
+						
+						//will create the new log window
+						createdLogWindows = new CreateLog(bounds.getMaxX(),bounds.getMaxY());
+						
 						
 					}
 				}
@@ -538,6 +516,9 @@ public class ICrashCoordGUIController extends AbstractAuthGUIController {
 		try {
 			if (userController.oeLogout().getValue()){
 				logonShowPanes(false);
+				
+				//Added by adriano , used to close the previously created log window
+				createdLogWindows.closeWindow();
 			}
 		} catch (ServerOfflineException | ServerNotBoundException e) {
 			showExceptionErrorMessage(e);
