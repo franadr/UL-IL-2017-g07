@@ -494,7 +494,7 @@ public class ICrashCoordGUIController extends AbstractAuthGUIController {
 						logonShowPanes(true);
 						
 						//will create the new log window
-						createdLogWindows = new CreateLog(bounds.getMaxX(),bounds.getMaxY());
+						createdLogWindows = new CreateLog(bounds.getMaxX()/2,bounds.getMaxY()/2);
 						
 						
 					}
