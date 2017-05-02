@@ -32,7 +32,9 @@ import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.PtString;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.utils.Log4JUtils;
 import lu.uni.lassy.excalibur.examples.icrash.dev.model.Message;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.AbstractAuthGUIController;
+import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.CreatedWindows;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.coordinator.CreateICrashCoordGUI;
+import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.sms.CreateSMSGUI;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.sms.SmsGUIController;
 import javafx.scene.layout.GridPane;
 import javafx.collections.ListChangeListener;
@@ -188,8 +190,8 @@ public class ICrashAdminGUIController extends AbstractAuthGUIController {
 		bttnAdminLogoff.setDisable(!loggedOn);
 		bttnAdminLogin.setDefaultButton(!loggedOn);
 		if (!loggedOn){
-			txtfldAdminUserName.setText("");
-			psswrdfldAdminPassword.setText("");
+			txtfldAdminUserName.setText("icrashadmin");																			//FOR TESTING CONVENIENCE
+			psswrdfldAdminPassword.setText("7WXC1359");																			//FOR TESTING CONVENIENCE
 			txtfldAdminUserName.requestFocus();
 			for (int i = anchrpnCoordinatorDetails.getChildren().size() -1; i >= 0; i--)
 				anchrpnCoordinatorDetails.getChildren().remove(i);
@@ -288,6 +290,9 @@ public class ICrashAdminGUIController extends AbstractAuthGUIController {
 		AnchorPane.setRightAnchor(grdpn, 0.0);
 		txtfldUserID.requestFocus();
 	}
+	
+	//SMS WINDOW
+	 private CreatedWindows createdSMSWindow; 
 
 	/* (non-Javadoc)
 	 * @see lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.AbstractAuthGUIController#logon()
@@ -297,7 +302,7 @@ public class ICrashAdminGUIController extends AbstractAuthGUIController {
 		if(txtfldAdminUserName.getText().length() > 0 && psswrdfldAdminPassword.getText().length() > 0){
 			try {
 				if (userController.oeLogin(txtfldAdminUserName.getText(), psswrdfldAdminPassword.getText()).getValue())
-					showSMSDialog();
+					createdSMSWindow = new CreateSMSGUI(this);
 			}
 			catch (ServerOfflineException | ServerNotBoundException e) {
 				showExceptionErrorMessage(e);
@@ -411,7 +416,7 @@ public class ICrashAdminGUIController extends AbstractAuthGUIController {
 			dialogStage.setScene(scene);
 			
 			((SmsGUIController) loader.getController()).setAdminGUIController(this);
-			((SmsGUIController) loader.getController()).setDialogStage(dialogStage);
+			((SmsGUIController) loader.getController()).setStage(dialogStage);
 
 			// Show the dialog and wait until the user closes it
 			dialogStage.showAndWait();
