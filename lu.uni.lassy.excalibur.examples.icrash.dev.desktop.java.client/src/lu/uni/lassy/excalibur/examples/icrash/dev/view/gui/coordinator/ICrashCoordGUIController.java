@@ -43,7 +43,7 @@ import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.AbstractA
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.CreatedWindows;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.log.CreateLog;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.log.LogGuiControler;
-import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.sms.SmsGUIController;
+import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.phone.PhoneGUIController;
 import javafx.scene.control.ButtonBar.ButtonData;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;

@@ -6,11 +6,11 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.sms.SmsGUIController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.phone.PhoneGUIController">
    <children>
-      <VBox prefHeight="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox prefHeight="400.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label prefHeight="17.0" prefWidth="199.0" text="My verification code is :">
+            <Label prefHeight="17.0" prefWidth="199.0" text="My Phone Number is :">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -34,7 +34,7 @@
                   <Font size="12.0" />
                </font>
             </Text>
-            <TextArea editable="false" prefHeight="145.0" prefWidth="266.0" text="Once your code has been verified, iCrash will not ask you for a SMS authentication for the next 3h." wrapText="true">
+            <TextArea editable="false" prefHeight="145.0" prefWidth="266.0" text="Once you confirm, an SMS including a verification code will be sent to the given Phone Number." wrapText="true">
                <VBox.margin>
                   <Insets bottom="45.0" left="20.0" right="20.0" />
                </VBox.margin>

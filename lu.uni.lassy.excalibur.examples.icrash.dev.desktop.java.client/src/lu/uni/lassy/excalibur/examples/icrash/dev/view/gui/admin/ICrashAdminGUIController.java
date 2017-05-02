@@ -34,6 +34,7 @@ import lu.uni.lassy.excalibur.examples.icrash.dev.model.Message;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.AbstractAuthGUIController;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.CreatedWindows;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.coordinator.CreateICrashCoordGUI;
+import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.phone.CreatePhoneGUI;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.sms.CreateSMSGUI;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.sms.SmsGUIController;
 import javafx.scene.layout.GridPane;
@@ -302,7 +303,8 @@ public class ICrashAdminGUIController extends AbstractAuthGUIController {
 	
 	
 	//SMS WINDOW
-	 private CreatedWindows createdSMSWindow; 
+	 private CreatedWindows createdSMSWindow;
+	 private CreatedWindows createdPhoneWindow;
 
 	/* (non-Javadoc)
 	 * @see lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.AbstractAuthGUIController#logon()
@@ -314,7 +316,7 @@ public class ICrashAdminGUIController extends AbstractAuthGUIController {
 		if(txtfldAdminUserName.getText().length() > 0 && psswrdfldAdminPassword.getText().length() > 0){
 			try {
 				if (userController.oeLogin(txtfldAdminUserName.getText(), psswrdfldAdminPassword.getText()).getValue())
-					createdSMSWindow = new CreateSMSGUI(this, 150, 150);
+					createdPhoneWindow = new CreatePhoneGUI(this, 150, 150);
 			}
 			catch (ServerOfflineException | ServerNotBoundException e) {
 				showExceptionErrorMessage(e);
