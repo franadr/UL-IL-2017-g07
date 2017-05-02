@@ -1,0 +1,43 @@
+package usecases.uciugDismissCrisis {
+	import icrash.usecases.ugDismissCrisis.msr
+	import icrash.environment
+	import icrash.usecases.subfunctions
+
+	Use Case Model {
+
+		use case instance uciugDismissCrisis : ugDismissCrisis{
+			actors {
+				chl: actHospital
+				bill: actCoordinator
+				
+			}
+			use case steps {
+				
+				chl
+				executed instanceof subfunction
+					oeSendBack("3","incorrect"){
+						ieMessage("Crisis 3 status has been set to 'incorrect'") returned to chl
+					}
+					
+				bill
+				executed instanceof subfunction
+					oeReportOnCrisis("Crisis 3 has been stated as incorrect"){
+						ieMessage("Report on Crisis 3 created") returned to bill
+					}
+					
+				bill
+				executed instanceof subfunction
+					oeInvalidateAlert("3"){
+						ieMessage("Alert 3 has been invalidated") returned to bill
+					}
+				
+				bill
+				executed instanceof subfunction
+					oeCloseCrisis("3"){
+						ieMessage("Crisis 3 has been closed") returned to bill
+					}
+				
+			}
+		}
+	}
+}

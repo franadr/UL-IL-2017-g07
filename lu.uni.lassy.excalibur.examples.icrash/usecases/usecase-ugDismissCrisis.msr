@@ -1,0 +1,31 @@
+/*
+* @author Carlos
+* @date Wed Apr 12 09:31:22 CEST 2017
+*/
+
+package icrash.usecases.ugDismissCrisis.msr {
+
+import lu.uni.lassy.messir.libraries.primitives
+import icrash.environment
+import icrash.usecases.subfunctions
+
+
+
+	Use Case Model {
+
+	use case system usergoal ugDismissCrisis() {
+		
+		actor actHospital[primary, active]
+		actor actCoordinator[primary, active]
+		
+		step a: actHospital executes oeSendBack
+		step b: actCoordinator executes oeReportOnCrisis
+		step c: actCoordinator executes oeInvalidateAlert
+		step d: actCoordinator executes oeCloseCrisis
+		
+		ordering constraint "dismissing a crisis is one of the usecases"
+		}
+	}
+
+
+}

@@ -1,0 +1,15 @@
+/*
+@author Carlos
+@date Wed Apr 12 09:39:59 CEST 2017
+*/
+
+
+@@view uci-uciugDismissCrisis
+@instance Use-Case usecases.uciugDismissCrisis.uciugDismissCrisis 
+@description ""
+@caption ""
+
+@@view uci-uciugDismissCrisis
+@instance Use-Case usecases.uciugDismissCrisis.uciugDismissCrisis 
+@description ""
+@caption ""

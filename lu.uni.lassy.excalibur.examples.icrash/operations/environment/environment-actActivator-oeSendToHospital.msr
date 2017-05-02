@@ -19,6 +19,7 @@ import icrash.concepts.primarytypes.classes
 			let AvpStarted: ptBoolean in
 			let TheActor:actCoordinator in
 			let ListOfHospital : Bag(ctHospital) in
+			let ListOfServiceHospital : Bag(ctHospital) in
 			self.rnActor.rnSystem = TheSystem
 			
 			and self.rnActor.rnSystem.vpStarted = AvpStarted
@@ -32,9 +33,13 @@ import icrash.concepts.primarytypes.classes
 			/*PreP03*/
 			and TheSystem.rnctHospital = ListOfHospital
   			and ListOfHospital->size().geq(1)
-  			and ActCrisis.init(AdtCrisisID, AetCrisisType, AetCrisisCategory, AetCrisisStatus, AdtGPSLocation, AdtDateAndTime, AetService, AdtComment)
-			and ListOfHospital -> forall(
-				AetService = hospital.service
+  			and ActCrisis.init(AdtCrisisID, AetCrisisType, 
+  							   AetCrisisCategory, AetCrisisStatus, 
+  							   AdtGPSLocation, AdtDateAndTime, 
+  							   AetService, AdtComment
+  			)
+			and ListOfServiceHospital -> select(
+				AetService == hospital.service
 				)
 		}
 		
