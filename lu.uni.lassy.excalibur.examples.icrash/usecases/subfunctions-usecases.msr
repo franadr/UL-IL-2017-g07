@@ -182,6 +182,14 @@ import icrash.environment
 	use case system subfunction oeBreakAndDeleteVCode() {
 		actor actActivator[primary,proactive]
 	}
+//
+	use case system subfunction oeGetLog(){
+		actor actCoordinator[primary,active]
+		
+		returned messages{
+			ieSendALogEntry(AlogEntry) returned to actCoordinator
+		}
+	}
   
   }
  }

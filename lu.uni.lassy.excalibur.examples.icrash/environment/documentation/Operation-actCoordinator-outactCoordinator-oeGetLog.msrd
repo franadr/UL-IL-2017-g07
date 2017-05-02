@@ -1,0 +1,30 @@
+/*
+@author Adriano
+@date Thu Apr 27 16:42:29 CEST 2017
+*/
+
+
+@@Operation
+icrash.environment.actCoordinator.outactCoordinator.oeGetLog
+@description "sent to retrieve all recorded log entry instances.
+ "
+//preProtocol descriptions
+@preP
+"The system is started "
+@preP
+"The coordinator instance is logged in"
+@endPreP
+//preFunctional descriptions
+@preF
+"There exists at least one instance of type logEntry "
+@endPreF
+//postFunctional descriptions
+@postF 
+"Each logEntry instances are returned to the coordinator"
+@endPostF
+//postProtocol descriptions
+@postP 
+" "
+@endPostP
+//example
+@example" "

@@ -54,7 +54,8 @@ public class CreateLog implements CreatedWindows {
 	
 	@Override
 	public void closeWindow() {
-		
+		if (stage != null)
+			stage.close();
 		
 	}
 	

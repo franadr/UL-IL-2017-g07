@@ -24,6 +24,7 @@ import icrash.usecases.subfunctions
 			step d: actActivator executes oeCreateLogEntry(ApteID,AeteType,ApeText,AdtTime)
 			step e: actComCompany executes oeAlert(AetKind,AdtMyDate,AdtTime,AdtPhoneNumber,AdtGPSLocation,AdtComment)
 			step f: actActivator executes oeCreateLogEntry(ApteID,AeteType,ApeText,AdtTime)
+			step g: actCoordinator executes oeGetLog()
 			
 		}
 
