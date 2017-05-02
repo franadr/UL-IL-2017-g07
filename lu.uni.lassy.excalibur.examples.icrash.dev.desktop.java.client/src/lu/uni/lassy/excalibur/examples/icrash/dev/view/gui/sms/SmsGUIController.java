@@ -5,6 +5,7 @@ import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.design.JIntIsActor;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.PtBoolean;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.AbstractGUIController;
@@ -18,6 +19,7 @@ public class SmsGUIController extends AbstractGUIController implements HasTables
 	private CreateICrashAdminGUI mainApp;
 	private Stage stage;
 	private ICrashAdminGUIController adminGUIController;
+	private Window window;
 	
 	/**
 	 * Initializes the controller class. This method is automatically called

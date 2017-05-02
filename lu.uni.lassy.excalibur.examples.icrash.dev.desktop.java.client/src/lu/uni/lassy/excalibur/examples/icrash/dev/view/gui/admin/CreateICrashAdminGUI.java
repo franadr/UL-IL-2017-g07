@@ -71,7 +71,6 @@ public class CreateICrashAdminGUI implements CreatedWindows {
             stage.show();
             ((ICrashAdminGUIController)loader.getController()).setWindow(stage);
             ((ICrashAdminGUIController)loader.getController()).setActor(aActAdmin);
-            ((ICrashAdminGUIController)loader.getController()).setLoginWindow(this);						/**NEW SMS AUTHENTIFICATION FEATURE**/
             stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
 				@Override
 				public void handle(WindowEvent event) {

@@ -45,6 +45,7 @@ import javafx.event.EventHandler;
  */
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
@@ -54,7 +55,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 /*
  * This is the end of the import section to be replaced by modifications in the ICrash.fxml document from the sample skeleton controller
  */
@@ -291,6 +294,13 @@ public class ICrashAdminGUIController extends AbstractAuthGUIController {
 		txtfldUserID.requestFocus();
 	}
 	
+	/*********************************************************************************************************************************************************************/
+	
+	public Window getWindow(){
+		return window;
+	}
+	
+	
 	//SMS WINDOW
 	 private CreatedWindows createdSMSWindow; 
 
@@ -299,10 +309,12 @@ public class ICrashAdminGUIController extends AbstractAuthGUIController {
 	 */
 	@Override
 	public void logon() {
+		Screen screen = Screen.getPrimary();
+		Rectangle2D bounds = screen.getVisualBounds();
 		if(txtfldAdminUserName.getText().length() > 0 && psswrdfldAdminPassword.getText().length() > 0){
 			try {
 				if (userController.oeLogin(txtfldAdminUserName.getText(), psswrdfldAdminPassword.getText()).getValue())
-					createdSMSWindow = new CreateSMSGUI(this);
+					createdSMSWindow = new CreateSMSGUI(this, 150, 150);
 			}
 			catch (ServerOfflineException | ServerNotBoundException e) {
 				showExceptionErrorMessage(e);
@@ -376,62 +388,5 @@ public class ICrashAdminGUIController extends AbstractAuthGUIController {
 			return new PtBoolean(false);
 		}
 		return new PtBoolean(false);
-	}
-	
-	
-	
-/***********************************************************************************************************************************************************************************/	
-
-	
-	private CreateICrashAdminGUI createAdminGUI;
-	
-	/**
-	 * Link to Login Window of the user.
-	 * */
-	public void setLoginWindow(CreateICrashAdminGUI createAdminGUI){
-		this.createAdminGUI = createAdminGUI;
-	}
-	
-	
-	@FXML
-	private void handleLogon() {
-		logonShowPanes(true);		
-	}
-	
-	
-	
-	public void showSMSDialog() {
-		try {
-			// Load the fxml file and create a new stage for the popup dialog.
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(SmsGUIController.class.getResource("SmsGUI.fxml"));
-			AnchorPane page = (AnchorPane) loader.load();
-
-			// Create the dialog Stage.
-			Stage dialogStage = new Stage();
-			dialogStage.setTitle("SMS Authentication");
-			dialogStage.initModality(Modality.WINDOW_MODAL);
-//			dialogStage.initOwner(stage);
-			Scene scene = new Scene(page);
-			dialogStage.setScene(scene);
-			
-			((SmsGUIController) loader.getController()).setAdminGUIController(this);
-			((SmsGUIController) loader.getController()).setStage(dialogStage);
-
-			// Show the dialog and wait until the user closes it
-			dialogStage.showAndWait();
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-	
-	
-/***********************************************************************************************************************************************************************************/	
-	
-	
-	
-	
-	
-	
+	}	
 }
