@@ -1,4 +1,4 @@
-package lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.sms;
+package lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.phone;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -11,21 +11,29 @@ import javafx.stage.Window;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.design.JIntIsActor;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.PtBoolean;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.AbstractGUIController;
+import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.CreatedWindows;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.HasTables;
-import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.admin.CreateICrashAdminGUI;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.admin.ICrashAdminGUIController;
+import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.sms.CreateSMSGUI;
 
-public class SmsGUIController extends AbstractGUIController implements HasTables {
+public class PhoneGUIController extends AbstractGUIController implements HasTables {
 
-
-	private CreateICrashAdminGUI mainApp;
 	private Stage stage;
 	private ICrashAdminGUIController adminGUIController;
 	private Window window;
-	
+	private CreatedWindows createdSMSWindow;
+		
 	@FXML Text warningMessage;
-	@FXML TextField vCodeField;	
+	@FXML TextField phoneField;
 	
+	/**
+	 * Initializes the controller class. This method is automatically called
+	 * after the fxml file has been loaded.
+	 */
+	@FXML
+	private void initialize() {
+
+	}
 	
 	public void setAdminGUIController(ICrashAdminGUIController adminGUIController){
 		this.adminGUIController = adminGUIController;
@@ -43,6 +51,7 @@ public class SmsGUIController extends AbstractGUIController implements HasTables
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
+		phoneField.setText("Whatever");
 		
 	}
 
@@ -65,10 +74,10 @@ public class SmsGUIController extends AbstractGUIController implements HasTables
 	}	
 	
 	public void bttnConfirm_OnClick(){
-		if(!vCodeField.getText().isEmpty()){
-			warningMessage.setText("Wrong Code !!"); 							//Condition adapted for convenience
+		if(phoneField.getText().isEmpty()){									//Condition adapted for convenience
+			warningMessage.setText("Phone Number Field is empty!!");
 		}else{
-		adminGUIController.logonShowPanes(true);
+		createdSMSWindow = new CreateSMSGUI(adminGUIController, 150, 150);
 		stage.close();
 		}
 	}

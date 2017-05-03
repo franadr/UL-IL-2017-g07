@@ -32,7 +32,10 @@ import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.PtString;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.utils.Log4JUtils;
 import lu.uni.lassy.excalibur.examples.icrash.dev.model.Message;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.AbstractAuthGUIController;
+import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.CreatedWindows;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.coordinator.CreateICrashCoordGUI;
+import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.phone.CreatePhoneGUI;
+import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.sms.CreateSMSGUI;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.sms.SmsGUIController;
 import javafx.scene.layout.GridPane;
 import javafx.collections.ListChangeListener;
@@ -43,6 +46,7 @@ import javafx.event.EventHandler;
  */
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
@@ -52,7 +56,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 /*
  * This is the end of the import section to be replaced by modifications in the ICrash.fxml document from the sample skeleton controller
  */
@@ -188,8 +194,8 @@ public class ICrashAdminGUIController extends AbstractAuthGUIController {
 		bttnAdminLogoff.setDisable(!loggedOn);
 		bttnAdminLogin.setDefaultButton(!loggedOn);
 		if (!loggedOn){
-			txtfldAdminUserName.setText("");
-			psswrdfldAdminPassword.setText("");
+			txtfldAdminUserName.setText("icrashadmin");																			//FOR TESTING CONVENIENCE
+			psswrdfldAdminPassword.setText("7WXC1359");																			//FOR TESTING CONVENIENCE
 			txtfldAdminUserName.requestFocus();
 			for (int i = anchrpnCoordinatorDetails.getChildren().size() -1; i >= 0; i--)
 				anchrpnCoordinatorDetails.getChildren().remove(i);
@@ -288,16 +294,29 @@ public class ICrashAdminGUIController extends AbstractAuthGUIController {
 		AnchorPane.setRightAnchor(grdpn, 0.0);
 		txtfldUserID.requestFocus();
 	}
+	
+	/*********************************************************************************************************************************************************************/
+	
+	public Window getWindow(){
+		return window;
+	}
+	
+	
+	//SMS WINDOW
+	 private CreatedWindows createdSMSWindow;
+	 private CreatedWindows createdPhoneWindow;
 
 	/* (non-Javadoc)
 	 * @see lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.AbstractAuthGUIController#logon()
 	 */
 	@Override
 	public void logon() {
+		Screen screen = Screen.getPrimary();
+		Rectangle2D bounds = screen.getVisualBounds();
 		if(txtfldAdminUserName.getText().length() > 0 && psswrdfldAdminPassword.getText().length() > 0){
 			try {
 				if (userController.oeLogin(txtfldAdminUserName.getText(), psswrdfldAdminPassword.getText()).getValue())
-					showSMSDialog();
+					createdPhoneWindow = new CreatePhoneGUI(this, 150, 150);
 			}
 			catch (ServerOfflineException | ServerNotBoundException e) {
 				showExceptionErrorMessage(e);
@@ -371,62 +390,5 @@ public class ICrashAdminGUIController extends AbstractAuthGUIController {
 			return new PtBoolean(false);
 		}
 		return new PtBoolean(false);
-	}
-	
-	
-	
-/***********************************************************************************************************************************************************************************/	
-
-	
-	private CreateICrashAdminGUI createAdminGUI;
-	
-	/**
-	 * Link to Login Window of the user.
-	 * */
-	public void setLoginWindow(CreateICrashAdminGUI createAdminGUI){
-		this.createAdminGUI = createAdminGUI;
-	}
-	
-	
-	@FXML
-	private void handleLogon() {
-		logonShowPanes(true);		
-	}
-	
-	
-	
-	public void showSMSDialog() {
-		try {
-			// Load the fxml file and create a new stage for the popup dialog.
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(SmsGUIController.class.getResource("SmsGUI.fxml"));
-			AnchorPane page = (AnchorPane) loader.load();
-
-			// Create the dialog Stage.
-			Stage dialogStage = new Stage();
-			dialogStage.setTitle("SMS Authentication");
-			dialogStage.initModality(Modality.WINDOW_MODAL);
-//			dialogStage.initOwner(stage);
-			Scene scene = new Scene(page);
-			dialogStage.setScene(scene);
-			
-			((SmsGUIController) loader.getController()).setAdminGUIController(this);
-			((SmsGUIController) loader.getController()).setDialogStage(dialogStage);
-
-			// Show the dialog and wait until the user closes it
-			dialogStage.showAndWait();
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-	
-	
-/***********************************************************************************************************************************************************************************/	
-	
-	
-	
-	
-	
-	
+	}	
 }
