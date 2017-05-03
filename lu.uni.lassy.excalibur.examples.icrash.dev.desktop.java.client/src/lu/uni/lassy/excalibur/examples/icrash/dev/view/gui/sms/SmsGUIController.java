@@ -27,14 +27,6 @@ public class SmsGUIController extends AbstractGUIController implements HasTables
 	@FXML TextField vCodeField;	
 	
 	
-	/**
-	 * Initializes the controller class. This method is automatically called
-	 * after the fxml file has been loaded.
-	 */
-	@FXML
-	private void initialize() {
-	}
-	
 	public void setAdminGUIController(ICrashAdminGUIController adminGUIController){
 		this.adminGUIController = adminGUIController;
 	}

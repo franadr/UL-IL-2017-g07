@@ -21,7 +21,7 @@
                   <Insets left="10.0" right="10.0" />
                </VBox.margin>
             </Label>
-            <TextField fx:id="phoneField">
+            <TextField fx:id="phoneField" text="ooooo">
                <VBox.margin>
                   <Insets bottom="5.0" left="30.0" right="30.0" />
                </VBox.margin>

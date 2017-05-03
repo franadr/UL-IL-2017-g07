@@ -32,7 +32,7 @@ public class PhoneGUIController extends AbstractGUIController implements HasTabl
 	 */
 	@FXML
 	private void initialize() {
-		phoneField.setText("Whatever");
+
 	}
 	
 	public void setAdminGUIController(ICrashAdminGUIController adminGUIController){
@@ -51,6 +51,7 @@ public class PhoneGUIController extends AbstractGUIController implements HasTabl
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
+		phoneField.setText("Whatever");
 		
 	}
 
@@ -73,7 +74,7 @@ public class PhoneGUIController extends AbstractGUIController implements HasTabl
 	}	
 	
 	public void bttnConfirm_OnClick(){
-		if(!phoneField.getText().isEmpty()){									//Condition adapted for convenience
+		if(phoneField.getText().isEmpty()){									//Condition adapted for convenience
 			warningMessage.setText("Phone Number Field is empty!!");
 		}else{
 		createdSMSWindow = new CreateSMSGUI(adminGUIController, 150, 150);
