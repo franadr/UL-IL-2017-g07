@@ -21,12 +21,12 @@
                   <Insets left="10.0" right="10.0" />
                </VBox.margin>
             </Label>
-            <TextField>
+            <TextField fx:id="vCodeField">
                <VBox.margin>
                   <Insets bottom="5.0" left="30.0" right="30.0" />
                </VBox.margin>
             </TextField>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Warning Messages!">
+            <Text fx:id="warningMessage" strokeType="OUTSIDE" strokeWidth="0.0" text="Warning Messages!">
                <VBox.margin>
                   <Insets bottom="30.0" left="30.0" />
                </VBox.margin>

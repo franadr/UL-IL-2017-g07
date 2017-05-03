@@ -4,6 +4,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.design.JIntIsActor;
@@ -20,6 +22,10 @@ public class SmsGUIController extends AbstractGUIController implements HasTables
 	private Stage stage;
 	private ICrashAdminGUIController adminGUIController;
 	private Window window;
+	
+	@FXML Text warningMessage;
+	@FXML TextField vCodeField;	
+	
 	
 	/**
 	 * Initializes the controller class. This method is automatically called
@@ -67,8 +73,12 @@ public class SmsGUIController extends AbstractGUIController implements HasTables
 	}	
 	
 	public void bttnConfirm_OnClick(){
+		if(!vCodeField.getText().isEmpty()){
+			warningMessage.setText("Wrong Code !!"); 							//Condition adapted for convenience
+		}else{
 		adminGUIController.logonShowPanes(true);
 		stage.close();
+		}
 	}
 	
 	public void bttnCancel_OnClick(){

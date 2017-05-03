@@ -4,6 +4,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.design.JIntIsActor;
@@ -11,7 +13,6 @@ import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.PtBoolean;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.AbstractGUIController;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.CreatedWindows;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.HasTables;
-import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.admin.CreateICrashAdminGUI;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.admin.ICrashAdminGUIController;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.sms.CreateSMSGUI;
 
@@ -21,6 +22,9 @@ public class PhoneGUIController extends AbstractGUIController implements HasTabl
 	private ICrashAdminGUIController adminGUIController;
 	private Window window;
 	private CreatedWindows createdSMSWindow;
+		
+	@FXML Text warningMessage;
+	@FXML TextField phoneField;
 	
 	/**
 	 * Initializes the controller class. This method is automatically called
@@ -28,6 +32,7 @@ public class PhoneGUIController extends AbstractGUIController implements HasTabl
 	 */
 	@FXML
 	private void initialize() {
+		phoneField.setText("Whatever");
 	}
 	
 	public void setAdminGUIController(ICrashAdminGUIController adminGUIController){
@@ -68,8 +73,12 @@ public class PhoneGUIController extends AbstractGUIController implements HasTabl
 	}	
 	
 	public void bttnConfirm_OnClick(){
+		if(!phoneField.getText().isEmpty()){									//Condition adapted for convenience
+			warningMessage.setText("Phone Number Field is empty!!");
+		}else{
 		createdSMSWindow = new CreateSMSGUI(adminGUIController, 150, 150);
 		stage.close();
+		}
 	}
 	
 	public void bttnCancel_OnClick(){
