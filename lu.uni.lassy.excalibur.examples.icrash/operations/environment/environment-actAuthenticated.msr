@@ -1,5 +1,6 @@
 package icrash.operations.environment.actAuthenticated{ 
-	
+
+import lu.uni.lassy.messir.libraries.calendar	
 import lu.uni.lassy.messir.libraries.primitives
 
 import icrash.concepts.primarytypes.datatypes
@@ -7,6 +8,8 @@ import icrash.concepts.primarytypes.classes
 import icrash.concepts.secondarytypes.datatypes
 import icrash.concepts.secondarytypes.classes
 import icrash.environment
+
+
 
 Operation Model {
 
@@ -22,6 +25,8 @@ preP{
   and TheSystem.vpStarted = true
 /* PreP02 */
   and TheActor.rnctAuthenticated.vpIsLogged = false
+/* PreP03 */
+  and TheActor.rnctAuthenticated.vpStatus = 'isIn1stLoginPhase'
 }
 preF{
 /* PreF01 */
@@ -30,6 +35,7 @@ true
 postF{
   let TheSystem: ctState in
   let TheactAuthenticated:actAuthenticated in
+  let AdtPhoneNumber in
 
   let AptStringMessageForTheactAuthenticated: ptString in
   let AptStringMessageForTheactAdministrator:ptString in
@@ -38,14 +44,23 @@ postF{
   and self.rnActor = TheactAuthenticated
   
   and /* PostF01 */
-      if (TheactAuthenticated.rnctAuthenticated.pwd
-          = AdtPassword
-          and TheactAuthenticated.rnctAuthenticated.login
-              = AdtLogin
+      if (TheactAuthenticated.rnctAuthenticated.pwd = AdtPassword
+          and TheactAuthenticated.rnctAuthenticated.login = AdtLogin
+          and TheactAuthenticated.rnctAuthenticated.rnctVCode -> isEmpty = false
          )
       then (AptStringMessageForTheactAuthenticated.eq('You are logged ! Welcome ...')
             and TheactAuthenticated.rnInterfaceIN^ieMessage(AptStringMessageForTheactAuthenticated)
            )
+      else if(TheactAuthenticated.rnctAuthenticated.pwd = AdtPassword
+          and TheactAuthenticated.rnctAuthenticated.login = AdtLogin
+          and TheactAuthenticated.rnctAuthenticated.rnctVCode -> isEmpty = true
+      )
+      then (if(TheactAuthenticated.rnctAuthenticated.isPhoneNumberValid = false)
+      		then(AptStringMessageForTheactAuthenticated.eq('Please confirm your phone number...'))
+      		else(TheactAuthenticated.rnctAuthenticated.phoneNumber = AdtPhoneNumber
+      		and AptStringMessageForTheactAuthenticated.eq('A verification code has been sent to ' + AdtPhoneNumber))
+      		endif
+      		)
       else (AptStringMessageForTheactAuthenticated
             .eq('Wrong identification information ! Please try again ...')
             and TheactAuthenticated.rnInterfaceIN^ieMessage(AptStringMessageForTheactAuthenticated)
@@ -54,7 +69,30 @@ postF{
                 .rnInterfaceIN^ieMessage(AptStringMessageForTheactAdministrator)
            )
       endif
+      endif
+      
+  and /* PostF02 */
+  
+  let ThectVCode:ctVCode in
+  let AdtDateAndTime:dtDateAndTime in
+  let AptBoolean:ptBoolean in
+  
+  TheSystem.clock = AdtDateAndTime
+  false = AptBoolean
+  
+      if(TheactAuthenticated.rnctAuthenticated.pwd = AdtPassword
+          and TheactAuthenticated.rnctAuthenticated.login = AdtLogin
+          and TheactAuthenticated.rnctAuthenticated.rnctVCode -> isEmpty = true
+      )then(ThectVCode.init(										
+      		AdtDateAndTime,
+      		AptBoolean)
+      		and TheactAthenticated.rnctAuthenticated.rnctVCode = ThectVCode
+      		)
+       else()
+       	
+      endif
 }
+
 postP{
   let TheSystem: ctState in
   let TheactAuthenticated:actAuthenticated in
@@ -64,10 +102,26 @@ postP{
 /* PostP01 */
   if (TheactAuthenticated.rnctAuthenticated.pwd = AdtPassword
       and TheactAuthenticated.rnctAuthenticated.login = AdtLogin
+      and TheactAuthenticated.rnctAuthenticated.rnctVCode -> isEmpty = false
+      and TheactAuthenticated.rnctAuthenticated.rnctVCode.vpIsValidated = true
      )
-  then (TheactAuthenticated.rnctAuthenticated@post.vpIsLogged = true)
-  else true
+  then (TheactAuthenticated.rnctAuthenticated@post.vpIsLogged = true
+  	and TheactAuthenticated.rnctAuthenticated.vpStatus = 'isNotShown'
+  )
+  else ()
   endif
+  
+/* PostP02 */
+  if (TheactAuthenticated.rnctAuthenticated.pwd = AdtPassword
+      and TheactAuthenticated.rnctAuthenticated.login = AdtLogin
+      and TheactAuthenticated.rnctAuthenticated.rnctVCode -> isEmpty = true)
+      then(if(TheactAuthenticated.rnctAuthenticated.isPhoneNumberValid = false)
+      		then(TheactAuthenticated.rnctAuthenticated.vpStatus = 'isInRequestPhone')
+      		else(TheactAuthenticated.rnctAuthenticated.vpStatus = 'isIn2ndLoginPhase')
+      		endif)
+     else()
+     endif
+  
 }
 prolog{"src/Operations/Environment/OUT/outactAuthenticated-oeLogin.pl"}
 }
