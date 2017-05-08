@@ -26,7 +26,8 @@ preP {
   				and TheSystem.vpStarted = true
   				
   				/*Prep 2*/
-  				and TheActor.rnctAuthenticated.vpIs2ndLoginPhase = true
+  				and (TheActor.rnctAuthenticated.vpStatus = 'isIn2ndLoginPhase' 
+  				or TheActor.rnctAuthenticated.vpStatus = 'isInRequestPhone')
 			}
 			
 			
@@ -50,14 +51,21 @@ preP {
 			}
 			
 			postP{
+				let TheSystem: ctState in
 				let TheActor:actAuthenticated in
+				let AdtVCode:dtVCode in
+				
+				self.rnActor.rnSystem = TheSystem
   				and self.rnActor = TheActor	
+				
+				TheActor.rnctAuthenticated.rnctVCode.dtVCode = AdtVCode
 				
 				/*PostF 1*/
   				and TheActor.rnctAuthenticated.rnctVCode -> isEmpty() = true
+  				and TheSystem.rnctVCode -> select(c:ctVCode | c.dtVCode = AdtVCode) -> isEmpty() = true
   				
   				/*PostF 2*/
-  				and TheActor.rnctAuthenticated.vpIs2ndLoginPhase = false
+  				TheActor.rnctAuthenticated.vpStatus = 'isIn1stLoginPhase' 
 			}
 		}
 	}

@@ -12,7 +12,7 @@ icrash.environment.actAuthenticated.outactAuthenticated.oeCancelLogin
 @preP
 "the system is started."
 @preP
-"the actor successfully passed the first login step."
+"the attribute 'vpStatus' of the actor's related ctAuthenticated is 'isIn2ndLoginPhase' or 'isInRequestPhone'."
 @endPreP
 //preFunctional descriptions
 @preF
@@ -20,14 +20,14 @@ icrash.environment.actAuthenticated.outactAuthenticated.oeCancelLogin
 @endPreF
 //postFunctional descriptions
 @postF 
-"a message is sent to the coordinator informing him that he cancelled the login procedure."
+"a message is sent to the actor informing him that he cancelled the login procedure."
 @endPostF
 //postProtocol descriptions
 @postP 
 "break the association between that 'ctVCode' instance and the unique associated actAuthenticated instance 
 (and also delete that ctVCode instance). "
 @postP
-"the actor is sent back to first login step."
+"the attribute 'vpStatus' of the actor's related ctAuthenticated is set to 'isIn1stLoginPhase'."
 @endPostP
 //example
 @example" "

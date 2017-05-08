@@ -18,9 +18,7 @@ icrash.environment.actAuthenticated.outactAuthenticated.oeConfirmPhoneNumber.Adt
 @preP
 "the system is started."
 @preP
-"the attribute 'vpIsPhoneNumberValid' of actor's related ctAuthenticated is set to false."
-@preP
-"the actor successfully passed the first login step."
+"the attribute 'vpStatus' of the actor's related ctAuthenticated is 'isInRequestPhone'."
 @endPreP
 //preFunctional descriptions
 @preF
@@ -42,7 +40,7 @@ and 'isValidated' attribute set to false
 @endPostF
 //postProtocol descriptions
 @postP 
-""
+"the attribute 'vpStatus' of the actor's related ctAuthenticated is set to 'isIn2ndLoginPhase'."
 @endPostP
 //example
 @example" "

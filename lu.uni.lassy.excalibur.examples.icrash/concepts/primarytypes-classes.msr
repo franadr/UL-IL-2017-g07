@@ -103,13 +103,13 @@ import lu.uni.lassy.messir.libraries.calendar
 				attribute pwd: dtPassword
 				attribute vpIsLogged:ptBoolean
 				attribute phoneNumber:dtPhoneNumber
-				attribute vpIsPhoneNumberValid:ptBoolean
-				attribute vpIs2ndLoginPhase:ptBoolean
+				attribute isPhoneNumberValid:ptBoolean
+				attribute vpStatus:etAuthenticatedStatus
 				
 				operation init(
 										Alogin:dtLogin ,
 										Apwd:dtPassword ,
-										AvpIsPhoneNumberValid:ptBoolean ):ptBoolean
+										AisPhoneNumberValid:ptBoolean ):ptBoolean
 										
 			}
 			

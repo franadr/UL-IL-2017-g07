@@ -18,7 +18,7 @@ combination of login and password."
 @preP
 " the system has started."
 @preP
-" the actor successfully passed the first login step."
+"the attribute 'vpStatus' of the actor's related ctAuthenticated is 'isIn2ndLoginPhase'."
 @preP
 " there exist some actor with its related ctAuthenticated instance having an association with a 
 'ctVCode' instance that still has its 'isValidated' attribute set to false."
@@ -30,15 +30,16 @@ combination of login and password."
 //postFunctional descriptions
 @postF 
 " if the verification code provided by the actor correspond to the one in the ctVCode with which the actor's related 
-ctAuthenticated instance is associated with then a welcome message is sent to the actor, the isValidated attribute
-of that ctVCode instance is set to true and its dtTime value is set to the current clock information. \newline 
+ctAuthenticated instance is associated with, then a welcome message is sent to the actor, the attributes isPhoneNumberValid (of ctAuthenticated) and
+vpIsValidated (of ctVCode) are set to true (if it isn't already) and its dateAndTime value is set to the current clock information \newline
 
  else the actor is notified that he gave incorrect data and all the administrator actors existing in the environment 
 are notified of an intrusion attempt."
 @endPostF
 //postProtocol descriptions
 @postP 
-"if the authentication information is correct then the actor is known to be logged in ! "
+"if the authentication information is correct then the actor is known to be logged in and 
+the attribute 'vpStatus' of the actor's related ctAuthenticated is set to 'isNotShown' !"
 @endPostP
 //example
 @example" "

@@ -25,10 +25,7 @@ import icrash.environment
   				and TheSystem.vpStarted = true
   				
   				/*PreP 2*/		
-				and TheActor.rnctAuthenticated.vpIsPhoneNumberValid = false
-  				
-  				/*PreP 3*/
-  				and TheActor.rnctAuthenticated.vpIs2ndLoginPhase = true
+				and TheActor.rnctAuthenticated.vpStatus = 'isInRequestPhone'	
 			}
 			
 			
@@ -54,7 +51,7 @@ import icrash.environment
 				and TheActor.rnInterfaceIN^ieMessage(AMessage)
 				
 				/*PostF 2*/
-				and ADateAndTime = TheSystem.dtDateAndTime
+				and ADateAndTime = TheSystem.clock
 				and ABoolean = false
 				and TheVCode.init(
 								ADateAndTime,
@@ -73,8 +70,7 @@ import icrash.environment
 				and TheActor.rnctAuthenticated.phoneNumber = AdtPhoneNumber				
 			}
 			postP{
-				
-				
+				and TheActor.rnctAuthenticated.vpStatus = 'isIn2ndLoginPhase'
 			}
 		 
 		}

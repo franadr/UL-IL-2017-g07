@@ -62,6 +62,10 @@ import lu.uni.lassy.messir.libraries.calendar
 				constants["small", "medium", "huge"]
 				operation is():ptBoolean
 			}
+			enum etAuthenticatedStatus {
+				constants["isIn1stLoginPhase", "isInRequestPhone", "isIn2ndLoginPhase", "isNotShown"]
+				operation is():ptBoolean
+			}
 			enum etCrisisCategory {
 				constants["1: Immediately life-threatening", "2: Imminently life-threatening", "3: Potentially life-threatening", "4: Potentially serious", "5: Less urgent"]
 				operation is():ptBoolean

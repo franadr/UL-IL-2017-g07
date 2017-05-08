@@ -12,7 +12,7 @@ icrash.environment.actActivator.outactActivator.oeBreakAndDeleteVCode
 " the system is started."
 @preP
 " there exist some actor with its related ctAuthenticated instance having an association with a 
-'ctVCode' where the difference between its dtTime attribute and the current clock time information is more than 3 hours. "
+'ctVCode' where the difference between its dateAndTime attribute and the current clock time information is more than 3 hours. "
 @endPreP
 //preFunctional descriptions
 @preF
@@ -21,7 +21,7 @@ icrash.environment.actActivator.outactActivator.oeBreakAndDeleteVCode
 //postFunctional descriptions
 @postF 
 " there is no actor with it's related ctAuthenticated instance still associated with a ctVCode instance where the difference between 
-its dtDateAndTime attribute and the current clock time information is more than 3 hours."
+its dateAndTime attribute and the current clock time information is more than 3 hours."
 @endPostF
 //postProtocol descriptions
 @postP 

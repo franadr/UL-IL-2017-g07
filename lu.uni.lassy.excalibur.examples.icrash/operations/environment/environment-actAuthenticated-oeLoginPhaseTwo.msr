@@ -29,7 +29,7 @@ import icrash.environment
   				and TheSystem.vpStarted = true
   				
   				/*Prep 2*/
-  				TheActor.rnctAuthenticated.vpIs2ndLoginPhase = true
+  				and TheActor.rnctAuthenticated.vpStatus = 'isIn2ndLoginPhase'
   				
   				/*Prep 3*/
   				and TheSystem.rnctAuthenticated.rnctVCode -> exist( vpIsValidated = false)
@@ -44,19 +44,18 @@ import icrash.environment
 			}
 			
 			postF{
-				let TheSystem: ctState in
 				let TheActor:actAuthenticated in
-  				let ColctVCode:Bag(ctVCode) in
   				let AMessage:ptString in
   				
-				self.rnActor.rnSystem = TheSystem
 				and self.rnActor = TheActor
 
 				
 				/*PostF 1*/
 				and if(AdtVCode = TheActor.rnctAuthenticated.VCode) 
 				then (AMessage = 'Welcome to iCrash!'
-				and TheActor.rnInterfaceIN^ieMessage(AMessage))
+				and TheActor.rnInterfaceIN^ieMessage(AMessage)
+				and TheActor.rnctAuthenticated.isPhoneNumberValid = true
+				and TheActor.rnctAuthenticated.rnctVCode.vpIsValidated = true)
 				else (AMessage = 'The given verification code is wrong!'
 				and TheActor.rnInterfaceIN^ieMessage(AMessage))
 				endif
@@ -70,7 +69,8 @@ import icrash.environment
 				
 				/*PostP 1*/
   				if(AdtVCode = TheActor.ctAuthenticated.VCode)
-  				then (TheActor.ctAuthenticated.vpIsLogged = true)
+  				then (TheActor.ctAuthenticated.vpIsLogged = true
+  				and TheActor.ctAuthenticated.vpStatus = 'isNotShown')
 				else ()
 				endif
 			}

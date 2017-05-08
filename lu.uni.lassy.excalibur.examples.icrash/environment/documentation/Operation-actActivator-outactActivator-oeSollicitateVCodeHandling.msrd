@@ -24,20 +24,20 @@ of its 'dtTime' attribute is more than 5 minutes less compared to the current ct
 @endPreF
 //postFunctional descriptions
 @postF 
-" if there exist some 'ctVCode' instance where the difference of its 'dtTime' attribute is 5-10 minutes less compared 
-to the current ctState clock information then a reminder message is sent to the actor notifying him that he has less than 
-10 minutes left."
+" if there exist some 'ctVCode' instance where the difference of its 'dateAndTime' attribute is 5-10 minutes less compared 
+to the current ctState clock information and its vpIsValidated attribute is false then a 
+reminder message is sent to the actor notifying him that he has less than 10 minutes left."
 @postF 
-" if there exist some 'ctVCode' instance where the difference of its 'dtTime' attribute is 10-15 minutes less compared 
-to the current ctState clock information then a reminder message is sent to the actor notifying him that he has less than 
+" if there exist some 'ctVCode' instance where the difference of its 'dateAndTime' attribute is 10-15 minutes less compared 
+to the current ctState clock information and its vpIsValidated attribute is false then a reminder message is sent to the actor notifying him that he has less than 
 5 minutes left."
 @postF 
-" if there exist some 'ctVCode' instance where the difference of its 'dtTime' attribute is more than 15 minutes less compared 
-to the current ctState clock information then a message is sent to the actor indicating that the verification code has been invalidated."
+" if there exist some 'ctVCode' instance where the difference of its 'dateAndTime' attribute is more than 15 minutes less compared 
+to the current ctState clock information and its vpIsValidated attribute is false then a message is sent to the actor indicating that the verification code has been invalidated."
 @endPostF
 //postProtocol descriptions
 @postP 
-" if there exist some 'ctVCode' instance where the difference of its 'dtTime' attribute is more than 15 minutes less compared 
+" if there exist some 'ctVCode' instance where the difference of its 'dateAndTime' attribute is more than 15 minutes less compared 
 to the current ctState clock information then break the association between that 'ctVCode' instance and the unique 
 associated actAuthenticated instance (and also delete that ctVCode instance)."
 @endPostP

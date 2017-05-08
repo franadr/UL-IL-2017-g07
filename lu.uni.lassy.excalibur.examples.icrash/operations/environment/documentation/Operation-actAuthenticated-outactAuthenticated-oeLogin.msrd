@@ -14,6 +14,8 @@ icrash.environment.actAuthenticated.outactAuthenticated.oeLogin
 "the system is started"
 @preP
 "the actor is not already logged in ! (i.e. the associated ctAuthenticated instance is not considered logged)"
+@preP
+"the attribute 'vpStatus' of the actor's related ctAuthenticated is 'isIn1stLoginPhase'."
 @endPreP
 
 //preFunctional descriptions
@@ -25,10 +27,10 @@ icrash.environment.actAuthenticated.outactAuthenticated.oeLogin
 @postF 
 " if the login and password provided by the actor correspond to the ones that belong to the ctAuthenticated instance 
 he is related to and the actor is already associated with a 'ctVCode' instance then
-a welcome message is sent to the actor (PostP 1); \newline
+a welcome message is sent to the actor (cf. PostP 1 also) \newline
 
  else if the actor isn't associated with any 'ctVCode' instance then the actor will be either notified that he has to
-input a verification code that is sent to his registered phone number or that he has to confirm his phone number.\newline
+input a verification code that is sent to his registered phone number or that he has to input his phone number (cf. PostP 2)\newline
 
  else the actor is notified that he gave incorrect data and all the administrator actors existing in the environment 
 are notified of an intrusion attempt.
@@ -39,7 +41,7 @@ he is related to and the attribute 'isPhoneNumberValid' of that class is set to 
 and the actor isn't associated with any 'ctVCode' instance then \newline
 
 the actor is associated with a newly generated 'ctVCode' instance with its \newline
-'dtTime' attribute set to the current ctState clock information \newline
+'dateAndTime' attribute set to the current ctState clock information \newline
 'dtVCode' attribute generated randomly \newline
 and 'isValidated' attribute set to false.
 "
@@ -56,14 +58,9 @@ instance where the attribute 'isValidated' is set to true then the actor is know
 
 @postP
  " if the login and password provided by the actor correspond to the ones that belong to the ctAuthenticated instance 
-he is related and that class @pre isn't associated with any 'ctVCode' instance then the actor will have to continue 
-his/her login procedure with ugSMSAuthentification (PostF 2)"
-
-@postP
-" if the login and password provided by the actor correspond to the ones that belong to the ctAuthenticated instance 
-he is related to and the attribute 'isPhoneNumberValid' of that class is set to false then the actor will have to
-continue his/her login procedure with oeConfirmPhoneNumber."
-
+he is related to and that class @pre isn't associated with any 'ctVCode' instance then two different cases may happen : \newline
+if the attribute 'isPhoneNumberValid' of actor's associated ctAuthenticated instance is false then its vpStatus is set to 'isInRequestPhone' \newline
+else its vpStatus is set to 'isIn2ndLoginPhase'."
 
 
 @endPostP
