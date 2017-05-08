@@ -63,6 +63,10 @@ import icrash.concepts.primarytypes.classes
 				and AdtTime = theEvent.eventTime
 				and ActLogEntry.createEntry(ApteID,AeteType,ApeText,AdtTime)
 				
+				/*PostF 2 */
+				TheSystem.rnctEvent->select(eventID.eq(ApteID))
+  				= theEvent
+  				and theEvent.msrIsKilled
 				
 			}
 			postP{

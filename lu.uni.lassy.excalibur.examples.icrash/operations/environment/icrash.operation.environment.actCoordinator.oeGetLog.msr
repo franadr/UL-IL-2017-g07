@@ -36,7 +36,6 @@ import icrash.concepts.primarytypes.classes
 			let ColOfLogEntries: Bag(ctLogEntry) in
 			
 			and TheCoordinator = self.rnActor
-			
 			and TheSystem = self.rnActor.rnSystem
 			and ColOfLogEntries = TheSystem.rnctLogEntry
 			and ColOfLogEntries->size.geq(1)
@@ -44,14 +43,10 @@ import icrash.concepts.primarytypes.classes
 		}
 		postF{
 			let TheCoordinator: ctCoordinator in
-			
 			let ColOfLogEntries: Bag(ctLogEntry) in
 			
 			and TheCoordinator = self.rnActor
-			
-		
 			and ColOfLogEntries = TheSystem.rnctLogEntry
-			
 			and ColOfLogEntries->forAll(e : ctLogEntry | TheCoordinator.rnInterfaceIN^ieSendALogEntry(e)  )
 			
 			

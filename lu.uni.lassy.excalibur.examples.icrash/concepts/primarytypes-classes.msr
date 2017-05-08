@@ -205,7 +205,7 @@ import lu.uni.lassy.messir.libraries.calendar
 				attribute eventTime : dtTime
 				
 				operation createEvent(AeventID : ptInteger,AeventType : etEventType,AeventContent : ptString,AeventTime : dtTime) : ptBoolean
-				
+				operation delete(): ptBoolean
 				
 			}
 		}
