@@ -21,30 +21,8 @@ import lu.uni.lassy.excalibur.examples.icrash.dev.java.environment.actors.ActAdm
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.environment.actors.ActAuthenticated;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.environment.actors.ActComCompany;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.environment.actors.ActCoordinator;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.CtAdministrator;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.CtAlert;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.CtAuthenticated;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.CtCoordinator;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.CtCrisis;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.CtHuman;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.CtState;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtAlertID;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtComment;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtCoordinatorID;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtCrisisID;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtGPSLocation;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtLogin;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtPassword;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtPhoneNumber;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.EtAlertStatus;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.EtCrisisStatus;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.EtCrisisType;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.EtHumanKind;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.DtDate;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.DtDateAndTime;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.DtTime;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.PtBoolean;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.PtInteger;
+import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.*;
+import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.*;
 
 /**
  * The Interface IcrashSystem that allows RMI access to the server methods.
@@ -374,6 +352,9 @@ public interface IcrashSystem extends Remote {
 	 * @return The success of the method
 	 * @throws RemoteException Thrown if the server is offline
 	 */
-	public PtBoolean oeSetClock(DtDateAndTime aCurrentClock) throws RemoteException; 
+	public PtBoolean oeSetClock(DtDateAndTime aCurrentClock) throws RemoteException;
 
+	public ArrayList<CtEvent> getAllEvent();
+
+	public PtBoolean oeAddLogEntry(PtInteger aptEID, EtEventType aeteType, PtString aptText, DtTime adtTime) throws Exception;
 }
