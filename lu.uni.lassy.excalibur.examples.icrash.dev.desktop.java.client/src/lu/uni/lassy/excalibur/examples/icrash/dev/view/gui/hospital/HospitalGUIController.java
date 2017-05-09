@@ -3,6 +3,7 @@ package lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.hospital;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import lu.uni.lassy.excalibur.examples.icrash.dev.java.environment.actors.ActHospital;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.design.JIntIsActor;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.PtBoolean;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.AbstractGUIController;
@@ -30,6 +31,11 @@ public class HospitalGUIController extends AbstractGUIController implements HasT
 
 	@Override
 	public void closeForm() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setActor(ActHospital aActHospital) {
 		// TODO Auto-generated method stub
 		
 	}
