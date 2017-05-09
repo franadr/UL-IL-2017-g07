@@ -18,8 +18,8 @@ import java.rmi.Remote;
 import java.rmi.RemoteException;
 
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.design.JIntIsActor;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.DtDateAndTime;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.PtBoolean;
+import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.EtEventType;
+import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.*;
 
 /**
  * The Interface ActActivator.
@@ -36,4 +36,17 @@ public interface ActActivator extends Remote, Serializable, JIntIsActor{
 	 */
 	public PtBoolean oeSetClock(DtDateAndTime aDtDateAndTime)
 			throws RemoteException, NotBoundException;
+
+	/**
+	 *The method to create a new log entry
+	 *
+	 *
+	 *
+	 * @param aptEID for the log entry id
+	 * @param aeteType for the log entry type
+	 * @param aptText  for the event details
+	 * @param adtTime for the occurance time
+	 * @return
+	 */
+	public PtBoolean oeAdLogEntry(PtInteger aptEID, EtEventType aeteType, PtString aptText, DtTime adtTime);
 }

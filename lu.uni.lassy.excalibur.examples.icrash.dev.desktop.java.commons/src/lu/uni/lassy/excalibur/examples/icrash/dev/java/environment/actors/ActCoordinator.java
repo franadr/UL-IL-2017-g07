@@ -15,14 +15,7 @@ package lu.uni.lassy.excalibur.examples.icrash.dev.java.environment.actors;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.CtAlert;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.CtCrisis;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtAlertID;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtComment;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtCrisisID;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.EtAlertStatus;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.EtCrisisStatus;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.EtCrisisType;
+import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.*;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.PtBoolean;
 
 /**
@@ -140,5 +133,23 @@ public interface ActCoordinator extends ActAuthenticated {
 	 * @throws RemoteException Thrown if the server is offline
 	 */
 	public PtBoolean ieSendAnAlert(CtAlert aCtAlert) throws RemoteException;
+
+
+	/**
+	 * Operation that trigger the system to send all the logentries to the coordinator
+	 * @return The success of the method
+	 * @throws RemoteException Thrown if the server is offline
+	 */
+	public PtBoolean oeGetLog();
+
+
+	/**
+	 * A Log Entry is received by the coordinator user
+	 *
+	 * @param aLogEntry The log entry received by the user
+	 * @return The success of the method
+	 * @throws RemoteException Thrown if the server is offline
+	 */
+	public PtBoolean ieSendALogEntry(CtLogEntry aLogEntry) throws RemoteException;
 
 }

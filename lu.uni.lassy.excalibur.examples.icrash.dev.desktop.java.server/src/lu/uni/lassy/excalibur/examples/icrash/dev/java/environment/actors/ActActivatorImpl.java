@@ -19,8 +19,8 @@ import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.IcrashSystem;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.DtDateAndTime;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.PtBoolean;
+import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.EtEventType;
+import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.*;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.utils.Log4JUtils;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.utils.RmiUtils;
 
@@ -65,5 +65,10 @@ public class ActActivatorImpl extends UnicastRemoteObject implements
 			log.info("operation oeSetClock successfully executed by the system");
 
 		return res;
+	}
+
+	@Override
+	public PtBoolean oeAdLogEntry(PtInteger aptEID, EtEventType aeteType, PtString aptText, DtTime adtTime) {
+		return new PtBoolean(false);
 	}
 }
