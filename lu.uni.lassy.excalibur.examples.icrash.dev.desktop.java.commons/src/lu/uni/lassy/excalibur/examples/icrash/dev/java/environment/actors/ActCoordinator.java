@@ -140,7 +140,7 @@ public interface ActCoordinator extends ActAuthenticated {
 	 * @return The success of the method
 	 * @throws RemoteException Thrown if the server is offline
 	 */
-	public PtBoolean oeGetLog();
+	public PtBoolean oeGetLog()throws RemoteException;
 
 
 	/**
