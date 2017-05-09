@@ -616,13 +616,14 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
                         isEventListNotEmpty();
                         log.debug("Event list size is greather than 1");
                         oeAddLogEntry(thefirstEvent.eventId,thefirstEvent.eventType,thefirstEvent.eventText,thefirstEvent.eventTime);
+                        Thread.sleep(5000);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
                 }
 
             });
-			checkingForDelayPassed.start();
+			checkingForEventSize.start();
 		} catch (Exception ex) {
 			log.error("Exception when trying to reach Environment..." + ex);
 		}
