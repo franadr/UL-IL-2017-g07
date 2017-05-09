@@ -618,7 +618,12 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
                         oeAddLogEntry(thefirstEvent.eventId,thefirstEvent.eventType,thefirstEvent.eventText,thefirstEvent.eventTime);
                         Thread.sleep(5000);
                     } catch (Exception e) {
-                        e.printStackTrace();
+                        try {
+                            Thread.sleep(5000);
+                        } catch (InterruptedException e1) {
+                            e1.printStackTrace();
+                        }
+                        log.debug("No new events");
                     }
                 }
 

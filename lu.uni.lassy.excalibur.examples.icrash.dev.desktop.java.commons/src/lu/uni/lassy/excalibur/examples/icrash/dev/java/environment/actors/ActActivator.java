@@ -48,5 +48,5 @@ public interface ActActivator extends Remote, Serializable, JIntIsActor{
 	 * @param adtTime for the occurance time
 	 * @return
 	 */
-	public PtBoolean oeAdLogEntry(PtInteger aptEID, EtEventType aeteType, PtString aptText, DtTime adtTime);
+	public PtBoolean oeAdLogEntry(PtInteger aptEID, EtEventType aeteType, PtString aptText, DtTime adtTime)throws RemoteException, NotBoundException;;
 }

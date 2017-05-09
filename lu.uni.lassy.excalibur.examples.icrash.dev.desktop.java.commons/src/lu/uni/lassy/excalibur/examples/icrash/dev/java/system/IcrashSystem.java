@@ -354,7 +354,7 @@ public interface IcrashSystem extends Remote {
 	 */
 	public PtBoolean oeSetClock(DtDateAndTime aCurrentClock) throws RemoteException;
 
-	public ArrayList<CtEvent> getAllEvent();
+	public ArrayList<CtEvent> getAllEvent() throws RemoteException;
 
-	public PtBoolean oeAddLogEntry(PtInteger aptEID, EtEventType aeteType, PtString aptText, DtTime adtTime) throws Exception;
+	public PtBoolean oeAddLogEntry(PtInteger aptEID, EtEventType aeteType, PtString aptText, DtTime adtTime) throws RemoteException;
 }
