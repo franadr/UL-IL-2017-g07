@@ -488,13 +488,28 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
 			 */
 			DtDateAndTime aClock = ICrashUtils.getMinimumDateAndTime();
 			DtSecond aCrisisReminderPeriod = new DtSecond(new PtInteger(300));
-			DtSecond aMaxCrisisReminderPeriod = new DtSecond(
-					new PtInteger(1200));
+			DtSecond aMaxCrisisReminderPeriod = new DtSecond(new PtInteger(1200));
+			DtSecond aNotificationPeriod5min = new DtSecond(new PtInteger(300));
+			DtSecond aNotificationPeriod10min = new DtSecond(new PtInteger(600));
+			DtSecond aNotificationPeriod15min = new DtSecond(new PtInteger(900));
+			DtSecond aNotificationPeriod3h = new DtSecond(new PtInteger(10800));
+			
+			
 			try{
 				String strReminderPeriod = PropertyUtils.getInstance().getProperty("iCrash.reminderPeriod", String.valueOf(300));
 				String strMaxReminderPeriod = PropertyUtils.getInstance().getProperty("iCrash.maxReminderPeriod", String.valueOf(1200));
 				aCrisisReminderPeriod = new DtSecond(new PtInteger(Integer.parseInt(strReminderPeriod)));
-				aMaxCrisisReminderPeriod = new DtSecond(new PtInteger(Integer.parseInt(strMaxReminderPeriod)));			
+				aMaxCrisisReminderPeriod = new DtSecond(new PtInteger(Integer.parseInt(strMaxReminderPeriod)));	
+				
+				String strNotificationPeriod5min = PropertyUtils.getInstance().getProperty("iCrash.notificationPeriod5min", String.valueOf(300));
+				String strNotificationPeriod10min = PropertyUtils.getInstance().getProperty("iCrash.notificationPeriod10min", String.valueOf(600));
+				String strNotificationPeriod15min = PropertyUtils.getInstance().getProperty("iCrash.notificationPeriod15min", String.valueOf(900));
+				String strNotificationPeriod3h = PropertyUtils.getInstance().getProperty("iCrash.notificationPeriod3h", String.valueOf(10800));
+				aNotificationPeriod5min = new DtSecond(new PtInteger(Integer.parseInt(strNotificationPeriod5min)));
+				aNotificationPeriod10min = new DtSecond(new PtInteger(Integer.parseInt(strNotificationPeriod10min)));
+				aNotificationPeriod15min = new DtSecond(new PtInteger(Integer.parseInt(strNotificationPeriod15min)));
+				aNotificationPeriod3h = new DtSecond(new PtInteger(Integer.parseInt(strNotificationPeriod3h)));				
+				
 				DtDate aDtDate = ICrashUtils.stringToDtDate(PropertyUtils.getInstance().getProperty("iCrash.date", ICrashUtils.getMinimumDateAndTime().date.toString()));
 				DtTime aDtTime = ICrashUtils.stringToDtTime(PropertyUtils.getInstance().getProperty("iCrash.time", ICrashUtils.getMinimumDateAndTime().time.toString()));
 				aClock = new DtDateAndTime(aDtDate, aDtTime);
@@ -514,7 +529,8 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
 
 			ctState.init(aNextValueForAlertID, aNextValueForCrisisID, aClock,
 					aCrisisReminderPeriod, aMaxCrisisReminderPeriod, aClock,
-					aVpStarted, aEventIndex);
+					aVpStarted, aEventIndex, aNotificationPeriod5min, aNotificationPeriod10min,
+					aNotificationPeriod15min, aNotificationPeriod3h);
 			/* ENV
 			PostF 2 the actMsrCreator actor instance is initiated (remember that since the
 			oeCreateSystemAndEnvironment is a special event, its role is to make consistent the post

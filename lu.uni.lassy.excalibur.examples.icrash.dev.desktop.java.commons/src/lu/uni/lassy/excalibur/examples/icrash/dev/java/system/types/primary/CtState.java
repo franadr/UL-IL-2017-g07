@@ -43,7 +43,12 @@ public class CtState implements Serializable {
 	
 	/**  If the system has been started or not. */
 	public PtBoolean vpStarted;
-
+	
+	public DtSecond notificationPeriod5min;
+	public DtSecond notificationPeriod10min;
+	public DtSecond notificationPeriod15min;
+	public DtSecond notificationPeriod3h;
+	
 	public PtInteger eventIndex;
 	/**
 	 * Initialises the system's state.
@@ -61,7 +66,8 @@ public class CtState implements Serializable {
 	public PtBoolean init(DtInteger aNextValueForAlertID, DtInteger aNextValueForCrisisID, 
 						DtDateAndTime aClock, DtSecond aCrisisReminderPeriod, 
 						DtSecond aMaxCrisisReminderPeriod, DtDateAndTime aVpLastReminder, 
-						PtBoolean aVpStarted, PtInteger aEventIndex){
+						PtBoolean aVpStarted, PtInteger aEventIndex, DtSecond aNotificationPeriod5min,
+						DtSecond aNotificationPeriod10min, DtSecond aNotificationPeriod15min, DtSecond aNotificationPeriod3h){
 	
 	
 				nextValueForAlertID = aNextValueForAlertID;
@@ -72,6 +78,10 @@ public class CtState implements Serializable {
 				vpLastReminder = aVpLastReminder;
 				vpStarted = aVpStarted;
 				eventIndex = aEventIndex;
+				notificationPeriod5min = aNotificationPeriod5min;
+				notificationPeriod10min = aNotificationPeriod10min;
+				notificationPeriod15min = aNotificationPeriod15min;
+				notificationPeriod3h = aNotificationPeriod3h;
 				
 				return new PtBoolean(true);
 	}

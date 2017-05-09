@@ -29,8 +29,22 @@ public abstract class CtAuthenticated implements Serializable {
 	/**  The user's password. */
 	public DtPassword pwd;
 	
+	//****************************************************************************************//
+	
+	/** The user's phone number */
+	public DtPhoneNumber phoneNumber;
+	
 	/**  A check to see if the current Ct class is considered logged into the system. */
-	public PtBoolean vpIsLogged;	
+	public PtBoolean vpIsLogged;
+	
+	/** A check to see if the phone number has already been confirmed. */
+	public PtBoolean isPhoneNumberValid;
+	
+	/** A check to see on which window the current ct should be at. */
+	public EtAuthenticatedStatus vpStatus;
+	
+	
+	//****************************************************************************************//
 	
 	/**
 	 * Initialisation of the user.
@@ -43,6 +57,8 @@ public abstract class CtAuthenticated implements Serializable {
 			login = aLogin;
 			pwd = aPwd;
 			vpIsLogged = new PtBoolean(false);
+			vpStatus = EtAuthenticatedStatus.isIn1stLoginPhase;
+			isPhoneNumberValid = new PtBoolean(false);
 			return new PtBoolean(true); 
 	}
 	
