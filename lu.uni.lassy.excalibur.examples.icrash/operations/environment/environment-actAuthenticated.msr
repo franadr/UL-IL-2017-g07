@@ -175,6 +175,7 @@ postP{
   and self.rnActor = TheactAuthenticated.asSet
 /* PostP01 */
   TheactAuthenticated.rnctAuthenticated@post.vpIsLogged = false
+  and TheactAuthenticated.rnctAuthenticated.vpStatus = 'isIn1stLoginPhase'
   
 
 

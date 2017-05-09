@@ -23,5 +23,6 @@ icrash.environment.actAuthenticated.outactAuthenticated.oeLogout
 
 //postProtocol descriptions
 @postP 
-"the actor is known to be logged out ! (i.e. the associated ctAuthenticated instance with given login and password is considered logged out)"
+"the actor is known to be logged out and the vpStatus attribute of its associated ctAuthenticated instance is set to 'isIn1stLoginPhase' ! 
+(i.e. the associated ctAuthenticated instance with given login and password is considered logged out)"
 @endPostP
