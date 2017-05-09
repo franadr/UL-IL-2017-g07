@@ -26,6 +26,10 @@ postF{
   let AmaxCrisisReminderPeriod: dtSecond in
   let AvpStarted: ptBoolean in
   let AnEventIndex : dtInteger in
+  let AnotificationPeriod5min:dtSecond in
+  let AnotificationPeriod10min:dtSecond in
+  let AnotificationPeriod15min:dtSecond in
+  let AnotificationPeriod3h:dtSecond in
 
   /* PostF01 -- MUST ALWAYS BE MADE FIRST -- */ 
   AnextValueForAlertID.value.eq(1)
@@ -37,9 +41,14 @@ postF{
   and Aclock.time.minute.value = 00
   and Aclock.time.second.value = 00
   and AnEventIndex.value.eq(0)
+  
 
   and AcrisisReminderPeriod.value.eq(300)
   and AmaxCrisisReminderPeriod.value.eq(1200)
+  and AnotificationPeriod5min.eq(300)
+  and AnotificationPeriod10min.eq(600)
+  and AnotificationPeriod15min.eq(900)
+  and AnotificationPeriod3h.eq(10800)
   and AvpStarted = true
   and TheSystem.init(AnextValueForAlertID,
                      AnextValueForCrisisID,
@@ -48,7 +57,11 @@ postF{
                      AmaxCrisisReminderPeriod,
                      Aclock,
                      AvpStarted,
-                     AnEventIndex
+                     AnEventIndex,
+                     AnotificationPeriod5min,
+                     AnotificationPeriod10min,
+                     AnotificationPeriod15min,
+                     AnotifiactionPeriod3h
                     )
   /* PostF02*/ 
   and AactMsrCreator.init()
