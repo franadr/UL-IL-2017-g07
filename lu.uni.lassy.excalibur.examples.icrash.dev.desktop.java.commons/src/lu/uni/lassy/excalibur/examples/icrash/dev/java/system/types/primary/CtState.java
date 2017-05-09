@@ -13,10 +13,8 @@
 package lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary;
 
 import java.io.Serializable;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.DtDateAndTime;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.DtInteger;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.DtSecond;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.PtBoolean;
+
+import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.*;
 
 /**
  * The Class CtState which has the systems's status.
@@ -45,7 +43,8 @@ public class CtState implements Serializable {
 	
 	/**  If the system has been started or not. */
 	public PtBoolean vpStarted;
-			
+
+	public PtInteger eventIndex;
 	/**
 	 * Initialises the system's state.
 	 *
@@ -56,12 +55,13 @@ public class CtState implements Serializable {
 	 * @param aMaxCrisisReminderPeriod The max crisis reminder period, if a crisis hasn't been handled within the period, coordinators will be warned.
 	 * @param aVpLastReminder The last time the coordinators have been reminded about outstanding crisises.
 	 * @param aVpStarted If the system has been started or not
+	 * @param aEventIndex the integer for the event id
 	 * @return Success of the initialisation
 	 */
 	public PtBoolean init(DtInteger aNextValueForAlertID, DtInteger aNextValueForCrisisID, 
 						DtDateAndTime aClock, DtSecond aCrisisReminderPeriod, 
 						DtSecond aMaxCrisisReminderPeriod, DtDateAndTime aVpLastReminder, 
-						PtBoolean aVpStarted){
+						PtBoolean aVpStarted, PtInteger aEventIndex){
 	
 	
 				nextValueForAlertID = aNextValueForAlertID;
@@ -71,6 +71,7 @@ public class CtState implements Serializable {
 				maxCrisisReminderPeriod = aMaxCrisisReminderPeriod;
 				vpLastReminder = aVpLastReminder;
 				vpStarted = aVpStarted;
+				eventIndex = aEventIndex;
 				
 				return new PtBoolean(true);
 	}

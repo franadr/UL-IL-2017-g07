@@ -17,8 +17,10 @@ import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.ArrayList;
 
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.IcrashSystem;
+import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.CtEvent;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.EtEventType;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.*;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.utils.Log4JUtils;
@@ -67,8 +69,26 @@ public class ActActivatorImpl extends UnicastRemoteObject implements
 		return res;
 	}
 
-	@Override
+
 	public PtBoolean oeAdLogEntry(PtInteger aptEID, EtEventType aeteType, PtString aptText, DtTime adtTime) {
-		return new PtBoolean(false);
+		Registry registry = null;
+		PtBoolean res;
+		try {
+			registry = LocateRegistry.getRegistry(RmiUtils.getInstance().getHost(),RmiUtils.getInstance().getPort());
+			IcrashSystem iCrashSys_Server = (IcrashSystem) registry
+					.lookup("iCrashServer");
+			ArrayList<CtEvent> events = iCrashSys_Server.getAllEvent();
+
+			CtEvent thefirstEvent = events.get(0);
+
+			res = iCrashSys_Server.oeAddLogEntry(thefirstEvent.eventId,thefirstEvent.eventType,thefirstEvent.eventText,thefirstEvent.eventTime);
+
+			return res;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+
+		return new PtBoolean(true);
 	}
 }

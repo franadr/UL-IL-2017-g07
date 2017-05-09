@@ -16,12 +16,7 @@ import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Enumeration;
-import java.util.Hashtable;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 import java.util.concurrent.Callable;
 import java.util.stream.Collectors;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.environment.IcrashEnvironment;
@@ -39,34 +34,9 @@ import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.db.DbComCompanies;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.db.DbCoordinators;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.db.DbCrises;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.db.DbHumans;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.CtAdministrator;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.CtAlert;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.CtAuthenticated;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.CtCoordinator;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.CtCrisis;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.CtHuman;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.CtState;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtAlertID;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtComment;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtCoordinatorID;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtCrisisID;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtGPSLocation;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtLogin;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtPassword;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtPhoneNumber;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.EtAlertStatus;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.EtCrisisStatus;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.EtCrisisType;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.EtHumanKind;
+import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.*;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.secondary.DtSMS;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.DtDate;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.DtDateAndTime;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.DtInteger;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.DtSecond;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.DtTime;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.PtBoolean;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.PtInteger;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.PtString;
+import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.*;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.utils.AdminActors;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.utils.ICrashUtils;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.utils.Log4JUtils;
@@ -134,7 +104,10 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
 	
 	/** The logger user by the system to print information to the console. */
 	private Logger log = Log4JUtils.getInstance().getLogger();
-	
+
+
+	/** A arraylist containing all CtEvent instances of the system */
+	List<CtEvent> cmpSystemCtEvent = Collections.synchronizedList(new ArrayList<CtEvent>());
 	/*
 	 * ********************************
 	 * Internal operations 
@@ -536,9 +509,12 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
 			DtInteger aNextValueForCrisisID = new DtInteger(new PtInteger(
 					nextValueForCrisisID));
 			PtBoolean aVpStarted = new PtBoolean(true);
+
+			PtInteger aEventIndex = new PtInteger(0);
+
 			ctState.init(aNextValueForAlertID, aNextValueForCrisisID, aClock,
 					aCrisisReminderPeriod, aMaxCrisisReminderPeriod, aClock,
-					aVpStarted);
+					aVpStarted, aEventIndex);
 			/* ENV
 			PostF 2 the actMsrCreator actor instance is initiated (remember that since the
 			oeCreateSystemAndEnvironment is a special event, its role is to make consistent the post
@@ -630,6 +606,22 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
 					}
 				}
 			};
+			checkingForDelayPassed.start();
+
+			Thread checkingForEventSize = new Thread(() -> {
+                while(true){
+                    try {
+
+                        CtEvent thefirstEvent = cmpSystemCtEvent.get(0);
+                        isEventListNotEmpty();
+                        log.debug("Event list size is greather than 1");
+                        oeAddLogEntry(thefirstEvent.eventId,thefirstEvent.eventType,thefirstEvent.eventText,thefirstEvent.eventTime);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+
+            });
 			checkingForDelayPassed.start();
 		} catch (Exception ex) {
 			log.error("Exception when trying to reach Environment..." + ex);
@@ -746,7 +738,17 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
 			DbAlerts.bindAlertHuman(aCtAlert, aCtHuman);
 			//update Messir composition
 			cmpSystemCtAlert.put(aCtAlert.id.value.getValue(), aCtAlert);
-			return new PtBoolean(true);
+
+
+			//PostF7
+            CtEvent event = new CtEvent();
+            DtHour hour = new DtHour(new PtInteger(12));
+            DtMinute minute = new DtMinute(new PtInteger(00));
+            DtSecond second = new DtSecond(new PtInteger(00));
+            event.createEvent(ctState.eventIndex,EtEventType.Alert,new PtString("A new alert has arrived"),new DtTime(hour,minute,second));
+            cmpSystemCtEvent.add(event);
+
+            return new PtBoolean(true);
 		}
 		catch(Exception e){
 			log.error("Exception in oeAlert..." + e);
@@ -1337,7 +1339,12 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
 		if (cmpSystemCtCrisis.values().stream().filter(t -> t.status == EtCrisisStatus.pending && propagate(t::handlingDelayPassed).getValue()).count() == 0)
 			throw new Exception("There are no unhandled crisises that have exceeded the handling delay");
 	}
-    
+
+	private synchronized void isEventListNotEmpty() throws Exception
+    {
+        if(!(cmpSystemCtEvent.size()>= 1 ))
+            throw  new Exception("There no event to register");
+    }
 	/* (non-Javadoc)
 	 * @see lu.uni.lassy.excalibur.examples.icrash.dev.java.system.IcrashSystem#oeSetClock(lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.DtDateAndTime)
 	 */
@@ -1360,4 +1367,42 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
 			return new PtBoolean(false);
 		}
 	}
+
+
+	public ArrayList<CtEvent> getAllEvent() {
+		ArrayList<CtEvent> result = new ArrayList<>();
+		if (cmpSystemCtAlert != null){
+			result.addAll(cmpSystemCtEvent);
+		}
+		return result;
+	}
+
+
+    public PtBoolean oeAddLogEntry(PtInteger aptEID, EtEventType aeteType, PtString aptText, DtTime adtTime){
+
+        try {
+            //Prep1
+            isSystemStarted();
+
+
+            CtEvent event;
+            CtLogEntry logEntry = new CtLogEntry();
+            //PreF1
+            if(cmpSystemCtEvent.size() >= 1){
+                //PostF1
+                logEntry.createEntry(aptEID,aeteType,aptText,adtTime);
+                //PostF2
+                cmpSystemCtEvent.remove(cmpSystemCtEvent.get(0));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+
+
+
+        return null;
+    }
 }
