@@ -61,16 +61,14 @@ postF{
       		and AptStringMessageForTheactAuthenticated.eq('A verification code has been sent to ' + AdtPhoneNumber))
       		endif
       		)
-      else (AptStringMessageForTheactAuthenticated
-            .eq('Wrong identification information ! Please try again ...')
+      else (AptStringMessageForTheactAuthenticated.eq('Wrong identification information ! Please try again ...')
             and TheactAuthenticated.rnInterfaceIN^ieMessage(AptStringMessageForTheactAuthenticated)
             and AptStringMessageForTheactAdministrator.eq('Intrusion tentative !')
-            and TheSystem.rnactAdministrator
-                .rnInterfaceIN^ieMessage(AptStringMessageForTheactAdministrator)
            )
       endif
       endif
-      
+            and TheSystem.rnactAdministrato.rnInterfaceIN^ieMessage(AptStringMessageForTheactAdministrator)
+            
   and /* PostF02 */
   
   let ThectVCode:ctVCode in
