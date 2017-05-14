@@ -14,20 +14,17 @@ package lu.uni.lassy.excalibur.examples.icrash.dev.model.actors;
 
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.Hashtable;
 
+import javafx.collections.ObservableList;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.environment.actors.ActCoordinator;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.environment.actors.ActProxyCoordinator;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.CtAlert;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.CtCrisis;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtAlertID;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtComment;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtCrisisID;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.EtAlertStatus;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.EtCrisisStatus;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.EtCrisisType;
+import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.*;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.PtBoolean;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.utils.Log4JUtils;
+import lu.uni.lassy.excalibur.examples.icrash.dev.model.LogEntry;
 import lu.uni.lassy.excalibur.examples.icrash.dev.model.Message;
 import lu.uni.lassy.excalibur.examples.icrash.dev.model.Message.MessageType;
 
@@ -54,6 +51,7 @@ public class ActProxyCoordinatorImpl extends ActProxyAuthenticatedImpl
 	 */
 	public ActProxyCoordinatorImpl(ActCoordinator user)
 			throws RemoteException, NotBoundException {
+
 		super(user);
 	}
 
@@ -219,6 +217,28 @@ public class ActProxyCoordinatorImpl extends ActProxyAuthenticatedImpl
 		listOfMessages.add(new Message(MessageType.ieSendAnAlert, "Alert " + aCtAlert.id.value.getValue() + " was sent"));
 		this.MapOfCtAlerts.put(aCtAlert.id.value.getValue(), aCtAlert);
 		return new PtBoolean(true);
+	}
+
+	public ArrayList<LogEntry> _listOfLogEntries = new ArrayList<>();
+
+	public ObservableList<LogEntry> listOfLogEntries = FXCollections.observableArrayList(_listOfLogEntries);
+
+
+	@Override
+	public PtBoolean ieSendALogEntry(CtLogEntry aCtLogEntry) throws RemoteException {
+		Logger log = Log4JUtils.getInstance().getLogger();
+		log.info("LogEntry ActCoordinator.ieSendALogEntry received from system");
+		log.info("logentry id is: " + aCtLogEntry.eId.getValue());
+		listOfLogEntries.add(new LogEntry(aCtLogEntry.eId.getValue(),aCtLogEntry.eType.toString(),aCtLogEntry.eText.getValue(),new Date(System.currentTimeMillis())));
+		return new PtBoolean(true);
+	}
+
+	@Override
+	public PtBoolean oeGetLog()throws RemoteException, NotBoundException {
+		if (getServerSideActor() != null)
+			return ((ActCoordinator) getServerSideActor()).oeGetLog();
+		else
+			return new PtBoolean(false);
 	}
 
 	/* (non-Javadoc)

@@ -140,7 +140,7 @@ public interface ActCoordinator extends ActAuthenticated {
 	 * @return The success of the method
 	 * @throws RemoteException Thrown if the server is offline
 	 */
-	public PtBoolean oeGetLog()throws RemoteException;
+	public PtBoolean oeGetLog()throws RemoteException, NotBoundException;
 
 
 	/**
@@ -151,5 +151,8 @@ public interface ActCoordinator extends ActAuthenticated {
 	 * @throws RemoteException Thrown if the server is offline
 	 */
 	public PtBoolean ieSendALogEntry(CtLogEntry aLogEntry) throws RemoteException;
+
+	public PtBoolean setServerSideActor(ActProxyCoordinator actProxyCoordinator) throws RemoteException;
+
 
 }

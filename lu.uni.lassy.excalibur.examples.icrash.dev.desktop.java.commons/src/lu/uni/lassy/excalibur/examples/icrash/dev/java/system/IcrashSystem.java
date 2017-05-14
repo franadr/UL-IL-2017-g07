@@ -49,6 +49,8 @@ public interface IcrashSystem extends Remote {
 	 * @throws RemoteException Thrown if the server is offline
 	 */
 	public void setCurrentRequestingAuthenticatedActor(ActAuthenticated aActAuthenticated) throws RemoteException;
+
+	public void setCurrentCoordinator(ActCoordinator actCoordinator)throws RemoteException;
 	
 	/**
 	 * Gets the current requesting authenticated actor that was set by the server side actor.
@@ -357,4 +359,5 @@ public interface IcrashSystem extends Remote {
 	public ArrayList<CtEvent> getAllEvent() throws RemoteException;
 
 	public PtBoolean oeAddLogEntry(PtInteger aptEID, EtEventType aeteType, PtString aptText, DtTime adtTime) throws RemoteException;
+	public PtBoolean oeGetLog() throws RemoteException;
 }

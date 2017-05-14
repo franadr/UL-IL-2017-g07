@@ -32,6 +32,7 @@ public class ActCoordinatorImpl extends ActAuthenticatedImpl implements ActCoord
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 227L;
+	private ActProxyCoordinator actProxyCoordinator;
 
 	/**
 	 * Instantiates a new server side actor of type coordinator.
@@ -328,12 +329,43 @@ public class ActCoordinatorImpl extends ActAuthenticatedImpl implements ActCoord
 		return res;
 	}
 
-	public PtBoolean oeGetLog() {
-		return null;
+	public PtBoolean oeGetLog()throws RemoteException, NotBoundException {
+		Logger log = Log4JUtils.getInstance().getLogger();
+		Registry registry = LocateRegistry.getRegistry(RmiUtils.getInstance().getHost(),RmiUtils.getInstance().getPort());
+
+		IcrashSystem iCrashSys_Server = (IcrashSystem)registry.lookup("iCrashServer");
+		iCrashSys_Server.setCurrentCoordinator(this);
+		log.info("message ActCoordinator.oeGetLog sent to system");
+		PtBoolean res = iCrashSys_Server.oeGetLog();
+		if(res.getValue() == true)
+			log.info("operation oeGetLog successfully executed by the system");
+
+		return res;
 	}
 
 
 	public PtBoolean ieSendALogEntry(CtLogEntry aLogEntry) throws RemoteException {
+		Logger log = Log4JUtils.getInstance().getLogger();
+
+		log.info("message ActCoordinator.ieSendALogEntry received from system");
+		log.info("log id '"	+ aLogEntry.eId.getValue() + "' "+
+				" with type '"+ aLogEntry.eType +"'"+
+				" with text '"+ aLogEntry.eText+"'");
+
+
+			try {
+				if (actProxyCoordinator != null)
+					(actProxyCoordinator).ieSendALogEntry(aLogEntry);
+			} catch (RemoteException e) {
+				Log4JUtils.getInstance().getLogger().error(e);
+			}
+
+		return new PtBoolean(true);
+	}
+
+	@Override
+	public PtBoolean setServerSideActor(ActProxyCoordinator actProxyCoordinator) throws RemoteException {
+			this.actProxyCoordinator=actProxyCoordinator;
 		return null;
 	}
 }

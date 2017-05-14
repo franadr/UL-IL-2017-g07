@@ -64,6 +64,10 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
 	 * This is set by the Actor itself before it performs an oe action*/
 	ActComCompany currentConnectedComCompany;
 
+    /** The current requesting Coordinator actor that is performing a method on the system.
+     * This is set by the Actor itself before it performs an oe action*/
+	ActCoordinator currentRequestionCoordinator;
+
 	// Messir compositions
 	/**  A hashtable of all administrators in the system, stored by their login as a key. */
 	Hashtable<String, CtAdministrator> cmpSystemCtAdministrator = new Hashtable<String, CtAdministrator>();
@@ -108,6 +112,9 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
 
 	/** A arraylist containing all CtEvent instances of the system */
 	List<CtEvent> cmpSystemCtEvent = Collections.synchronizedList(new ArrayList<CtEvent>());
+
+	/**  A hashtable of the logentries in the system, stored by their id as a key. * */
+	Hashtable<String, CtLogEntry> cmpSystemLogEntry = new Hashtable<String, CtLogEntry>();
 	/*
 	 * ********************************
 	 * Internal operations 
@@ -303,6 +310,11 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
 		currentConnectedComCompany = aComCompany;
 	}
 
+    synchronized public void setCurrentCoordinator(ActCoordinator actCoordinator)
+            throws RemoteException {
+        currentRequestionCoordinator = actCoordinator;
+    }
+
 	/* (non-Javadoc)
 	 * @see lu.uni.lassy.excalibur.examples.icrash.dev.java.system.IcrashSystem#getCtState()
 	 */
@@ -448,6 +460,15 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
 		if (cmpSystemActComCompany != null){
 			for(ActComCompany comComp : cmpSystemActComCompany.values())
 				result.add(comComp);
+		}
+		return result;
+	}
+
+	public ArrayList<CtLogEntry> getAllLogEntries() throws java.rmi.RemoteException{
+		ArrayList<CtLogEntry> result = new ArrayList<>();
+
+		if(cmpSystemLogEntry !=null){
+			result.addAll(cmpSystemLogEntry.values());
 		}
 		return result;
 	}
@@ -630,8 +651,9 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
 
                         CtEvent thefirstEvent = cmpSystemCtEvent.get(0);
                         isEventListNotEmpty();
-                        log.debug("Event list size is greather than 1");
+                        log.debug("Event list size is greather than 1 running oeAddLogEntry");
                         oeAddLogEntry(thefirstEvent.eventId,thefirstEvent.eventType,thefirstEvent.eventText,thefirstEvent.eventTime);
+                       // log.debug("New event created id : "+thefirstEvent.eventId.getValue());
                         Thread.sleep(5000);
                     } catch (Exception e) {
                         try {
@@ -767,6 +789,7 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
             DtHour hour = new DtHour(new PtInteger(12));
             DtMinute minute = new DtMinute(new PtInteger(00));
             DtSecond second = new DtSecond(new PtInteger(00));
+            ctState.eventIndex = new PtInteger(ctState.eventIndex.getValue()+1);
             event.createEvent(ctState.eventIndex,EtEventType.Alert,new PtString("A new alert has arrived"),new DtTime(hour,minute,second));
             cmpSystemCtEvent.add(event);
 
@@ -1415,6 +1438,9 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
                 logEntry.createEntry(aptEID,aeteType,aptText,adtTime);
                 //PostF2
                 cmpSystemCtEvent.remove(cmpSystemCtEvent.get(0));
+
+                // update logEntries system hashtable
+				cmpSystemLogEntry.put(String.valueOf(logEntry.eId.getValue()), logEntry);
             }
 
         } catch (Exception e) {
@@ -1425,6 +1451,35 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
 
 
 
-        return null;
+        return new PtBoolean(true);
+    }
+
+    public PtBoolean oeGetLog() {
+        try{
+            //PreP1
+            isSystemStarted();
+            //PreP2
+            isUserLoggedIn();
+
+            //Pref1
+            if(cmpSystemLogEntry.size() >=1){
+                //PostF
+                for (CtLogEntry logEntry : cmpSystemLogEntry.values()
+                     ) {
+                currentRequestionCoordinator.ieSendALogEntry(logEntry);
+
+                }
+
+                return new PtBoolean(true);
+
+            }
+
+
+
+        }
+        catch (Exception e){
+            log.error("Exception in oeGetLog..." + e);
+        }
+        return new PtBoolean(false);
     }
 }

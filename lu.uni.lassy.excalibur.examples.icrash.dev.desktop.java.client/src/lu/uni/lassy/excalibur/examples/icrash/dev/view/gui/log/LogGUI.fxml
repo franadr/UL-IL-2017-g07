@@ -9,7 +9,7 @@
    <children>
       <Pane prefHeight="321.0" prefWidth="459.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <TableView layoutY="61.0" prefHeight="217.0" prefWidth="459.0">
+            <TableView fx:id="logtblvw" layoutY="61.0" prefHeight="217.0" prefWidth="459.0">
               <columns>
                 <TableColumn prefWidth="49.0" text="Time" />
                 <TableColumn prefWidth="65.0" text="Type" />
