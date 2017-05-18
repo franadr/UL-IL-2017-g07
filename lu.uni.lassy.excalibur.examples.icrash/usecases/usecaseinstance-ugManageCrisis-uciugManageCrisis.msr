@@ -7,6 +7,7 @@ package usecases.uciugManageCrisis {
 			actors {
 				bill : icrash.environment.actCoordinator
 				activator : icrash.environment.actActivator
+				chl : icrash.environment.actHospital
 				
 			}
 			use case steps {
@@ -44,8 +45,10 @@ package usecases.uciugManageCrisis {
 				
 				activator
 				executed instanceof subfunction
-				icrash.usecases.subfunctions.oeSendToHospital("3","12/12/2007","13:37","medium","3: Potentially life-threatening","691547896","rue de la mer","Jambe droite et bras droit cassés"){
+				icrash.usecases.subfunctions.oeSendToHospital("Paternity","3","12/12/2007","13:37","medium","3: Potentially life-threatening","691547896","rue de la mer","Right leg and right arm broken"){
+					ieReceiveCrisis("Paternity","3","12/12/2007","13:37","medium","3: Potentially life-threatening","691547896","rue de la mer","Right leg and right arm broken") returned to chl
 					ieMessage("Crisis 3 has been sent to the Zitha Hospital") returned to bill
+					
 				}
 				
 				

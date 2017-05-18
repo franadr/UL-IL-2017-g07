@@ -8,8 +8,3 @@
 @instance Use-Case usecases.uciugDismissCrisis.uciugDismissCrisis 
 @description ""
 @caption ""
-
-@@view uci-uciugDismissCrisis
-@instance Use-Case usecases.uciugDismissCrisis.uciugDismissCrisis 
-@description ""
-@caption ""

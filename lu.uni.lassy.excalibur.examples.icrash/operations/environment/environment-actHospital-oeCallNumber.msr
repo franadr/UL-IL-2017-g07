@@ -35,12 +35,6 @@ import icrash.environment
 			}
 			postF{
 				
-				let TheSystem: ctState in
-				self.rnActor.rnSystem = TheSystem
-				
-				/*postF 01*/
-				TheSystem.rnctCrisis.etStatus = "treated"
-				
 			}
 			postP{
 				

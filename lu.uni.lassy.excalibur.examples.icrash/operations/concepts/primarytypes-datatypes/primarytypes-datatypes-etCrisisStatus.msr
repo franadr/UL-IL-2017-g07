@@ -10,6 +10,8 @@ Operation Model {
         ( if
           ( self = pending
             or self = handled
+            or self = incorrect
+            or self = treated
             or self = solved
             or self = closed
           )

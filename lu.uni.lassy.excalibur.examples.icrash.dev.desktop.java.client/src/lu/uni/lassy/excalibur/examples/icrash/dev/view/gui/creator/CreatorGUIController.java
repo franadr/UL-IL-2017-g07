@@ -31,6 +31,7 @@ import javafx.scene.control.TextField;
  */
 import lu.uni.lassy.excalibur.examples.icrash.dev.controller.SystemStateController;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.environment.actors.ActComCompany;
+import lu.uni.lassy.excalibur.examples.icrash.dev.java.environment.actors.ActHospital;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.design.JIntIsActor;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.PtBoolean;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.PtInteger;
@@ -39,6 +40,7 @@ import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.CreatedWi
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.activator.CreateActivatorGUI;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.admin.CreateICrashAdminGUI;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.comcompany.CreateICrashComCompany;
+import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.hospital.CreateHospitalGUI;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.log.CreateLog;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.monitor.CreateMonitor;
 import javafx.stage.Screen;
@@ -112,6 +114,7 @@ public class CreatorGUIController extends AbstractGUIController{
 									x = bounds.getWidth() - widthOfForm;
 							}
 						}
+//----------------------//listOfWindows.add(new CreateHospitalGUI(new ActHospital, 50,50));
 						//Activator window placement
 						percent = 0.5;
 						listOfWindows.add(new CreateActivatorGUI(systemStatecontroller.getActActivator(), (bounds.getMinX()), (bounds.getMinY() + rangeY * percent)));
