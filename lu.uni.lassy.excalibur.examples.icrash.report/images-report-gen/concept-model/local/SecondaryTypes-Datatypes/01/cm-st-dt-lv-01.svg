@@ -15,40 +15,40 @@
         <path d="M9 9 L166 9 L166 89 L9 89 L9 9 Z" />
       </clipPath>
       <clipPath clipPathUnits="userSpaceOnUse" id="clipPath3">
-        <path d="M57 14 L118 14 L118 33 L57 33 L57 14 Z" />
+        <path d="M55 14 L120 14 L120 33 L55 33 L55 14 Z" />
       </clipPath>
       <clipPath clipPathUnits="userSpaceOnUse" id="clipPath4">
-        <path d="M57 14 L121 14 L121 33 L57 33 L57 14 Z" />
+        <path d="M55 14 L124 14 L124 33 L55 33 L55 14 Z" />
       </clipPath>
       <clipPath clipPathUnits="userSpaceOnUse" id="clipPath5">
-        <path d="M14 38 L128 38 L128 56 L14 56 L14 38 Z" />
+        <path d="M14 38 L128 38 L128 57 L14 57 L14 38 Z" />
       </clipPath>
       <clipPath clipPathUnits="userSpaceOnUse" id="clipPath6">
-        <path d="M14 38 L130 38 L130 56 L14 56 L14 38 Z" />
+        <path d="M14 38 L130 38 L130 57 L14 57 L14 38 Z" />
       </clipPath>
       <clipPath clipPathUnits="userSpaceOnUse" id="clipPath7">
-        <path d="M14 54 L140 54 L140 72 L14 72 L14 54 Z" />
+        <path d="M14 55 L141 55 L141 74 L14 74 L14 55 Z" />
       </clipPath>
       <clipPath clipPathUnits="userSpaceOnUse" id="clipPath8">
-        <path d="M14 54 L142 54 L142 72 L14 72 L14 54 Z" />
+        <path d="M14 55 L143 55 L143 74 L14 74 L14 55 Z" />
       </clipPath>
       <clipPath clipPathUnits="userSpaceOnUse" id="clipPath9">
         <path d="M10 36 L165 36 L165 88 L10 88 L10 36 Z" />
       </clipPath>
     </defs>
-    <g font-size="13" fill="rgb(131,122,133)" font-family="'Lucida Sans Unicode'" stroke-linejoin="round" stroke="rgb(131,122,133)" stroke-width="0" stroke-miterlimit="0">
+    <g font-size="8" fill="rgb(131,122,133)" font-family="'Lucida Sans'" stroke-linejoin="round" stroke="rgb(131,122,133)" stroke-width="0" stroke-miterlimit="0">
       <rect x="11" y="11" clip-path="url(#clipPath1)" width="155" rx="0" opacity="0.2549" ry="0" height="78" stroke="none" />
       <rect x="12" y="12" clip-path="url(#clipPath1)" width="155" rx="0" opacity="0.2549" ry="0" height="78" stroke="none" />
       <rect x="10" y="10" clip-path="url(#clipPath2)" fill="url(#linearGradient1)" width="155" rx="0" ry="0" height="78" stroke="none" />
     </g>
-    <g stroke-width="1.1" font-size="13" font-family="'Lucida Sans Unicode'" stroke-linecap="butt">
+    <g stroke-width="1.1" font-size="8" font-family="'Lucida Sans'" stroke-linecap="butt">
       <rect x="10" y="10" clip-path="url(#clipPath2)" fill="none" width="154" rx="0" ry="0" height="77" />
-      <image x="58" y="15" clip-path="url(#clipPath3)" width="18" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAARCAYAAADQWvz5AAAA8klEQVR42mNgoBJg&#xD;&#xA;hNJMQNwNxFFALEGk3n9AvByI46BsMFgCxMeBWJoER0hD9fQiC/4l0RBkw57DvASj&#xD;&#xA;n5Jh0FNYULCgSewAYgUg/gKVOwnEFUAcCMRZQMwKxOpAfAWqPhmmkQWLLUlAfAzK&#xD;&#xA;bgPi6UAcAcTzgFgSiA8AsQm6JiYCTm8AYhcgZifkR0IG/QLiZ8QkCSYi5MWB+AUl&#xD;&#xA;BoESazkQ7wbin4QMwhbYoED9DPXWeSDOJCYdoBvkQUD9c2j0kxxGRAOYQS8oyCLg&#xD;&#xA;DMsMFZAC4mJoyv5MgiFrgPgQEK9DLkYWAXEkCd4F+WIZEJeCXAUAASAqIjz7P3EA&#xD;&#xA;AAAASUVORK5CYII=" xlink:type="simple" xlink:actuate="onLoad" height="17" preserveAspectRatio="none" xlink:show="embed" />
-      <text xml:space="preserve" x="79" y="30" clip-path="url(#clipPath4)" stroke="none">dtSMS</text>
-      <image x="15" y="40" clip-path="url(#clipPath5)" width="14" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAABsklEQVR42mNgIBMw&#xD;&#xA;InP+///PqDM1PIufnSf+86/vGiAxXjbOGx9/fll4NWfVVKwataeG8nAycx1UFJDU&#xD;&#xA;zDQL5tQSUwKLX3t1j2H6qbXfn395c+xIyhwXmHpmGEPATeNnlK672CTvEjZFQSkG&#xD;&#xA;HjZOMAaxQ3VcWLfeOqIg7Kll92jTuUVwjdpTwrKVBKSdp/tVsOLyU7iOK+OO28cl&#xD;&#xA;GR2kPrzedvU0C0gQ5KcSmxh2EPv9j88MFbsmM1x8eQfkaQZrOX2GHo98oJ8YGUBe&#xD;&#xA;qNk7PR6obCoTSDEoIGB+uvXmIYM4jzDD/sTpDDX2SQybbx5muP/+GVgOpAYWaCzo&#xD;&#xA;ThLhEmB4+fUdQ/y6BqCNELHff/9gOJ0JFuSg0AOBOec2Mjz99IphVVg7Q5yBF4pi&#xD;&#xA;kBqQWrhGUDyBghzEtpM3ZHjw/jmD26JchhVXdoM1fPr1FUz3HFnyE6QW7tQr2Sun&#xD;&#xA;mc5MSOo4vFC/wjae2V7BiOHPv78MfOzccNvaDs3/c/vdY/bbBeumYiSAX7//flYV&#xD;&#xA;kv0JCmH0BPDg44vr3/58tb+avfoLRpKDxSm2JAdyFSMj438GSgEADY+7RSdBNBAA&#xD;&#xA;AAAASUVORK5CYII=" xlink:type="simple" xlink:actuate="onLoad" height="14" preserveAspectRatio="none" xlink:show="embed" />
-      <text xml:space="preserve" x="32" y="54" clip-path="url(#clipPath6)" stroke="none">value : ptString</text>
-      <image x="15" y="55" clip-path="url(#clipPath7)" width="16" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA2ElEQVR42mNgGAUU&#xD;&#xA;A0Y8ckwMHEYODOzingx/f7Az/H61leHn1Z3oiphxaucxz2Tkc09i5HXkY2DkkGP4&#xD;&#xA;8yKMgV3mN8OvJ2eRlbHg0C7OxG1jzyiS9AziFrb///484/7/9WwukLcBiF8inIkd&#xD;&#xA;cP5nFeOB8/79g9D/vwqD5IhxwXeG7zf/MLCcEgDr/3GNn+HXU6CBTF/AckSEwVcG&#xD;&#xA;RnbB/78eOP7//YiX4ccNIYafdwSBXpnP8OfNVuIC8TcosFheMPz7JMjw/9sLhv//&#xD;&#xA;2xl+3pgH8sho4kUFAI8kR8rJaHWeAAAAAElFTkSuQmCC" xlink:type="simple" xlink:actuate="onLoad" height="16" preserveAspectRatio="none" xlink:show="embed" />
-      <text xml:space="preserve" x="34" y="70" clip-path="url(#clipPath8)" stroke="none">is(): ptBoolean    </text>
+      <image width="18" xlink:show="embed" xlink:type="simple" clip-path="url(#clipPath3)" preserveAspectRatio="none" height="17" x="56" y="15" font-size="14" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAARCAYAAADQWvz5AAAA8klEQVR42mNgoBJg&#xA;hNJMQNwNxFFALEGk3n9AvByI46BsMFgCxMeBWJoER0hD9fQiC/4l0RBkw57DvASj&#xA;n5Jh0FNYULCgSewAYgUg/gKVOwnEFUAcCMRZQMwKxOpAfAWqPhmmkQWLLUlAfAzK&#xA;bgPi6UAcAcTzgFgSiA8AsQm6JiYCTm8AYhcgZifkR0IG/QLiZ8QkCSYi5MWB+AUl&#xA;BoESazkQ7wbin4QMwhbYoED9DPXWeSDOJCYdoBvkQUD9c2j0kxxGRAOYQS8oyCLg&#xA;DMsMFZAC4mJoyv5MgiFrgPgQEK9DLkYWAXEkCd4F+WIZEJeCXAUAASAqIjz7P3EA&#xA;AAAASUVORK5CYII=" xlink:actuate="onLoad" />
+      <text x="77" font-size="14" y="29" clip-path="url(#clipPath4)" stroke="none" xml:space="preserve">dtSMS</text>
+      <image width="14" xlink:show="embed" xlink:type="simple" clip-path="url(#clipPath5)" preserveAspectRatio="none" height="14" font-family="'Tahoma'" x="15" y="40" font-size="14" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAABsklEQVR42mNgIBMw&#xA;InP+///PqDM1PIufnSf+86/vGiAxXjbOGx9/fll4NWfVVKwataeG8nAycx1UFJDU&#xA;zDQL5tQSUwKLX3t1j2H6qbXfn395c+xIyhwXmHpmGEPATeNnlK672CTvEjZFQSkG&#xA;HjZOMAaxQ3VcWLfeOqIg7Kll92jTuUVwjdpTwrKVBKSdp/tVsOLyU7iOK+OO28cl&#xA;GR2kPrzedvU0C0gQ5KcSmxh2EPv9j88MFbsmM1x8eQfkaQZrOX2GHo98oJ8YGUBe&#xA;qNk7PR6obCoTSDEoIGB+uvXmIYM4jzDD/sTpDDX2SQybbx5muP/+GVgOpAYWaCzo&#xA;ThLhEmB4+fUdQ/y6BqCNELHff/9gOJ0JFuSg0AOBOec2Mjz99IphVVg7Q5yBF4pi&#xA;kBqQWrhGUDyBghzEtpM3ZHjw/jmD26JchhVXdoM1fPr1FUz3HFnyE6QW7tQr2Sun&#xA;mc5MSOo4vFC/wjae2V7BiOHPv78MfOzccNvaDs3/c/vdY/bbBeumYiSAX7//flYV&#xA;kv0JCmH0BPDg44vr3/58tb+avfoLRpKDxSm2JAdyFSMj438GSgEADY+7RSdBNBAA&#xA;AAAASUVORK5CYII=" xlink:actuate="onLoad" />
+      <text x="32" font-size="14" y="53" clip-path="url(#clipPath6)" font-family="'Tahoma'" stroke="none" xml:space="preserve">value : ptString</text>
+      <image width="16" xlink:show="embed" xlink:type="simple" clip-path="url(#clipPath7)" preserveAspectRatio="none" height="16" font-family="'Tahoma'" x="15" y="56" font-size="14" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA2ElEQVR42mNgGAUU&#xA;A0Y8ckwMHEYODOzingx/f7Az/H61leHn1Z3oiphxaucxz2Tkc09i5HXkY2DkkGP4&#xA;8yKMgV3mN8OvJ2eRlbHg0C7OxG1jzyiS9AziFrb///484/7/9WwukLcBiF8inIkd&#xA;cP5nFeOB8/79g9D/vwqD5IhxwXeG7zf/MLCcEgDr/3GNn+HXU6CBTF/AckSEwVcG&#xA;RnbB/78eOP7//YiX4ccNIYafdwSBXpnP8OfNVuIC8TcosFheMPz7JMjw/9sLhv//&#xA;2xl+3pgH8sho4kUFAI8kR8rJaHWeAAAAAElFTkSuQmCC" xlink:actuate="onLoad" />
+      <text x="34" font-size="14" y="70" clip-path="url(#clipPath8)" font-family="'Tahoma'" stroke="none" xml:space="preserve">is(): ptBoolean    </text>
       <line clip-path="url(#clipPath9)" fill="none" x1="11" x2="164" y1="37" y2="37" />
     </g>
   </g>
