@@ -64,7 +64,7 @@ public class DbVCode  extends DbAbstract{
 	
 				log.debug("[DATABASE]-Insert human");
 				int val = st.executeUpdate("INSERT INTO "+ dbName+ ".vcode" +
-											"(vcode,instant,isValidated)" + 
+											"(vcode,dateAndTime,vpIsValidated)" + 
 											"VALUES("+"'"+vcode+"','"+instant+"','"+isValidated+"')");
 				
 				log.debug(val + " row affected");

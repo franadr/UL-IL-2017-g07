@@ -20,9 +20,12 @@ import java.sql.Statement;
 import java.util.Hashtable;
 
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.CtCoordinator;
+import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.CtVCode;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtCoordinatorID;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtLogin;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtPassword;
+import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtPhoneNumber;
+import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtVCode;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.PtBoolean;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.PtString;
 
@@ -106,8 +109,23 @@ public class DbCoordinators extends DbAbstract{
 					DtLogin aLogin = new DtLogin(new PtString(res.getString("login")));
 					//coordinator's pwd
 					DtPassword aPwd = new DtPassword(new PtString(res.getString("pwd")));
+					//coordinator's phone number
+					DtPhoneNumber aPhoneNumber = new DtPhoneNumber(new PtString(res.getString("phoneNumber")));
+					//coordinator's associated vCode
+					DtVCode aDtVCode = new DtVCode(new PtString(res.getString("vCode")));
+					CtVCode aCtVCode = DbVCode.getVCode(aDtVCode.value.getValue());
+						
+						
+						
+					//coordinators's isPhoneNumberValid boolean
+					PtBoolean aIsPhoneNumberValid;
+					int tmpIsValidated = res.getInt("isPhoneNumberValid");
+					if(tmpIsValidated == 1)
+						aIsPhoneNumberValid = new PtBoolean(true);
+					else
+						aIsPhoneNumberValid = new PtBoolean(false);
 
-					aCtCoordinator.init(aId, aLogin,aPwd);
+					aCtCoordinator.init(aId, aLogin,aPwd, aPhoneNumber, aCtVCode, aIsPhoneNumberValid);
 					
 				}
 								
@@ -182,8 +200,12 @@ public class DbCoordinators extends DbAbstract{
 				String id = aCtCoordinator.id.value.getValue();
 				String login =  aCtCoordinator.login.value.getValue();
 				String pwd =  aCtCoordinator.pwd.value.getValue();
+				String phoneNumber = aCtCoordinator.phoneNumber.value.getValue();
+				String vCode = aCtCoordinator.vCode.vCode.value.getValue();
+				Byte isPhoneNumberValid = (byte) (aCtCoordinator.isPhoneNumberValid.getValue() ? 1 : 0 );
 				String statement = "UPDATE "+ dbName+ ".coordinators" +
-						" SET pwd='"+pwd+"',  login='"+ login+"' " +
+						" SET pwd='"+pwd+"',  login='"+ login+"', phoneNumber='"+ phoneNumber+
+						"' vCode='"+ vCode+"' isPhoneNumberValid='"+ isPhoneNumberValid+"' " +
 						"WHERE id='"+id+"'";
 				int val = st.executeUpdate(statement);
 				log.debug(val+" row updated");

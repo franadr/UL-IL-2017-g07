@@ -181,6 +181,8 @@ public abstract class ActAuthenticatedImpl extends UnicastRemoteObject
 
 		if (res.getValue() == true)
 			log.info("operation oeConfirmPhoneNumber successfully executed by the system");
+		else
+			log.info("operation oeConfirmPhoneNumber failed");
 
 		return res;
 	}

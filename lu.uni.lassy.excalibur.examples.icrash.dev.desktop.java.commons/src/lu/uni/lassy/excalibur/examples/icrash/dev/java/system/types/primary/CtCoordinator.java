@@ -41,6 +41,20 @@ public class CtCoordinator extends CtAuthenticated {
 	}
 	
 	/**
+	 * Initialises the coordinator.
+	 *
+	 * @param aId The ID of the coordinator
+	 * @param aLogin The username of the coordinator
+	 * @param aPwd The password of the coordinator
+	 * @return The success of the initialisation
+	 */
+	public PtBoolean init(DtCoordinatorID aId,DtLogin aLogin,DtPassword aPwd, DtPhoneNumber aPhoneNumber, CtVCode aVCode, PtBoolean aIsPhoneNumberValid){
+			super.init(aLogin, aPwd, aPhoneNumber, aVCode, aIsPhoneNumberValid);
+			id = aId;
+			return new PtBoolean(true); 
+	}
+	
+	/**
 	 * Updates the user details, used when the administrator does an update on the coordinator.
 	 *
 	 * @param aLogin The value to change the login to

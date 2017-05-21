@@ -4,10 +4,15 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.Window;
+import lu.uni.lassy.excalibur.examples.icrash.dev.controller.AdminController;
+import lu.uni.lassy.excalibur.examples.icrash.dev.controller.exceptions.ServerNotBoundException;
+import lu.uni.lassy.excalibur.examples.icrash.dev.controller.exceptions.ServerOfflineException;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.design.JIntIsActor;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.PtBoolean;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.AbstractGUIController;
@@ -18,6 +23,7 @@ import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.sms.CreateSMSGUI;
 
 public class PhoneGUIController extends AbstractGUIController implements HasTables {
 
+	
 	private Stage stage;
 	private ICrashAdminGUIController adminGUIController;
 	private Window window;
@@ -74,13 +80,19 @@ public class PhoneGUIController extends AbstractGUIController implements HasTabl
 	}	
 	
 	public void bttnConfirm_OnClick(){
-		if(phoneField.getText().isEmpty()){									//Condition adapted for convenience
+		if(!phoneField.getText().isEmpty()){									//Condition adapted for convenience
+				try {
+					if (adminGUIController.getUserController().oeConfirmPhoneNumber(phoneField.getText()).getValue()){
+						createdSMSWindow = new CreateSMSGUI(adminGUIController, 150, 150);
+						stage.close();
+					}
+				}catch (ServerOfflineException | ServerNotBoundException e) {
+						showExceptionErrorMessage(e);
+				}	
+		}else
 			warningMessage.setText("Phone Number Field is empty!!");
-		}else{
-		createdSMSWindow = new CreateSMSGUI(adminGUIController, 150, 150);
-		stage.close();
-		}
 	}
+	
 	
 	public void bttnCancel_OnClick(){
 		closeForm();

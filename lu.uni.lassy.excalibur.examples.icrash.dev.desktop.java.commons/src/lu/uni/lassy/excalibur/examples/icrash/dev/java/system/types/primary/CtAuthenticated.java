@@ -43,6 +43,9 @@ public abstract class CtAuthenticated implements Serializable {
 	/** A check to see on which window the current ct should be at. */
 	public EtAuthenticatedStatus vpStatus;
 	
+	/** The user's eventually associated verification code */
+	public CtVCode vCode;
+	
 	
 	//****************************************************************************************//
 	
@@ -59,6 +62,26 @@ public abstract class CtAuthenticated implements Serializable {
 			vpIsLogged = new PtBoolean(false);
 			vpStatus = EtAuthenticatedStatus.isIn1stLoginPhase;
 			isPhoneNumberValid = new PtBoolean(false);
+			vCode = null;
+			return new PtBoolean(true); 
+	}
+	
+	/**
+	 * Initialisation of the user.
+	 *
+	 * @param aLogin The username of the user
+	 * @param aPwd The password of the user
+	 * @return The success of the initialisation of the user
+	 */
+	public PtBoolean init(DtLogin aLogin, DtPassword aPwd, DtPhoneNumber aPhoneNumber, CtVCode aVCode, PtBoolean aIsPhoneNumberValidated){
+			login = aLogin;
+			pwd = aPwd;
+			vpIsLogged = new PtBoolean(false);
+			vpStatus = EtAuthenticatedStatus.isIn1stLoginPhase;
+			phoneNumber = aPhoneNumber;
+			vCode = aVCode;
+			isPhoneNumberValid = aIsPhoneNumberValidated;
+
 			return new PtBoolean(true); 
 	}
 	

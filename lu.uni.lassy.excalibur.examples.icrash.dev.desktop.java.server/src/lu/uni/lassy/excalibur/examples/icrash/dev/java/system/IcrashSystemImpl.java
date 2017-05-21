@@ -484,6 +484,16 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
 		return cmpSystemActComCompany.get(name);
 	}
 	
+	public ArrayList <CtVCode> getAllCtVCode() throws java.rmi.RemoteException{
+		ArrayList<CtVCode> result = new ArrayList<CtVCode>();
+		if (cmpSystemCtVCode != null){
+			for(CtVCode vCode : cmpSystemCtVCode.values())
+				result.add(vCode);
+		}
+		return result;
+	}
+	
+	
 	/*
 	 * ************************
 	 * System operations 
@@ -613,6 +623,7 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
 			cmpSystemCtAlert = DbAlerts.getSystemAlerts();
 			cmpSystemCtCrisis = DbCrises.getSystemCrises();
 			cmpSystemCtHuman = DbHumans.getSystemHumans();
+			cmpSystemCtVCode = DbVCode.getSystemVCodes();
 			Hashtable<String, CtCoordinator> cmpSystemCtCoordinator = DbCoordinators.getSystemCoordinators();
 			for(CtCoordinator ctCoord: cmpSystemCtCoordinator.values()){
 				cmpSystemCtAuthenticated.put(ctCoord.login.value.getValue(), ctCoord);
@@ -1491,72 +1502,85 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
     @Override
 	public PtBoolean oeConfirmPhoneNumber(DtPhoneNumber aDtPhoneNumber) {
     	
-    	log.error("ERRROR HERE ?? 1 ");
+    	log.error("ERRROR HERE ?? 0 ");
     	
 		try{
 			CtAuthenticated ctAuthenticatedInstance;
 			DtLogin user = currentRequestingAuthenticatedActor.getLogin();
 			if (user != null && user.value != null){
 				ctAuthenticatedInstance = cmpSystemCtAuthenticated.get(user.value.getValue());
-				if (ctAuthenticatedInstance.vpIsLogged.getValue())
-					throw new Exception("The user " + user.value.getValue() + " is already logged in");
 			}
 			else
-				throw new Exception("The user does not exist");
+				throw new Exception("oeConfirmPhoneNumber can't find the user...");
 			
 			log.error("ERRROR HERE ?? 1 ");
 			
 			//PreP1
 			isSystemStarted();
 			
-			log.error("ERRROR HERE ?? 1 ");
+			log.error("ERRROR HERE ?? 2 ");
 			
 			//PreP2
-			if(!(ctAuthenticatedInstance.vpStatus == EtAuthenticatedStatus.isInRequestPhone))
-				throw new Exception("The status of the user is wrong!");
+//			if(!(ctAuthenticatedInstance.vpStatus == EtAuthenticatedStatus.isInRequestPhone))
+//				throw new Exception("The status of the user is wrong!");
 			
-			log.error("ERRROR HERE ?? 1 ");
+			log.error("ERRROR HERE ?? 3 ");
 			
 			//PostF1
 			PtString aMessage = new PtString("A verification code has been sent to " + aDtPhoneNumber);
 			currentRequestingAuthenticatedActor.ieMessage(aMessage);
 			
-			log.error("ERRROR HERE ?? 1 ");
+			log.error("ERRROR HERE ?? 4 ");
 			
 			//PostF2
 			DtDateAndTime aDateAndTime = ctState.clock;
 			CtVCode aCtVCode = new CtVCode();
-			aCtVCode.init(aDateAndTime, new PtBoolean(false));
 			
-			log.error("ERRROR HERE ?? 1 ");
+			do
+				aCtVCode.init(aDateAndTime, new PtBoolean(false));
+			while(cmpSystemCtVCode.containsKey(aCtVCode.vCode.value.getValue()));
+			
+			log.error("ERRROR HERE ?? 5 ");
 	
 				//update Messir composition
 				cmpSystemCtVCode.put(aCtVCode.vCode.value.getValue(), aCtVCode);
 			
 				//DB: insert human in the database
 				DbVCode.insertVCode(aCtVCode);
+				
+				//update ctAuthenticatedInstance
+				ctAuthenticatedInstance.vCode = aCtVCode;
+				if (currentRequestingAuthenticatedActor instanceof ActCoordinator)
+					DbCoordinators.updateCoordinator((CtCoordinator)ctAuthenticatedInstance);
+				
+			log.error("ERRROR HERE ?? 6 ");
 			
 			//PostF3
-			DtSMS sms = new DtSMS(new PtString(	"Dear user, this is the verification code you need to login to iCrash:" + aCtVCode + ".It is a one-time verification code, meaning that it will become invalid once you have used it to login to your account. Be notified that this code will also become invalid after not being used for 15 minutes."));
-			currentConnectedComCompany.ieSmsSend(aDtPhoneNumber, sms);
+//			DtSMS sms = new DtSMS(new PtString("Dear user, this is the verification code you need to login to iCrash:" + aCtVCode + ".It is a one-time verification code, meaning that it will become invalid once you have used it to login to your account. Be notified that this code will also become invalid after not being used for 15 minutes."));
+//			currentConnectedComCompany.ieSmsSend(aDtPhoneNumber, sms);
+			PtString aMessageSimulatingSMS = new PtString("Dear user, this is the verification code you need to login to iCrash:" + aCtVCode + ".It is a one-time verification code, meaning that it will become invalid once you have used it to login to your account. Be notified that this code will also become invalid after not being used for 15 minutes.");
+			currentRequestingAuthenticatedActor.ieMessage(aMessageSimulatingSMS);			
+		
 			
-			log.error("ERRROR HERE ?? 1 ");
+			log.error("ERRROR HERE ?? 7 ");
 			
 			//PostF4
 			ctAuthenticatedInstance.phoneNumber = aDtPhoneNumber;
 			
-			log.error("ERRROR HERE ?? 1 ");
+			log.error("ERRROR HERE ?? 8 ");
 			
 			//PostP1
 			ctAuthenticatedInstance.vpStatus = EtAuthenticatedStatus.isIn2ndLoginPhase;
 			
-			log.error("ERRROR HERE ?? 1 ");
+			log.error("ERRROR HERE ?? 9 ");
+			
+			return new PtBoolean(true);
 			
 		}catch(Exception ex){
 			log.error("Exception in oeLogin..." + ex);
 		}
 		
-		return new PtBoolean(true);
+		return new PtBoolean(false);
     }
 
 /*********************************************************************************************************************************************************************************/

@@ -2,6 +2,7 @@ package lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary;
 
 import java.io.Serializable;
 import java.rmi.RemoteException;
+import java.security.SecureRandom;
 
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.environment.actors.ActCoordinator;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.DtDateAndTime;
@@ -30,7 +31,7 @@ public class CtVCode implements Serializable {
 	 */
 	public PtBoolean init(DtDateAndTime aInstant, PtBoolean aPtBoolean) {
 			
-		vCode = new DtVCode(new PtString("123456"));
+		vCode = new DtVCode(new PtString(randomString(6)));
 		instant = aInstant;
 		isValidated = aPtBoolean;
 		
@@ -83,5 +84,18 @@ public class CtVCode implements Serializable {
 	@Override
 	public int hashCode(){
 		return this.vCode.value.getValue().length();
+	}
+	
+	/*
+	 * Generating a random verification code
+	 */
+	static final String LETTERS = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	static SecureRandom rnd = new SecureRandom();
+
+	private String randomString(int length){
+	   StringBuilder sb = new StringBuilder( length );
+	   for( int i = 0; i < length; i++ ) 
+	      sb.append( LETTERS.charAt( rnd.nextInt(LETTERS.length()) ) );
+	   return sb.toString();
 	}
 }
