@@ -34,6 +34,7 @@ import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.db.DbComCompanies;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.db.DbCoordinators;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.db.DbCrises;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.db.DbHumans;
+import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.db.DbVCode;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.*;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.secondary.DtSMS;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.*;
@@ -86,6 +87,9 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
 	
 	/**  A hashtable of the actor com companies in the system, stored by their name as a key. */
 	Hashtable<String, ActComCompany> cmpSystemActComCompany = new Hashtable<String, ActComCompany>();
+	
+	/**  A hashtable of the verification codes in the system, stored by their code as a key. */
+	Hashtable<String, CtVCode> cmpSystemCtVCode = new Hashtable<String, CtVCode>();
 
 	// Messir associations	
 	/**  A hashtable of the joint alerts and crises in the system, stored by their alert as a key. */
@@ -1482,4 +1486,79 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
         }
         return new PtBoolean(false);
     }
+/*********************************************************************************************************************************************************************************/
+	
+    @Override
+	public PtBoolean oeConfirmPhoneNumber(DtPhoneNumber aDtPhoneNumber) {
+    	
+    	log.error("ERRROR HERE ?? 1 ");
+    	
+		try{
+			CtAuthenticated ctAuthenticatedInstance;
+			DtLogin user = currentRequestingAuthenticatedActor.getLogin();
+			if (user != null && user.value != null){
+				ctAuthenticatedInstance = cmpSystemCtAuthenticated.get(user.value.getValue());
+				if (ctAuthenticatedInstance.vpIsLogged.getValue())
+					throw new Exception("The user " + user.value.getValue() + " is already logged in");
+			}
+			else
+				throw new Exception("The user does not exist");
+			
+			log.error("ERRROR HERE ?? 1 ");
+			
+			//PreP1
+			isSystemStarted();
+			
+			log.error("ERRROR HERE ?? 1 ");
+			
+			//PreP2
+			if(!(ctAuthenticatedInstance.vpStatus == EtAuthenticatedStatus.isInRequestPhone))
+				throw new Exception("The status of the user is wrong!");
+			
+			log.error("ERRROR HERE ?? 1 ");
+			
+			//PostF1
+			PtString aMessage = new PtString("A verification code has been sent to " + aDtPhoneNumber);
+			currentRequestingAuthenticatedActor.ieMessage(aMessage);
+			
+			log.error("ERRROR HERE ?? 1 ");
+			
+			//PostF2
+			DtDateAndTime aDateAndTime = ctState.clock;
+			CtVCode aCtVCode = new CtVCode();
+			aCtVCode.init(aDateAndTime, new PtBoolean(false));
+			
+			log.error("ERRROR HERE ?? 1 ");
+	
+				//update Messir composition
+				cmpSystemCtVCode.put(aCtVCode.vCode.value.getValue(), aCtVCode);
+			
+				//DB: insert human in the database
+				DbVCode.insertVCode(aCtVCode);
+			
+			//PostF3
+			DtSMS sms = new DtSMS(new PtString(	"Dear user, this is the verification code you need to login to iCrash:" + aCtVCode + ".It is a one-time verification code, meaning that it will become invalid once you have used it to login to your account. Be notified that this code will also become invalid after not being used for 15 minutes."));
+			currentConnectedComCompany.ieSmsSend(aDtPhoneNumber, sms);
+			
+			log.error("ERRROR HERE ?? 1 ");
+			
+			//PostF4
+			ctAuthenticatedInstance.phoneNumber = aDtPhoneNumber;
+			
+			log.error("ERRROR HERE ?? 1 ");
+			
+			//PostP1
+			ctAuthenticatedInstance.vpStatus = EtAuthenticatedStatus.isIn2ndLoginPhase;
+			
+			log.error("ERRROR HERE ?? 1 ");
+			
+		}catch(Exception ex){
+			log.error("Exception in oeLogin..." + ex);
+		}
+		
+		return new PtBoolean(true);
+    }
+
+/*********************************************************************************************************************************************************************************/
+
 }

@@ -360,4 +360,12 @@ public interface IcrashSystem extends Remote {
 
 	public PtBoolean oeAddLogEntry(PtInteger aptEID, EtEventType aeteType, PtString aptText, DtTime adtTime) throws RemoteException;
 	public PtBoolean oeGetLog() throws RemoteException;
+	
+/*********************************************************************************************************************************************************************************/
+	
+	public PtBoolean oeConfirmPhoneNumber(DtPhoneNumber aDtPhoneNumber) throws RemoteException;	
+	
+	
+/*********************************************************************************************************************************************************************************/	
+	
 }
