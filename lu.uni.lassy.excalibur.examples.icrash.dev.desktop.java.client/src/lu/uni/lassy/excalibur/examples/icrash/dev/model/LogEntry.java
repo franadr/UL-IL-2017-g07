@@ -1,5 +1,7 @@
 package lu.uni.lassy.excalibur.examples.icrash.dev.model;
 
+import javafx.beans.property.IntegerProperty;
+
 import java.util.Date;
 
 /**
@@ -9,23 +11,23 @@ public class LogEntry {
 
 
 
-    private int logId;
+    private IntegerProperty logId;
     private String type;
     private String text;
     private Date date;
 
-    public LogEntry(int logId, String type, String text, Date date) {
+    public LogEntry(IntegerProperty logId, String type, String text, Date date) {
         this.logId = logId;
         this.type = type;
         this.text = text;
         this.date = date;
     }
 
-    public int getLogId() {
+    public IntegerProperty getLogId() {
         return logId;
     }
 
-    public void setLogId(int logId) {
+    public void setLogId(IntegerProperty logId) {
         this.logId = logId;
     }
 
@@ -66,12 +68,12 @@ public class LogEntry {
         return date != null ? date.equals(logEntry.date) : logEntry.date == null;
     }
 
-    @Override
-    public int hashCode() {
-        int result = logId;
-        result = 31 * result + (type != null ? type.hashCode() : 0);
-        result = 31 * result + (text != null ? text.hashCode() : 0);
-        result = 31 * result + (date != null ? date.hashCode() : 0);
-        return result;
-    }
+//    @Override
+//    public int hashCode() {
+//        Integer result = logId;
+//        result = 31 * result + (type != null ? type.hashCode() : 0);
+//        result = 31 * result + (text != null ? text.hashCode() : 0);
+//        result = 31 * result + (date != null ? date.hashCode() : 0);
+//        return result;
+//    }
 }

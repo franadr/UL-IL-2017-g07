@@ -52,6 +52,7 @@ import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.EtCr
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.DtDate;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.DtTime;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.PtBoolean;
+import lu.uni.lassy.excalibur.examples.icrash.dev.model.LogEntry;
 import lu.uni.lassy.excalibur.examples.icrash.dev.model.Message;
 import lu.uni.lassy.excalibur.examples.icrash.dev.model.Message.MessageType;
 import lu.uni.lassy.excalibur.examples.icrash.dev.controller.exceptions.IncorrectFormatException;
@@ -749,6 +750,12 @@ public abstract class AbstractGUIController implements Initializable {
 		//Using the method Platform.runLater(), we can call methods to be ran at a later date, but on the main thread. This allows us to interact
 		//with GUI elements that are on the main thread
 		Platform.runLater(() -> tblvw.scrollTo(observableList.size()-1) );
+	}
+
+	public void addLogEntryToTableView(TableView<LogEntry> tblle, ObservableList<? extends LogEntry> observableList){
+
+		tblle.getItems().clear();
+		tblle.getItems().addAll(observableList);
 	}
 	
 	/**

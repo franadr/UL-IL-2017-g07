@@ -8,15 +8,17 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
+import lu.uni.lassy.excalibur.examples.icrash.dev.java.environment.actors.ActCoordinator;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.utils.Log4JUtils;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.CreatedWindows;
+import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.coordinator.ICrashCoordGUIController;
 
 
 public class CreateLog implements CreatedWindows {
 
 	
-	public CreateLog(double xPosition, double yPosition){
-		start(xPosition, yPosition);
+	public CreateLog(double xPosition, double yPosition,ICrashCoordGUIController iCrashCoordGUIController){
+		start(xPosition, yPosition,iCrashCoordGUIController);
 	}
 	/** The stage that will host the form. */
 	private Stage stage;
@@ -28,7 +30,7 @@ public class CreateLog implements CreatedWindows {
 	 * @param xPosition the x position of where to put the window on the screen
 	 * @param yPosition the y position of where to put the window on the screen
 	 */
-	public void start(double xPosition, double yPosition){
+	public void start(double xPosition, double yPosition,ICrashCoordGUIController iCrashCoordGUIController){
 		try {
 			URL url = this.getClass().getResource("LogGUI.fxml");
 			FXMLLoader loader = new FXMLLoader(url);
@@ -39,6 +41,7 @@ public class CreateLog implements CreatedWindows {
             stage.setX(xPosition);
             stage.setY(yPosition);
             stage.show();
+			((LogGuiControler)loader.getController()).setCoordGUIController(iCrashCoordGUIController);
             ((LogGuiControler)loader.getController()).setWindow(stage);
             stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
 				@Override

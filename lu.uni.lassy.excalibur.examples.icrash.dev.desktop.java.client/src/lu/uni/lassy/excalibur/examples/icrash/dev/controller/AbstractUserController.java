@@ -25,6 +25,7 @@ import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.PtBoolean;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.PtString;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.utils.Log4JUtils;
 import lu.uni.lassy.excalibur.examples.icrash.dev.model.actors.ActProxyAuthenticatedImpl;
+import lu.uni.lassy.excalibur.examples.icrash.dev.model.actors.ActProxyCoordinatorImpl;
 
 /**
  * The Class AbstractUserController, used for generic functions that are done by both administrators and coordinators.
@@ -110,6 +111,10 @@ public abstract class AbstractUserController implements HasListeners {
 	 */
 	public ActProxyAuthenticatedImpl getAuthImpl(){
 		return (ActProxyAuthenticatedImpl) this._auth;
+	}
+
+	public ActProxyCoordinatorImpl getCoordImpl(){
+		return  (ActProxyCoordinatorImpl) this._auth;
 	}
 	/* (non-Javadoc)
 	 * @see lu.uni.lassy.excalibur.examples.icrash.dev.controller.HasListeners#removeAllListeners()

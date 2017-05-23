@@ -24,6 +24,7 @@ import com.oracle.jrockit.jfr.Producer;
 
 import javafx.util.Callback;
 import lu.uni.lassy.excalibur.examples.icrash.dev.controller.CoordinatorController;
+import lu.uni.lassy.excalibur.examples.icrash.dev.controller.SystemStateController;
 import lu.uni.lassy.excalibur.examples.icrash.dev.controller.exceptions.IncorrectActorException;
 import lu.uni.lassy.excalibur.examples.icrash.dev.controller.exceptions.IncorrectFormatException;
 import lu.uni.lassy.excalibur.examples.icrash.dev.controller.exceptions.ServerNotBoundException;
@@ -37,6 +38,7 @@ import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.EtAl
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.EtCrisisStatus;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.PtBoolean;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.utils.Log4JUtils;
+import lu.uni.lassy.excalibur.examples.icrash.dev.model.LogEntry;
 import lu.uni.lassy.excalibur.examples.icrash.dev.model.Message;
 import lu.uni.lassy.excalibur.examples.icrash.dev.model.actors.ActProxyCoordinatorImpl;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.AbstractAuthGUIController;
@@ -252,7 +254,7 @@ public class ICrashCoordGUIController extends AbstractAuthGUIController {
      */
 	
 	/** The user controller, for this GUI it's the coordinator controller and allows access to coordinator functions like reporting on crises. */
-	private CoordinatorController userController;
+	public CoordinatorController userController;
 	
 	/*
 	 * Other things created for this controller
@@ -268,8 +270,8 @@ public class ICrashCoordGUIController extends AbstractAuthGUIController {
 	 * 
 	 */
 	
-	 private CreatedWindows createdLogWindows; 
-	
+	 private CreatedWindows createdLogWindows;
+	SystemStateController systemstateController;
 	
 	/**
 	 * 
@@ -494,7 +496,7 @@ public class ICrashCoordGUIController extends AbstractAuthGUIController {
 						logonShowPanes(true);
 						
 						//will create the new log window
-						createdLogWindows = new CreateLog(bounds.getMaxX()/2,bounds.getMaxY()/2);
+						createdLogWindows = new CreateLog(bounds.getMaxX()/2,bounds.getMaxY()/2, this);
 						
 						
 					}
@@ -560,6 +562,9 @@ public class ICrashCoordGUIController extends AbstractAuthGUIController {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		systemstateController = new SystemStateController();
+		logonShowPanes(false);
+
 		setUpTables();
 		cmbbxAlertStatus.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
@@ -568,7 +573,7 @@ public class ICrashCoordGUIController extends AbstractAuthGUIController {
 			}
 		});	
 		cmbbxCrisisStatus.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
+
 			public void handle(ActionEvent event) {
 				populateCrisis();
 			}
@@ -593,6 +598,7 @@ public class ICrashCoordGUIController extends AbstractAuthGUIController {
 				try{
 					userController = new CoordinatorController((ActCoordinator)actor);
 					try{
+
 						userController.getAuthImpl().listOfMessages.addListener(new ListChangeListener<Message>() {
 							@Override
 							public void onChanged(ListChangeListener.Change<? extends Message> c) {
@@ -634,4 +640,17 @@ public class ICrashCoordGUIController extends AbstractAuthGUIController {
 		}
 		return new PtBoolean(true);
 	}
+
+	@FXML
+    public void refreshLog(){
+
+        try {
+            if (!userController.getCoordImpl().oeGetLog().getValue())
+                showWarningMessage("Unable to get the log ", "Unable to get the log , please try again");
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        } catch (NotBoundException e) {
+            e.printStackTrace();
+        }
+    }
 }
