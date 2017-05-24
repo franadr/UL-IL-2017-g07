@@ -1,14 +1,22 @@
 package lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.log;
 
 import java.net.URL;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 import javafx.collections.ListChangeListener;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import lu.uni.lassy.excalibur.examples.icrash.dev.controller.exceptions.NullValueException;
+import lu.uni.lassy.excalibur.examples.icrash.dev.controller.exceptions.ServerNotBoundException;
+import lu.uni.lassy.excalibur.examples.icrash.dev.controller.exceptions.ServerOfflineException;
+import lu.uni.lassy.excalibur.examples.icrash.dev.java.environment.actors.ActProxyCoordinator;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.design.JIntIsActor;
+import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.CtLogEntry;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.PtBoolean;
+import lu.uni.lassy.excalibur.examples.icrash.dev.java.utils.Log4JUtils;
 import lu.uni.lassy.excalibur.examples.icrash.dev.model.LogEntry;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.AbstractGUIController;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.HasTables;
@@ -17,7 +25,7 @@ import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.coordinator.ICrashCoo
 public class LogGuiControler extends AbstractGUIController implements HasTables {
 
 	@FXML
-	TableView<LogEntry> logtblvw;
+	TableView<CtLogEntry> logtblvw;
 
 	@FXML
 	TableColumn<LogEntry,Integer> idCol;
@@ -36,32 +44,48 @@ public class LogGuiControler extends AbstractGUIController implements HasTables 
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+	    System.out.println("Doing setup Tables ...");
+	    setUpTables();
+	    populateLogTable();
+
 
 
 	}
 
 	@Override
 	public void setUpTables() {
-		// TODO Auto-generated method stub
+		setupLogEntryTable(logtblvw);
+
 		
 	}
 
-	@Override
-	public PtBoolean setActor(JIntIsActor actor) {
-//		if (actor instanceof ActCoordinator){
-//			try {
-//				userSideController = new CoordinatorController((ActCoordinator)actor);
-//				userSideController.getCoordImpl().listOfLogEntries.addListener((ListChangeListener<LogEntry>) c -> addLogEntryToTableView(logtblvw,c.getList()));
-//			} catch (RemoteException e) {
-//				e.printStackTrace();
-//			} catch (NotBoundException e) {
-//				e.printStackTrace();
-//			}
-//		}
+
+	public PtBoolean setActor2() {
+        System.out.println("setActor2");
+        userSideController.userController.getCoordImpl().listOfLogEntries.addListener((ListChangeListener<? super CtLogEntry>) c -> {
+            System.out.println("Change detected adding to list");
+            addLogEntryToTableView(logtblvw,c.getList());
+        });
+
 		return null;
 	}
 
-	@Override
+	public void populateLogTable(){
+        try {
+            System.out.println("Test"+userSideController.userController.getCoordImpl().listOfLogEntries.get(1).eId);
+            addLogEntryToTableView(logtblvw,userSideController.userController.getCoordImpl().listOfLogEntries);
+        } catch (NullPointerException e){
+            Log4JUtils.getInstance().getLogger().error(e);
+            showExceptionErrorMessage(new NullValueException(this.getClass()));
+        }
+    }
+
+    @Override
+    public PtBoolean setActor(JIntIsActor actor) {
+        return null;
+    }
+
+    @Override
 	public void closeForm() {
 		// TODO Auto-generated method stub
 		
@@ -69,12 +93,18 @@ public class LogGuiControler extends AbstractGUIController implements HasTables 
 
 	@FXML
 	public void bttn_refreshLog(){
-		userSideController.refreshLog();
+
+	    userSideController.refreshLog();
+	    populateLogTable();
+        System.out.println("refresh on LogGuiControlelr");
 	}
 
 
 	public void setCoordGUIController(ICrashCoordGUIController iCrashCoordGUIController){
 		this.userSideController = iCrashCoordGUIController;
+
+
+
 	}
 
 

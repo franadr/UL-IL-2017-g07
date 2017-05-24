@@ -41,14 +41,7 @@ import javafx.scene.control.TableColumn.CellDataFeatures;
 import javafx.util.Callback;
 import javafx.util.StringConverter;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.design.JIntIsActor;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.CtAdministrator;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.CtAlert;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.CtCoordinator;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.CtCrisis;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.CtHuman;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.CtState;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.EtAlertStatus;
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.EtCrisisStatus;
+import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.*;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.DtDate;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.DtTime;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.PtBoolean;
@@ -82,7 +75,7 @@ public abstract class AbstractGUIController implements Initializable {
 	
 	/**
 	 * Sets the window details, which allows dialogs to appear in the correct place when created
-	 * @param The window that this form belongs to
+	 * @param window window that this form belongs to
 	 */
 	public void setWindow(Window window){
 		this.window = window;
@@ -455,7 +448,7 @@ public abstract class AbstractGUIController implements Initializable {
 		TableColumn<CtCrisis, String> commentCol = new TableColumn<CtCrisis, String>("Comment");
 		TableColumn<CtCrisis, String> statusCol = new TableColumn<CtCrisis, String>("Status");
 		idCol.setCellValueFactory(new Callback<CellDataFeatures<CtCrisis, String>, ObservableValue<String>>() {
-			
+
 			public ObservableValue<String> call(CellDataFeatures<CtCrisis, String> crisis) {
 				return new ReadOnlyObjectWrapper<String>(crisis.getValue().id.value.getValue());
 			}
@@ -752,10 +745,12 @@ public abstract class AbstractGUIController implements Initializable {
 		Platform.runLater(() -> tblvw.scrollTo(observableList.size()-1) );
 	}
 
-	public void addLogEntryToTableView(TableView<LogEntry> tblle, ObservableList<? extends LogEntry> observableList){
+	public void addLogEntryToTableView(TableView<CtLogEntry> tblle, ObservableList<? extends CtLogEntry> observableList){
 
 		tblle.getItems().clear();
 		tblle.getItems().addAll(observableList);
+
+		System.out.println("LogEntry added to table view");
 	}
 	
 	/**
@@ -809,6 +804,25 @@ public abstract class AbstractGUIController implements Initializable {
 				return success;
 		}
 		return success;
+	}
+
+	public void setupLogEntryTable(TableView<CtLogEntry> tblvw){
+		TableColumn<CtLogEntry, String> idCol = new TableColumn<CtLogEntry, String>("ID");
+		TableColumn<CtLogEntry, String> dateCol = new TableColumn<CtLogEntry, String>("Date");
+		TableColumn<CtLogEntry, String> typeCol = new TableColumn<CtLogEntry, String>("Type");
+		TableColumn<CtLogEntry, String> textCol = new TableColumn<CtLogEntry, String>("Text");
+
+		idCol.setCellValueFactory(logEntry -> new ReadOnlyObjectWrapper<String>(String.valueOf(logEntry.getValue().eId.getValue())));
+		dateCol.setCellValueFactory(logEntry -> new ReadOnlyObjectWrapper<String>(logEntry.getValue().eTime.toString()));
+		typeCol.setCellValueFactory(logEntry -> new ReadOnlyObjectWrapper<String>(logEntry.getValue().eType.toString()));
+		textCol.setCellValueFactory(logEntry -> new ReadOnlyObjectWrapper<String>(logEntry.getValue().eText.getValue()));
+
+		tblvw.getColumns().add(idCol);
+		tblvw.getColumns().add(dateCol);
+		tblvw.getColumns().add(typeCol);
+		tblvw.getColumns().add(textCol);
+
+
 	}
 
 	/**

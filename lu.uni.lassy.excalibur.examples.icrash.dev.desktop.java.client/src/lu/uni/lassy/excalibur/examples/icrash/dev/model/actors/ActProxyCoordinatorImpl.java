@@ -219,9 +219,10 @@ public class ActProxyCoordinatorImpl extends ActProxyAuthenticatedImpl
 		return new PtBoolean(true);
 	}
 
-	public ArrayList<LogEntry> _listOfLogEntries = new ArrayList<>();
+	public ArrayList<CtLogEntry >_listOfLogEntries = new ArrayList<>();
 
-	public ObservableList<LogEntry> listOfLogEntries = FXCollections.observableArrayList(_listOfLogEntries);
+	public ObservableList<CtLogEntry> listOfLogEntries = FXCollections.observableArrayList(_listOfLogEntries);
+
 
 
 	@Override
@@ -229,7 +230,7 @@ public class ActProxyCoordinatorImpl extends ActProxyAuthenticatedImpl
 		Logger log = Log4JUtils.getInstance().getLogger();
 		log.info("LogEntry ActCoordinator.ieSendALogEntry received from system");
 		log.info("logentry id is: " + aCtLogEntry.eId.getValue());
-		listOfLogEntries.add(new LogEntry(aCtLogEntry.eId.getValue(),aCtLogEntry.eType.toString(),aCtLogEntry.eText.getValue(),new Date(System.currentTimeMillis())));
+		listOfLogEntries.add(aCtLogEntry);
 		return new PtBoolean(true);
 	}
 

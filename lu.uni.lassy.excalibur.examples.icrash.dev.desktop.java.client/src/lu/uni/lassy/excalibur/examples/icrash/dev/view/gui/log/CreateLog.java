@@ -2,6 +2,7 @@ package lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.log;
 
 import java.net.URL;
 
+import javafx.collections.ListChangeListener;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.environment.actors.ActCoordinator;
+import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.CtLogEntry;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.utils.Log4JUtils;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.CreatedWindows;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.coordinator.ICrashCoordGUIController;
@@ -42,13 +44,10 @@ public class CreateLog implements CreatedWindows {
             stage.setY(yPosition);
             stage.show();
 			((LogGuiControler)loader.getController()).setCoordGUIController(iCrashCoordGUIController);
+			((LogGuiControler)loader.getController()).setActor2();
             ((LogGuiControler)loader.getController()).setWindow(stage);
-            stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
-				@Override
-				public void handle(WindowEvent event) {
-					((LogGuiControler)loader.getController()).closeForm();
-				}
-			});
+
+            stage.setOnCloseRequest(event -> ((LogGuiControler)loader.getController()).closeForm());
 		} catch(Exception e) {
 			Log4JUtils.getInstance().getLogger().error(e);
 		}

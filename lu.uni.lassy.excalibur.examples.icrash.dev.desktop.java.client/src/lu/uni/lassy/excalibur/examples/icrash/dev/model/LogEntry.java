@@ -11,23 +11,23 @@ public class LogEntry {
 
 
 
-    private IntegerProperty logId;
+    private int logId;
     private String type;
     private String text;
     private Date date;
 
-    public LogEntry(IntegerProperty logId, String type, String text, Date date) {
+    public LogEntry(int logId, String type, String text, Date date) {
         this.logId = logId;
         this.type = type;
         this.text = text;
         this.date = date;
     }
 
-    public IntegerProperty getLogId() {
+    public int getLogId() {
         return logId;
     }
 
-    public void setLogId(IntegerProperty logId) {
+    public void setLogId(int logId) {
         this.logId = logId;
     }
 
