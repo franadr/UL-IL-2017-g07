@@ -23,7 +23,11 @@ public enum EtCrisisStatus implements JIntIs {
 	/** A crisis is set as pending when it is first initialised. It is also in this status when no coordinator is currently handling */
 	pending, 
 	/** A crisis is set as handled when it gets assigned to a coordinator. */
-	handled, 
+	handled,
+	
+	treated,
+	
+	incorrect,
 	
 	/**  A crisis is set as solved when a coordinator sets it as being solved. */
 	solved, 
@@ -36,7 +40,10 @@ public enum EtCrisisStatus implements JIntIs {
 	 */
 	public PtBoolean is(){
 		return new PtBoolean(this.name() == EtCrisisStatus.pending.name() ||
-				this.name() == EtCrisisStatus.handled.name()|| this.name() == EtCrisisStatus.solved.name() ||
+				this.name() == EtCrisisStatus.handled.name()||
+				this.name() == EtCrisisStatus.treated.name() ||
+				this.name() == EtCrisisStatus.incorrect.name() ||
+				this.name() == EtCrisisStatus.solved.name() ||
 				this.name() == EtCrisisStatus.closed.name() );
 	}
 }
