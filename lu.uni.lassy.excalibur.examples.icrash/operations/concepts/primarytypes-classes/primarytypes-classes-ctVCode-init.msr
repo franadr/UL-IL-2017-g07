@@ -1,0 +1,35 @@
+package icrash.concepts.primarytypes.classes.operations.classes.ctVCode.init {
+
+import lu.uni.lassy.messir.libraries.primitives
+import lu.uni.lassy.messir.libraries.math
+import lu.uni.lassy.messir.libraries.calendar
+
+import icrash.concepts.primarytypes.datatypes
+import icrash.concepts.primarytypes.classes
+import icrash.concepts.secondarytypes.datatypes
+import icrash.concepts.secondarytypes.classes
+import lu.uni.lassy.messir.libraries.primitives
+
+	Operation Model {
+
+		operation: icrash.concepts.primarytypes.classes.ctVCode.init(AdateAndTime:dtDateAndTime, AvpIsValidated:ptBoolean):ptBoolean{
+		
+	postF{
+		
+		if(
+			/* Post F01 */
+			let Self:ctVCode in
+			Self.dateAndTIme = AdateAndTime
+			and Self.vpIsValidated = AvpIsValidated
+			
+			/* Post F02 */
+			and (Self.oclIsNew and self = Self)
+		)
+		then (result = true)
+		else (result = false)
+		endif
+	}
+	
+		}
+	}
+}
