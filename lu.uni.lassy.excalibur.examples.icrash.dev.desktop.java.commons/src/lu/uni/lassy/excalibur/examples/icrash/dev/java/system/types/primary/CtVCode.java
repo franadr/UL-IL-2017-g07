@@ -93,7 +93,7 @@ public class CtVCode implements Serializable {
 	static SecureRandom rnd = new SecureRandom();
 
 	private String randomString(int length){
-	   StringBuilder sb = new StringBuilder( length );
+	   StringBuilder sb = new StringBuilder(length);
 	   for( int i = 0; i < length; i++ ) 
 	      sb.append( LETTERS.charAt( rnd.nextInt(LETTERS.length()) ) );
 	   return sb.toString();
