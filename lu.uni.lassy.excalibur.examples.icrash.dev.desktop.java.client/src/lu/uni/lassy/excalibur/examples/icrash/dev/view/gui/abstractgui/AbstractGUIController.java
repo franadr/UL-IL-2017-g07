@@ -745,10 +745,10 @@ public abstract class AbstractGUIController implements Initializable {
 		Platform.runLater(() -> tblvw.scrollTo(observableList.size()-1) );
 	}
 
-	public void addLogEntryToTableView(TableView<CtLogEntry> tblle, ObservableList<? extends CtLogEntry> observableList){
+	public void addLogEntryToTableView(TableView<CtLogEntry> tblle, Collection<? extends CtLogEntry> collection){
 
 		tblle.getItems().clear();
-		tblle.getItems().addAll(observableList);
+		tblle.getItems().addAll(collection);
 
 		System.out.println("LogEntry added to table view");
 	}

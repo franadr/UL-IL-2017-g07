@@ -9,6 +9,8 @@ import javafx.collections.ListChangeListener;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import lu.uni.lassy.excalibur.examples.icrash.dev.controller.LogController;
+import lu.uni.lassy.excalibur.examples.icrash.dev.controller.SystemStateController;
 import lu.uni.lassy.excalibur.examples.icrash.dev.controller.exceptions.NullValueException;
 import lu.uni.lassy.excalibur.examples.icrash.dev.controller.exceptions.ServerNotBoundException;
 import lu.uni.lassy.excalibur.examples.icrash.dev.controller.exceptions.ServerOfflineException;
@@ -41,10 +43,15 @@ public class LogGuiControler extends AbstractGUIController implements HasTables 
 
 
 	ICrashCoordGUIController userSideController;
+	SystemStateController systemStateController;
+	LogController logController;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 	    System.out.println("Doing setup Tables ...");
+		systemStateController = new SystemStateController();
+		logController = new LogController();
+
 	    setUpTables();
 	    populateLogTable();
 
@@ -72,13 +79,17 @@ public class LogGuiControler extends AbstractGUIController implements HasTables 
 
 	public void populateLogTable(){
         try {
-            System.out.println("Test"+userSideController.userController.getCoordImpl().listOfLogEntries.get(1).eId);
-            addLogEntryToTableView(logtblvw,userSideController.userController.getCoordImpl().listOfLogEntries);
+
+            addLogEntryToTableView(logtblvw,logController.getListOfLogEntries());
         } catch (NullPointerException e){
             Log4JUtils.getInstance().getLogger().error(e);
             showExceptionErrorMessage(new NullValueException(this.getClass()));
-        }
-    }
+        } catch (ServerNotBoundException e) {
+			e.printStackTrace();
+		} catch (ServerOfflineException e) {
+			e.printStackTrace();
+		}
+	}
 
     @Override
     public PtBoolean setActor(JIntIsActor actor) {

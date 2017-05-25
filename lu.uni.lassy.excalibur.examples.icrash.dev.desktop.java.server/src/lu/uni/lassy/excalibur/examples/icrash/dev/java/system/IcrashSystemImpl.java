@@ -805,7 +805,7 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
             DtMinute minute = new DtMinute(new PtInteger(00));
             DtSecond second = new DtSecond(new PtInteger(00));
             ctState.eventIndex = new PtInteger(ctState.eventIndex.getValue()+1);
-            event.createEvent(ctState.eventIndex,EtEventType.Alert,new PtString("A new alert has arrived"),new DtTime(hour,minute,second));
+            event.createEvent(ctState.eventIndex,EtEventType.Alert,new PtString("A new alert has arrived"),ctState.clock.time);
             cmpSystemCtEvent.add(event);
 
             return new PtBoolean(true);
@@ -1143,6 +1143,15 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
 						//+ "with ID '"
 						//+ aDtCrisisID.value.getValue() + "' "
 								+ "is now closed !");
+
+				//PostF5
+				CtEvent event = new CtEvent();
+				DtHour hour = new DtHour(new PtInteger(12));
+				DtMinute minute = new DtMinute(new PtInteger(00));
+				DtSecond second = new DtSecond(new PtInteger(00));
+				ctState.eventIndex = new PtInteger(ctState.eventIndex.getValue()+1);
+				event.createEvent(ctState.eventIndex,EtEventType.Crisis,new PtString("Crisis :"+ aDtCrisisID.value.getValue()+" has been closed"),ctState.clock.time);
+				cmpSystemCtEvent.add(event);
 				try {
 					theActCoordinator.ieMessage(aMessage);
 				} catch (RemoteException e) {
@@ -1194,8 +1203,18 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
 						//PostF1
 						PtString aMessage = new PtString("You are logged ! Welcome ...");
 						currentRequestingAuthenticatedActor.ieMessage(aMessage);
+
+						//PostF2
+						CtEvent event = new CtEvent();
+						DtHour hour = new DtHour(new PtInteger(12));
+						DtMinute minute = new DtMinute(new PtInteger(00));
+						DtSecond second = new DtSecond(new PtInteger(00));
+						ctState.eventIndex = new PtInteger(ctState.eventIndex.getValue()+1);
+						event.createEvent(ctState.eventIndex,EtEventType.System,new PtString("new Authenticated actor logged in : "+aDtLogin.value.getValue()),ctState.clock.time);
+						cmpSystemCtEvent.add(event);
 						return new PtBoolean(true);
 					}
+
 				}
 			}
 			//PostF1
@@ -1211,6 +1230,9 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
 				aMessage = new PtString("Intrusion tentative !");
 				admin.ieMessage(aMessage);
 			}
+
+			//PostF2
+
 		} catch (Exception ex) {
 			log.error("Exception in oeLogin..." + ex);
 		}
@@ -1497,6 +1519,7 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
         }
         return new PtBoolean(false);
     }
+
 /*********************************************************************************************************************************************************************************/
 	
     @Override
