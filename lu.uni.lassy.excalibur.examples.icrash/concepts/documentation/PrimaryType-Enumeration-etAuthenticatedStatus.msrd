@@ -1,0 +1,12 @@
+/*
+@author zhikin
+@date Mon May 29 21:27:39 CEST 2017
+*/
+
+
+@@Primary Type Enumeration icrash.concepts.primarytypes.datatypes.etAuthenticatedStatus
+@description "this type is used to indicate the different status of an authenticated actor."
+@operation
+icrash.concepts.primarytypes.datatypes.etAuthenticatedStatus.is
+"used to determine which litteral belongs to the enumeration."
+@endOperations

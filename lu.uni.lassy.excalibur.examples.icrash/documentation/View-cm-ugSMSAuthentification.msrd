@@ -9,5 +9,5 @@
 @level Global
 @sublevel Primary Class
 @number 10
-@description ""
-@caption ""
+@description "View for ugSMSAuthentication feature."
+@caption "ugSMSAuthentication - Global View of the feature."
