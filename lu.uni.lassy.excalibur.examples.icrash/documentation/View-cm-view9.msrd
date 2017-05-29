@@ -9,5 +9,8 @@
 @level Local
 @sublevel Primary Class
 @number 9
-@description ""
+@description "shows a global view on the \msricrash logentry and event primary types"
 @caption ""
+@scale 0.5
+@orientation Landscape
+

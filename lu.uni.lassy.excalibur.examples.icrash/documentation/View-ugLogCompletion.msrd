@@ -7,5 +7,5 @@
 @@view ugLogCompletion
 @model Use-Case icrash.usecases.ugLogCompletion.ugLogCompletion 
 @description "shows the use case diagram for the ugLogCompletion user goal use case"
-@caption ""
+@caption "ugLogCompletion usecase Diagram"
 @scale 0.50

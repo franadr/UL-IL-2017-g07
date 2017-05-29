@@ -24,6 +24,9 @@
 @attribute icrash.concepts.primarytypes.classes.ctState.vpStarted
 "used to avoid reacting to an actor message if the system is not started (i.e. oeCreateSystemAndEnvironment not executed)."
 
+@attribute icrash.concepts.primarytypes.classes.ctState.eventIndex
+"used as global variable updated at each even."
+
 @endAttributes
 
 @operation icrash.concepts.primarytypes.classes.ctState.init

@@ -1,4 +1,6 @@
 @@view uciugLogCompletion
 @instance Use-Case usecases.uciugLogCompletion.uciugLogCompletion
-@description ""
-@caption ""
+@description "Use case instance showing concrete operation on the Log"
+@caption "UseCase instance view of ugLogCompletion"
+@scale MaxWidth
+
