@@ -22,10 +22,10 @@ preP {
 				self.rnActor.rnSystem = TheSystem
   				and self.rnActor = TheActor
   				
-  				/*Prep 1*/
+  				/*PreP 1*/
   				and TheSystem.vpStarted = true
   				
-  				/*Prep 2*/
+  				/*PreP 2*/
   				and (TheActor.rnctAuthenticated.vpStatus = 'isIn2ndLoginPhase' 
   				or TheActor.rnctAuthenticated.vpStatus = 'isInRequestPhone')
 			}
@@ -60,11 +60,11 @@ preP {
 				
 				TheActor.rnctAuthenticated.rnctVCode.dtVCode = AdtVCode
 				
-				/*PostF 1*/
+				/*PostP 1*/
   				and TheActor.rnctAuthenticated.rnctVCode -> isEmpty() = true
   				and TheSystem.rnctVCode -> select(c:ctVCode | c.dtVCode = AdtVCode) -> isEmpty() = true
   				
-  				/*PostF 2*/
+  				/*PostP 2*/
   				TheActor.rnctAuthenticated.vpStatus = 'isIn1stLoginPhase' 
 			}
 		}
