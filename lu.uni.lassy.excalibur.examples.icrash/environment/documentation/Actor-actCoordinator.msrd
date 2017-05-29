@@ -7,6 +7,8 @@
 "allows for receiving a requested ctAlert instance."
 @inputEvent icrash.environment.actCoordinator.inactCoordinator.ieSendACrisis
 "allows for receiving a requested ctCrisis instance."
+@inputEvent icrash.environment.actCoordinator.inactCoordinator.ieSendALogEntry
+"allows for receiving a logEntry instance."
 
 @endInputEvents
 
@@ -29,5 +31,7 @@
 "sent to define the gravity type of a specific crisis."
 @outputEvent icrash.environment.actCoordinator.outactCoordinator.oeValidateAlert
 "sent to indicate that a specific alert is not a fake."
+@outputEvent icrash.environment.actCoordinator.outactCoordinator.oeGetLog
+"sent to get log entries registered in the system"
 
 @endOutputEvents

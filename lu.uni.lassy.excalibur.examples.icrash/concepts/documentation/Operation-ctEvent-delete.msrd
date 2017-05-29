@@ -1,0 +1,16 @@
+/*
+@author Adriano
+@date Thu May 18 11:05:02 CEST 2017
+*/
+
+
+@@Operation
+icrash.concepts.primarytypes.classes.ctEvent.delete
+@description "used to clear an instance of ctEvent from the system
+ "
+//postFunctional descriptions
+@postF 
+"The instance of ctEvent is not linked to ctState anymore "
+@endPostF
+//example
+@example" "

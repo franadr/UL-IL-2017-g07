@@ -5,22 +5,25 @@
 
 
 @@Use Case Subfunction icrash.usecases.ugLogCompletion.subfonction.oeCreateLogEntry
-@description ""
-@parameter icrash.usecases.ugLogCompletion.subfonction.oeCreateLogEntry.ApteID ""
-@parameter icrash.usecases.ugLogCompletion.subfonction.oeCreateLogEntry.AeteType ""
-@parameter icrash.usecases.ugLogCompletion.subfonction.oeCreateLogEntry.ApeText ""
-@parameter icrash.usecases.ugLogCompletion.subfonction.oeCreateLogEntry.AdtTime ""
+@description "used to initialize a log Entry Instance"
+@parameter icrash.usecases.ugLogCompletion.subfonction.oeCreateLogEntry.ApteID "used to initialize the LogEntry ID"
+@parameter icrash.usecases.ugLogCompletion.subfonction.oeCreateLogEntry.AeteType "used to initialize the log entry type"
+@parameter icrash.usecases.ugLogCompletion.subfonction.oeCreateLogEntry.ApeText "used to initialize the log entry Text"
+@parameter icrash.usecases.ugLogCompletion.subfonction.oeCreateLogEntry.AdtTime "used to initialize the log entry Time occurance"
 @endParameters
 @protocolCondition
-"
+"The system must be started 
 "
 @endProtocolConditions
 @preCondition
-"
+"There exists events that are not recorded as logentries
 "
 @endPreConditions
 @postCondition
+"each event has been translated into a log Entry
 "
+@postCondition
+"each translated event are deleted
 "
 @endPostConditions
 @additionalInformation

@@ -5,4 +5,4 @@
 
 
 @@Instance Use Case usecases.uciugLogCompletion.uciugLogCompletion
-@description ""
+@description "Shows the use case instance of a normal operation of the system including log completion"

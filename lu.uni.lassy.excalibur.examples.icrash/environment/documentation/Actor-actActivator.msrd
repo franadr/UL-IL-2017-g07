@@ -8,4 +8,6 @@
 "used to avoid crisis to stay too long in an not handled status."
 @outputEvent icrash.environment.actActivator.outactActivator.oeSetClock
 "used to update the system's time"
+@outputEvent icrash.environment.actActivator.outactActivator.oeaddLogEntry
+"used to add a log entry to the system"
 @endOutputEvents

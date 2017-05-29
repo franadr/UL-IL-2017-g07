@@ -1,0 +1,27 @@
+/*
+@author Adriano
+@date Thu May 18 11:05:05 CEST 2017
+*/
+
+
+@@Use Case Subfunction icrash.usecases.subfunctions.oeGetLog
+@description ""
+@protocolCondition
+"The icrash System is started 
+"
+@protocolCondition
+"The coordinator is logged in
+"
+@endProtocolConditions
+@preCondition
+"There exists at least 1 instance of ctLogEntry 
+"
+@endPreConditions
+@postCondition
+"Each log entry are returned to the coordinator
+"
+@endPostConditions
+@additionalInformation
+"
+none
+"
