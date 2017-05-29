@@ -1188,6 +1188,11 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
 				//PreP2
 				if(ctAuthenticatedInstance.vpIsLogged.getValue())
 					throw new Exception("User " + aDtLogin.value.getValue() + " is already logged in");
+				//PreP3
+				if(!(ctAuthenticatedInstance.vpStatus == EtAuthenticatedStatus.isIn1stLoginPhase))
+					throw new Exception("The status of the user is wrong!");
+				
+				
 				PtBoolean pwdCheck = ctAuthenticatedInstance.pwd.eq(aDtPassword);
 				if(pwdCheck.getValue()) {
 					//PostP1
@@ -1198,11 +1203,65 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
 					 */
 					ActAuthenticated authActorCheck = assCtAuthenticatedActAuthenticated.get(ctAuthenticatedInstance);
 					log.debug("The logging in actor is " + authActorCheck.getLogin().value.getValue());
-					if (authActorCheck != null && authActorCheck.getLogin().value.getValue().equals(currentRequestingAuthenticatedActor.getLogin().value.getValue())){
-						ctAuthenticatedInstance.vpIsLogged = new PtBoolean(true);
+					if (authActorCheck != null && authActorCheck.getLogin().value.getValue().equals(currentRequestingAuthenticatedActor.getLogin().value.getValue()) &&
+							!ctAuthenticatedInstance.vCode.vCode.value.getValue().equals("dummy")){
 						//PostF1
 						PtString aMessage = new PtString("You are logged ! Welcome ...");
 						currentRequestingAuthenticatedActor.ieMessage(aMessage);
+						//PostP1
+						ctAuthenticatedInstance.vpIsLogged = new PtBoolean(true);
+						ctAuthenticatedInstance.vpStatus = EtAuthenticatedStatus.isNotShown;
+					}else if(authActorCheck != null && authActorCheck.getLogin().value.getValue().equals(currentRequestingAuthenticatedActor.getLogin().value.getValue()) &&
+							ctAuthenticatedInstance.vCode.vCode.value.getValue().equals("dummy")){
+						
+						//PostF1
+						if(!ctAuthenticatedInstance.isPhoneNumberValid.getValue()){
+							PtString aMessage = new PtString("Please input your phone number...");
+							currentRequestingAuthenticatedActor.ieMessage(aMessage);
+							//PostP2
+							ctAuthenticatedInstance.vpStatus = EtAuthenticatedStatus.isInRequestPhone;
+						}else{
+							PtString aMessage = new PtString("A verification code has been sent to " + ctAuthenticatedInstance.phoneNumber.value.getValue());
+							currentRequestingAuthenticatedActor.ieMessage(aMessage);
+							//PostP2
+							ctAuthenticatedInstance.vpStatus = EtAuthenticatedStatus.isIn2ndLoginPhase;
+							
+							//PostF2
+							DtDateAndTime aDateAndTime = ctState.clock;
+							CtVCode aCtVCode = new CtVCode();
+							
+							do
+								aCtVCode.init(aDateAndTime, new PtBoolean(false));
+							while(cmpSystemCtVCode.containsKey(aCtVCode.vCode.value.getValue()));
+							
+								//update Messir composition
+								cmpSystemCtVCode.put(aCtVCode.vCode.value.getValue(), aCtVCode);
+							
+								//DB: insert human in the database
+								DbVCode.insertVCode(aCtVCode);
+								
+								//update ctAuthenticatedInstance
+								ctAuthenticatedInstance.vCode = aCtVCode;
+								if (currentRequestingAuthenticatedActor instanceof ActCoordinator)
+									DbCoordinators.updateCoordinator((CtCoordinator)ctAuthenticatedInstance);
+						}
+					}else{
+						//PostF1
+						PtString aMessage = new PtString(
+								"Wrong identification information! Please try again ...");
+						currentRequestingAuthenticatedActor.ieMessage(aMessage);
+						Registry registry = LocateRegistry.getRegistry(RmiUtils.getInstance().getHost(), RmiUtils.getInstance().getPort());
+						IcrashEnvironment env = (IcrashEnvironment) registry
+								.lookup("iCrashEnvironment");
+						//Notify to all administrators that exist in the environment
+						for (String adminKey : env.getAdministrators().keySet()) {
+							ActAdministrator admin = env.getActAdministrator(adminKey);
+							aMessage = new PtString("Intrusion tentative !");
+							admin.ieMessage(aMessage);
+						}
+						
+						return new PtBoolean(false);
+					}
 
 						//PostF2
 						CtEvent event = new CtEvent();
@@ -1212,27 +1271,11 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
 						ctState.eventIndex = new PtInteger(ctState.eventIndex.getValue()+1);
 						event.createEvent(ctState.eventIndex,EtEventType.System,new PtString("new Authenticated actor logged in : "+aDtLogin.value.getValue()),ctState.clock.time);
 						cmpSystemCtEvent.add(event);
+						
 						return new PtBoolean(true);
 					}
-
-				}
 			}
-			//PostF1
-			PtString aMessage = new PtString(
-					"Wrong identification information! Please try again ...");
-			currentRequestingAuthenticatedActor.ieMessage(aMessage);
-			Registry registry = LocateRegistry.getRegistry(RmiUtils.getInstance().getHost(), RmiUtils.getInstance().getPort());
-			IcrashEnvironment env = (IcrashEnvironment) registry
-					.lookup("iCrashEnvironment");
-			//notify to all administrators that exist in the environment
-			for (String adminKey : env.getAdministrators().keySet()) {
-				ActAdministrator admin = env.getActAdministrator(adminKey);
-				aMessage = new PtString("Intrusion tentative !");
-				admin.ieMessage(aMessage);
-			}
-
-			//PostF2
-
+			
 		} catch (Exception ex) {
 			log.error("Exception in oeLogin..." + ex);
 		}
@@ -1538,8 +1581,8 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
 			isSystemStarted();
 			
 			//PreP2
-//			if(!(ctAuthenticatedInstance.vpStatus == EtAuthenticatedStatus.isInRequestPhone))
-//				throw new Exception("The status of the user is wrong!");
+			if(!(ctAuthenticatedInstance.vpStatus == EtAuthenticatedStatus.isInRequestPhone))
+				throw new Exception("The status of the user is wrong!");
 			
 			//PostF1
 			PtString aMessage = new PtString("A verification code has been sent to " + aDtPhoneNumber);
@@ -1589,8 +1632,6 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
     @Override
 	public PtBoolean oeLoginPhaseTwo(DtVCode aDtVCode) {
     	
-    	log.error("ERRROR HERE ??asdas 0 ");
-    	
 		try{
 			CtAuthenticated ctAuthenticatedInstance;
 			DtLogin user = currentRequestingAuthenticatedActor.getLogin();
@@ -1600,24 +1641,17 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
 			else
 				throw new Exception("oeLoginPhaseTwo can't find the user...");
 			
-			log.error("ERRROR HERE ??asdsa 1 ");
-			
 			//PreP1
 			isSystemStarted();
 			
-			log.error("ERRROR HERE ??asd 2 ");
-			
 			//PreP2
-//			if(!(ctAuthenticatedInstance.vpStatus == EtAuthenticatedStatus.isIn2ndLoginPhase))
-//				throw new Exception("The status of the user is wrong!");
+			if(!(ctAuthenticatedInstance.vpStatus == EtAuthenticatedStatus.isIn2ndLoginPhase))
+				throw new Exception("The status of the user is wrong!");
 			
 			//PreP3
 			if(!checkExistingNotYetValidatedVCodes())
 				throw new Exception("None of the vCodes in the system meet the right conditions.");
 
-			
-			
-			log.error("ERRROR HERE ??SAD 3 ");
 			
 			//PostF1
 			if(aDtVCode.value.getValue().equals(ctAuthenticatedInstance.vCode.vCode.value.getValue())){
@@ -1632,8 +1666,6 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
 				currentRequestingAuthenticatedActor.ieMessage(aMessage);
 				return new PtBoolean(false);
 			}
-			
-			log.error("ERRROR HERE ?? 9ads ");
 			
 			//PostP1
 			ctAuthenticatedInstance.vpStatus = EtAuthenticatedStatus.isNotShown;
