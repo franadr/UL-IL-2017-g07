@@ -162,4 +162,8 @@ public abstract class ActProxyAuthenticatedImpl extends UnicastRemoteObject impl
 	public PtBoolean oeLoginPhaseTwo(DtVCode aDtVCode)  throws RemoteException, NotBoundException{
 		return this._serverSideActor.oeLoginPhaseTwo(aDtVCode);
 	}
+	
+	public PtBoolean oeCancelLogin()  throws RemoteException, NotBoundException{
+		return this._serverSideActor.oeCancelLogin();
+	}
 }

@@ -62,8 +62,15 @@ public class SmsGUIController extends AbstractGUIController implements HasTables
 
 	@Override
 	public void closeForm() {
-		// TODO Auto-generated method stub
-		adminGUIController.logoff();
+		try {
+			if (adminGUIController.getUserController().oeCancelLogin().getValue()){
+				stage.close();
+			}else{
+				System.err.println("Something went wrong in oeCancelLogin");
+			}
+		}catch(ServerOfflineException | ServerNotBoundException e){
+				showExceptionErrorMessage(e);
+		}
 	}	
 	
 	public void bttnConfirm_OnClick(){		
@@ -93,7 +100,6 @@ public class SmsGUIController extends AbstractGUIController implements HasTables
 	
 	public void bttnCancel_OnClick(){
 		closeForm();
-		stage.close();
 	}
 
 	

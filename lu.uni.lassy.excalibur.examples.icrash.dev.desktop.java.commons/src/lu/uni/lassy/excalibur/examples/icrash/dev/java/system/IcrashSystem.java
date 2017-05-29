@@ -365,7 +365,9 @@ public interface IcrashSystem extends Remote {
 	
 	public PtBoolean oeConfirmPhoneNumber(DtPhoneNumber aDtPhoneNumber) throws RemoteException;
 
-	public PtBoolean oeLoginPhaseTwo(DtVCode aDtVCode) throws RemoteException;	
+	public PtBoolean oeLoginPhaseTwo(DtVCode aDtVCode) throws RemoteException;
+
+	public PtBoolean oeCancelLogin() throws RemoteException;	
 	
 	
 /*********************************************************************************************************************************************************************************/	

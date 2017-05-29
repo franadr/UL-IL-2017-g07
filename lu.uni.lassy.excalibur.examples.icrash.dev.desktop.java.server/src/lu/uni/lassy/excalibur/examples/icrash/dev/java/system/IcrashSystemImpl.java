@@ -1690,6 +1690,47 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
 		}
 		return false;
     }
+    
+    @Override
+	public PtBoolean oeCancelLogin() {
+    	
+		try{
+			CtAuthenticated ctAuthenticatedInstance;
+			DtLogin user = currentRequestingAuthenticatedActor.getLogin();
+			if (user != null && user.value != null){
+				ctAuthenticatedInstance = cmpSystemCtAuthenticated.get(user.value.getValue());
+			}
+			else
+				throw new Exception("oeCancelLogin can't find the user...");
+			
+			//PreP1
+			isSystemStarted();
+			
+			//PreP2
+			if(!((ctAuthenticatedInstance.vpStatus == EtAuthenticatedStatus.isInRequestPhone) || (ctAuthenticatedInstance.vpStatus == EtAuthenticatedStatus.isIn2ndLoginPhase)))
+				throw new Exception("The status of the user is wrong!");
+			
+			//PostF1
+			PtString aMessage = new PtString("You've cancelled your login.");
+			currentRequestingAuthenticatedActor.ieMessage(aMessage);
+			
+			//PostP1
+			DbVCode.deleteVCode(ctAuthenticatedInstance.vCode);
+			cmpSystemCtVCode.remove(ctAuthenticatedInstance.vCode);
+			ctAuthenticatedInstance.vCode = new CtVCode();
+			
+			//PostP2
+			ctAuthenticatedInstance.vpStatus = EtAuthenticatedStatus.isIn1stLoginPhase;
+			
+			return new PtBoolean(true);
+			
+		}catch(Exception ex){
+			log.error("Exception in oeCancelLogin..." + ex);
+		}
+		
+		return new PtBoolean(false);
+    }
+    
 /*********************************************************************************************************************************************************************************/
 
 }
