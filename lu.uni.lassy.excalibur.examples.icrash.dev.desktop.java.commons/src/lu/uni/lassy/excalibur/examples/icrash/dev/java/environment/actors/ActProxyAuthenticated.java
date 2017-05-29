@@ -101,5 +101,6 @@ public interface ActProxyAuthenticated extends Remote, JIntHasServerSideActor, J
 	public PtBoolean oeConfirmPhoneNumber(DtPhoneNumber aDtPhoneNumber) throws RemoteException, NotBoundException;
 	
 	public PtBoolean oeLoginPhaseTwo(DtVCode aDtVCode) throws RemoteException, NotBoundException;
+	public PtBoolean oeCancelLogin() throws RemoteException, NotBoundException;
 	
 }

@@ -175,4 +175,23 @@ public abstract class AbstractUserController implements HasListeners {
 		}
 	}
 	
+	/**
+	 * The method that allows the user to cancel his/her login process.
+	 * 
+	 * @throws ServerOfflineException Thrown if the server is currently offline
+	 * @throws ServerNotBoundException Thrown if the server hasn't been bound in the RMI settings
+	 * @return The success of the method
+	 */
+	public PtBoolean oeCancelLogin() throws ServerOfflineException, ServerNotBoundException{
+		try {
+			return this.getAuth().oeCancelLogin();
+		} catch (RemoteException e) {
+			Log4JUtils.getInstance().getLogger().error(e);
+			throw new ServerOfflineException();
+		} catch (NotBoundException e) {
+			Log4JUtils.getInstance().getLogger().error(e);
+			throw new ServerNotBoundException();
+		}
+	}
+	
 }

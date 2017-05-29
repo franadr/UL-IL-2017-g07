@@ -87,4 +87,6 @@ public interface ActAuthenticated extends java.rmi.Remote, Serializable, JIntIsA
 	public PtBoolean oeConfirmPhoneNumber(DtPhoneNumber aDtPhoneNumber) throws RemoteException, NotBoundException;
 
 	public PtBoolean oeLoginPhaseTwo(DtVCode aDtVCode) throws RemoteException, NotBoundException;
+
+	public PtBoolean oeCancelLogin() throws RemoteException, NotBoundException;
 }

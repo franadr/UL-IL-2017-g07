@@ -75,8 +75,15 @@ public class PhoneGUIController extends AbstractGUIController implements HasTabl
 
 	@Override
 	public void closeForm() {
-		// TODO Auto-generated method stub
-		adminGUIController.logoff();
+		try {
+			if (adminGUIController.getUserController().oeCancelLogin().getValue()){
+				stage.close();
+			}else{
+				System.err.println("Something went wrong in oeCancelLogin");
+			}
+		}catch(ServerOfflineException | ServerNotBoundException e){
+				showExceptionErrorMessage(e);
+		}
 	}	
 	
 	public void bttnConfirm_OnClick(){
@@ -96,7 +103,6 @@ public class PhoneGUIController extends AbstractGUIController implements HasTabl
 	
 	public void bttnCancel_OnClick(){
 		closeForm();
-		stage.close();
 	}
 
 	
