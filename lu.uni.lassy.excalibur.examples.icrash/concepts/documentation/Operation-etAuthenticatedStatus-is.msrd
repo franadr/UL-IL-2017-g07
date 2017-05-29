@@ -1,0 +1,16 @@
+/*
+@author zhikin
+@date Mon May 29 21:32:10 CEST 2017
+*/
+
+
+@@Operation
+icrash.concepts.primarytypes.datatypes.etAuthenticatedStatus.is
+@description " used to determine which litteral belongs to the enumeration.
+ "
+//postFunctional descriptions
+@postF 
+"true iff the value is equal to one of the following values: \msrcode{isIn1stLoginPhase, isInRequestPhone, isIn2ndLoginPhase, isNotShown}"
+@endPostF
+//example
+@example" "

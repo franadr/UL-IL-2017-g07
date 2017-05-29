@@ -5,4 +5,4 @@
 
 
 @@Instance Use Case usecases.uciugSecurelyUseSystemWithSMS2ndVersion.uciugSecurelyUseSystemWithSMS2ndVersion
-@description ""
+@description "uciugSecurelyUseSystemWithSMS2ndVersion - with failure/repeat."

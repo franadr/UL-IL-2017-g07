@@ -67,7 +67,7 @@ postF{
            )
       endif
       endif
-            and TheSystem.rnactAdministrato.rnInterfaceIN^ieMessage(AptStringMessageForTheactAdministrator)
+            and TheSystem.rnactAdministrator.rnInterfaceIN^ieMessage(AptStringMessageForTheactAdministrator)
             
   and /* PostF02 */
   
