@@ -21,6 +21,7 @@ import lu.uni.lassy.excalibur.examples.icrash.dev.java.environment.actors.ActPro
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtLogin;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtPassword;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtPhoneNumber;
+import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtVCode;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.PtBoolean;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.PtString;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.utils.Log4JUtils;
@@ -144,6 +145,27 @@ public abstract class AbstractUserController implements HasListeners {
 		DtPhoneNumber aDtPhoneNumber = new DtPhoneNumber(new PtString(phoneNumber));
 		try {
 			return this.getAuth().oeConfirmPhoneNumber(aDtPhoneNumber);
+		} catch (RemoteException e) {
+			Log4JUtils.getInstance().getLogger().error(e);
+			throw new ServerOfflineException();
+		} catch (NotBoundException e) {
+			Log4JUtils.getInstance().getLogger().error(e);
+			throw new ServerNotBoundException();
+		}
+	}
+	
+	/**
+	 * The method that allows the user to eventually pass the 2nd Login Phase with the verification code.
+	 * 
+	 * @param vCode The required verification code
+	 * @throws ServerOfflineException Thrown if the server is currently offline
+	 * @throws ServerNotBoundException Thrown if the server hasn't been bound in the RMI settings
+	 * @return The success of the method
+	 */
+	public PtBoolean oeLoginPhaseTwo(String vCode) throws ServerOfflineException, ServerNotBoundException{
+		DtVCode aDtVCode = new DtVCode(new PtString(vCode));
+		try {
+			return this.getAuth().oeLoginPhaseTwo(aDtVCode);
 		} catch (RemoteException e) {
 			Log4JUtils.getInstance().getLogger().error(e);
 			throw new ServerOfflineException();

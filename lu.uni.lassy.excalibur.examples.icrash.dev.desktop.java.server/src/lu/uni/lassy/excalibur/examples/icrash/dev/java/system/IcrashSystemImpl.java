@@ -1525,8 +1525,6 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
     @Override
 	public PtBoolean oeConfirmPhoneNumber(DtPhoneNumber aDtPhoneNumber) {
     	
-    	log.error("ERRROR HERE ?? 0 ");
-    	
 		try{
 			CtAuthenticated ctAuthenticatedInstance;
 			DtLogin user = currentRequestingAuthenticatedActor.getLogin();
@@ -1536,25 +1534,17 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
 			else
 				throw new Exception("oeConfirmPhoneNumber can't find the user...");
 			
-			log.error("ERRROR HERE ?? 1 ");
-			
 			//PreP1
 			isSystemStarted();
-			
-			log.error("ERRROR HERE ?? 2 ");
 			
 			//PreP2
 //			if(!(ctAuthenticatedInstance.vpStatus == EtAuthenticatedStatus.isInRequestPhone))
 //				throw new Exception("The status of the user is wrong!");
 			
-			log.error("ERRROR HERE ?? 3 ");
-			
 			//PostF1
 			PtString aMessage = new PtString("A verification code has been sent to " + aDtPhoneNumber);
 			currentRequestingAuthenticatedActor.ieMessage(aMessage);
-			
-			log.error("ERRROR HERE ?? 4 ");
-			
+
 			//PostF2
 			DtDateAndTime aDateAndTime = ctState.clock;
 			CtVCode aCtVCode = new CtVCode();
@@ -1563,8 +1553,6 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
 				aCtVCode.init(aDateAndTime, new PtBoolean(false));
 			while(cmpSystemCtVCode.containsKey(aCtVCode.vCode.value.getValue()));
 			
-			log.error("ERRROR HERE ?? 5 ");
-	
 				//update Messir composition
 				cmpSystemCtVCode.put(aCtVCode.vCode.value.getValue(), aCtVCode);
 			
@@ -1576,36 +1564,100 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
 				if (currentRequestingAuthenticatedActor instanceof ActCoordinator)
 					DbCoordinators.updateCoordinator((CtCoordinator)ctAuthenticatedInstance);
 				
-			log.error("ERRROR HERE ?? 6 ");
-			
 			//PostF3
 //			DtSMS sms = new DtSMS(new PtString("Dear user, this is the verification code you need to login to iCrash:" + aCtVCode + ".It is a one-time verification code, meaning that it will become invalid once you have used it to login to your account. Be notified that this code will also become invalid after not being used for 15 minutes."));
 //			currentConnectedComCompany.ieSmsSend(aDtPhoneNumber, sms);
 			PtString aMessageSimulatingSMS = new PtString("Dear user, this is the verification code you need to login to iCrash:" + aCtVCode + ".It is a one-time verification code, meaning that it will become invalid once you have used it to login to your account. Be notified that this code will also become invalid after not being used for 15 minutes.");
 			currentRequestingAuthenticatedActor.ieMessage(aMessageSimulatingSMS);			
 		
-			
-			log.error("ERRROR HERE ?? 7 ");
-			
 			//PostF4
 			ctAuthenticatedInstance.phoneNumber = aDtPhoneNumber;
-			
-			log.error("ERRROR HERE ?? 8 ");
 			
 			//PostP1
 			ctAuthenticatedInstance.vpStatus = EtAuthenticatedStatus.isIn2ndLoginPhase;
 			
-			log.error("ERRROR HERE ?? 9 ");
-			
 			return new PtBoolean(true);
 			
 		}catch(Exception ex){
-			log.error("Exception in oeLogin..." + ex);
+			log.error("Exception in oeConfirmPhoneNumber..." + ex);
 		}
 		
 		return new PtBoolean(false);
     }
 
+    
+    @Override
+	public PtBoolean oeLoginPhaseTwo(DtVCode aDtVCode) {
+    	
+    	log.error("ERRROR HERE ??asdas 0 ");
+    	
+		try{
+			CtAuthenticated ctAuthenticatedInstance;
+			DtLogin user = currentRequestingAuthenticatedActor.getLogin();
+			if (user != null && user.value != null){
+				ctAuthenticatedInstance = cmpSystemCtAuthenticated.get(user.value.getValue());
+			}
+			else
+				throw new Exception("oeLoginPhaseTwo can't find the user...");
+			
+			log.error("ERRROR HERE ??asdsa 1 ");
+			
+			//PreP1
+			isSystemStarted();
+			
+			log.error("ERRROR HERE ??asd 2 ");
+			
+			//PreP2
+//			if(!(ctAuthenticatedInstance.vpStatus == EtAuthenticatedStatus.isIn2ndLoginPhase))
+//				throw new Exception("The status of the user is wrong!");
+			
+			//PreP3
+			if(!checkExistingNotYetValidatedVCodes())
+				throw new Exception("None of the vCodes in the system meet the right conditions.");
+
+			
+			
+			log.error("ERRROR HERE ??SAD 3 ");
+			
+			//PostF1
+			if(aDtVCode.value.getValue().equals(ctAuthenticatedInstance.vCode.vCode.value.getValue())){
+				PtString aMessage = new PtString("Welcome to iCrash !");
+				currentRequestingAuthenticatedActor.ieMessage(aMessage);
+				ctAuthenticatedInstance.isPhoneNumberValid = new PtBoolean(true);
+				ctAuthenticatedInstance.vCode.isValidated = new PtBoolean(true);
+				ctAuthenticatedInstance.vCode.instant = ctState.clock;
+				ctAuthenticatedInstance.vpIsLogged = new PtBoolean(true);
+			}else{
+				PtString aMessage = new PtString("Wrong Code!");
+				currentRequestingAuthenticatedActor.ieMessage(aMessage);
+				return new PtBoolean(false);
+			}
+			
+			log.error("ERRROR HERE ?? 9ads ");
+			
+			//PostP1
+			ctAuthenticatedInstance.vpStatus = EtAuthenticatedStatus.isNotShown;
+						
+			return new PtBoolean(true);
+			
+		}catch(Exception ex){
+			log.error("Exception in oeLoginPhaseTwo..." + ex);
+		}
+		
+		return new PtBoolean(false);
+    }
+    
+    
+    private Boolean checkExistingNotYetValidatedVCodes(){
+    	Set<String> keys = cmpSystemCtAuthenticated.keySet();
+		for(String key : keys){
+			if(!cmpSystemCtAuthenticated.get(key).vCode.vCode.value.equals("dummy")){
+					if(cmpSystemCtAuthenticated.get(key).vCode.isValidated.getValue() == new PtBoolean(false).getValue())
+				return true;
+			}
+		}
+		return false;
+    }
 /*********************************************************************************************************************************************************************************/
 
 }

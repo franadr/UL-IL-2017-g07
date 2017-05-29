@@ -8,5 +8,5 @@ public enum EtAuthenticatedStatus {
 	    /**The actor is in the 2nd Login Window (with the verfication code)*/
 	    isIn2ndLoginPhase,
 	    /**The actor is in neither of the above windows */
-	    isNotShow
+	    isNotShown
 	}

@@ -363,7 +363,9 @@ public interface IcrashSystem extends Remote {
 	public ArrayList<CtLogEntry> getAllLogEntries() throws  RemoteException;
 /*********************************************************************************************************************************************************************************/
 	
-	public PtBoolean oeConfirmPhoneNumber(DtPhoneNumber aDtPhoneNumber) throws RemoteException;	
+	public PtBoolean oeConfirmPhoneNumber(DtPhoneNumber aDtPhoneNumber) throws RemoteException;
+
+	public PtBoolean oeLoginPhaseTwo(DtVCode aDtVCode) throws RemoteException;	
 	
 	
 /*********************************************************************************************************************************************************************************/	

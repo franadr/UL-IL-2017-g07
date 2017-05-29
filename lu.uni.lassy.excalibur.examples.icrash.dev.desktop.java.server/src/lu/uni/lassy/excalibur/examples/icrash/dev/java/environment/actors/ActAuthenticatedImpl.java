@@ -25,6 +25,7 @@ import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.IcrashSystem;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtLogin;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtPassword;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtPhoneNumber;
+import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtVCode;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.PtBoolean;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.PtString;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.utils.Log4JUtils;
@@ -176,7 +177,7 @@ public abstract class ActAuthenticatedImpl extends UnicastRemoteObject
 		//set up ActAuthenticated instance that performs the request
 		iCrashSys_Server.setCurrentRequestingAuthenticatedActor(this);
 
-		log.info("message ActAuthenticated.oeLogin sent to system");
+		log.info("message ActAuthenticated.oeConfirmPhoneNubmer sent to system");
 		PtBoolean res = iCrashSys_Server.oeConfirmPhoneNumber(aDtPhoneNumber);
 
 		if (res.getValue() == true)
@@ -187,6 +188,32 @@ public abstract class ActAuthenticatedImpl extends UnicastRemoteObject
 		return res;
 	}
 	
+	/* (non-Javadoc)
+	 * @see lu.uni.lassy.excalibur.examples.icrash.dev.java.environment.actors.ActAuthenticated#oeConfirmPhoneNumber
+	 */
+	synchronized public PtBoolean oeLoginPhaseTwo(DtVCode aDtVCode) throws RemoteException, NotBoundException {
+
+		Logger log = Log4JUtils.getInstance().getLogger();
+
+		Registry registry = LocateRegistry.getRegistry(RmiUtils.getInstance().getHost(),RmiUtils.getInstance().getPort());
+
+		//Gathering the remote object as it was published into the registry
+		IcrashSystem iCrashSys_Server = (IcrashSystem) registry
+				.lookup("iCrashServer");
+
+		//set up ActAuthenticated instance that performs the request
+		iCrashSys_Server.setCurrentRequestingAuthenticatedActor(this);
+
+		log.info("message ActAuthenticated.oeLoginPhaseTwo sent to system");
+		PtBoolean res = iCrashSys_Server.oeLoginPhaseTwo(aDtVCode);
+
+		if (res.getValue() == true)
+			log.info("operation oeLoginPhaseTwo successfully executed by the system");
+		else
+			log.info("operation oeLoginPhaseTwo failed");
+
+		return res;
+	}
 /*********************************************************************************************************************************************************************************/
 	
 }

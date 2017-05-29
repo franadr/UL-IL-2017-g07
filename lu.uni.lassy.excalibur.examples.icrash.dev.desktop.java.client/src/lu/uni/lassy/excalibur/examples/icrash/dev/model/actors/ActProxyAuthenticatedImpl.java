@@ -21,6 +21,7 @@ import lu.uni.lassy.excalibur.examples.icrash.dev.java.environment.actors.*;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtLogin;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtPassword;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtPhoneNumber;
+import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtVCode;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.PtBoolean;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.PtString;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.utils.Log4JUtils;
@@ -156,5 +157,9 @@ public abstract class ActProxyAuthenticatedImpl extends UnicastRemoteObject impl
 	
 	public PtBoolean oeConfirmPhoneNumber(DtPhoneNumber aDtPhoneNumber)  throws RemoteException, NotBoundException{
 		return this._serverSideActor.oeConfirmPhoneNumber(aDtPhoneNumber);
+	}
+	
+	public PtBoolean oeLoginPhaseTwo(DtVCode aDtVCode)  throws RemoteException, NotBoundException{
+		return this._serverSideActor.oeLoginPhaseTwo(aDtVCode);
 	}
 }

@@ -39,6 +39,15 @@ public class CtVCode implements Serializable {
 	}
 	
 	/**
+	 * Initialises a dummy to evade NullPointerExceptions.
+	 * @return the success of the initialisation of the alert
+	 */
+	public CtVCode(){	
+		vCode = new DtVCode(new PtString("dummy"));
+		isValidated = new PtBoolean(false);
+	}
+	
+	/**
 	 * Initialises the verification code.
 	 * @param aDtVCode the vCode which we use to initialise the instance
 	 * @param aInstant the date and time of the initialization of the instance
