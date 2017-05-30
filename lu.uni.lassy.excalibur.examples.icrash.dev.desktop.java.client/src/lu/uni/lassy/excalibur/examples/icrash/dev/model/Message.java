@@ -41,7 +41,9 @@ public class Message {
 		ieCoordinatorUpdated,
 		
 		/** The ie sms send. */
-		ieSmsSend
+		ieSmsSend,
+		
+		ieRecieveCrisis
 	}
 	
 	/**

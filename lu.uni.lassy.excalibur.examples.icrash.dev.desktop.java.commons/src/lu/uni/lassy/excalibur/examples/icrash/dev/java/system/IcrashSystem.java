@@ -12,6 +12,7 @@
  ******************************************************************************/
 package lu.uni.lassy.excalibur.examples.icrash.dev.java.system;
 
+import java.rmi.NotBoundException;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
@@ -373,5 +374,9 @@ public interface IcrashSystem extends Remote {
 	
 	
 /*********************************************************************************************************************************************************************************/	
+	
+	public PtBoolean oeSendBack(CtCrisis aCtCrisis, EtCrisisStatus aEtCrisisStatus) throws RemoteException, NotBoundException;
+
+	public PtBoolean oeTreated(CtCrisis aCtCrisis, EtCrisisStatus aEtCrisisStatus) throws RemoteException, NotBoundException;
 	
 }

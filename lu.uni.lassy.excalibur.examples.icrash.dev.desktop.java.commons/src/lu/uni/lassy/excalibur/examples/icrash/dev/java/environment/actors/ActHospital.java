@@ -3,7 +3,7 @@ package lu.uni.lassy.excalibur.examples.icrash.dev.java.environment.actors;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 
-import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtCrisisID;
+import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.CtCrisis;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtPhoneNumber;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.EtCrisisStatus;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.PtBoolean;
@@ -18,8 +18,10 @@ public interface ActHospital {
 
 	public PtBoolean oeCallNumber(DtPhoneNumber aDtPhoneNumber);
 
-	public PtBoolean oeSendBack(DtCrisisID aDtCrisisID, EtCrisisStatus aEtCrisisStatus);
+	public PtBoolean oeSendBack(CtCrisis aCtCrisis, EtCrisisStatus aEtCrisisStatus) throws RemoteException, NotBoundException;
 
-	public PtBoolean oeTreated(DtCrisisID aDtCrisisID, EtCrisisStatus aEtCrisisStatus);
+	public PtBoolean oeTreated(CtCrisis aCtCrisis, EtCrisisStatus aEtCrisisStatus) throws RemoteException, NotBoundException;
+	
+	public PtBoolean ieReceiveCrisis(CtCrisis aCtCrisis) throws RemoteException;;
 
 }
