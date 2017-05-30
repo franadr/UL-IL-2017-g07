@@ -12,11 +12,18 @@ import lu.uni.lassy.messir.libraries.calendar
 
 		postF{ 
 			
+		let TheString:ptString in
+		let TheVCodeString:ptString in
+		
+		and TheString = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+			
         let TheResult: ptBoolean in(
-	        if(Length = 6 and AdtValue.value.length().eq(Length))
-	          then (TheResult = true)
-	          else (TheResult = false)
-	          endif
+        	if(Length = 6 
+        		and (TheVCodeString.length().eq(Length)) 
+        		and (TheVCodeString.characters() -> forAll(char:dtString | TheString.indexOf(char) > 0)))
+	          		then (TheResult = true)
+	        else (TheResult = false)
+	        endif
 	        result = TheResult
         )
 
