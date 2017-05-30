@@ -11,3 +11,4 @@
 @number 10
 @description "View for ugSMSAuthentication feature."
 @caption "ugSMSAuthentication - Global View of the feature."
+@scale MaxWidth
