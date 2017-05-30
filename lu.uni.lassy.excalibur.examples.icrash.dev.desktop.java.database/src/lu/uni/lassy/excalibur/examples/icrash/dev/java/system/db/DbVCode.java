@@ -128,7 +128,7 @@ public class DbVCode  extends DbAbstract{
 					
 					//vcode's boolean
 					PtBoolean aIsValidated;
-					int tmpIsValidated = res.getInt("isValidated");
+					int tmpIsValidated = res.getInt("vpIsValidated");
 					if(tmpIsValidated == 1)
 						aIsValidated = new PtBoolean(true);
 					else
@@ -202,7 +202,7 @@ public class DbVCode  extends DbAbstract{
 					
 					//vcode's boolean
 					PtBoolean aIsValidated;
-					int tmpIsValidated = res.getInt("isValidated");
+					int tmpIsValidated = res.getInt("vpIsValidated");
 					if(tmpIsValidated == 1)
 						aIsValidated = new PtBoolean(true);
 					else
