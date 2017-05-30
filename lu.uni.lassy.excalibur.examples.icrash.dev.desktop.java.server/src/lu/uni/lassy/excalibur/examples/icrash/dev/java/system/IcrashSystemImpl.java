@@ -1214,13 +1214,18 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
 						//PostP1
 						ctAuthenticatedInstance.vpIsLogged = new PtBoolean(true);
 						ctAuthenticatedInstance.vpStatus = EtAuthenticatedStatus.isNotShown;
-					}else{ /*authActorCheck != null && authActorCheck.getLogin().value.getValue().equals(currentRequestingAuthenticatedActor.getLogin().value.getValue()) && ctAuthenticatedInstance.vCode.vCode.value.getValue().equals("dummy"))*/
+					}else if(authActorCheck != null && authActorCheck.getLogin().value.getValue().equals(currentRequestingAuthenticatedActor.getLogin().value.getValue()) && ctAuthenticatedInstance.vCode.vCode.value.getValue().equals("dummy")){
 						//PostF1
 						if(!ctAuthenticatedInstance.isPhoneNumberValid.getValue()){
 							PtString aMessage = new PtString("Please input your phone number...");
 							currentRequestingAuthenticatedActor.ieMessage(aMessage);
 							//PostP2
 							ctAuthenticatedInstance.vpStatus = EtAuthenticatedStatus.isInRequestPhone;
+							
+							//update ctAuthenticatedInstance
+							if (currentRequestingAuthenticatedActor instanceof ActCoordinator)
+								DbCoordinators.updateCoordinator((CtCoordinator)ctAuthenticatedInstance);
+							
 						}else{
 							PtString aMessage = new PtString("A verification code has been sent to " + ctAuthenticatedInstance.phoneNumber.value.getValue());
 							currentRequestingAuthenticatedActor.ieMessage(aMessage);
@@ -1238,14 +1243,20 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
 								//update Messir composition
 								cmpSystemCtVCode.put(aCtVCode.vCode.value.getValue(), aCtVCode);
 							
-								//DB: insert human in the database
+								//DB: insert code in the database
 								DbVCode.insertVCode(aCtVCode);
 								
 								//update ctAuthenticatedInstance
 								ctAuthenticatedInstance.vCode = aCtVCode;
 								if (currentRequestingAuthenticatedActor instanceof ActCoordinator)
 									DbCoordinators.updateCoordinator((CtCoordinator)ctAuthenticatedInstance);
+							
+							ctAuthenticatedInstance.vCode = aCtVCode;	
+							PtString aMessageSimulatingSMS = new PtString("Dear user, this is the verification code you need to login to iCrash:" + aCtVCode + ".It is a one-time verification code, meaning that it will become invalid once you have used it to login to your account. Be notified that this code will also become invalid after not being used for 15 minutes.");
+							currentRequestingAuthenticatedActor.ieMessage(aMessageSimulatingSMS);
 						}
+						
+
 					}
 					
 					//PostF2
@@ -1607,11 +1618,6 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
 				//DB: insert human in the database
 				DbVCode.insertVCode(aCtVCode);
 				
-				//update ctAuthenticatedInstance
-				ctAuthenticatedInstance.vCode = aCtVCode;
-				if (currentRequestingAuthenticatedActor instanceof ActCoordinator)
-					DbCoordinators.updateCoordinator((CtCoordinator)ctAuthenticatedInstance);
-				
 			//PostF3
 //			DtSMS sms = new DtSMS(new PtString("Dear user, this is the verification code you need to login to iCrash:" + aCtVCode + ".It is a one-time verification code, meaning that it will become invalid once you have used it to login to your account. Be notified that this code will also become invalid after not being used for 15 minutes."));
 //			currentConnectedComCompany.ieSmsSend(aDtPhoneNumber, sms);
@@ -1623,6 +1629,11 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
 			
 			//PostP1
 			ctAuthenticatedInstance.vpStatus = EtAuthenticatedStatus.isIn2ndLoginPhase;
+			
+			//update ctAuthenticatedInstance
+			ctAuthenticatedInstance.vCode = aCtVCode;
+			if (currentRequestingAuthenticatedActor instanceof ActCoordinator)
+				DbCoordinators.updateCoordinator((CtCoordinator)ctAuthenticatedInstance);
 			
 			return new PtBoolean(true);
 			
@@ -1674,6 +1685,10 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
 			
 			//PostP1
 			ctAuthenticatedInstance.vpStatus = EtAuthenticatedStatus.isNotShown;
+			
+			//update ctAuthenticatedInstance
+			if (currentRequestingAuthenticatedActor instanceof ActCoordinator)
+				DbCoordinators.updateCoordinator((CtCoordinator)ctAuthenticatedInstance);
 						
 			return new PtBoolean(true);
 			
@@ -1726,6 +1741,10 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
 			
 			//PostP2
 			ctAuthenticatedInstance.vpStatus = EtAuthenticatedStatus.isIn1stLoginPhase;
+			
+			//update ctAuthenticatedInstance
+			if (currentRequestingAuthenticatedActor instanceof ActCoordinator)
+				DbCoordinators.updateCoordinator((CtCoordinator)ctAuthenticatedInstance);
 			
 			return new PtBoolean(true);
 			

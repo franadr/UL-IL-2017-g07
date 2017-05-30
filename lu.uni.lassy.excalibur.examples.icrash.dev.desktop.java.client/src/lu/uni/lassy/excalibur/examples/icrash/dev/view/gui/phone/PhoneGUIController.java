@@ -58,7 +58,7 @@ public class PhoneGUIController extends AbstractGUIController implements HasTabl
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
-		phoneField.setText("Whatever");
+		phoneField.setText("123 456 789");
 		
 	}
 

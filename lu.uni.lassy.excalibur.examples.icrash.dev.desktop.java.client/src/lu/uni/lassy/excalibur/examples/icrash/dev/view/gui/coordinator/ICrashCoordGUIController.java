@@ -498,6 +498,17 @@ public class ICrashCoordGUIController extends AbstractAuthGUIController {
 		Screen screen = Screen.getPrimary();
 		Rectangle2D bounds = screen.getVisualBounds();
 		if(txtfldCoordLogonUserName.getText().length() > 0 && psswrdfldCoordLogonPassword.getText().length() > 0){
+			
+			/**
+			 * Setup Actor !!!
+			 */
+			try {
+				ActCoordinator actor = systemstateController.getActCoordinator(txtfldCoordLogonUserName.getText());
+				setActor(actor);
+			} catch (ServerNotBoundException | ServerOfflineException e1) {
+				e1.printStackTrace();
+			}
+			
 			try {
 				if (userController.oeLogin(txtfldCoordLogonUserName.getText(), psswrdfldCoordLogonPassword.getText()).getValue()){
 					if (userController.getUserType() == UserType.Coordinator){
