@@ -303,7 +303,6 @@ public class ICrashAdminGUIController extends AbstractAuthGUIController {
 	}
 	
 	
-	//SMS WINDOW
 	 private CreatedWindows createdSMSWindow;
 	 private CreatedWindows createdPhoneWindow;
 
@@ -413,5 +412,21 @@ public class ICrashAdminGUIController extends AbstractAuthGUIController {
 			return new PtBoolean(false);
 		}
 		return new PtBoolean(false);
+	}
+
+	/**
+	 * To be implemented if Admin ever gets a Log Window too!
+	 */
+	@Override
+	public void refreshLog() {
+	}
+
+	/**
+	 * To be implemented if Admin ever gets a Log Window too!
+	 */
+	@Override
+	public void setLogWindow(CreatedWindows createdLogWindow) {
+		// TODO Auto-generated method stub
+		
 	}	
 }

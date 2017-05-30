@@ -12,6 +12,7 @@ import javafx.stage.WindowEvent;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.environment.actors.ActCoordinator;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.CtLogEntry;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.utils.Log4JUtils;
+import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.AbstractAuthGUIController;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.CreatedWindows;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.coordinator.ICrashCoordGUIController;
 
@@ -19,8 +20,8 @@ import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.coordinator.ICrashCoo
 public class CreateLog implements CreatedWindows {
 
 	
-	public CreateLog(double xPosition, double yPosition,ICrashCoordGUIController iCrashCoordGUIController){
-		start(xPosition, yPosition,iCrashCoordGUIController);
+	public CreateLog(double xPosition, double yPosition,AbstractAuthGUIController userGUIController){
+		start(xPosition, yPosition,userGUIController);
 	}
 	/** The stage that will host the form. */
 	private Stage stage;
@@ -32,7 +33,7 @@ public class CreateLog implements CreatedWindows {
 	 * @param xPosition the x position of where to put the window on the screen
 	 * @param yPosition the y position of where to put the window on the screen
 	 */
-	public void start(double xPosition, double yPosition,ICrashCoordGUIController iCrashCoordGUIController){
+	public void start(double xPosition, double yPosition,AbstractAuthGUIController userGUIController){
 		try {
 			URL url = this.getClass().getResource("LogGUI.fxml");
 			FXMLLoader loader = new FXMLLoader(url);
@@ -43,7 +44,7 @@ public class CreateLog implements CreatedWindows {
             stage.setX(xPosition);
             stage.setY(yPosition);
             stage.show();
-			((LogGuiControler)loader.getController()).setCoordGUIController(iCrashCoordGUIController);
+			((LogGuiControler)loader.getController()).setUserGUIController(userGUIController);
 			((LogGuiControler)loader.getController()).setActor2();
             ((LogGuiControler)loader.getController()).setWindow(stage);
 

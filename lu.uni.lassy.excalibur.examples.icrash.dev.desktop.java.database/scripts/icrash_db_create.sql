@@ -91,6 +91,9 @@ CREATE TABLE `coordinators` (
  `id` varchar(80) NOT NULL,
   `login` varchar(80) DEFAULT NULL,
   `pwd` varchar(80) DEFAULT NULL,
+  `phoneNumber` varchar(15) DEFAULT NULL,
+  `vCode` char(6) DEFAULT NULL,
+  `isPhoneNumberValid` tinyint(1) DEFAULT '0',
  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -190,6 +193,27 @@ UNLOCK TABLES;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+--
+-- Table structure for table `coordinators`
+--
+
+DROP TABLE IF EXISTS `vcode`;
+CREATE TABLE `vcode` (
+  `vCode` char(6) NOT NULL,
+  `dateAndTime` datetime DEFAULT NULL,
+  `vpIsValidated` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`vCode`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `coordinators`
+--
+
+LOCK TABLES `vcode` WRITE;
+/*!40000 ALTER TABLE `vcode` DISABLE KEYS */;
+/*!40000 ALTER TABLE `vcode` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 /*grant all on `database`.* to 'user'@'localhost' identified by 'password'*/

@@ -41,5 +41,9 @@ public abstract class AbstractAuthGUIController extends AbstractGUIController im
 	public abstract AbstractUserController getUserController();
 
 	public abstract Window getWindow();
+
+	public abstract void refreshLog();
+
+	public abstract void setLogWindow(CreatedWindows createdLogWindow);
 	
 }
