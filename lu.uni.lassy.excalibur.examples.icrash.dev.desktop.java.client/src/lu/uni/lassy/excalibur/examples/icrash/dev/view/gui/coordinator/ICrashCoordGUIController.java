@@ -23,6 +23,7 @@ import java.util.function.Consumer;
 import com.oracle.jrockit.jfr.Producer;
 
 import javafx.util.Callback;
+import lu.uni.lassy.excalibur.examples.icrash.dev.controller.AbstractUserController;
 import lu.uni.lassy.excalibur.examples.icrash.dev.controller.CoordinatorController;
 import lu.uni.lassy.excalibur.examples.icrash.dev.controller.SystemStateController;
 import lu.uni.lassy.excalibur.examples.icrash.dev.controller.exceptions.IncorrectActorException;
@@ -62,6 +63,7 @@ import javafx.event.EventHandler;
 import javafx.stage.Modality;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 import javafx.stage.WindowEvent;
 /*
  * This is the import section to be replaced by modifications in the ICrash.fxml document from the sample skeleton controller
@@ -530,7 +532,7 @@ public class ICrashCoordGUIController extends AbstractAuthGUIController {
 	/* (non-Javadoc)
 	 * @see lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.AbstractAuthGUIController#logonShowPanes(boolean)
 	 */
-	protected void logonShowPanes(boolean loggedOn){
+	public void logonShowPanes(boolean loggedOn){
 		tbpnMain.setVisible(loggedOn);
 		bttnCoordLogoff.setDisable(!loggedOn);
 		pnLogon.setVisible(!loggedOn);
@@ -653,4 +655,14 @@ public class ICrashCoordGUIController extends AbstractAuthGUIController {
             e.printStackTrace();
         }
     }
+
+	@Override
+	public AbstractUserController getUserController() {
+		return userController;
+	}
+
+	@Override
+	public Window getWindow() {
+		return window;
+	}
 }

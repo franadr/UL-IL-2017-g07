@@ -12,6 +12,9 @@
  ******************************************************************************/
 package lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui;
 
+import javafx.stage.Window;
+import lu.uni.lassy.excalibur.examples.icrash.dev.controller.AbstractUserController;
+
 /**
  * The Class AbstractAuthGUIController.
  * Used to specify a GUI controller should allow a user to logon and logoff
@@ -33,6 +36,10 @@ public abstract class AbstractAuthGUIController extends AbstractGUIController im
 	 *
 	 * @param loggedOn Is the user logged onto the system?
 	 */
-	protected abstract void logonShowPanes(boolean loggedOn);
+	public abstract void logonShowPanes(boolean loggedOn);
+	
+	public abstract AbstractUserController getUserController();
+
+	public abstract Window getWindow();
 	
 }

@@ -12,6 +12,7 @@ import lu.uni.lassy.excalibur.examples.icrash.dev.controller.exceptions.ServerNo
 import lu.uni.lassy.excalibur.examples.icrash.dev.controller.exceptions.ServerOfflineException;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.design.JIntIsActor;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.PtBoolean;
+import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.AbstractAuthGUIController;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.AbstractGUIController;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.HasTables;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.admin.CreateICrashAdminGUI;
@@ -22,15 +23,15 @@ public class SmsGUIController extends AbstractGUIController implements HasTables
 
 	private CreateICrashAdminGUI mainApp;
 	private Stage stage;
-	private ICrashAdminGUIController adminGUIController;
+	private AbstractAuthGUIController userGUIController;
 	private Window window;
 	
 	@FXML Text warningMessage;
 	@FXML TextField vCodeField;	
 	
 	
-	public void setAdminGUIController(ICrashAdminGUIController adminGUIController){
-		this.adminGUIController = adminGUIController;
+	public void setAdminGUIController(AbstractAuthGUIController userGUIController){
+		this.userGUIController = userGUIController;
 	}
 	
 	/**
@@ -63,7 +64,7 @@ public class SmsGUIController extends AbstractGUIController implements HasTables
 	@Override
 	public void closeForm() {
 		try {
-			if (adminGUIController.getUserController().oeCancelLogin().getValue()){
+			if (userGUIController.getUserController().oeCancelLogin().getValue()){
 				stage.close();
 			}else{
 				System.err.println("Something went wrong in oeCancelLogin");
@@ -76,8 +77,8 @@ public class SmsGUIController extends AbstractGUIController implements HasTables
 	public void bttnConfirm_OnClick(){		
 //		if(!vCodeField.getText().isEmpty()){									
 			try {
-				if (adminGUIController.getUserController().oeLoginPhaseTwo(vCodeField.getText()).getValue()){
-					adminGUIController.logonShowPanes(true);
+				if (userGUIController.getUserController().oeLoginPhaseTwo(vCodeField.getText()).getValue()){
+					userGUIController.logonShowPanes(true);
 					stage.close();
 				}else{
 					warningMessage.setText("Wrong Code !!");
