@@ -10,14 +10,15 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.utils.Log4JUtils;
+import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.AbstractAuthGUIController;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.CreatedWindows;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.admin.ICrashAdminGUIController;
 
 public class CreatePhoneGUI implements CreatedWindows {
 
 		
-		public CreatePhoneGUI(ICrashAdminGUIController adminGUIController, double x, double y){
-			start(adminGUIController, x, y);
+		public CreatePhoneGUI(AbstractAuthGUIController userGUIController, double x, double y){
+			start(userGUIController, x, y);
 		}
 		/** The stage that will host the form. */
 		private Stage stage;
@@ -26,7 +27,7 @@ public class CreatePhoneGUI implements CreatedWindows {
 		/**
 		 * Generates and shows the window on the screen
 		 */
-		public void start(ICrashAdminGUIController adminGUIController, double x, double y){
+		public void start(AbstractAuthGUIController userGUIController, double x, double y){
 			try {
 				URL url = this.getClass().getResource("PhoneGUI.fxml");
 				FXMLLoader loader = new FXMLLoader(url);
@@ -34,7 +35,7 @@ public class CreatePhoneGUI implements CreatedWindows {
 	            stage = new Stage();
 	            stage.setTitle("Requesting Phone Number");
 	            stage.setScene(new Scene(root));
-	            stage.initOwner(adminGUIController.getWindow());
+	            stage.initOwner(userGUIController.getWindow());
 				stage.initModality(Modality.WINDOW_MODAL);
 	            stage.setX(x);
 	            stage.setY(y);
@@ -47,7 +48,7 @@ public class CreatePhoneGUI implements CreatedWindows {
 					}
 				});
 	            
-	            ((PhoneGUIController) loader.getController()).setAdminGUIController(adminGUIController);
+	            ((PhoneGUIController) loader.getController()).setAdminGUIController(userGUIController);
 				((PhoneGUIController) loader.getController()).setStage(stage);
 				
 

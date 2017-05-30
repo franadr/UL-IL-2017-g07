@@ -15,6 +15,7 @@ import lu.uni.lassy.excalibur.examples.icrash.dev.controller.exceptions.ServerNo
 import lu.uni.lassy.excalibur.examples.icrash.dev.controller.exceptions.ServerOfflineException;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.design.JIntIsActor;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.PtBoolean;
+import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.AbstractAuthGUIController;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.AbstractGUIController;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.CreatedWindows;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.HasTables;
@@ -25,7 +26,7 @@ public class PhoneGUIController extends AbstractGUIController implements HasTabl
 
 	
 	private Stage stage;
-	private ICrashAdminGUIController adminGUIController;
+	private AbstractAuthGUIController userGUIController;
 	private Window window;
 	private CreatedWindows createdSMSWindow;
 		
@@ -41,8 +42,8 @@ public class PhoneGUIController extends AbstractGUIController implements HasTabl
 
 	}
 	
-	public void setAdminGUIController(ICrashAdminGUIController adminGUIController){
-		this.adminGUIController = adminGUIController;
+	public void setAdminGUIController(AbstractAuthGUIController userGUIController){
+		this.userGUIController = userGUIController;
 	}
 	
 	/**
@@ -76,7 +77,7 @@ public class PhoneGUIController extends AbstractGUIController implements HasTabl
 	@Override
 	public void closeForm() {
 		try {
-			if (adminGUIController.getUserController().oeCancelLogin().getValue()){
+			if (userGUIController.getUserController().oeCancelLogin().getValue()){
 				stage.close();
 			}else{
 				System.err.println("Something went wrong in oeCancelLogin");
@@ -89,8 +90,8 @@ public class PhoneGUIController extends AbstractGUIController implements HasTabl
 	public void bttnConfirm_OnClick(){
 		if(!phoneField.getText().isEmpty()){									//Condition adapted for convenience
 				try {
-					if (adminGUIController.getUserController().oeConfirmPhoneNumber(phoneField.getText()).getValue()){
-						createdSMSWindow = new CreateSMSGUI(adminGUIController, 150, 150);
+					if (userGUIController.getUserController().oeConfirmPhoneNumber(phoneField.getText()).getValue()){
+						createdSMSWindow = new CreateSMSGUI(userGUIController, 150, 150);
 						stage.close();
 					}
 				}catch (ServerOfflineException | ServerNotBoundException e) {

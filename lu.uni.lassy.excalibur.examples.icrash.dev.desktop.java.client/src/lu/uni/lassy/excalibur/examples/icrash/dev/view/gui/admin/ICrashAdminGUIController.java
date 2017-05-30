@@ -18,6 +18,7 @@ import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import lu.uni.lassy.excalibur.examples.icrash.dev.controller.AbstractUserController;
 import lu.uni.lassy.excalibur.examples.icrash.dev.controller.AdminController;
 import lu.uni.lassy.excalibur.examples.icrash.dev.controller.SystemStateController;
 import lu.uni.lassy.excalibur.examples.icrash.dev.controller.exceptions.IncorrectActorException;
@@ -302,7 +303,6 @@ public class ICrashAdminGUIController extends AbstractAuthGUIController {
 	}
 	
 	
-	//SMS WINDOW
 	 private CreatedWindows createdSMSWindow;
 	 private CreatedWindows createdPhoneWindow;
 
@@ -326,6 +326,10 @@ public class ICrashAdminGUIController extends AbstractAuthGUIController {
 						case isNotShown : 
 							logonShowPanes(true);
 							break;
+						default:
+							System.err.println("Something went wrong in oeLogin...");
+							break;
+
 							
 					}
 			}
@@ -351,7 +355,7 @@ public class ICrashAdminGUIController extends AbstractAuthGUIController {
 		}
 	}
 	
-	public AdminController getUserController(){
+	public AbstractUserController getUserController(){
 		return userController;
 	}
 	
@@ -408,5 +412,21 @@ public class ICrashAdminGUIController extends AbstractAuthGUIController {
 			return new PtBoolean(false);
 		}
 		return new PtBoolean(false);
+	}
+
+	/**
+	 * To be implemented if Admin ever gets a Log Window too!
+	 */
+	@Override
+	public void refreshLog() {
+	}
+
+	/**
+	 * To be implemented if Admin ever gets a Log Window too!
+	 */
+	@Override
+	public void setLogWindow(CreatedWindows createdLogWindow) {
+		// TODO Auto-generated method stub
+		
 	}	
 }

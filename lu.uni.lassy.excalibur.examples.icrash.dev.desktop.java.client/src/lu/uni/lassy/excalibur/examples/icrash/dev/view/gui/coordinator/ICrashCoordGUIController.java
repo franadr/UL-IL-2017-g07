@@ -23,6 +23,7 @@ import java.util.function.Consumer;
 import com.oracle.jrockit.jfr.Producer;
 
 import javafx.util.Callback;
+import lu.uni.lassy.excalibur.examples.icrash.dev.controller.AbstractUserController;
 import lu.uni.lassy.excalibur.examples.icrash.dev.controller.CoordinatorController;
 import lu.uni.lassy.excalibur.examples.icrash.dev.controller.SystemStateController;
 import lu.uni.lassy.excalibur.examples.icrash.dev.controller.exceptions.IncorrectActorException;
@@ -45,7 +46,9 @@ import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.AbstractA
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.CreatedWindows;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.log.CreateLog;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.log.LogGuiControler;
+import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.phone.CreatePhoneGUI;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.phone.PhoneGUIController;
+import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.sms.CreateSMSGUI;
 import javafx.scene.control.ButtonBar.ButtonData;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
@@ -62,6 +65,7 @@ import javafx.event.EventHandler;
 import javafx.stage.Modality;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 import javafx.stage.WindowEvent;
 /*
  * This is the import section to be replaced by modifications in the ICrash.fxml document from the sample skeleton controller
@@ -270,7 +274,7 @@ public class ICrashCoordGUIController extends AbstractAuthGUIController {
 	 * 
 	 */
 	
-	 private CreatedWindows createdLogWindows;
+	private CreatedWindows createdLogWindows;
 	SystemStateController systemstateController;
 	
 	/**
@@ -480,6 +484,10 @@ public class ICrashCoordGUIController extends AbstractAuthGUIController {
 			}
 		populateAlerts();
 	}
+	
+	
+	 private CreatedWindows createdSMSWindow;
+	 private CreatedWindows createdPhoneWindow;
 
 	/* (non-Javadoc)
 	 * @see lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.AbstractAuthGUIController#logon()
@@ -493,16 +501,24 @@ public class ICrashCoordGUIController extends AbstractAuthGUIController {
 			try {
 				if (userController.oeLogin(txtfldCoordLogonUserName.getText(), psswrdfldCoordLogonPassword.getText()).getValue()){
 					if (userController.getUserType() == UserType.Coordinator){
-						logonShowPanes(true);
-						
-						//will create the new log window
-						createdLogWindows = new CreateLog(bounds.getMaxX()/2,bounds.getMaxY()/2, this);
-						
-						
+						switch(userController.oeGetAuthenticatedStatus()){
+							case isInRequestPhone : 
+							createdPhoneWindow = new CreatePhoneGUI(this, 200, 200);
+							break;
+						case isIn2ndLoginPhase : 
+							createdSMSWindow = new CreateSMSGUI(this, 150, 150);
+							break;
+						case isNotShown : 
+							logonShowPanes(true);
+							createdLogWindows = new CreateLog(bounds.getMaxX()/2,bounds.getMaxY()/2, this);
+							break;
+						default:
+							System.err.println("Something went wrong in oeLogin...");
+							break;
+						}
 					}
 				}
-			}
-			catch (ServerOfflineException | ServerNotBoundException e) {
+			}catch (ServerOfflineException | ServerNotBoundException e) {
 				showExceptionErrorMessage(e);
 			}
     	}
@@ -530,7 +546,7 @@ public class ICrashCoordGUIController extends AbstractAuthGUIController {
 	/* (non-Javadoc)
 	 * @see lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.AbstractAuthGUIController#logonShowPanes(boolean)
 	 */
-	protected void logonShowPanes(boolean loggedOn){
+	public void logonShowPanes(boolean loggedOn){
 		tbpnMain.setVisible(loggedOn);
 		bttnCoordLogoff.setDisable(!loggedOn);
 		pnLogon.setVisible(!loggedOn);
@@ -653,4 +669,19 @@ public class ICrashCoordGUIController extends AbstractAuthGUIController {
             e.printStackTrace();
         }
     }
+
+	@Override
+	public AbstractUserController getUserController() {
+		return userController;
+	}
+
+	@Override
+	public Window getWindow() {
+		return window;
+	}
+
+	@Override
+	public void setLogWindow(CreatedWindows createdLogWindow) {
+		this.createdLogWindows = createdLogWindow;
+	}
 }

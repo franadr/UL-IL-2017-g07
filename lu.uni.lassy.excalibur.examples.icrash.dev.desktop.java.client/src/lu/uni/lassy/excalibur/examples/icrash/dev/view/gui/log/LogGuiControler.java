@@ -20,6 +20,7 @@ import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.CtLo
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.PtBoolean;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.utils.Log4JUtils;
 import lu.uni.lassy.excalibur.examples.icrash.dev.model.LogEntry;
+import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.AbstractAuthGUIController;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.AbstractGUIController;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.abstractgui.HasTables;
 import lu.uni.lassy.excalibur.examples.icrash.dev.view.gui.coordinator.ICrashCoordGUIController;
@@ -42,7 +43,7 @@ public class LogGuiControler extends AbstractGUIController implements HasTables 
 	TableColumn<LogEntry,String> dateCol;
 
 
-	ICrashCoordGUIController userSideController;
+	AbstractAuthGUIController userSideController;
 	SystemStateController systemStateController;
 	LogController logController;
 
@@ -69,7 +70,7 @@ public class LogGuiControler extends AbstractGUIController implements HasTables 
 
 	public PtBoolean setActor2() {
         System.out.println("setActor2");
-        userSideController.userController.getCoordImpl().listOfLogEntries.addListener((ListChangeListener<? super CtLogEntry>) c -> {
+        userSideController.getUserController().getCoordImpl().listOfLogEntries.addListener((ListChangeListener<? super CtLogEntry>) c -> {
             System.out.println("Change detected adding to list");
             addLogEntryToTableView(logtblvw,c.getList());
         });
@@ -107,12 +108,12 @@ public class LogGuiControler extends AbstractGUIController implements HasTables 
 
 	    userSideController.refreshLog();
 	    populateLogTable();
-        System.out.println("refresh on LogGuiControlelr");
+        System.out.println("refresh on LogGuiController");
 	}
 
 
-	public void setCoordGUIController(ICrashCoordGUIController iCrashCoordGUIController){
-		this.userSideController = iCrashCoordGUIController;
+	public void setUserGUIController(AbstractAuthGUIController userGUIController){
+		this.userSideController = userGUIController;
 
 
 
