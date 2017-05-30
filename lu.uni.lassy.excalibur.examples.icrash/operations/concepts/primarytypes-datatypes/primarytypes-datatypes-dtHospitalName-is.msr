@@ -1,0 +1,33 @@
+package icrash.concepts.primarytypes.datatypes.operations.datatypes.dtHospitalName.is {
+
+import lu.uni.lassy.messir.libraries.primitives
+import lu.uni.lassy.messir.libraries.math
+import lu.uni.lassy.messir.libraries.string
+import lu.uni.lassy.messir.libraries.calendar
+
+	Operation Model {
+
+		operation: icrash.concepts.primarytypes.datatypes.dtHospitalName.is():ptBoolean{
+	postF{ 
+			
+		let TheString:ptString in
+		let TheName:ptString in
+		
+		and TheString = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+			
+        let TheResult: ptBoolean in(
+        	if(TheName.characters() -> forAll(char:dtString | TheString.indexOf(char) > 0))
+	          		then (TheResult = true)
+	        else (TheResult = false)
+	        endif
+	        result = TheResult
+        )
+
+
+			}
+		}
+
+		}
+	
+	
+}
