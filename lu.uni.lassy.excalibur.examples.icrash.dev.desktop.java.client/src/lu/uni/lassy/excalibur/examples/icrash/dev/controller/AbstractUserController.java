@@ -22,6 +22,7 @@ import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtLo
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtPassword;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtPhoneNumber;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtVCode;
+import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.EtAuthenticatedStatus;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.PtBoolean;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.PtString;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.utils.Log4JUtils;
@@ -185,6 +186,25 @@ public abstract class AbstractUserController implements HasListeners {
 	public PtBoolean oeCancelLogin() throws ServerOfflineException, ServerNotBoundException{
 		try {
 			return this.getAuth().oeCancelLogin();
+		} catch (RemoteException e) {
+			Log4JUtils.getInstance().getLogger().error(e);
+			throw new ServerOfflineException();
+		} catch (NotBoundException e) {
+			Log4JUtils.getInstance().getLogger().error(e);
+			throw new ServerNotBoundException();
+		}
+	}
+	
+	/**
+	 * The method that allows the system to get the user's status
+	 * 
+	 * @throws ServerOfflineException Thrown if the server is currently offline
+	 * @throws ServerNotBoundException Thrown if the server hasn't been bound in the RMI settings
+	 * @return The status of the user
+	 */
+	public EtAuthenticatedStatus oeGetAuthenticatedStatus() throws ServerOfflineException, ServerNotBoundException{
+		try {
+			return this.getAuth().oeGetAuthenticatedStatus();
 		} catch (RemoteException e) {
 			Log4JUtils.getInstance().getLogger().error(e);
 			throw new ServerOfflineException();

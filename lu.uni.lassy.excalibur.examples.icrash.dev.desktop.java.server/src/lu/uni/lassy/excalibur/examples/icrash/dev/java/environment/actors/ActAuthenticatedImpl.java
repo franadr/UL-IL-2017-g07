@@ -26,6 +26,7 @@ import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtLo
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtPassword;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtPhoneNumber;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.DtVCode;
+import lu.uni.lassy.excalibur.examples.icrash.dev.java.system.types.primary.EtAuthenticatedStatus;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.PtBoolean;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.types.stdlib.PtString;
 import lu.uni.lassy.excalibur.examples.icrash.dev.java.utils.Log4JUtils;
@@ -189,7 +190,7 @@ public abstract class ActAuthenticatedImpl extends UnicastRemoteObject
 	}
 	
 	/* (non-Javadoc)
-	 * @see lu.uni.lassy.excalibur.examples.icrash.dev.java.environment.actors.ActAuthenticated#oeConfirmPhoneNumber
+	 * @see lu.uni.lassy.excalibur.examples.icrash.dev.java.environment.actors.ActAuthenticated#oeLoginPhaseTwo
 	 */
 	synchronized public PtBoolean oeLoginPhaseTwo(DtVCode aDtVCode) throws RemoteException, NotBoundException {
 
@@ -216,7 +217,7 @@ public abstract class ActAuthenticatedImpl extends UnicastRemoteObject
 	}
 	
 	/* (non-Javadoc)
-	 * @see lu.uni.lassy.excalibur.examples.icrash.dev.java.environment.actors.ActAuthenticated#oeConfirmPhoneNumber
+	 * @see lu.uni.lassy.excalibur.examples.icrash.dev.java.environment.actors.ActAuthenticated#oeCancelLogin
 	 */
 	synchronized public PtBoolean oeCancelLogin() throws RemoteException, NotBoundException {
 
@@ -238,6 +239,28 @@ public abstract class ActAuthenticatedImpl extends UnicastRemoteObject
 			log.info("operation oeCancelLogin successfully executed by the system");
 		else
 			log.info("operation oeCancelLogin failed");
+
+		return res;
+	}
+	
+	/* (non-Javadoc)
+	 * @see lu.uni.lassy.excalibur.examples.icrash.dev.java.environment.actors.ActAuthenticated#oeGetAuthenticatedStatus
+	 */
+	synchronized public EtAuthenticatedStatus oeGetAuthenticatedStatus() throws RemoteException, NotBoundException {
+
+		Logger log = Log4JUtils.getInstance().getLogger();
+
+		Registry registry = LocateRegistry.getRegistry(RmiUtils.getInstance().getHost(),RmiUtils.getInstance().getPort());
+
+		//Gathering the remote object as it was published into the registry
+		IcrashSystem iCrashSys_Server = (IcrashSystem) registry
+				.lookup("iCrashServer");
+
+		//set up ActAuthenticated instance that performs the request
+		iCrashSys_Server.setCurrentRequestingAuthenticatedActor(this);
+
+		log.info("message ActAuthenticated.oeGetAuthenticatedStatus sent to system");
+		EtAuthenticatedStatus res = iCrashSys_Server.oeGetAuthenticatedStatus();
 
 		return res;
 	}

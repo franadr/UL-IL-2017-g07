@@ -1175,8 +1175,10 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
 			throws RemoteException {		
 		try {
 			log.debug("The current requesting authenticating actor is " + currentRequestingAuthenticatedActor.getLogin().value.getValue());
+			
 			//PreP1
 			isSystemStarted();
+			
 			/**
 			 * check whether the credentials corresponds to an existing user
 			 *this is done by checking if there exists an instance with
@@ -1192,7 +1194,6 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
 				if(!(ctAuthenticatedInstance.vpStatus == EtAuthenticatedStatus.isIn1stLoginPhase))
 					throw new Exception("The status of the user is wrong!");
 				
-				
 				PtBoolean pwdCheck = ctAuthenticatedInstance.pwd.eq(aDtPassword);
 				if(pwdCheck.getValue()) {
 					//PostP1
@@ -1205,15 +1206,15 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
 					log.debug("The logging in actor is " + authActorCheck.getLogin().value.getValue());
 					if (authActorCheck != null && authActorCheck.getLogin().value.getValue().equals(currentRequestingAuthenticatedActor.getLogin().value.getValue()) &&
 							!ctAuthenticatedInstance.vCode.vCode.value.getValue().equals("dummy")){
+						log.info("HOIN???");
 						//PostF1
 						PtString aMessage = new PtString("You are logged ! Welcome ...");
 						currentRequestingAuthenticatedActor.ieMessage(aMessage);
 						//PostP1
 						ctAuthenticatedInstance.vpIsLogged = new PtBoolean(true);
 						ctAuthenticatedInstance.vpStatus = EtAuthenticatedStatus.isNotShown;
-					}else if(authActorCheck != null && authActorCheck.getLogin().value.getValue().equals(currentRequestingAuthenticatedActor.getLogin().value.getValue()) &&
-							ctAuthenticatedInstance.vCode.vCode.value.getValue().equals("dummy")){
-						
+					}else{ /*authActorCheck != null && authActorCheck.getLogin().value.getValue().equals(currentRequestingAuthenticatedActor.getLogin().value.getValue()) && ctAuthenticatedInstance.vCode.vCode.value.getValue().equals("dummy"))*/
+						log.info("HAIN???");
 						//PostF1
 						if(!ctAuthenticatedInstance.isPhoneNumberValid.getValue()){
 							PtString aMessage = new PtString("Please input your phone number...");
@@ -1245,37 +1246,47 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
 								if (currentRequestingAuthenticatedActor instanceof ActCoordinator)
 									DbCoordinators.updateCoordinator((CtCoordinator)ctAuthenticatedInstance);
 						}
-					}else{
-						//PostF1
-						PtString aMessage = new PtString(
-								"Wrong identification information! Please try again ...");
-						currentRequestingAuthenticatedActor.ieMessage(aMessage);
-						Registry registry = LocateRegistry.getRegistry(RmiUtils.getInstance().getHost(), RmiUtils.getInstance().getPort());
-						IcrashEnvironment env = (IcrashEnvironment) registry
-								.lookup("iCrashEnvironment");
-						//Notify to all administrators that exist in the environment
-						for (String adminKey : env.getAdministrators().keySet()) {
-							ActAdministrator admin = env.getActAdministrator(adminKey);
-							aMessage = new PtString("Intrusion tentative !");
-							admin.ieMessage(aMessage);
-						}
-						
-						return new PtBoolean(false);
 					}
-
-						//PostF2
-						CtEvent event = new CtEvent();
-						DtHour hour = new DtHour(new PtInteger(12));
-						DtMinute minute = new DtMinute(new PtInteger(00));
-						DtSecond second = new DtSecond(new PtInteger(00));
-						ctState.eventIndex = new PtInteger(ctState.eventIndex.getValue()+1);
-						event.createEvent(ctState.eventIndex,EtEventType.System,new PtString("new Authenticated actor logged in : "+aDtLogin.value.getValue()),ctState.clock.time);
-						cmpSystemCtEvent.add(event);
-						
-						return new PtBoolean(true);
+					
+					//PostF2
+					CtEvent event = new CtEvent();
+					DtHour hour = new DtHour(new PtInteger(12));
+					DtMinute minute = new DtMinute(new PtInteger(00));
+					DtSecond second = new DtSecond(new PtInteger(00));
+					ctState.eventIndex = new PtInteger(ctState.eventIndex.getValue()+1);
+					event.createEvent(ctState.eventIndex,EtEventType.System,new PtString("new Authenticated actor logged in : "+aDtLogin.value.getValue()),ctState.clock.time);
+					cmpSystemCtEvent.add(event);
+					
+					return new PtBoolean(true);
+					
+				}else{
+					//PostF1
+					PtString aMessage = new PtString(
+							"Wrong identification information! Please try again ...");
+					currentRequestingAuthenticatedActor.ieMessage(aMessage);
+					Registry registry = LocateRegistry.getRegistry(RmiUtils.getInstance().getHost(), RmiUtils.getInstance().getPort());
+					IcrashEnvironment env = (IcrashEnvironment) registry
+							.lookup("iCrashEnvironment");
+					//Notify to all administrators that exist in the environment
+					for (String adminKey : env.getAdministrators().keySet()) {
+						ActAdministrator admin = env.getActAdministrator(adminKey);
+						aMessage = new PtString("Intrusion tentative !");
+						admin.ieMessage(aMessage);
 					}
+						
+					//PostF2
+					CtEvent event = new CtEvent();
+					DtHour hour = new DtHour(new PtInteger(12));
+					DtMinute minute = new DtMinute(new PtInteger(00));
+					DtSecond second = new DtSecond(new PtInteger(00));
+					ctState.eventIndex = new PtInteger(ctState.eventIndex.getValue()+1);
+					event.createEvent(ctState.eventIndex,EtEventType.System,new PtString("new Authenticated actor logged in : "+aDtLogin.value.getValue()),ctState.clock.time);
+					cmpSystemCtEvent.add(event);
+					
+					return new PtBoolean(false);
+				}
 			}
-			
+					
 		} catch (Exception ex) {
 			log.error("Exception in oeLogin..." + ex);
 		}
@@ -1304,6 +1315,9 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
 				PtString aMessage = new PtString(
 						"You are logged out ! Good Bye ...");
 				currentRequestingAuthenticatedActor.ieMessage(aMessage);
+				
+				//PostP1
+				ctAuth.vpStatus = EtAuthenticatedStatus.isIn1stLoginPhase;
 			}
 			return new PtBoolean(true);
 		}
@@ -1729,6 +1743,27 @@ public class IcrashSystemImpl extends UnicastRemoteObject implements
 		}
 		
 		return new PtBoolean(false);
+    }
+    
+    @Override
+	public EtAuthenticatedStatus oeGetAuthenticatedStatus() {
+    	
+		try{
+			CtAuthenticated ctAuthenticatedInstance;
+			DtLogin user = currentRequestingAuthenticatedActor.getLogin();
+			if (user != null && user.value != null){
+				ctAuthenticatedInstance = cmpSystemCtAuthenticated.get(user.value.getValue());
+			}
+			else
+				throw new Exception("oeGetAuthenticatedStatus can't find the user...");
+			
+			return ctAuthenticatedInstance.vpStatus;
+			
+		}catch(Exception ex){
+			log.error("Exception in oeGetAuthenticatedStatus..." + ex);
+		}
+		
+		return null;
     }
     
 /*********************************************************************************************************************************************************************************/

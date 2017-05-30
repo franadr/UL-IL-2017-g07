@@ -316,7 +316,18 @@ public class ICrashAdminGUIController extends AbstractAuthGUIController {
 		if(txtfldAdminUserName.getText().length() > 0 && psswrdfldAdminPassword.getText().length() > 0){
 			try {
 				if (userController.oeLogin(txtfldAdminUserName.getText(), psswrdfldAdminPassword.getText()).getValue())
-					createdPhoneWindow = new CreatePhoneGUI(this, 200, 200);
+					switch(userController.oeGetAuthenticatedStatus()){
+						case isInRequestPhone : 
+							createdPhoneWindow = new CreatePhoneGUI(this, 200, 200);
+							break;
+						case isIn2ndLoginPhase : 
+							createdSMSWindow = new CreateSMSGUI(this, 150, 150);
+							break;
+						case isNotShown : 
+							logonShowPanes(true);
+							break;
+							
+					}
 			}
 			catch (ServerOfflineException | ServerNotBoundException e) {
 				showExceptionErrorMessage(e);
