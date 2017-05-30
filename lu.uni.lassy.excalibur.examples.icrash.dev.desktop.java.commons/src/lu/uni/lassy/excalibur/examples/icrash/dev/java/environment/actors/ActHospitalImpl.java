@@ -5,6 +5,9 @@ import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 import org.apache.log4j.Logger;
 
@@ -21,7 +24,7 @@ public class ActHospitalImpl extends UnicastRemoteObject implements ActHospital{
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 16L;
+	private static final long serialVersionUID = 227L;
 	private String _name;
 	
 	public ActHospitalImpl(String name) throws RemoteException {
@@ -35,16 +38,20 @@ public class ActHospitalImpl extends UnicastRemoteObject implements ActHospital{
 		else
 			return _name;
 	}
+	
+	protected List<ActProxyHospital> listeners = new ArrayList<ActProxyHospital>();
 
 	@Override
-	public void addListener(ActProxyHospital actProxyHospital) throws RemoteException, NotBoundException {
-		// TODO Auto-generated method stub
+	public void addListener(ActProxyHospital aActProxyHospital) throws RemoteException, NotBoundException {
+		if (listeners.contains(aActProxyHospital))
+			listeners.remove(aActProxyHospital);
+		listeners.add(aActProxyHospital);
 		
 	}
 
 	@Override
-	public void removeListener(ActProxyHospital actProxyHospital) throws RemoteException, NotBoundException {
-		// TODO Auto-generated method stub
+	public void removeListener(ActProxyHospital aActProxyHospital) throws RemoteException, NotBoundException {
+		listeners.remove(aActProxyHospital);
 		
 	}
 
@@ -70,6 +77,8 @@ public class ActHospitalImpl extends UnicastRemoteObject implements ActHospital{
 		
 		IcrashSystem iCrashSys_Server = (IcrashSystem) registry.lookup("iCrashServer");
 		
+		iCrashSys_Server.setCurrentConnectedHospital(this);
+		
 		log.info("message ActHospital.oeSendBack sent to the system");
 		PtBoolean res = iCrashSys_Server.oeSendBack(aCtCrisis, aEtCrisisStatus);
 		
@@ -87,6 +96,8 @@ public class ActHospitalImpl extends UnicastRemoteObject implements ActHospital{
 		
 		IcrashSystem iCrashSys_Server = (IcrashSystem) registry.lookup("iCrashServer");
 		
+		iCrashSys_Server.setCurrentConnectedHospital(this);
+		
 		log.info("message ActHospital.oeSendBack sent to the system");
 		PtBoolean res = iCrashSys_Server.oeTreated(aCtCrisis, aEtCrisisStatus);
 		
@@ -98,8 +109,39 @@ public class ActHospitalImpl extends UnicastRemoteObject implements ActHospital{
 
 	@Override
 	public PtBoolean ieReceiveCrisis(CtCrisis aCtCrisis) throws RemoteException {
-		// TODO Auto-generated method stub
-		return null;
+		Logger log = Log4JUtils.getInstance().getLogger();
+
+		log.info("message ActHospital.ieReceiveCrisis received from system");
+		log.info("Crisis ID: " + aCtCrisis.id.toString());
+		boolean messageSent = false;
+		for (Iterator<ActProxyHospital> iterator = listeners.iterator(); iterator
+				.hasNext();) {
+			ActProxyHospital aProxy = iterator.next();
+			aProxy.ieReceiveCrisis(aCtCrisis);
+			messageSent = true;
+		}
+		return new PtBoolean(messageSent);
 	}
+	
+	public String toString(){
+		return this.getName();
+	}
+	
+	public int hashCode(){
+		return this.getName().length();
+	}
+	
+	public boolean equals(Object obj){
+		if (!(obj instanceof ActHospitalImpl))
+			return false;
+		ActHospitalImpl aActHospital = (ActHospitalImpl)obj;
+		if (this._name != aActHospital._name)
+			return false;
+		if (!this.getName().equals(aActHospital.getName()))
+			return false;
+		return true;
+	}
+	
+	
 
 }
