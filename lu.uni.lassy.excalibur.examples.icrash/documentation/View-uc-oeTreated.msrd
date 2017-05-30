@@ -8,3 +8,4 @@
 @model Use-Case icrash.usecases.subfunctions.oeTreated
 @description "shows the use case diagram for oeTreated operation"
 @caption "oeTreated operation"
+@scale MaxWidth

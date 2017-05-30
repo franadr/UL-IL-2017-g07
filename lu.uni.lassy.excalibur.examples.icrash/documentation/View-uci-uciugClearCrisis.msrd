@@ -8,3 +8,4 @@
 @instance Use-Case usecases.uciugClearCrisis.uciugClearCrisis 
 @description "use case instance of ugClearCrisis"
 @caption "uciugClearCrisis"
+@scale MaxWidth

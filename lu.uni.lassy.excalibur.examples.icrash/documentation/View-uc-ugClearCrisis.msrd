@@ -8,3 +8,4 @@
 @model Use-Case icrash.usecases.ugClearCrisis.msr.ugClearCrisis 
 @description "shows the use case diagram for the ugClearCrisis user goal"
 @caption "ugClearCrisis user goal use case"
+@scale MaxWidth

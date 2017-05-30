@@ -8,3 +8,4 @@
 @instance Use-Case usecases.uciugDismissCrisis.uciugDismissCrisis 
 @description "use case instance of ugDismissCrisis"
 @caption "uciugDismissCrisis"
+@scale MaxWidth
