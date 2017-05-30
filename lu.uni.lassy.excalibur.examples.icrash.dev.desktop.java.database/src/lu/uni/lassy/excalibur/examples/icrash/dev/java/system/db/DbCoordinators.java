@@ -205,8 +205,8 @@ public class DbCoordinators extends DbAbstract{
 				Byte isPhoneNumberValid = (byte) (aCtCoordinator.isPhoneNumberValid.getValue() ? 1 : 0 );
 				String statement = "UPDATE "+ dbName+ ".coordinators" +
 						" SET pwd='"+pwd+"',  login='"+ login+"', phoneNumber='"+ phoneNumber+
-						"' vCode='"+ vCode+"' isPhoneNumberValid='"+ isPhoneNumberValid+"' " +
-						"WHERE id='"+id+"'";
+						"', vCode='"+ vCode+"', isPhoneNumberValid="+ isPhoneNumberValid+" " +
+						"WHERE id="+id;
 				int val = st.executeUpdate(statement);
 				log.debug(val+" row updated");
 				success = new PtBoolean(val == 1);
@@ -244,22 +244,38 @@ public class DbCoordinators extends DbAbstract{
 				PreparedStatement statement = conn.prepareStatement(sql);
 				ResultSet res = statement.executeQuery(sql);
 
-				CtCoordinator aCtCoord = null;
+				CtCoordinator aCtCoordinator = null;
 
-				while (res.next()) {
-
-					aCtCoord = new CtCoordinator();
-					//alert's id
-					DtCoordinatorID aId = new DtCoordinatorID(new PtString(
-							res.getString("id")));
+				while (res.next()) {			
+					
+					aCtCoordinator = new CtCoordinator();
+					//coordinator's id
+					DtCoordinatorID aId = new DtCoordinatorID(new PtString(res.getString("id")));
+					//coordinator's login
 					DtLogin aLogin = new DtLogin(new PtString(res.getString("login")));
+					//coordinator's pwd
 					DtPassword aPwd = new DtPassword(new PtString(res.getString("pwd")));
-					//init aCtAlert instance
-					aCtCoord.init(aId, aLogin, aPwd);
+					//coordinator's phone number
+					DtPhoneNumber aPhoneNumber = new DtPhoneNumber(new PtString(res.getString("phoneNumber")));
+					//coordinator's associated vCode
+					DtVCode aDtVCode = new DtVCode(new PtString(res.getString("vCode")));
+					CtVCode aCtVCode = DbVCode.getVCode(aDtVCode.value.getValue());
+						
+					//coordinators's isPhoneNumberValid boolean
+					PtBoolean aIsPhoneNumberValid;
+					int tmpIsValidated = res.getInt("isPhoneNumberValid");
+					if(tmpIsValidated == 1)
+						aIsPhoneNumberValid = new PtBoolean(true);
+					else
+						aIsPhoneNumberValid = new PtBoolean(false);
+
+					aCtCoordinator.init(aId, aLogin,aPwd, aPhoneNumber, aCtVCode, aIsPhoneNumberValid);	
+					
+					
 					
 					//add instance to the hash
 					cmpSystemCtCoord
-							.put(aCtCoord.id.value.getValue(), aCtCoord);
+							.put(aCtCoordinator.id.value.getValue(), aCtCoordinator);
 				}
 			} catch (SQLException s) {
 				log.error("SQL statement is not executed! " + s);

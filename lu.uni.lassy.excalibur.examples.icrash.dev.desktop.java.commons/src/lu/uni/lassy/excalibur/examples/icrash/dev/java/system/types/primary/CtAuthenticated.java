@@ -79,7 +79,12 @@ public abstract class CtAuthenticated implements Serializable {
 			vpIsLogged = new PtBoolean(false);
 			vpStatus = EtAuthenticatedStatus.isIn1stLoginPhase;
 			phoneNumber = aPhoneNumber;
-			vCode = aVCode;
+			
+			if(aVCode != null)
+				vCode = aVCode;
+			else
+				vCode = new CtVCode();
+				
 			isPhoneNumberValid = aIsPhoneNumberValidated;
 
 			return new PtBoolean(true); 

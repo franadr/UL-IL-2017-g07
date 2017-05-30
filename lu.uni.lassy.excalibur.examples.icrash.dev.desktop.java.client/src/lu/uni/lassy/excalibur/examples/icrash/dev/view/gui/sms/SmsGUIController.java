@@ -102,15 +102,6 @@ public class SmsGUIController extends AbstractGUIController implements HasTables
 	}
 		
 		
-		
-//		if(!vCodeField.getText().isEmpty()){
-//			warningMessage.setText("Wrong Code !!"); 							//Condition adapted for convenience
-//		}else{
-//		adminGUIController.logonShowPanes(true);
-//		stage.close();
-//		}
-//	}
-	
 	public void bttnCancel_OnClick(){
 		closeForm();
 	}
