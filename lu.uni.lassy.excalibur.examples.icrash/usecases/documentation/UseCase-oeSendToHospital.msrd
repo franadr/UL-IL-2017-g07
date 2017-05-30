@@ -5,18 +5,22 @@
 
 
 @@Use Case Subfunction icrash.usecases.subfunctions.oeSendToHospital
-@description ""
+@description "used to send the crisis information to a hospital"
 @parameter icrash.usecases.subfunctions.oeSendToHospital.AdtCrisisID ""
 @endParameters
-@protocolCondition"
+@protocolCondition
+"The icrash System is started 
+"
+@protocolCondition
+"The coordinator is logged in
 "
 @endProtocolConditions
 @preCondition
-"
+"There exist at least one Hospital with the same service as the crisis
 "
 @endPreConditions
 @postCondition
-"
+"A crisis information is sent to the hospital
 "
 @endPostConditions
 @additionalInformation

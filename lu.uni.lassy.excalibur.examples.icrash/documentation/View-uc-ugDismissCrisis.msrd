@@ -6,5 +6,5 @@
 
 @@view uc-ugDismissCrisis
 @model Use-Case icrash.usecases.ugDismissCrisis.msr.ugDismissCrisis 
-@description ""
-@caption ""
+@description "shows the use case diagram for the ugDismissCrisis user goal"
+@caption "ugDismissCrisis user goal"

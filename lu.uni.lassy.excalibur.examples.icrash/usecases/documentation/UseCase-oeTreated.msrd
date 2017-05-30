@@ -5,7 +5,7 @@
 
 
 @@Use Case Subfunction icrash.usecases.subfunctions.oeTreated
-@description ""
+@description "used to send a status treated of crisis to the system"
 @parameter icrash.usecases.subfunctions.oeTreated.AdtCrisisID ""
 @parameter icrash.usecases.subfunctions.oeTreated.AetCrisisStatus ""
 @endParameters
@@ -18,7 +18,7 @@
 "
 @endPreConditions
 @postCondition
-"
+"The status of one instance of ctCrisis is changed to treated and sent to the system
 "
 @endPostConditions
 @additionalInformation

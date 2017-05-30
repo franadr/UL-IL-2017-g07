@@ -1,0 +1,8 @@
+/*
+@author Carlos
+@date Tue May 30 19:39:52 CEST 2017
+*/
+
+
+@@Instance Use Case usecases.uciugDismissCrisis.uciugDismissCrisis
+@description "Shows the use case instance of a normal operation of the system including dismissing a crisis"

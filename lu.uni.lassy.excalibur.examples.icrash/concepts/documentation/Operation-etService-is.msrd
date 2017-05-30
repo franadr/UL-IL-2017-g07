@@ -6,7 +6,7 @@
 
 @@Operation
 icrash.concepts.primarytypes.datatypes.etService.is
-@description "
+@description "used to determine the service needed to treat a victim of a crisis
  "
 //postFunctional descriptions
 @postF 

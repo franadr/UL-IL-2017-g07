@@ -6,7 +6,7 @@
 
 @@Operation
 icrash.concepts.primarytypes.datatypes.etCrisisCategory.is
-@description "
+@description " used to determine the seriousness of a crisis
  "
 //postFunctional descriptions
 @postF 

@@ -17,30 +17,19 @@ import icrash.concepts.primarytypes.classes
 		preP{
 			let TheSystem: ctState in
 			let AvpStarted: ptBoolean in
-			let TheActor:actCoordinator in
+			let TheActor:actActivator in
 			let ListOfHospital : Bag(ctHospital) in
 			let ListOfServiceHospital : Bag(ctHospital) in
-			self.rnActor.rnSystem = TheSystem
+			TheSystem = self.rnActor.rnSystem
 			
 			and self.rnActor.rnSystem.vpStarted = AvpStarted
 			
 			/*PreP01*/
+			and TheActivator = self.rnActor
 			and AvpStarted = true
 			
 			/*PreP02*/
 			and TheActor.rnctAuthenticated.vpIsLogged = true
-			
-			/*PreP03*/
-			and TheSystem.rnctHospital = ListOfHospital
-  			and ListOfHospital->size().geq(1)
-  			and ActCrisis.init(AdtCrisisID, AetCrisisType, 
-  							   AetCrisisCategory, AetCrisisStatus, 
-  							   AdtGPSLocation, AdtDateAndTime, 
-  							   AetService, AdtComment
-  			)
-			and ListOfServiceHospital -> select(
-				AetService == hospital.service
-				)
 		}
 		
 		preF{
@@ -48,6 +37,7 @@ import icrash.concepts.primarytypes.classes
 		}
 		
 		postF{
+			let TheActivator: actActivator in
 			let TheSystem: ctState in
 			let ListOfHospital: Bag(ctHospital) in
 			self.rnActor.rnSystem = TheSystem
@@ -64,7 +54,20 @@ import icrash.concepts.primarytypes.classes
 			/*PostF01*/
 			
 			and TheSystem.rnctHospital = ListOfHospital
-			and ActCrisis.init(AdtCrisisID, AetCrisisType, AetCrisisCategory, AetCrisisStatus, AdtGPSLocation, AdtDateAndTime, AetService, AdtComment)
+  			and ListOfHospital->size().geq(1)
+  			and ActCrisis.init(AdtCrisisID, AetCrisisType, 
+  							   AetCrisisCategory, AetCrisisStatus, 
+  							   AdtGPSLocation, AdtDateAndTime, 
+  							   AetService, AdtComment
+  			)
+			and ListOfServiceHospital -> select(
+				AetService == hospital.service 
+				)
+				
+			TheActivator.rnInterfaceIN^ieSendToHospital(AdtCrisisID, AetCrisisType, 
+  							   AetCrisisCategory, AetCrisisStatus, 
+  							   AdtGPSLocation, AdtDateAndTime, 
+  							   AetService, AdtComment)
 		}
 		
 		postP{

@@ -67,7 +67,7 @@ import lu.uni.lassy.messir.libraries.calendar
 				operation is():ptBoolean
 			}
 			enum etCrisisCategory {
-				constants["1: Immediately life-threatening", "2: Imminently life-threatening", "3: Potentially life-threatening", "4: Potentially serious", "5: Less urgent"]
+				constants["Immediately life-threatening", "Imminently life-threatening", "Potentially life-threatening", "Potentially serious", "Less urgent"]
 				operation is():ptBoolean
 			}
 			enum etService {

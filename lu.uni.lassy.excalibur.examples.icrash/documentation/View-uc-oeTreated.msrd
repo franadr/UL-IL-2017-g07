@@ -6,5 +6,5 @@
 
 @@view uc-oeTreated
 @model Use-Case icrash.usecases.subfunctions.oeTreated
-@description ""
-@caption ""
+@description "shows the use case diagram for oeTreated operation"
+@caption "oeTreated operation"

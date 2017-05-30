@@ -5,4 +5,4 @@
 
 
 @@Instance Use Case usecases.uciugManageCrisis.uciugManageCrisis
-@description ""
+@description "Shows the use case instance of a normal operation of the system including managing crisis"

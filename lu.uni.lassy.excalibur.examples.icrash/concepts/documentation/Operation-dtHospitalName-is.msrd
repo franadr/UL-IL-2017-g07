@@ -6,11 +6,11 @@
 
 @@Operation
 icrash.concepts.primarytypes.datatypes.dtHospitalName.is
-@description "
+@description "used to determine the name of the hospital
  "
 //postFunctional descriptions
 @postF 
-" "
+"its true if it is composed of only numbers and/or capital letters of the alphabet. "
 @endPostF
 //example
 @example" "

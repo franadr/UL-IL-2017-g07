@@ -5,7 +5,7 @@
 
 
 @@Use Case Subfunction icrash.usecases.subfunctions.oeSendBack
-@description ""
+@description "used to send a status incorrect of crisis to the system"
 @parameter icrash.usecases.subfunctions.oeSendBack.AdtCrisisID ""
 @parameter icrash.usecases.subfunctions.oeSendBack.AdtComment ""
 @endParameters
@@ -18,7 +18,7 @@
 "
 @endPreConditions
 @postCondition
-"
+"The status of one instance of ctCrisis is changed to incorrect and sent to the system
 "
 @endPostConditions
 @additionalInformation

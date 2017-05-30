@@ -17,7 +17,7 @@ operation: actCoordinator.outactCoordinator.oeSetCrisisType(AdtCrisisID:dtCrisis
 		self.rnActor.rnSystem = TheSystem
 		and self.rnActor.rnSystem.vpStarted = AvpStarted
 		
-		/*Prep 1*/
+		/*PreP 1*/
 		and AvpStarted = true
 		
 	}

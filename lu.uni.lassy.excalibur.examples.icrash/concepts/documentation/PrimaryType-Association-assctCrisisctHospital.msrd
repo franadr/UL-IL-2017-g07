@@ -5,4 +5,4 @@
 
 
 @@Primary Type Association icrash.concepts.primarytypes.associations.assctCrisisctHospital
-@description ""
+@description "Each crisis is bound to single Hospital"

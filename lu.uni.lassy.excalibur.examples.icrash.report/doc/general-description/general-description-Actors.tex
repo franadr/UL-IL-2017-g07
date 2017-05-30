@@ -57,6 +57,7 @@ A coordinator is a employee of the ABC company being responsible of handling one
 \begin{itemize}
   \item to securely monitor the existing alerts and crisis.
   \item to securely manage alerts and crisis until their termination.
+  \item to get the system log.
 \end{itemize}
 \vspace{0.5cm}
 
@@ -109,12 +110,32 @@ The objectives of a \msrcode{activator} are:
 \begin{itemize}
   \item to communicate the current time to the system
   \item to notify the administrator that some crisis are still pending for a too long time.
+  \item to record new event triggered in the system as log entry
+  \item to send the filled information of a crisis to a hospital
+  \item to manage parts of the login procedures of the users.
 \end{itemize}
 \vspace{0.5cm}
 In order to achieve these objectives, the responsibilities of a \msrcode{activator} are:
 \begin{itemize}
   \item to know the current universal time
   \item to send the messages to the system according to the time constraints specifically defined for it.
+  \item to know if new event occurs
+  \item to know if the missing information of a crisis filled
+\end{itemize}
+
+\subsection{Hospital}
+
+A \msrcode{hospital} is a service responsible to treat a crisis.
+
+The objectives of a \msrcode{hospital} are:
+\begin{itemize}
+  \item to manage the received crisis
+\end{itemize}
+\vspace{0.5cm}
+In order to achieve these objectives, the responsibilities of a
+\msrcode{hospital} are:
+\begin{itemize}
+  \item to send the status of a crisis to the system
 \end{itemize}
 
 \newpage
@@ -132,6 +153,7 @@ Among all the stakeholders presented in the previous section, we can determine f
   \item \msrcode{actCoordinator}: for the Coordinators stakeholders.
   \item \msrcode{actActivator}: for the Activator stakeholder.
   \item \msrcode{actMsrCreator}: for the Creator stakeholder.
+  \item \msrcode{actHospital}: for the Hospital stakeholder.
 \end{itemize}
  
 In addition to those system actors, we can add five other types of actors related to the system's ones. Those five actors are grouped into two categories:

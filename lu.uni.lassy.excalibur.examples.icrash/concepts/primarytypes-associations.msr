@@ -49,9 +49,9 @@ association assctVCodectAuthenticated
  					ctAuthenticated(rnctAuthenticated)[1..1]
  					actAuthenticated(rnactAuthenticated)[1..1]
  		
- 		association assctHospitalactCoordinator2
+ 		association assctHospitalactActivator
  					ctHospital(rnctHospital)[1..*]
- 					actCoordinator(rnactCoordinator2)[1..1]
+ 					actActivator(rnactActivator)[1..1]
 			
 		}
 	}

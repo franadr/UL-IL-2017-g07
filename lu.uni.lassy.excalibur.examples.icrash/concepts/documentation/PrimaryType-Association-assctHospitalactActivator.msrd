@@ -1,0 +1,8 @@
+/*
+@author Carlos
+@date Tue May 30 20:08:13 CEST 2017
+*/
+
+
+@@Primary Type Association icrash.concepts.primarytypes.associations.assctHospitalactActivator
+@description "Each Hospital is bound to a single actActivator"

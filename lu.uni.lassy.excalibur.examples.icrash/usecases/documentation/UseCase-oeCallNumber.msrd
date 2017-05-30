@@ -5,7 +5,7 @@
 
 
 @@Use Case Subfunction icrash.usecases.subfunctions.oeCallNumber
-@description ""
+@description "used to call the indicated phone number"
 @parameter icrash.usecases.subfunctions.oeCallNumber.AdtPhoneNumber ""
 @endParameters
 @protocolCondition

@@ -123,8 +123,7 @@ import lu.uni.lassy.messir.libraries.calendar
 				operation ieMessage(AMessage:ptString):ptBoolean
 				operation ieReceiveCrisis(  AetService:etService,
 											AdtCrisisID:dtCrisisID,
-											AdtDate:dtDate ,
-											AdtTime:dtTime ,
+											Ainstant:dtDateAndTime ,
 											AetCrisisType:etCrisisType ,
 											AetCrisisCategory:etCrisisCategory ,
 											AdtPhoneNumber:dtPhoneNumber ,

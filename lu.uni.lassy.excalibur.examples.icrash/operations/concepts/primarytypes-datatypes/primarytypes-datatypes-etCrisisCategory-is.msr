@@ -1,0 +1,30 @@
+package icrash.concepts.primarytypes.datatypes.operations.datatypes.etCrisisCategory.is {
+
+import lu.uni.lassy.messir.libraries.primitives
+import lu.uni.lassy.messir.libraries.math
+import lu.uni.lassy.messir.libraries.string
+import lu.uni.lassy.messir.libraries.calendar
+
+	Operation Model {
+
+		operation: icrash.concepts.primarytypes.datatypes.etCrisisCategory.is():ptBoolean{
+	postF{ 
+        let TheResult: ptBoolean in
+        ( if
+          ( self = Immediately life-threatening
+            or self = Imminently life-threatening
+            or self = Potentially life-threatening
+            or self = Potentially serious
+            or self = Less urgent
+          )
+          then (TheResult = true)
+          else (TheResult = false)
+          endif
+          result = TheResult
+        )
+    }
+	
+
+		}
+	}
+}

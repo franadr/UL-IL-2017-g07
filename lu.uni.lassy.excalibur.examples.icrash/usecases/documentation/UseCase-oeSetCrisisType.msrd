@@ -5,7 +5,7 @@
 
 
 @@Use Case Subfunction icrash.usecases.subfunctions.oeSetCrisisType
-@description ""
+@description "used to set the seriousness of a crisis"
 @parameter icrash.usecases.subfunctions.oeSetCrisisType.AdtCrisisID ""
 @parameter icrash.usecases.subfunctions.oeSetCrisisType.AetCrisisType ""
 @parameter icrash.usecases.subfunctions.oeSetCrisisType.AetCrisisCategory ""

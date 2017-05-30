@@ -6,5 +6,5 @@
 
 @@view uci-uciugDismissCrisis
 @instance Use-Case usecases.uciugDismissCrisis.uciugDismissCrisis 
-@description ""
-@caption ""
+@description "use case instance of ugDismissCrisis"
+@caption "uciugDismissCrisis"

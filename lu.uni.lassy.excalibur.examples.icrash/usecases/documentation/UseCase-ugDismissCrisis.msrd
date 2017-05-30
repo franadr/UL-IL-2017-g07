@@ -1,11 +1,11 @@
 /*
 @author Carlos
-@date Tue Apr 11 21:06:33 CEST 2017
+@date Tue May 30 19:45:23 CEST 2017
 */
 
 
-@@Use Case icrash.usecases.ugClearCrisis.msr.ugClearCrisis
-@description "A user goal to achieve the closing of a crisis"
+@@Use Case icrash.usecases.ugDismissCrisis.msr.ugDismissCrisis
+@description "A user goal to achieve the dismissing of a crisis"
 @protocolCondition
 "The iCrash system has been deployed
 "
